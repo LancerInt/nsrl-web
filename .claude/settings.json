@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node \"C:/Users/it/AppData/Local/Temp/claude/c--Users-it-OneDrive-Documents-nsrl-web/9025146f-9dba-4a08-8118-dd8d3829f4f0/scratchpad/tw.mjs\")",
+      "Bash(cp \"C:/Users/it/AppData/Local/Temp/claude/c--Users-it-OneDrive-Documents-nsrl-web/9025146f-9dba-4a08-8118-dd8d3829f4f0/scratchpad/tw.mjs\" ./__tw-check.mjs)",
+      "Bash(node ./__tw-check.mjs)",
+      "Bash(node \"C:/Users/it/AppData/Local/Temp/claude/c--Users-it-OneDrive-Documents-nsrl-web/9025146f-9dba-4a08-8118-dd8d3829f4f0/scratchpad/sweep.js\")",
+      "Bash(npx prettier *)"
+    ]
+  }
+}
