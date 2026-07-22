@@ -44,8 +44,8 @@ export function LedgerRule() {
         </g>
 
         {/* Margin line and its six entry marks. */}
-        <path d="M 604 0 V 700" stroke="var(--color-signal-500)" strokeWidth="1.2" opacity="0.45" />
-        <g fill="var(--color-signal-500)" opacity="0.75">
+        <path d="M 604 0 V 700" stroke="var(--color-meniscus-500)" strokeWidth="1.2" opacity="0.45" />
+        <g fill="var(--color-meniscus-500)" opacity="0.75">
           {Array.from({ length: 6 }, (_, i) => (
             <circle key={i} cx="604" cy={126 + i * 88} r={i % 3 === 0 ? 5 : 3} />
           ))}

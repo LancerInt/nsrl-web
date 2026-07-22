@@ -27,30 +27,30 @@ export function CredentialStrip({
   if (!credentials.length) return null;
 
   return (
-    <Section tone="deep-raised" aria-labelledby="credentials">
+    <Section aria-labelledby="credentials">
       <SectionBody>
-        <div className="egrid gap-y-12">
+        <div className="egrid gap-y-8">
           <div className="col-span-12 lg:col-span-4">
-            <Eyebrow index={index} tone="deep">
+            <Eyebrow index={index}>
               Under accreditation
             </Eyebrow>
 
-            <h2 id="credentials" className="mt-8 font-display text-d4 text-white">
+            <h2 id="credentials" className="mt-6 font-display text-d4 text-ink-950">
               <RevealText as="span" className="block">
                 What governs this work.
               </RevealText>
             </h2>
 
-            <p className="mt-6 max-w-[30ch] text-small text-ink-200">
+            <p className="mt-6 max-w-[30ch] text-small text-neutral-600">
               {divisionName} operates inside the quality system audited under the
               certifications listed here.
             </p>
 
-            <ul className="mt-10 flex flex-wrap gap-2">
+            <ul className="mt-7 flex flex-wrap gap-2">
               {credentials.map((credential) => (
                 <li
                   key={credential.id}
-                  className="label-mono rounded-full border border-signal-400/40 px-3.5 py-2 text-signal-300"
+                  className="label-mono rounded-full border border-ink-900/45 px-3.5 py-2 text-ink-800"
                 >
                   {credential.abbr}
                 </li>
@@ -64,32 +64,31 @@ export function CredentialStrip({
                 key={credential.id}
                 data-reveal
                 style={{ "--reveal-delay": `${i * 0.08}s` } as React.CSSProperties}
-                className="group border-t border-white/12 py-9 transition-colors duration-500 hover:border-signal-400/50"
+                className="group border-t border-[var(--rule)] py-6 transition-colors duration-500 hover:border-ink-900/40"
               >
                 <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
-                  <h3 className="font-display text-h2 text-white">{credential.name}</h3>
-                  <span className="label-mono text-signal-400">{credential.abbr}</span>
+                  <h3 className="font-display text-h2 text-ink-950">{credential.name}</h3>
+                  <span className="label-mono text-ink-800">{credential.abbr}</span>
                 </div>
 
-                <p className="label-mono mt-4 text-ink-200">{credential.issuer}</p>
-                <p className="measure mt-4 text-small text-ink-200">{credential.scope}</p>
+                <p className="label-mono mt-4 text-neutral-600">{credential.issuer}</p>
+                <p className="measure mt-4 text-small text-neutral-600">{credential.scope}</p>
 
                 {credential.certificateUrl ? (
                   <ActionLink
                     href={credential.certificateUrl}
                     variant="text"
-                    tone="deep"
                     icon="diagonal"
                     external
                     className="mt-6"
-                    cursorLabel="Open"
+ 
                   >
                     View the certificate
                   </ActionLink>
                 ) : null}
               </li>
             ))}
-            <li aria-hidden className="border-t border-white/12" />
+            <li aria-hidden className="border-t border-[var(--rule)]" />
           </ul>
         </div>
       </SectionBody>

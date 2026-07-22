@@ -3,54 +3,38 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RevealText } from "@/components/ui/RevealText";
 import { ActionLink } from "@/components/ui/ActionLink";
 
-/** A wave of offsets, so the four columns never read as a card grid. */
-const offset = ["lg:mt-0", "lg:mt-16", "lg:mt-7", "lg:mt-24"];
-
 /**
- * The 3Rs, extended with rehabilitation.
- *
- * Four outlined display letters carry the band; the fourth is filled in signal
- * green because it is the one that goes past the standard framework. The letters
- * are decorative duplicates of the words beneath them, so they are hidden from
- * assistive technology rather than read out four times as "R".
+ * The 3Rs, extended with rehabilitation — a plain four-column ruled list.
+ * The fourth column carries a stronger rule and a mono tag because it is the
+ * one commitment that goes past the standard framework.
  */
 export function ThreeRsBand() {
   return (
     <section
-      data-theme="deep"
-      className="relative isolate overflow-hidden bg-deep py-[var(--section-y)] text-ink-50"
+      className="relative isolate overflow-hidden bg-canvas-sunken py-[var(--section-y)] text-ink-950"
     >
       <div
         aria-hidden
-        className="graticule pointer-events-none absolute inset-0 opacity-70"
+        className="graticule pointer-events-none absolute inset-0 opacity-40"
         style={
           {
-            "--graticule-color": "rgba(255,255,255,0.035)",
+            "--graticule-color": "color-mix(in oklab, var(--color-ink-900) 2.5%, transparent)",
             "--graticule-size": "7rem",
           } as React.CSSProperties
         }
       />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-40 top-0 h-[34rem] w-[34rem] rounded-full opacity-40 blur-3xl"
-        style={{
-          background:
-            "radial-gradient(circle, color-mix(in oklab, var(--color-signal-500) 22%, transparent), transparent 70%)",
-        }}
-      />
-
       <div className="shell relative">
         <div className="egrid items-end gap-y-8">
           <div className="col-span-12 lg:col-span-7">
-            <Eyebrow index="04" tone="deep">
+            <Eyebrow index="04">
               Animal welfare
             </Eyebrow>
-            <RevealText as="h2" className="mt-8 font-display text-d3 text-white">
+            <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
               Three Rs. And a fourth.
             </RevealText>
           </div>
           <div className="col-span-12 lg:col-span-4 lg:col-start-9">
-            <p className="text-small text-ink-200">
+            <p className="text-small text-neutral-600">
               Welfare is treated as a data-quality question, not a compliance
               overlay. A stressed animal is a poor model — the programme exists
               because the science depends on it.
@@ -58,7 +42,6 @@ export function ThreeRsBand() {
             <ActionLink
               href="/research/vivarium"
               variant="text"
-              tone="deep"
               className="mt-5"
             >
               Inside the vivarium
@@ -66,40 +49,22 @@ export function ThreeRsBand() {
           </div>
         </div>
 
-        <ol className="mt-[clamp(3.5rem,7vw,6rem)] grid gap-x-[clamp(1.5rem,3vw,3rem)] gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="mt-6 grid gap-x-[clamp(1.5rem,3vw,3rem)] gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
           {threeRs.map((item, i) => {
             const extended = i === threeRs.length - 1;
             return (
               <li
                 key={item.word}
-                data-reveal
-                style={{ "--reveal-delay": `${i * 0.09}s` } as React.CSSProperties}
-                className={`relative border-t pt-8 ${offset[i]} ${
-                  extended ? "border-signal-400/60" : "border-white/15"
+                className={`border-t pt-5 ${
+                  extended ? "border-ink-900/45" : "border-[var(--rule)]"
                 }`}
               >
-                <span
-                  aria-hidden
-                  className="block select-none font-display text-[clamp(6rem,12vw,11rem)] font-bold leading-[0.78] tracking-[-0.06em]"
-                  style={
-                    extended
-                      ? { color: "var(--color-signal-400)" }
-                      : {
-                          color: "transparent",
-                          WebkitTextStroke: "1px var(--color-ink-300)",
-                        }
-                  }
-                >
-                  {item.letter}
-                </span>
-
-                <h3 className="mt-6 font-display text-h1 text-white">{item.word}</h3>
-                <p className="mt-4 text-small text-ink-200">{item.body}</p>
+                <span className="label-mono text-neutral-550">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="mt-3 font-display text-h2 text-ink-950">{item.word}</h3>
+                <p className="mt-2 text-small text-neutral-600">{item.body}</p>
 
                 {extended ? (
-                  <p className="label-mono mt-6 text-signal-400">
-                    Beyond the three · CPCSEA
-                  </p>
+                  <p className="label-mono mt-4 text-signal-700">Beyond the three · CPCSEA</p>
                 ) : null}
               </li>
             );

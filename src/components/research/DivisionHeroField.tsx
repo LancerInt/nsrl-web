@@ -10,9 +10,9 @@ import { noise, type HeroFieldKind } from "./variation";
  * that is not also stated in type.
  */
 
-const HAIR = "rgba(255,255,255,0.16)";
-const HAIR_STRONG = "rgba(255,255,255,0.26)";
-const ACCENT = "var(--color-signal-400)";
+const HAIR = "rgba(8,21,43,0.16)";
+const HAIR_STRONG = "rgba(8,21,43,0.26)";
+const ACCENT = "var(--color-meniscus-500)";
 
 export function DivisionHeroField({
   kind,
@@ -26,10 +26,10 @@ export function DivisionHeroField({
   return (
     <div aria-hidden className={cn("absolute inset-0", className)}>
       <div
-        className="graticule absolute inset-0 opacity-70"
+        className="graticule absolute inset-0 opacity-40"
         style={
           {
-            "--graticule-color": "rgba(255,255,255,0.035)",
+            "--graticule-color": "color-mix(in oklab, var(--color-ink-900) 2.5%, transparent)",
             "--graticule-size": "5.5rem",
           } as React.CSSProperties
         }
@@ -56,7 +56,7 @@ export function DivisionHeroField({
       </svg>
 
       {/* Keeps the display type legible wherever the field runs bright. */}
-      <div className="absolute inset-0 bg-[linear-gradient(102deg,var(--color-deep)_26%,transparent_88%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(102deg,var(--color-canvas)_26%,transparent_88%)]" />
     </div>
   );
 }
@@ -98,7 +98,7 @@ function ColumnField({ seed }: { seed: number }) {
             y={620 - band.h}
             width="20"
             height={band.h}
-            fill="white"
+            fill="var(--color-ink-900)"
             fillOpacity={band.o}
           />
           <line

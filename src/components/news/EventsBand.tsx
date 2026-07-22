@@ -13,7 +13,7 @@ import { OrbitalMark } from "@/components/visuals/OrbitalMark";
  */
 export function EventsBand() {
   return (
-    <Section tone="deep-raised" bleed id="events" className="overflow-hidden">
+    <Section bleed id="events" className="overflow-hidden">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-y-0 right-[-8rem] hidden w-[38rem] opacity-[0.16] lg:block"
@@ -22,32 +22,31 @@ export function EventsBand() {
       </div>
 
       <SectionBody className="shell relative">
-        <div className="egrid items-end gap-y-12">
+        <div className="egrid items-end gap-y-8">
           <div className="col-span-12 lg:col-span-6">
-            <Eyebrow index="02" tone="deep">
+            <Eyebrow index="02">
               Live updates
             </Eyebrow>
 
-            <RevealText as="h2" className="mt-8 font-display text-d2 text-white">
+            <RevealText as="h2" className="mt-6 font-display text-d2 text-ink-950">
               {newsroomNote.title}
             </RevealText>
           </div>
 
           <div className="col-span-12 lg:col-span-5 lg:col-start-8">
-            <p className="text-lead text-ink-200">{newsroomNote.body}</p>
+            <p className="text-lead text-neutral-600">{newsroomNote.body}</p>
 
-            <div className="mt-10">
+            <div className="mt-7">
               <ActionLink
                 href={site.linkedin}
                 external
                 variant="solid"
-                tone="deep"
                 icon="diagonal"
-                cursorLabel="LinkedIn"
+ 
               >
                 {newsroomNote.cta}
               </ActionLink>
-              <p className="label-mono mt-5 text-ink-200">
+              <p className="label-mono mt-5 text-neutral-600">
                 LinkedIn — opens in a new tab
               </p>
             </div>

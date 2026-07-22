@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 
-import { cn, pad } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { locations } from "@/content/site";
 import { Section, SectionBody } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -13,21 +13,17 @@ function mapsUrl(lines: string[]): string {
 }
 
 /**
- * The three sites, set as a directory rather than a row of cards.
- *
- * Each entry is a full-width record — plate, label, role, address — and the
- * plate changes side down the list, so the band reads as a survey being worked
- * through instead of three interchangeable tiles.
+ * The office, as a single full-width record — plate, label, role, address.
  */
 export function LocationDirectory() {
   return (
-    <Section tone="deep" bleed id="locations" className="overflow-hidden scroll-mt-24">
+    <Section bleed id="locations" className="overflow-hidden scroll-mt-24">
       <div
         aria-hidden
-        className="graticule pointer-events-none absolute inset-0 opacity-50"
+        className="graticule pointer-events-none absolute inset-0 opacity-35"
         style={
           {
-            "--graticule-color": "rgba(255,255,255,0.03)",
+            "--graticule-color": "color-mix(in oklab, var(--color-ink-900) 2.5%, transparent)",
             "--graticule-size": "5rem",
           } as React.CSSProperties
         }
@@ -37,23 +33,20 @@ export function LocationDirectory() {
         <SectionBody>
           <div className="egrid items-end gap-y-8">
             <div className="col-span-12 lg:col-span-7">
-              <Eyebrow index="02" tone="deep">
-                Where to find us
-              </Eyebrow>
-              <RevealText as="h2" className="mt-8 font-display text-d3 text-white">
-                Three addresses, one laboratory.
+              <Eyebrow>Where to find us</Eyebrow>
+              <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
+                One office, in Salem.
               </RevealText>
             </div>
             <div className="col-span-12 lg:col-span-4 lg:col-start-9">
-              <p className="text-small text-ink-200">
-                Every address below opens in your own map application. Sponsors are welcome to
-                audit any of the units — say which one you are coming to and we will meet you
-                there.
+              <p className="text-small text-neutral-600">
+                The address below opens in your own map application. Sponsors are welcome to audit
+                the facility — tell us when you are coming and we will meet you there.
               </p>
             </div>
           </div>
 
-          <div className="mt-[clamp(3.5rem,7vw,6rem)]">
+          <div className="mt-[clamp(2rem,3.5vw,3rem)]">
             {locations.map((location, i) => {
               const plateFirst = i % 2 === 0;
 
@@ -67,18 +60,15 @@ export function LocationDirectory() {
                 <article
                   key={location.id}
                   data-reveal
-                  className="egrid group items-center gap-y-8 border-t border-white/12 py-[clamp(2.5rem,5vw,4rem)] last:border-b last:border-b-white/12 lg:gap-x-[clamp(2rem,4vw,4rem)]"
+                  className="egrid group items-center gap-y-8 lg:gap-x-[clamp(2rem,4vw,4rem)]"
                 >
                   <div
                     className={cn(
-                      "relative col-span-12 aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] border border-white/12 sm:aspect-[16/9] lg:col-span-5 lg:row-start-1 lg:aspect-[4/3]",
+                      "relative col-span-12 aspect-[4/3] img-frame sm:aspect-[16/9] lg:col-span-5 lg:row-start-1 lg:aspect-[4/3]",
                       plateFirst ? "lg:col-start-1" : "lg:col-start-8",
                     )}
                   >
-                    <MapPlate seed={i + 1} tone="deep" />
-                    <p className="label-mono absolute left-5 top-5 rounded-full border border-white/15 bg-deep/70 px-3 py-1.5 text-ink-100 backdrop-blur-sm">
-                      Fig. {pad(i + 1)}
-                    </p>
+                    <MapPlate seed={i + 1} />
                   </div>
 
                   <div
@@ -87,17 +77,12 @@ export function LocationDirectory() {
                       plateFirst ? "lg:col-start-7" : "lg:col-start-1",
                     )}
                   >
-                    <div className="flex flex-wrap items-baseline gap-x-5 gap-y-2">
-                      <span className="label-mono tabular-nums text-signal-400">
-                        {pad(i + 1)}
-                      </span>
-                      <h3 className="font-display text-d4 text-white">{location.label}</h3>
-                    </div>
+                    <h3 className="font-display text-d4 text-ink-950">{location.label}</h3>
 
-                    <p className="label-mono mt-4 text-ink-300">{location.role}</p>
+                    <p className="label-mono mt-4 text-neutral-550">{location.role}</p>
 
                     <address className="mt-7 not-italic">
-                      <ul className="text-lead leading-[1.5] text-ink-100">
+                      <ul className="text-lead leading-[1.5] text-neutral-600">
                         {location.lines.map((line) => (
                           <li key={line}>{line}</li>
                         ))}
@@ -108,7 +93,7 @@ export function LocationDirectory() {
                       href={mapsUrl(location.lines)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group/map mt-8 inline-flex items-center gap-2.5 border-b border-white/25 pb-2 font-display text-h3 text-white transition-colors duration-400 hover:border-signal-400 hover:text-signal-300"
+                      className="group/map mt-6 inline-flex items-center gap-2.5 border-b border-[var(--rule)] pb-2 font-display text-h3 text-ink-950 transition-colors duration-400 hover:border-ink-900/40 hover:text-ink-950"
                     >
                       Open in Google Maps
                       <ArrowUpRight

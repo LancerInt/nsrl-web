@@ -48,14 +48,7 @@ export default function ResearchIndexPage() {
         eyebrow="Scientific divisions"
         index={String(disciplines.length)}
         crumbs={[{ label: "Home", href: "/" }, { label: "Research" }]}
-        title={
-          <>
-            Thirteen divisions,{" "}
-            <span className="font-editorial font-normal italic tracking-[-0.02em] text-signal-300">
-              set out in full.
-            </span>
-          </>
-        }
+        title="Thirteen divisions, set out in full."
         lead="Each division holds its own accreditations, its own instrument estate and its own species list. They share one campus, one quality system and one archive — which is why a programme can cross between them without a handover."
         meta={[
           { label: "Divisions", value: String(disciplines.length) },
@@ -79,26 +72,26 @@ export default function ResearchIndexPage() {
 
       <AccreditationMatrix />
 
-      <Section tone="sunken" aria-labelledby="route-in">
+      <Section tone="canvas" aria-labelledby="route-in">
         <SectionBody>
-          <div className="egrid items-end gap-y-12">
+          <div className="egrid items-end gap-y-8">
             <div className="col-span-12 lg:col-span-6">
               <Eyebrow index="05">Where to start</Eyebrow>
 
-              <h2 id="route-in" className="mt-8 font-display text-d3 text-ink-950">
+              <h2 id="route-in" className="mt-6 font-display text-d3 text-ink-950">
                 <RevealText as="span" className="block">
                   Not sure which division owns your question?
                 </RevealText>
               </h2>
 
-              <p className="measure mt-8 text-lead text-neutral-600">
+              <p className="measure mt-6 text-lead text-neutral-600">
                 Most of them touch three or four. Tell us what you need to prove and to
                 which authority, and we will map it back to the divisions that can prove it
                 — and to the guideline numbers a reviewer will look for.
               </p>
 
-              <div className="mt-11 flex flex-wrap gap-3">
-                <ActionLink href="/contact" variant="solid" cursorLabel="Enquire">
+              <div className="mt-7 flex flex-wrap gap-3">
+                <ActionLink href="/contact" variant="solid" >
                   Request a proposal
                 </ActionLink>
                 <ActionLink href="/products" variant="outline">
@@ -112,13 +105,13 @@ export default function ResearchIndexPage() {
                 <p className="label-mono text-neutral-600">Direct line</p>
                 <a
                   href={`tel:${contact.phoneHref}`}
-                  className="mt-4 block font-display text-h1 text-ink-950 transition-colors duration-400 hover:text-signal-700"
+                  className="mt-4 block font-display text-h1 text-ink-950 transition-colors duration-400 hover:text-ink-700"
                 >
                   {contact.phoneDisplay}
                 </a>
                 <a
                   href={`mailto:${contact.email}`}
-                  className="mt-3 block text-small text-neutral-600 transition-colors duration-400 hover:text-signal-700"
+                  className="mt-3 block text-small text-neutral-600 transition-colors duration-400 hover:text-ink-950"
                 >
                   {contact.email}
                 </a>

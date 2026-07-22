@@ -9,7 +9,7 @@ import { LocationDirectory } from "@/components/contact/LocationDirectory";
 
 export const metadata: Metadata = pageMetadata({
   title: "Contact — talk to NSRL about a study",
-  description: `Call ${contact.phoneDisplay}, write to ${contact.email}, or send an enquiry. NSRL's head office and three laboratory sites are near Sriperumbudur, Tamil Nadu, India.`,
+  description: `Call ${contact.phoneDisplay}, write to ${contact.email}, or send an enquiry. NSRL's office and laboratory are in Salem, Tamil Nadu, India.`,
   path: "/contact",
   keywords: [
     "contact NSRL",
@@ -27,7 +27,7 @@ function contactPageJsonLd() {
     "@id": `${site.url}/contact#page`,
     url: `${site.url}/contact`,
     name: `Contact ${site.name}`,
-    description: `Telephone, email and the three ${site.name} sites in Tamil Nadu, India.`,
+    description: `Telephone, email and the ${site.name} office in Salem, Tamil Nadu, India.`,
     inLanguage: "en-IN",
     isPartOf: { "@id": `${site.url}/#website` },
     about: { "@id": `${site.url}/#organisation` },
@@ -95,9 +95,12 @@ export default function ContactPage() {
             >
               {contact.phoneDisplay}
             </a>
-            <p className="label-mono mt-3 leading-relaxed text-neutral-500">
-              {contact.phoneRange}
-            </p>
+            <a
+              href={`tel:${contact.mobileHref}`}
+              className="mt-2 block font-display text-h2 text-ink-950 transition-colors duration-400 hover:text-signal-700"
+            >
+              {contact.mobileDisplay}
+            </a>
 
             <a
               href={`mailto:${contact.email}`}
@@ -106,7 +109,7 @@ export default function ContactPage() {
               {contact.email}
             </a>
 
-            <ul className="mt-8 border-t border-ink-900/12">
+            <ul className="mt-6 border-t border-ink-900/12">
               {locations.map((location) => (
                 <li key={location.id} className="border-b border-ink-900/10 py-4 last:border-b-0">
                   <p className="text-small font-medium text-ink-900">{location.label}</p>
@@ -119,7 +122,7 @@ export default function ContactPage() {
               href="#locations"
               className="label-mono mt-6 inline-block text-ink-700 underline decoration-ink-900/25 underline-offset-4 transition-colors duration-400 hover:text-signal-700"
             >
-              Full addresses
+              Full address
             </a>
           </div>
         }

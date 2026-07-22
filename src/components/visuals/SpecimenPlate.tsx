@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { cn } from "@/lib/utils";
 
 /* --------------------------------------------------------------------------
@@ -91,16 +93,42 @@ export function SpecimenPlate({
   seed = 0,
   className,
   tone = "light",
+  src,
+  alt = "",
+  sizes = "(min-width: 1024px) 40vw, 100vw",
+  priority = false,
 }: {
   variant?: PlateVariant;
   seed?: number;
   className?: string;
   tone?: "light" | "deep";
+  /** When set, the figure is a real photograph instead of a drawing. */
+  src?: string;
+  alt?: string;
+  sizes?: string;
+  priority?: boolean;
 }) {
+  // A supplied photograph takes the drawing's place, filling the same frame.
+  // The caller owns the aspect ratio via its positioned wrapper.
+  if (src) {
+    return (
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={sizes}
+        priority={priority}
+        className={cn("object-cover", className)}
+      />
+    );
+  }
+
   const id = `${variant}-${seed}`;
   const stroke = tone === "deep" ? "rgba(255,255,255,0.5)" : "var(--color-ink-600)";
   const faint = tone === "deep" ? "rgba(255,255,255,0.12)" : "rgba(8,21,43,0.12)";
-  const accent = "var(--color-signal-500)";
+  /* Traces plot in the meniscus blue: on paper the figures read as drawn ink,
+     and the green stays reserved for certification marks elsewhere. */
+  const accent = "var(--color-meniscus-500)";
 
   return (
     <svg
@@ -124,7 +152,7 @@ export function SpecimenPlate({
           />
         </linearGradient>
         <radialGradient id={`${id}-glow`} cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor={accent} stopOpacity="0.32" />
+          <stop offset="0%" stopColor={accent} stopOpacity="0.16" />
           <stop offset="100%" stopColor={accent} stopOpacity="0" />
         </radialGradient>
       </defs>

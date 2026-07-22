@@ -1,10 +1,10 @@
 import { leadership } from "@/content/organisation";
 import { site } from "@/content/site";
+import { images } from "@/content/imagery";
 import { ActionLink } from "@/components/ui/ActionLink";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RevealText } from "@/components/ui/RevealText";
 import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
-import { OrbitalMark } from "@/components/visuals/OrbitalMark";
 
 /** The three things Test Facility Management is accountable for under GLP. */
 const tfmResponsibilities = ["Resourcing", "Personnel", "Quality system"];
@@ -27,18 +27,18 @@ export function LeadershipPanel() {
       className="relative scroll-mt-[calc(var(--nav-h)+2rem)] bg-canvas py-[var(--section-y)]"
     >
       <div className="shell">
-        <div className="egrid gap-y-14">
+        <div className="egrid gap-y-8">
           {/* Figure */}
           <figure
             data-reveal="scale"
             className="col-span-12 sm:col-span-8 lg:col-span-5"
           >
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-card)]">
-              <SpecimenPlate variant="lattice" seed={7} tone="deep" />
-              <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-ink-950/80 to-transparent p-7">
-                <p className="label-mono text-white/80">Fig. 02 — Test facility management</p>
-                <OrbitalMark className="h-7 w-7 shrink-0 text-signal-400/80" />
-              </div>
+            <div className="relative aspect-[4/5] img-frame">
+              <SpecimenPlate
+                src={images.team.src}
+                alt={images.team.alt}
+                sizes="(min-width: 1024px) 40vw, 100vw"
+              />
             </div>
             <figcaption className="mt-5 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
               <span className="label-mono text-neutral-600">{site.legalName}</span>
@@ -52,20 +52,20 @@ export function LeadershipPanel() {
           <div className="col-span-12 lg:col-span-6 lg:col-start-7">
             <Eyebrow index="05">Leadership</Eyebrow>
 
-            <RevealText as="h2" className="mt-8 font-display text-d3 text-ink-950">
+            <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
               {leader.name}
             </RevealText>
 
-            <p className="label-mono mt-6 text-signal-700">{leader.role}</p>
+            <p className="label-mono mt-6 text-ink-800">{leader.role}</p>
 
-            <p data-reveal className="measure mt-9 text-lead text-neutral-700">
+            <p data-reveal className="measure mt-6 text-lead text-neutral-700">
               {leader.bio}
             </p>
 
             <div
               data-reveal
               style={{ "--reveal-delay": "0.12s" } as React.CSSProperties}
-              className="mt-12 rounded-[var(--radius-card)] border border-ink-900/12 bg-canvas-sunken p-[clamp(1.5rem,3vw,2.5rem)]"
+              className="mt-6 rounded-[var(--radius-card)] border border-ink-900/12 bg-canvas-sunken p-[clamp(1.5rem,3vw,2.5rem)]"
             >
               <h3 className="label-mono text-neutral-600">
                 Responsibility under OECD GLP
@@ -80,9 +80,9 @@ export function LeadershipPanel() {
                 {tfmResponsibilities.map((item, i) => (
                   <div
                     key={item}
-                    className="group flex items-baseline gap-5 border-t border-ink-900/12 py-4 transition-colors duration-500 hover:border-signal-500/60"
+                    className="group flex items-baseline gap-5 border-t border-ink-900/12 py-4 transition-colors duration-500 hover:border-ink-900/40"
                   >
-                    <dt className="label-mono shrink-0 text-neutral-550 transition-colors duration-500 group-hover:text-signal-700">
+                    <dt className="label-mono shrink-0 text-neutral-550 transition-colors duration-500 group-hover:text-ink-950">
                       0{i + 1}
                     </dt>
                     <dd className="font-display text-h3 text-ink-950">{item}</dd>
@@ -90,7 +90,7 @@ export function LeadershipPanel() {
                 ))}
               </dl>
 
-              <ActionLink href="#quality-system" variant="text" className="mt-8">
+              <ActionLink href="#quality-system" variant="text" className="mt-6">
                 The system it answers for
               </ActionLink>
             </div>

@@ -31,7 +31,7 @@ export function NextArticle({
           </h2>
           <Link
             href="/news"
-            className="label-mono group inline-flex items-center gap-2.5 text-neutral-550 transition-colors duration-400 hover:text-signal-700"
+            className="label-mono group inline-flex items-center gap-2.5 text-neutral-550 transition-colors duration-400 hover:text-ink-700"
           >
             <ArrowUpLeft
               aria-hidden
@@ -44,18 +44,18 @@ export function NextArticle({
         {article ? (
           <Link
             href={`/news/${article.slug}`}
-            className="group mt-8 grid gap-x-[clamp(1.5rem,3vw,3.5rem)] gap-y-6 border-t border-ink-900/15 pt-9 transition-colors duration-500 hover:border-signal-500 lg:grid-cols-[3.5rem_minmax(0,1fr)_auto] lg:items-center"
+            className="group mt-6 grid gap-x-[clamp(1.5rem,3vw,3.5rem)] gap-y-6 border-t border-ink-900/15 pt-9 transition-colors duration-500 hover:border-ink-900/60 lg:grid-cols-[3.5rem_minmax(0,1fr)_auto] lg:items-center"
           >
             <span
               aria-hidden
-              className="label-mono tabular-nums text-neutral-550 transition-colors duration-400 group-hover:text-signal-700"
+              className="label-mono tabular-nums text-neutral-550 transition-colors duration-400 group-hover:text-ink-700"
             >
               {pad(position)}
             </span>
 
             <span className="block">
               <span className="flex flex-wrap items-center gap-x-5 gap-y-2">
-                <span className="label-mono text-signal-700">{article.category}</span>
+                <span className="label-mono text-ink-700">{article.category}</span>
                 <span aria-hidden className="h-3 w-px bg-ink-900/15" />
                 <time dateTime={article.date} className="label-mono text-neutral-550">
                   {article.dateDisplay}
@@ -66,20 +66,20 @@ export function NextArticle({
                 </span>
               </span>
 
-              <span className="mt-5 block font-display text-d4 text-ink-950 transition-colors duration-500 group-hover:text-signal-700">
+              <span className="mt-5 block font-display text-d4 text-ink-950 transition-colors duration-500 group-hover:text-ink-700">
                 {article.title}
               </span>
             </span>
 
             <span
               aria-hidden
-              className="grid h-14 w-14 shrink-0 place-items-center rounded-full border border-ink-900/15 transition-colors duration-500 group-hover:border-signal-500 group-hover:bg-signal-500/8"
+              className="grid h-14 w-14 shrink-0 place-items-center rounded-full border border-ink-900/15 transition-colors duration-500 group-hover:border-ink-900/60 group-hover:bg-ink-900/8"
             >
               <ArrowRight className="h-5 w-5 transition-transform duration-500 [transition-timing-function:var(--ease-out-expo)] group-hover:translate-x-1" />
             </span>
           </Link>
         ) : (
-          <p className="mt-8 border-t border-ink-900/15 pt-9 text-lead text-neutral-600">
+          <p className="mt-6 border-t border-ink-900/15 pt-9 text-lead text-neutral-600">
             This is the only note published in full. The rest of the archive is listed on the
             newsroom index.
           </p>

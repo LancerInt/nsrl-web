@@ -83,27 +83,13 @@ function HeroVisual() {
   return (
     <>
       <div
-        className="graticule absolute inset-0 opacity-70"
+        className="graticule absolute inset-0 opacity-40"
         style={
           {
             "--graticule-color": "rgba(8,21,43,0.045)",
             "--graticule-size": "5.5rem",
           } as React.CSSProperties
         }
-      />
-      <div
-        className="absolute -right-[12%] -top-[38%] h-[46rem] w-[46rem] rounded-full opacity-70 blur-3xl"
-        style={{
-          background:
-            "radial-gradient(circle, color-mix(in oklab, var(--color-meniscus-200) 62%, transparent), transparent 68%)",
-        }}
-      />
-      <div
-        className="absolute -left-[18%] top-[52%] h-[30rem] w-[30rem] rounded-full opacity-60 blur-3xl"
-        style={{
-          background:
-            "radial-gradient(circle, color-mix(in oklab, var(--color-signal-200) 45%, transparent), transparent 70%)",
-        }}
       />
       <div className="absolute inset-x-0 bottom-0 h-px bg-[var(--rule)]" />
     </>

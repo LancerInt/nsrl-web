@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { disciplines, getDiscipline } from "@/content/disciplines";
+import { imageFor, divisionImage } from "@/content/imagery";
 import { JsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo";
 import { cn, pad } from "@/lib/utils";
 import { PageHero } from "@/components/ui/PageHero";
@@ -98,16 +99,16 @@ export default async function DivisionPage({ params }: PageProps) {
       <div className="lg:rail-sticky">
         <Eyebrow index={step("overview")}>Overview</Eyebrow>
 
-        <h2 id="overview" className="mt-8 font-display text-d4 text-ink-950">
+        <h2 id="overview" className="mt-6 font-display text-d4 text-ink-950">
           <RevealText as="span" className="block">
             The work,{" "}
-            <span className="font-editorial font-normal italic tracking-[-0.02em] text-signal-700">
+            <span className="font-display text-ink-800">
               in outline.
             </span>
           </RevealText>
         </h2>
 
-        <p className="label-mono mt-8 text-neutral-600">Family</p>
+        <p className="label-mono mt-6 text-neutral-600">Family</p>
         <p className="mt-2 font-display text-h3 text-ink-900">{discipline.family}</p>
 
         <p className="label-mono mt-7 text-neutral-600">Capability groups</p>
@@ -126,7 +127,7 @@ export default async function DivisionPage({ params }: PageProps) {
         railFirst ? "lg:col-start-5" : "lg:col-start-1",
       )}
     >
-      <div className="measure space-y-8 text-lead text-neutral-700">
+      <div className="measure space-y-6 text-lead text-neutral-700">
         {discipline.body.map((paragraph, i) => (
           <p
             key={paragraph.slice(0, 24)}
@@ -165,16 +166,15 @@ export default async function DivisionPage({ params }: PageProps) {
         visual={<DivisionHeroField kind={variation.field} seed={variation.seed} />}
         aside={
           <figure>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-card)] border border-white/12">
-              <SpecimenPlate variant={variation.plate} seed={variation.seed} tone="deep" />
-              <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-4 bg-gradient-to-t from-deep/85 to-transparent p-6">
-                <span className="label-mono text-white/70">Fig. {discipline.index}</span>
-                <span className="label-mono text-signal-400">
-                  {variation.plate.replace("-", " ")}
-                </span>
-              </div>
+            <div className="relative aspect-[4/5] img-frame">
+              <SpecimenPlate
+                src={imageFor(divisionImage, discipline.slug).src}
+                alt={imageFor(divisionImage, discipline.slug).alt}
+                sizes="(min-width: 1024px) 33vw, 100vw"
+                priority
+              />
             </div>
-            <figcaption className="label-mono mt-4 text-ink-200">
+            <figcaption className="label-mono mt-4 text-neutral-600">
               Division {discipline.index} of {disciplines.length}
             </figcaption>
           </figure>
@@ -184,7 +184,7 @@ export default async function DivisionPage({ params }: PageProps) {
       {/* Overview — the orientation rail swaps sides with the division index. */}
       <Section tone="canvas" aria-labelledby="overview">
         <SectionBody>
-          <div className="egrid gap-y-12">
+          <div className="egrid gap-y-8">
             {railFirst ? [railBlock, proseBlock] : [proseBlock, railBlock]}
           </div>
         </SectionBody>
@@ -202,7 +202,7 @@ export default async function DivisionPage({ params }: PageProps) {
             <div className="col-span-12 lg:col-span-7">
               <Eyebrow index={step("capabilities")}>Capabilities</Eyebrow>
 
-              <h2 id="capabilities" className="mt-8 font-display text-d3 text-ink-950">
+              <h2 id="capabilities" className="mt-6 font-display text-d3 text-ink-950">
                 <RevealText as="span" className="block">
                   {discipline.capabilities.length} groups, {methods} listed methods.
                 </RevealText>
@@ -218,7 +218,7 @@ export default async function DivisionPage({ params }: PageProps) {
             </div>
           </div>
 
-          <div className="mt-16">
+          <div className="mt-6">
             <CapabilityLedger
               groups={discipline.capabilities}
               mode={variation.capabilityMode}

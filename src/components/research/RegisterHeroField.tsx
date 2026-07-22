@@ -19,10 +19,10 @@ export function RegisterHeroField() {
   return (
     <div aria-hidden className="absolute inset-0">
       <div
-        className="graticule absolute inset-0 opacity-70"
+        className="graticule absolute inset-0 opacity-40"
         style={
           {
-            "--graticule-color": "rgba(255,255,255,0.035)",
+            "--graticule-color": "color-mix(in oklab, var(--color-ink-900) 2.5%, transparent)",
             "--graticule-size": "5rem",
           } as React.CSSProperties
         }
@@ -40,8 +40,8 @@ export function RegisterHeroField() {
       >
         <defs>
           <linearGradient id="rf-bar" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="var(--color-signal-400)" stopOpacity="0.16" />
-            <stop offset="100%" stopColor="var(--color-signal-400)" stopOpacity="0.01" />
+            <stop offset="0%" stopColor="var(--color-meniscus-500)" stopOpacity="0.16" />
+            <stop offset="100%" stopColor="var(--color-meniscus-500)" stopOpacity="0.01" />
           </linearGradient>
         </defs>
 
@@ -56,7 +56,7 @@ export function RegisterHeroField() {
                 y1={600 - h}
                 x2={x + 26}
                 y2={600 - h}
-                stroke="var(--color-signal-400)"
+                stroke="var(--color-meniscus-500)"
                 strokeOpacity="0.55"
                 strokeWidth="1.5"
               />
@@ -65,7 +65,7 @@ export function RegisterHeroField() {
                 y1="600"
                 x2={x}
                 y2={i % 4 === 0 ? 622 : 612}
-                stroke="rgba(255,255,255,0.18)"
+                stroke="rgba(8,21,43,0.18)"
                 strokeWidth="1"
               />
             </g>
@@ -77,7 +77,7 @@ export function RegisterHeroField() {
           y1="600"
           x2="1200"
           y2="600"
-          stroke="rgba(255,255,255,0.26)"
+          stroke="rgba(8,21,43,0.26)"
           strokeWidth="1"
         />
         <line
@@ -85,13 +85,13 @@ export function RegisterHeroField() {
           y1="120"
           x2="1200"
           y2="120"
-          stroke="rgba(255,255,255,0.08)"
+          stroke="rgba(8,21,43,0.08)"
           strokeWidth="1"
           strokeDasharray="4 8"
         />
       </svg>
 
-      <div className="absolute inset-0 bg-[linear-gradient(100deg,var(--color-deep)_30%,transparent_92%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(100deg,var(--color-canvas)_30%,transparent_92%)]" />
     </div>
   );
 }

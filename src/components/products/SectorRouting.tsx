@@ -18,11 +18,11 @@ export function SectorRouting() {
   return (
     <section className="relative bg-canvas-sunken py-[var(--section-y)]">
       <div className="shell">
-        <div className="egrid gap-y-10">
+        <div className="egrid gap-y-7">
           <div className="col-span-12 lg:col-span-4">
             <div className="lg:rail-sticky">
               <Eyebrow index="03">If none of the six fit</Eyebrow>
-              <RevealText as="h2" className="mt-8 font-display text-d3 text-ink-950">
+              <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
                 Start from the authority instead.
               </RevealText>
               <p className="measure-tight mt-7 text-body text-neutral-600">
@@ -30,7 +30,7 @@ export function SectorRouting() {
                 submission is unusual, the sector pages set out the frameworks in full — and a
                 study can be designed from scratch.
               </p>
-              <ActionLink href="/research/custom-studies" variant="outline" className="mt-9">
+              <ActionLink href="/research/custom-studies" variant="outline" className="mt-6">
                 Custom studies
               </ActionLink>
             </div>
@@ -45,14 +45,14 @@ export function SectorRouting() {
               >
                 <Link
                   href={`/services/${industry.slug}`}
-                  className="group grid grid-cols-[auto_1fr_auto] items-baseline gap-x-6 border-t border-ink-900/12 py-8 transition-colors duration-500 hover:border-signal-500/60"
+                  className="group grid grid-cols-[auto_1fr_auto] items-baseline gap-x-6 border-t border-ink-900/12 py-6 transition-colors duration-500 hover:border-ink-900/40"
                 >
-                  <span className="label-mono tabular-nums text-neutral-550 transition-colors duration-400 group-hover:text-signal-700">
+                  <span className="label-mono tabular-nums text-neutral-550 transition-colors duration-400 group-hover:text-ink-700">
                     {industry.index}
                   </span>
 
                   <span>
-                    <span className="block font-display text-h1 text-ink-950 transition-colors duration-400 group-hover:text-signal-700">
+                    <span className="block font-display text-h1 text-ink-950 transition-colors duration-400 group-hover:text-ink-700">
                       {industry.name}
                     </span>
                     <span className="mt-3 block max-w-[46ch] text-small text-neutral-600">
@@ -65,7 +65,7 @@ export function SectorRouting() {
 
                   <ArrowRight
                     aria-hidden
-                    className="h-5 w-5 shrink-0 -translate-x-2 text-signal-600 opacity-0 transition-all duration-500 [transition-timing-function:var(--ease-out-expo)] group-hover:translate-x-0 group-hover:opacity-100"
+                    className="h-5 w-5 shrink-0 -translate-x-2 text-ink-700 opacity-0 transition-all duration-500 [transition-timing-function:var(--ease-out-expo)] group-hover:translate-x-0 group-hover:opacity-100"
                   />
                 </Link>
               </li>

@@ -125,6 +125,23 @@ export function SiteHeader() {
     window.clearTimeout(closeTimer.current);
   }, []);
 
+  // Close the mega menu when a link inside it is clicked. If the link points at
+  // the page we are already on, the route will not change (so the menu-close
+  // effect never fires and nothing appears to happen) — scroll to the top so
+  // the click has a visible result.
+  const onMenuNavigate = useCallback(
+    (event: React.MouseEvent) => {
+      const anchor = (event.target as HTMLElement).closest("a[href]") as HTMLAnchorElement | null;
+      setOpenMenu(null);
+      if (!anchor) return;
+      const url = new URL(anchor.href, window.location.origin);
+      if (url.pathname === pathname && !url.hash) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    },
+    [pathname],
+  );
+
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
@@ -189,7 +206,7 @@ export function SiteHeader() {
                         <span
                           aria-hidden
                           className={cn(
-                            "absolute inset-x-4 bottom-1 h-px origin-left bg-signal-500 transition-transform duration-500 [transition-timing-function:var(--ease-out-expo)]",
+                            "absolute inset-x-4 bottom-1 h-px origin-left bg-current transition-transform duration-500 [transition-timing-function:var(--ease-out-expo)]",
                             isActive(group.href) || openMenu === group.label
                               ? "scale-x-100"
                               : "scale-x-0",
@@ -202,18 +219,6 @@ export function SiteHeader() {
               </nav>
 
               <div className="flex items-center gap-3">
-                <a
-                  href={`tel:${contact.phoneHref}`}
-                  className={cn(
-                    "label-mono hidden transition-colors duration-400 xl:block",
-                    onDark
-                      ? "text-ink-200 hover:text-white"
-                      : "text-neutral-500 hover:text-ink-950",
-                  )}
-                >
-                  {contact.phoneDisplay}
-                </a>
-
                 {/* Wrapped rather than given `hidden`: ActionLink's own
                     `inline-flex` is a display utility of equal specificity, so
                     the two would fight and Tailwind's source order would win. */}
@@ -223,7 +228,7 @@ export function SiteHeader() {
                     variant="solid"
                     tone={onDark ? "deep" : "light"}
                     size="compact"
-                    cursorLabel="Enquire"
+ 
                   >
                     Request a proposal
                   </ActionLink>
@@ -236,7 +241,7 @@ export function SiteHeader() {
                   aria-label="Open menu"
                   aria-expanded={mobileOpen}
                   className={cn(
-                    "grid h-11 w-11 place-items-center rounded-full border transition-colors duration-400 hover:border-signal-500 lg:hidden",
+                    "grid h-11 w-11 place-items-center rounded-full border transition-colors duration-400 hover:border-ink-900 lg:hidden",
                     onDark ? "border-white/25 text-white" : "border-ink-900/15 text-ink-900",
                   )}
                 >
@@ -254,6 +259,7 @@ export function SiteHeader() {
               group={primaryNav.find((g) => g.label === openMenu)!}
               onEnter={cancelClose}
               onLeave={scheduleClose}
+              onNavigate={onMenuNavigate}
             />
           ) : null}
         </AnimatePresence>
@@ -275,10 +281,12 @@ function MegaPanel({
   group,
   onEnter,
   onLeave,
+  onNavigate,
 }: {
   group: NavGroup;
   onEnter: () => void;
   onLeave: () => void;
+  onNavigate: (event: React.MouseEvent) => void;
 }) {
   const panel = group.panel;
   if (!panel) return null;
@@ -291,58 +299,57 @@ function MegaPanel({
       transition={{ duration: 0.42, ease: easing.expo }}
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
-      className="hidden border-b border-ink-900/8 bg-canvas/95 backdrop-blur-xl backdrop-saturate-150 lg:block"
+      onClick={onNavigate}
+      className="hidden border-b border-ink-900/8 bg-canvas/95 backdrop-blur-2xl backdrop-saturate-150 lg:block"
     >
       <div className="shell">
-        <div className="egrid gap-y-10 py-12">
-          <div className="col-span-4 pr-10">
-            <p className="label-mono text-signal-700">{panel.intro.eyebrow}</p>
-            <p className="mt-5 font-display text-h1 text-ink-950">{panel.intro.title}</p>
-            <p className="mt-4 max-w-[34ch] text-small text-neutral-600">{panel.intro.body}</p>
-            <ActionLink
-              href={panel.intro.cta.href}
-              variant="text"
-              className="mt-6"
-              magnetic={false}
-            >
+        <div className="grid grid-cols-[minmax(0,15rem)_minmax(0,1fr)] gap-x-14 py-8">
+          {/* Intro */}
+          <div>
+            <p className="label-mono text-neutral-550">{panel.intro.eyebrow}</p>
+            <p className="mt-4 font-display text-h2 text-ink-950">{panel.intro.title}</p>
+            <p className="mt-3 max-w-[30ch] text-small text-neutral-600">{panel.intro.body}</p>
+            <ActionLink href={panel.intro.cta.href} variant="text" className="mt-5">
               {panel.intro.cta.label}
             </ActionLink>
           </div>
 
-          {panel.columns.map((column, index) => (
-            <div
-              key={column.heading}
-              className={cn(
-                "col-span-4 border-l border-ink-900/10 pl-8",
-                panel.columns.length === 2 && index === 0 && "col-start-6",
-              )}
-            >
-              <p className="label-mono mb-5 text-neutral-600">{column.heading}</p>
-              <ul className="space-y-0.5">
-                {column.links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="group flex items-center justify-between gap-4 rounded-lg py-2.5 pr-3 transition-colors duration-400 hover:text-signal-700"
-                    >
-                      <span className="flex flex-col">
-                        <span className="text-small font-medium text-ink-900 transition-colors duration-400 group-hover:text-signal-700">
-                          {link.label}
+          {/* Link columns — evenly distributed, no dividing rules. */}
+          <div
+            className={cn(
+              "grid gap-x-10 gap-y-2",
+              panel.columns.length >= 3 ? "grid-cols-3" : "grid-cols-2",
+            )}
+          >
+            {panel.columns.map((column) => (
+              <div key={column.heading}>
+                <p className="label-mono mb-3 text-neutral-550">{column.heading}</p>
+                <ul>
+                  {column.links.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="group -mx-3 flex items-center justify-between gap-4 rounded-lg px-3 py-2 transition-colors duration-300 hover:bg-canvas-sunken"
+                      >
+                        <span className="flex flex-col">
+                          <span className="text-small font-medium text-ink-900">
+                            {link.label}
+                          </span>
+                          {link.description ? (
+                            <span className="text-micro text-neutral-500">{link.description}</span>
+                          ) : null}
                         </span>
-                        {link.description ? (
-                          <span className="text-micro text-neutral-500">{link.description}</span>
-                        ) : null}
-                      </span>
-                      <ArrowRight
-                        aria-hidden
-                        className="h-4 w-4 shrink-0 -translate-x-2 text-signal-600 opacity-0 transition-all duration-500 [transition-timing-function:var(--ease-out-expo)] group-hover:translate-x-0 group-hover:opacity-100"
-                      />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+                        <ArrowRight
+                          aria-hidden
+                          className="h-4 w-4 shrink-0 -translate-x-2 text-ink-700 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
+                        />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </motion.div>
@@ -451,7 +458,7 @@ function MobileMenu({
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -16, opacity: 0 }}
             transition={{ duration: 0.5, ease: easing.expo }}
-            className="shell flex min-h-full flex-col pb-16"
+            className="shell flex min-h-full flex-col pb-10"
           >
             <div className="flex h-[5.5rem] shrink-0 items-center justify-between">
               <Logo tone="deep" />
@@ -460,7 +467,7 @@ function MobileMenu({
                 type="button"
                 onClick={onClose}
                 aria-label="Close menu"
-                className="grid h-11 w-11 place-items-center rounded-full border border-white/20 transition-colors duration-400 hover:border-signal-400"
+                className="grid h-11 w-11 place-items-center rounded-full border border-white/20 transition-colors duration-400 hover:border-white"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -479,8 +486,8 @@ function MobileMenu({
                     <Link
                       href={group.href}
                       className={cn(
-                        "flex items-baseline gap-4 py-5 font-display text-d4 tracking-[-0.03em]",
-                        pathname.startsWith(group.href) ? "text-signal-300" : "text-white",
+                        "flex items-baseline gap-4 py-5 font-display text-d4",
+                        pathname.startsWith(group.href) ? "text-ink-200" : "text-white",
                       )}
                     >
                       <span className="label-mono text-ink-200">
@@ -502,7 +509,7 @@ function MobileMenu({
                             <li key={link.href}>
                               <Link
                                 href={link.href}
-                                className="inline-flex min-h-11 items-center py-2.5 text-small text-ink-200 transition-colors duration-300 hover:text-signal-300"
+                                className="inline-flex min-h-11 items-center py-2.5 text-small text-ink-200 transition-colors duration-300 hover:text-white"
                               >
                                 {link.label}
                               </Link>
@@ -515,8 +522,8 @@ function MobileMenu({
               </ul>
             </nav>
 
-            <div className="mt-10 flex flex-col gap-4 border-t border-white/12 pt-8">
-              <ActionLink href="/contact" variant="solid" tone="deep" magnetic={false}>
+            <div className="mt-7 flex flex-col gap-4 border-t border-white/12 pt-8">
+              <ActionLink href="/contact" variant="solid" tone="deep" >
                 Request a proposal
               </ActionLink>
               <a

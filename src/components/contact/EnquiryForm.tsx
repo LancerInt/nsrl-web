@@ -241,10 +241,10 @@ export function EnquiryForm() {
         </div>
       </div>
 
-      <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5 border-t border-ink-900/10 pt-8">
+      <div className="mt-7 flex flex-wrap items-center gap-x-8 gap-y-5 border-t border-ink-900/10 pt-8">
         <button
           type="submit"
-          className="inline-flex items-center justify-center gap-3 rounded-full bg-ink-900 px-7 py-4 font-display text-[0.9375rem] font-semibold tracking-[-0.01em] text-white transition-colors duration-500 [transition-timing-function:var(--ease-out-expo)] hover:bg-signal-700"
+          className="inline-flex items-center justify-center gap-3 rounded-[3px] bg-ink-900 px-6 py-3.5 font-sans text-[0.9375rem] font-medium text-white transition-colors duration-300 hover:bg-ink-700"
         >
           Send enquiry
         </button>

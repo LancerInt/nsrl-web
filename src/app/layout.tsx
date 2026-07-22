@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Mono, Inter, Instrument_Serif, Manrope } from "next/font/google";
+import { IBM_Plex_Mono, Inter, Newsreader } from "next/font/google";
 
 import "./globals.css";
 
@@ -8,15 +8,15 @@ import { JsonLd, organisationJsonLd, websiteJsonLd } from "@/lib/seo";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { MotionProvider } from "@/components/system/MotionProvider";
-import { SmoothScroll } from "@/components/system/SmoothScroll";
-import { ScrollProgress } from "@/components/system/ScrollProgress";
-import { Preloader } from "@/components/system/Preloader";
-import { Cursor } from "@/components/system/Cursor";
+import { ScrollManager } from "@/components/system/ScrollManager";
 
-/* Four families, four jobs: display, body, instrument label, editorial accent. */
-const manrope = Manrope({
+/* Three families, three jobs: the serif document voice for headlines, the sans
+   working voice for body and UI, the monospace instrument voice for data. */
+const newsreader = Newsreader({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  style: ["normal", "italic"],
+  axes: ["opsz"],
+  variable: "--font-newsreader",
   display: "swap",
 });
 
@@ -30,14 +30,6 @@ const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
   variable: "--font-plex-mono",
-  display: "swap",
-});
-
-const instrument = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  variable: "--font-instrument",
   display: "swap",
 });
 
@@ -108,7 +100,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en-IN"
-      className={`${manrope.variable} ${inter.variable} ${plexMono.variable} ${instrument.variable}`}
+      className={`${newsreader.variable} ${inter.variable} ${plexMono.variable}`}
+      // The inline <head> script below adds `js` to this element before React
+      // hydrates, so the server- and client-rendered className legitimately
+      // differ by design. React 19 compares the attribute and would report a
+      // hydration mismatch on every page without this.
+      suppressHydrationWarning
     >
       <head>
         {/*
@@ -134,15 +131,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Wraps everything that can animate, including app/template.tsx, so
             `prefers-reduced-motion` reaches Framer's JS-driven inline styles. */}
         <MotionProvider>
-          <Preloader />
-          <ScrollProgress />
-          <Cursor />
-
-          <SmoothScroll>
+          <ScrollManager>
             <SiteHeader />
             <main id="main">{children}</main>
             <SiteFooter />
-          </SmoothScroll>
+          </ScrollManager>
         </MotionProvider>
       </body>
     </html>

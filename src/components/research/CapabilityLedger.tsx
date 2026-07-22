@@ -64,7 +64,7 @@ export function CapabilityLedger({
               {group.blurb ? (
                 <p className="mt-4 max-w-[34ch] text-small text-neutral-600">{group.blurb}</p>
               ) : null}
-              <p className="label-mono mt-5 text-signal-700">
+              <p className="label-mono mt-5 text-ink-700">
                 {group.items.length} methods
               </p>
             </div>

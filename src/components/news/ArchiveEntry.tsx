@@ -2,10 +2,11 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import type { Article } from "@/content/news";
+import { images, type ImageKey } from "@/content/imagery";
 import { cn, pad } from "@/lib/utils";
-import { SpecimenPlate, type PlateVariant } from "@/components/visuals/SpecimenPlate";
+import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
 
-const PLATES: PlateVariant[] = ["titration", "chromatogram", "wave", "gradient-well"];
+const FIGURES: ImageKey[] = ["chemistryBench", "microscope", "pipetting", "team"];
 
 /**
  * One entry in the newsroom archive.
@@ -29,11 +30,11 @@ export function ArchiveEntry({
   position: number;
   variant: "lead" | "record";
 }) {
-  const plate = PLATES[(position - 1) % PLATES.length];
+  const figure = images[FIGURES[(position - 1) % FIGURES.length]];
 
   const meta = (
     <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-      <span className="label-mono text-signal-700">{article.category}</span>
+      <span className="label-mono text-ink-700">{article.category}</span>
       <span aria-hidden className="h-3 w-px bg-ink-900/15" />
       <time dateTime={article.date} className="label-mono text-neutral-500">
         {article.dateDisplay}
@@ -44,7 +45,7 @@ export function ArchiveEntry({
   );
 
   const cta = (
-    <span className="mt-9 inline-flex items-center gap-2.5 font-display text-[0.9375rem] font-semibold tracking-[-0.01em] text-ink-950 transition-colors duration-400 group-hover:text-signal-700">
+    <span className="mt-6 inline-flex items-center gap-2.5 font-sans text-[0.9375rem] font-medium text-ink-950 transition-colors duration-400 group-hover:text-ink-700">
       Read the note
       <ArrowRight
         aria-hidden
@@ -58,40 +59,41 @@ export function ArchiveEntry({
       <article data-reveal>
         <Link
           href={`/news/${article.slug}`}
-          className="group block border-t border-ink-900/15 pt-9 transition-colors duration-500 hover:border-signal-500"
+          className="group block border-t border-ink-900/15 pt-9 transition-colors duration-500 hover:border-ink-900/60"
         >
-          <div className="egrid gap-y-12">
+          <div className="egrid gap-y-8">
             <div className="col-span-12 lg:col-span-7">
               <div className="flex items-baseline gap-6">
                 <span
                   aria-hidden
-                  className="label-mono tabular-nums text-neutral-550 transition-colors duration-400 group-hover:text-signal-700"
+                  className="label-mono tabular-nums text-neutral-550 transition-colors duration-400 group-hover:text-ink-700"
                 >
                   {pad(position)}
                 </span>
                 {meta}
               </div>
 
-              <h3 className="mt-8 font-display text-d3 text-ink-950 transition-colors duration-500 group-hover:text-signal-700">
+              <h3 className="mt-6 font-display text-d3 text-ink-950 transition-colors duration-500 group-hover:text-ink-700">
                 {article.title}
               </h3>
 
-              <p className="measure mt-8 text-lead text-neutral-600">{article.excerpt}</p>
+              <p className="measure mt-6 text-lead text-neutral-600">{article.excerpt}</p>
 
               {cta}
             </div>
 
             <div className="col-span-12 sm:col-span-8 lg:col-span-4 lg:col-start-9">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-card)]">
-                <SpecimenPlate variant={plate} seed={position + 2} />
-                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-ink-950/70 to-transparent p-6">
-                  <p className="label-mono text-white/80">Fig. {pad(position)}</p>
-                  <p className="label-mono text-ink-100">{article.category}</p>
-                </div>
+              <div className="relative aspect-[4/5] img-frame">
+                <SpecimenPlate
+                  src={figure.src}
+                  alt={figure.alt}
+                  sizes="(min-width: 1024px) 33vw, 100vw"
+                  priority
+                />
               </div>
 
               {article.takeaways?.length ? (
-                <div className="mt-8">
+                <div className="mt-6">
                   <p className="label-mono text-neutral-600">In this note</p>
                   <ul className="mt-4">
                     {article.takeaways.slice(0, 3).map((takeaway) => (
@@ -101,7 +103,7 @@ export function ArchiveEntry({
                       >
                         <span
                           aria-hidden
-                          className="mt-2 h-1 w-1 shrink-0 rounded-full bg-signal-500"
+                          className="mt-2 h-1 w-1 shrink-0 rounded-full bg-ink-900"
                         />
                         {takeaway}
                       </li>
@@ -121,31 +123,32 @@ export function ArchiveEntry({
       <Link
         href={`/news/${article.slug}`}
         className={cn(
-          "group grid gap-x-[clamp(1.5rem,3vw,3.5rem)] gap-y-8 border-t border-ink-900/15 py-[clamp(2.25rem,4vw,3.5rem)] transition-colors duration-500 hover:border-signal-500",
+          "group grid gap-x-[clamp(1.5rem,3vw,3.5rem)] gap-y-8 border-t border-ink-900/15 py-[clamp(1.25rem,2vw,1.875rem)] transition-colors duration-500 hover:border-ink-900/60",
           "lg:grid-cols-[3.5rem_minmax(0,7fr)_minmax(0,4fr)]",
         )}
       >
         <span
           aria-hidden
-          className="label-mono tabular-nums text-neutral-550 transition-colors duration-400 group-hover:text-signal-700"
+          className="label-mono tabular-nums text-neutral-550 transition-colors duration-400 group-hover:text-ink-700"
         >
           {pad(position)}
         </span>
 
         <div>
           {meta}
-          <h3 className="mt-6 font-display text-d4 text-ink-950 transition-colors duration-500 group-hover:text-signal-700">
+          <h3 className="mt-6 font-display text-d4 text-ink-950 transition-colors duration-500 group-hover:text-ink-700">
             {article.title}
           </h3>
           <p className="measure mt-5 text-body text-neutral-600">{article.excerpt}</p>
           {cta}
         </div>
 
-        <div className="relative aspect-[3/2] overflow-hidden rounded-[var(--radius-card)] lg:aspect-[4/3]">
-          <SpecimenPlate variant={plate} seed={position + 2} />
-          <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-ink-950/65 to-transparent p-5">
-            <p className="label-mono text-white">Fig. {pad(position)}</p>
-          </div>
+        <div className="relative aspect-[3/2] img-frame lg:aspect-[4/3]">
+          <SpecimenPlate
+            src={figure.src}
+            alt={figure.alt}
+            sizes="(min-width: 1024px) 33vw, 100vw"
+          />
         </div>
       </Link>
     </article>

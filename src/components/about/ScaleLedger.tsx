@@ -18,7 +18,7 @@ export function ScaleLedger() {
         <div className="egrid items-end gap-y-8">
           <div className="col-span-12 lg:col-span-6">
             <Eyebrow index="02">The record</Eyebrow>
-            <RevealText as="h2" className="mt-8 font-display text-d3 text-ink-950">
+            <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
               What the ledger says.
             </RevealText>
           </div>
@@ -32,7 +32,7 @@ export function ScaleLedger() {
         </div>
 
         {/* Column head */}
-        <div className="mt-[clamp(3rem,6vw,5rem)] flex items-baseline justify-between border-b border-ink-900/22 pb-4">
+        <div className="mt-[clamp(2rem,3.5vw,3rem)] flex items-baseline justify-between border-b border-[var(--rule-strong)] pb-4">
           <p className="label-mono text-neutral-600">Ref. · Measure</p>
           <p className="label-mono text-neutral-600">Recorded</p>
         </div>
@@ -43,9 +43,9 @@ export function ScaleLedger() {
               key={stat.label}
               data-reveal
               style={{ "--reveal-delay": `${i * 0.07}s` } as React.CSSProperties}
-              className="group grid grid-cols-12 items-baseline gap-x-[clamp(1rem,1.8vw,2rem)] gap-y-3 border-b border-ink-900/12 py-[clamp(1.75rem,3.4vw,3rem)] transition-colors duration-500 [transition-timing-function:var(--ease-out-expo)] hover:border-signal-500/60"
+              className="group grid grid-cols-12 items-baseline gap-x-[clamp(1rem,1.8vw,2rem)] gap-y-2 border-b border-[var(--rule)] py-[clamp(1.25rem,2.2vw,2rem)] transition-colors duration-500 hover:border-ink-900/40"
             >
-              <span className="label-mono col-span-2 text-neutral-550 transition-colors duration-500 group-hover:text-signal-700">
+              <span className="label-mono col-span-2 text-neutral-550 transition-colors duration-500 group-hover:text-ink-700">
                 {pad(i + 1)}
               </span>
 
@@ -57,7 +57,7 @@ export function ScaleLedger() {
                 {stat.caption}
               </dd>
 
-              <dd className="col-span-12 text-left font-display text-[clamp(2.75rem,5.6vw,5rem)] font-bold leading-[0.9] tracking-[-0.045em] tabular-nums text-ink-950 lg:col-span-3 lg:text-right">
+              <dd className="col-span-12 text-left font-display text-[clamp(2.25rem,3.6vw,3.25rem)] font-medium leading-none tracking-[-0.02em] tabular-nums text-ink-950 lg:col-span-3 lg:text-right">
                 <CountUp value={stat.value} suffix={stat.suffix} />
               </dd>
             </div>

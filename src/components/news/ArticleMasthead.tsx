@@ -23,47 +23,36 @@ export function ArticleMasthead({
   total: number;
 }) {
   return (
-    <header
-      data-theme="deep"
-      className="relative isolate overflow-hidden bg-deep text-ink-50"
-    >
+    <header className="relative isolate overflow-hidden bg-canvas text-ink-950">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div
-          className="graticule absolute inset-0 opacity-70"
+          className="graticule absolute inset-0 opacity-40"
           style={
             {
-              "--graticule-color": "rgba(255,255,255,0.03)",
+              "--graticule-color": "color-mix(in oklab, var(--color-ink-900) 2.5%, transparent)",
               "--graticule-size": "4rem",
             } as React.CSSProperties
           }
         />
-        <div
-          className="absolute left-[-14rem] top-[-10rem] h-[36rem] w-[36rem] rounded-full opacity-40 blur-3xl"
-          style={{
-            background:
-              "radial-gradient(circle, color-mix(in oklab, var(--color-ink-500) 50%, transparent), transparent 70%)",
-          }}
-        />
       </div>
 
-      <div className="shell relative pb-[clamp(3rem,6vw,5.5rem)] pt-[clamp(8rem,13vw,12rem)]">
+      <div className="shell relative pb-[clamp(3rem,6vw,5.5rem)] pt-[clamp(6.25rem,8vw,7.5rem)]">
         <Breadcrumbs
           items={[
             { label: "Home", href: "/" },
             { label: "News & events", href: "/news" },
             { label: article.title },
           ]}
-          tone="deep"
           baseUrl={site.url}
         />
 
-        <div className="egrid mt-12 gap-y-10">
+        <div className="egrid mt-6 gap-y-7">
           <div className="col-span-12 lg:col-span-9">
             <p className="label-mono flex flex-wrap items-center gap-x-4 gap-y-2">
-              <span aria-hidden className="inline-block h-px w-8 shrink-0 bg-signal-400" />
-              <span className="text-signal-400">{article.category}</span>
-              <span aria-hidden className="h-3 w-px bg-white/20" />
-              <span className="text-ink-200">
+              <span aria-hidden className="inline-block h-px w-8 shrink-0 bg-ink-900" />
+              <span className="text-ink-800">{article.category}</span>
+              <span aria-hidden className="h-3 w-px bg-[var(--rule)]" />
+              <span className="text-neutral-550">
                 Entry {pad(position)} of {pad(total)}
               </span>
             </p>
@@ -71,7 +60,7 @@ export function ArticleMasthead({
             <RevealText
               as="h1"
               trigger="mount"
-              className="mt-8 font-display text-d2 text-white"
+              className="mt-6 font-display text-d2 text-ink-950"
             >
               {article.title}
             </RevealText>
@@ -79,7 +68,7 @@ export function ArticleMasthead({
             <p
               data-reveal
               style={{ "--reveal-delay": "0.35s" } as React.CSSProperties}
-              className="measure mt-9 text-lead text-ink-200"
+              className="measure mt-6 text-lead text-neutral-600"
             >
               {article.excerpt}
             </p>
@@ -89,26 +78,29 @@ export function ArticleMasthead({
         <dl
           data-reveal
           style={{ "--reveal-delay": "0.5s" } as React.CSSProperties}
-          className="mt-14 grid gap-y-8 border-t border-white/12 pt-8 sm:grid-cols-3"
+          className="mt-6 grid gap-y-8 border-t border-[var(--rule)] pt-8 sm:grid-cols-3"
         >
           <div>
-            <dt className="label-mono text-ink-200">Written by</dt>
-            <dd className="mt-2 font-display text-h3 text-white">{article.author}</dd>
+            <dt className="label-mono text-neutral-550">Written by</dt>
+            <dd className="mt-2 font-display text-h3 text-ink-950">{article.author}</dd>
           </div>
           <div>
-            <dt className="label-mono text-ink-200">Published</dt>
-            <dd className="mt-2 font-display text-h3 text-white">
+            <dt className="label-mono text-neutral-550">Published</dt>
+            <dd className="mt-2 font-display text-h3 text-ink-950">
               <time dateTime={article.date}>{article.dateDisplay}</time>
             </dd>
           </div>
           <div>
-            <dt className="label-mono text-ink-200">Reading time</dt>
-            <dd className="mt-2 font-display text-h3 text-white">
+            <dt className="label-mono text-neutral-550">Reading time</dt>
+            <dd className="mt-2 font-display text-h3 text-ink-950">
               {article.readingMinutes} min
             </dd>
           </div>
         </dl>
       </div>
+
+      {/* The double rule that ends a report's title page. */}
+      <div aria-hidden className="shell rule-double" />
     </header>
   );
 }

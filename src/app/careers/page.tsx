@@ -46,16 +46,16 @@ export default function CareersPage() {
         meta={meta}
         visual={<CareersHeroVisual />}
         aside={
-          <div className="rounded-[var(--radius-card)] border border-white/15 bg-white/[0.04] p-8">
-            <p className="label-mono text-ink-300">Open to application</p>
-            <p className="mt-5 font-display text-d3 leading-none text-white">
+          <div className="rounded-[var(--radius-card)] border border-[var(--rule)] bg-white/[0.04] p-8">
+            <p className="label-mono text-neutral-550">Open to application</p>
+            <p className="mt-5 font-display text-d3 leading-none text-ink-950">
               {departments.length}
             </p>
-            <p className="mt-4 text-small text-ink-200">
+            <p className="mt-4 text-small text-neutral-600">
               departments, grouped into {departmentGroups.length} families — scientific divisions,
               animal science and pathology, quality and records, and operations.
             </p>
-            <ActionLink href="#apply" variant="outline" tone="deep" className="mt-8">
+            <ActionLink href="#apply" variant="outline" className="mt-6">
               Apply now
             </ActionLink>
           </div>

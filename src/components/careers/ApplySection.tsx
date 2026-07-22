@@ -12,60 +12,56 @@ import { ApplicationForm } from "@/components/careers/ApplicationForm";
  */
 export function ApplySection() {
   return (
-    <Section tone="deep" bleed id="apply" className="overflow-hidden scroll-mt-24">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -left-40 bottom-0 h-[34rem] w-[34rem] rounded-full opacity-30 blur-3xl"
-        style={{
-          background:
-            "radial-gradient(circle, color-mix(in oklab, var(--color-signal-700) 42%, transparent), transparent 70%)",
-        }}
-      />
-
+    <Section bleed id="apply" className="overflow-hidden scroll-mt-24">
       <div className="shell relative">
         <SectionBody>
-          <div className="egrid gap-y-16">
+          <div className="egrid gap-y-9">
             <div className="col-span-12 lg:col-span-4">
-              <Eyebrow index="04" tone="deep">
+              <Eyebrow index="04">
                 Apply
               </Eyebrow>
 
-              <RevealText as="h2" className="mt-8 font-display text-d3 text-white">
+              <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
                 Tell us{" "}
-                <span className="font-editorial font-normal italic tracking-[-0.02em] text-signal-300">
+                <span className="font-display text-ink-800">
                   where you fit.
                 </span>
               </RevealText>
 
-              <p className="mt-7 text-small text-ink-200">
+              <p className="mt-7 text-small text-neutral-600">
                 Applications go to the same address as everything else here, and they are read by
                 people who know what the departments do.
               </p>
 
-              <dl className="mt-12 border-t border-white/12">
-                <div className="border-b border-white/12 py-7">
-                  <dt className="label-mono text-ink-300">Write to us</dt>
+              <dl className="mt-6 border-t border-[var(--rule)]">
+                <div className="border-b border-[var(--rule)] py-5">
+                  <dt className="label-mono text-neutral-550">Write to us</dt>
                   <dd className="mt-3">
                     <a
                       href={`mailto:${contact.email}`}
-                      className="font-display text-h1 text-white underline decoration-white/25 underline-offset-[6px] transition-colors duration-400 hover:text-signal-300 hover:decoration-signal-400"
+                      className="font-display text-h1 text-ink-950 underline decoration-white/25 underline-offset-[6px] transition-colors duration-400 hover:text-ink-950 hover:decoration-signal-400"
                     >
                       {contact.email}
                     </a>
                   </dd>
                 </div>
 
-                <div className="border-b border-white/12 py-7">
-                  <dt className="label-mono text-ink-300">Call the laboratory</dt>
-                  <dd className="mt-3">
+                <div className="border-b border-[var(--rule)] py-5">
+                  <dt className="label-mono text-neutral-550">Call the laboratory</dt>
+                  <dd className="mt-3 flex flex-col gap-1.5">
                     <a
                       href={`tel:${contact.phoneHref}`}
-                      className="font-display text-h1 text-white underline decoration-white/25 underline-offset-[6px] transition-colors duration-400 hover:text-signal-300 hover:decoration-signal-400"
+                      className="font-display text-h1 text-ink-950 underline decoration-ink-900/20 underline-offset-[6px] transition-colors duration-400 hover:decoration-ink-900"
                     >
                       {contact.phoneDisplay}
                     </a>
+                    <a
+                      href={`tel:${contact.mobileHref}`}
+                      className="font-display text-h2 text-ink-950 underline decoration-ink-900/20 underline-offset-[6px] transition-colors duration-400 hover:decoration-ink-900"
+                    >
+                      {contact.mobileDisplay}
+                    </a>
                   </dd>
-                  <dd className="label-mono mt-4 text-ink-300">{contact.phoneRange}</dd>
                 </div>
               </dl>
             </div>

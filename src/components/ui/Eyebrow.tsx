@@ -1,41 +1,38 @@
 import { cn } from "@/lib/utils";
 
 /**
- * The recurring calibration label. A monospace tag preceded by a tick mark —
- * the detail that ties the whole site to the instrument metaphor.
+ * The section label. A small monospace tag with a short accent tick — quiet
+ * orientation, no rule and no section counter (the running 01/02/03 numbering
+ * read as templated). `index` is still accepted so call sites need not change.
  */
 export function Eyebrow({
   children,
-  index,
   tone = "light",
   className,
 }: {
   children: React.ReactNode;
-  /** Optional section number, rendered before the label. */
+  /** Accepted for call-site compatibility; no longer rendered. */
   index?: string;
   tone?: "light" | "deep";
   className?: string;
 }) {
+  const deep = tone === "deep";
+
   return (
     <p
       className={cn(
         "label-mono flex items-center gap-3",
-        tone === "deep" ? "text-ink-200" : "text-ink-600",
+        deep ? "text-white/70" : "text-ink-700",
         className,
       )}
     >
       <span
         aria-hidden
         className={cn(
-          "inline-block h-px w-8 shrink-0",
-          tone === "deep" ? "bg-signal-400" : "bg-signal-500",
+          "h-1.5 w-1.5 shrink-0 rounded-full",
+          deep ? "bg-meniscus-400" : "bg-meniscus-500",
         )}
       />
-      {index ? (
-        <span className={tone === "deep" ? "text-ink-300" : "text-neutral-550"}>
-          {index}
-        </span>
-      ) : null}
       <span>{children}</span>
     </p>
   );

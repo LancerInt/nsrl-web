@@ -17,18 +17,18 @@ export function AboutHeroVisual() {
       </div>
 
       <div
-        className="graticule absolute inset-0 opacity-70"
+        className="graticule absolute inset-0 opacity-40"
         style={
           {
-            "--graticule-color": "rgba(255,255,255,0.035)",
+            "--graticule-color": "color-mix(in oklab, var(--color-ink-900) 2.5%, transparent)",
             "--graticule-size": "6rem",
           } as React.CSSProperties
         }
       />
 
       {/* Keeps the display type legible where it crosses the field. */}
-      <div className="absolute inset-0 bg-[linear-gradient(255deg,var(--color-deep)_16%,transparent_82%)]" />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(to_top,var(--color-deep),transparent)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(255deg,var(--color-canvas)_16%,transparent_82%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(to_top,var(--color-canvas),transparent)]" />
     </>
   );
 }

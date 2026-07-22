@@ -30,17 +30,9 @@ export default function NewsIndexPage() {
   return (
     <>
       <PageHero
-        tone="light"
         eyebrow="Newsroom"
         index="N.01"
-        title={
-          <>
-            Notes from the laboratory,{" "}
-            <span className="font-editorial font-normal italic tracking-[-0.02em] text-signal-600">
-              written up in full.
-            </span>
-          </>
-        }
+        title="Notes from the laboratory, written up in full."
         lead="A short archive by design. What is here is a complete note rather than a headline — and anything that moves faster than a written note is posted to LinkedIn as it happens."
         crumbs={[{ label: "Home", href: "/" }, { label: "News & events" }]}
         meta={[
@@ -56,7 +48,7 @@ export default function NewsIndexPage() {
           <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-6">
             <div>
               <Eyebrow index="01">The archive</Eyebrow>
-              <h2 className="mt-8 font-display text-d4 text-ink-950">
+              <h2 className="mt-6 font-display text-d4 text-ink-950">
                 Everything the laboratory has published here.
               </h2>
               <p className="measure mt-6 text-body text-neutral-600">
@@ -94,8 +86,8 @@ export default function NewsIndexPage() {
           </div>
 
           {/* End-of-archive marker: the short archive is stated, not hidden. */}
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-ink-900/15 pt-6">
-            <span aria-hidden className="h-2.5 w-px bg-signal-500" />
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-[var(--rule)] pt-6">
+            <span aria-hidden className="h-2.5 w-px bg-ink-900" />
             <p className="label-mono text-neutral-500">
               End of archive — {pad(totalRecords)} records
             </p>

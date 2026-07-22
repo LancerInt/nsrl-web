@@ -18,21 +18,13 @@ export function CareersHeroVisual() {
   return (
     <>
       <div
-        className="graticule absolute inset-0 opacity-70"
+        className="graticule absolute inset-0 opacity-40"
         style={
           {
-            "--graticule-color": "rgba(255,255,255,0.035)",
+            "--graticule-color": "color-mix(in oklab, var(--color-ink-900) 2.5%, transparent)",
             "--graticule-size": "6rem",
           } as React.CSSProperties
         }
-      />
-
-      <div
-        className="absolute -right-40 top-[-18%] h-[46rem] w-[46rem] rounded-full opacity-40 blur-3xl"
-        style={{
-          background:
-            "radial-gradient(circle, color-mix(in oklab, var(--color-ink-500) 45%, transparent), transparent 68%)",
-        }}
       />
 
       {/* Department scale */}
@@ -49,7 +41,7 @@ export function CareersHeroVisual() {
                   <span
                     className={cn(
                       "block h-px",
-                      major ? "w-24 bg-signal-400/70" : "w-12 bg-white/18",
+                      major ? "w-24 bg-ink-900/70" : "w-12 bg-white/18",
                     )}
                   />
                 </span>
@@ -61,7 +53,7 @@ export function CareersHeroVisual() {
       </div>
 
       {/* Keeps the display type off the artwork. */}
-      <div className="absolute inset-0 bg-[linear-gradient(96deg,var(--color-deep)_38%,transparent_88%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(96deg,var(--color-canvas)_38%,transparent_88%)]" />
     </>
   );
 }

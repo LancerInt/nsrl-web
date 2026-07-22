@@ -50,7 +50,7 @@ export const capacityStats: Stat[] = [
     value: 150000,
     suffix: " sq ft",
     label: "Laboratory space",
-    caption: "Across three units in Kanchipuram district, Tamil Nadu",
+    caption: "At a single accredited site in Salem, Tamil Nadu",
   },
   {
     value: 450,

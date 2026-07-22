@@ -48,7 +48,7 @@ export function Disclosure({
           id={`${id}-trigger`}
           className={cn(
             "group flex w-full items-center justify-between gap-6 py-6 text-left transition-colors duration-500",
-            deep ? "hover:text-signal-300" : "hover:text-signal-700",
+            deep ? "hover:text-ink-700" : "hover:text-ink-700",
           )}
         >
           {/* min-w-0 so a long title wraps instead of forcing the row wider
@@ -73,7 +73,7 @@ export function Disclosure({
               "grid h-10 w-10 shrink-0 place-items-center rounded-full border transition-all duration-500 [transition-timing-function:var(--ease-out-expo)]",
               deep
                 ? "border-white/20 group-hover:border-signal-400"
-                : "border-ink-900/15 group-hover:border-signal-500",
+                : "border-ink-900/15 group-hover:border-ink-900/60",
               open && "rotate-45",
             )}
           >

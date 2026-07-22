@@ -12,15 +12,15 @@ import { SpecChips } from "@/components/ui/SpecList";
 export function SectorBrief({ industry }: { industry: Industry }) {
   return (
     <Section tone="canvas" innerClassName="py-[var(--section-y)]">
-      <div className="egrid gap-y-14">
+      <div className="egrid gap-y-8">
         <div className="col-span-12 lg:col-span-4">
           <div className="lg:rail-sticky">
             <Eyebrow index="01">The programme</Eyebrow>
 
-            <p className="label-mono mt-12 text-neutral-600">Frameworks &amp; authorities</p>
+            <p className="label-mono mt-6 text-neutral-600">Frameworks &amp; authorities</p>
             <SpecChips items={industry.frameworks} className="mt-5" />
 
-            <p className="label-mono mt-10 border-t border-ink-900/12 pt-6 leading-relaxed text-neutral-500">
+            <p className="label-mono mt-7 border-t border-ink-900/12 pt-6 leading-relaxed text-neutral-500">
               Sector {industry.index} · {industry.serviceGroups.length} study groups ·{" "}
               {industry.divisions.length} divisions
             </p>
@@ -32,7 +32,7 @@ export function SectorBrief({ industry }: { industry: Industry }) {
             What the dossier has to prove.
           </RevealText>
 
-          <div className="mt-10 space-y-7 text-lead text-neutral-700">
+          <div className="mt-7 space-y-5 text-lead text-neutral-700">
             {industry.body.map((paragraph, i) => (
               <p
                 key={paragraph.slice(0, 48)}
@@ -48,12 +48,12 @@ export function SectorBrief({ industry }: { industry: Industry }) {
       </div>
 
       {industry.proofPoint ? (
-        <div className="egrid mt-[clamp(4rem,8vw,7rem)] gap-y-8 border-t border-ink-900/15 pt-[clamp(2.5rem,5vw,4rem)]">
+        <div className="egrid mt-[clamp(2rem,3.5vw,3rem)] gap-y-8 border-t border-ink-900/15 pt-[clamp(1.5rem,2.5vw,2.25rem)]">
           <p className="label-mono col-span-12 text-neutral-600 lg:col-span-1">Proof</p>
 
           <p
             data-reveal
-            className="col-span-12 font-display text-d3 text-gradient-ink lg:col-span-7 lg:col-start-2"
+            className="col-span-12 font-display text-d3 text-ink-950 lg:col-span-7 lg:col-start-2"
           >
             {industry.proofPoint.value}
           </p>
@@ -61,7 +61,7 @@ export function SectorBrief({ industry }: { industry: Industry }) {
           <p
             data-reveal
             style={{ "--reveal-delay": "0.1s" } as React.CSSProperties}
-            className="col-span-12 self-end border-l border-signal-500/40 pl-6 text-small text-neutral-600 lg:col-span-3 lg:col-start-10"
+            className="col-span-12 self-end border-l border-ink-900/45 pl-6 text-small text-neutral-600 lg:col-span-3 lg:col-start-10"
           >
             {industry.proofPoint.caption}
           </p>

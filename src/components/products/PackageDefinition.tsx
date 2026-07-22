@@ -34,49 +34,48 @@ export function PackageDefinition() {
 
   return (
     <section
-      data-theme="deep"
-      className="relative isolate overflow-hidden bg-deep py-[var(--section-y)] text-ink-50"
+      className="relative isolate overflow-hidden bg-canvas-sunken py-[var(--section-y)] text-ink-950"
     >
       <div
         aria-hidden
-        className="graticule pointer-events-none absolute inset-0 opacity-50"
+        className="graticule pointer-events-none absolute inset-0 opacity-35"
         style={
           {
-            "--graticule-color": "rgba(255,255,255,0.03)",
+            "--graticule-color": "color-mix(in oklab, var(--color-ink-900) 2.5%, transparent)",
             "--graticule-size": "5rem",
           } as React.CSSProperties
         }
       />
 
       <div className="shell relative">
-        <div className="egrid gap-y-12">
+        <div className="egrid gap-y-8">
           <div className="col-span-12 lg:col-span-5">
-            <Eyebrow index="01" tone="deep">
+            <Eyebrow index="01">
               What a package is
             </Eyebrow>
-            <RevealText as="h2" className="mt-8 font-display text-d3 text-white">
+            <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
               An assembly, not an invention.
             </RevealText>
 
             <p
               data-reveal
-              className="font-editorial text-editorial mt-10 max-w-[38ch] italic text-ink-100"
+              className="font-display text-editorial mt-7 max-w-[38ch] text-neutral-600"
             >
               The catalogue does not change. Only the order you read it in.
             </p>
 
-            <dl className="mt-12 flex flex-wrap gap-x-14 gap-y-6">
+            <dl className="mt-6 flex flex-wrap gap-x-14 gap-y-6">
               <div>
-                <dt className="label-mono text-ink-200">Packages</dt>
-                <dd className="mt-2 font-display text-h1 text-white">{pad(studyPackages.length)}</dd>
+                <dt className="label-mono text-neutral-600">Packages</dt>
+                <dd className="mt-2 font-display text-h1 text-ink-950">{pad(studyPackages.length)}</dd>
               </div>
               <div>
-                <dt className="label-mono text-ink-200">Studies listed</dt>
-                <dd className="mt-2 font-display text-h1 text-white">{studies}</dd>
+                <dt className="label-mono text-neutral-600">Studies listed</dt>
+                <dd className="mt-2 font-display text-h1 text-ink-950">{studies}</dd>
               </div>
             </dl>
 
-            <ActionLink href="/research" variant="text" tone="deep" className="mt-10">
+            <ActionLink href="/research" variant="text" className="mt-7">
               The divisions that run them
             </ActionLink>
           </div>
@@ -87,18 +86,18 @@ export function PackageDefinition() {
                 key={clause.title}
                 data-reveal
                 style={{ "--reveal-delay": `${i * 0.08}s` } as React.CSSProperties}
-                className="group grid grid-cols-[auto_1fr] gap-x-6 border-t border-white/12 py-9 transition-colors duration-500 hover:border-signal-400/60"
+                className="group grid grid-cols-[auto_1fr] gap-x-6 border-t border-[var(--rule)] py-6 transition-colors duration-500 hover:border-ink-900/40"
               >
-                <span className="label-mono pt-2 text-ink-300 transition-colors duration-400 group-hover:text-signal-400">
+                <span className="label-mono pt-2 text-neutral-550 transition-colors duration-400 group-hover:text-ink-950">
                   {pad(i + 1)}
                 </span>
                 <div>
-                  <h3 className="font-display text-h1 text-white">{clause.title}</h3>
-                  <p className="measure mt-4 text-small text-ink-200">{clause.body}</p>
+                  <h3 className="font-display text-h1 text-ink-950">{clause.title}</h3>
+                  <p className="measure mt-4 text-small text-neutral-600">{clause.body}</p>
                 </div>
               </li>
             ))}
-            <li aria-hidden className="border-t border-white/12" />
+            <li aria-hidden className="border-t border-[var(--rule)]" />
           </ol>
         </div>
       </div>

@@ -4,20 +4,10 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RevealText } from "@/components/ui/RevealText";
 import { pad } from "@/lib/utils";
 
-/** Each milestone steps one span further right than the last. */
-const step = [
-  "lg:col-span-7 lg:col-start-1",
-  "lg:col-span-7 lg:col-start-3",
-  "lg:col-span-7 lg:col-start-5",
-  "lg:col-span-6 lg:col-start-7",
-];
-
 /**
- * Firsts and records, walked down the page as a staircase.
- *
- * The source material carries no dates, so this is deliberately not a timeline —
- * it is an ordered set of things done first, and the descending indent supplies
- * the sense of progression a date axis would otherwise give.
+ * Firsts and records — an ordered set of things done first, set as a compact
+ * grid. The source material carries no dates, so this is deliberately not a
+ * timeline; the index supplies the sense of order a date axis would give.
  */
 export function MilestoneStair() {
   return (
@@ -26,7 +16,7 @@ export function MilestoneStair() {
         <div className="egrid gap-y-8">
           <div className="col-span-12 lg:col-span-6">
             <Eyebrow index="07">Firsts</Eyebrow>
-            <RevealText as="h2" className="mt-8 font-display text-d3 text-ink-950">
+            <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
               Work that had no precedent to follow.
             </RevealText>
           </div>
@@ -39,32 +29,26 @@ export function MilestoneStair() {
           </div>
         </div>
 
-        <div className="egrid mt-[clamp(3.5rem,7vw,6rem)] gap-y-[clamp(2rem,4vw,3.5rem)]">
+        <div className="mt-[clamp(2rem,3.5vw,3rem)] grid gap-x-[clamp(2rem,4vw,4rem)] gap-y-8 sm:grid-cols-2">
           {milestones.map((milestone, i) => (
             <article
               key={milestone.title}
               data-reveal
-              style={{ "--reveal-delay": `${i * 0.08}s` } as React.CSSProperties}
-              className={`group col-span-12 border-t border-ink-900/22 pt-7 transition-colors duration-700 [transition-timing-function:var(--ease-out-expo)] hover:border-signal-500/70 ${step[i % step.length]}`}
+              style={{ "--reveal-delay": `${(i % 2) * 0.08}s` } as React.CSSProperties}
+              className="border-t border-[var(--rule-strong)] pt-6"
             >
-              <div className="flex items-baseline gap-6">
-                <span className="label-mono shrink-0 text-neutral-550 transition-colors duration-500 group-hover:text-signal-700">
-                  {pad(i + 1)}
-                </span>
+              <div className="flex items-baseline gap-5">
+                <span className="label-mono shrink-0 text-neutral-550">{pad(i + 1)}</span>
                 <div>
-                  <h3 className="font-display text-d4 text-ink-950">
-                    {milestone.title}
-                  </h3>
-                  <p className="mt-4 max-w-[48ch] text-body text-neutral-600">
-                    {milestone.body}
-                  </p>
+                  <h3 className="font-display text-h1 text-ink-950">{milestone.title}</h3>
+                  <p className="mt-3 text-body text-neutral-600">{milestone.body}</p>
                 </div>
               </div>
             </article>
           ))}
         </div>
 
-        <div className="mt-[clamp(4rem,8vw,7rem)] flex flex-wrap items-center gap-x-10 gap-y-5 border-t border-ink-900/12 pt-10">
+        <div className="mt-[clamp(2rem,3.5vw,3rem)] flex flex-wrap items-center gap-x-10 gap-y-5 border-t border-ink-900/12 pt-7">
           <p className="label-mono text-neutral-600">Next</p>
           <ActionLink href="/facilities" variant="outline">
             Walk the facilities

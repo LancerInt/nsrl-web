@@ -9,11 +9,6 @@ import { AccreditationTicker } from "@/components/home/AccreditationTicker";
 import { Thesis } from "@/components/home/Thesis";
 import { DivisionIndex, type DivisionRow } from "@/components/home/DivisionIndex";
 import { SectorScroll, type SectorCard } from "@/components/home/SectorScroll";
-import { WhyStack } from "@/components/home/WhyStack";
-import { LifecycleTrack } from "@/components/home/LifecycleTrack";
-import { ScaleBand } from "@/components/home/ScaleBand";
-import { FacilitiesPreview } from "@/components/home/FacilitiesPreview";
-import { NewsPreview } from "@/components/home/NewsPreview";
 
 export const metadata: Metadata = pageMetadata({
   title: `${site.name} — Complete Preclinical Research, Start to Finish`,
@@ -50,6 +45,12 @@ const sectorCards: SectorCard[] = industries.map((industry) => ({
   frameworks: industry.frameworks.slice(0, 4),
 }));
 
+/**
+ * A conventional corporate home: masthead with the recorded figures, the
+ * credibility strip, one short argument, then two directories — divisions and
+ * sectors — that route out to their own pages. Facilities, the quality
+ * system, careers and the newsroom live on their pages, not here.
+ */
 export default function HomePage() {
   return (
     <>
@@ -58,11 +59,6 @@ export default function HomePage() {
       <Thesis />
       <DivisionIndex divisions={divisionRows} />
       <SectorScroll sectors={sectorCards} />
-      <WhyStack />
-      <LifecycleTrack />
-      <ScaleBand />
-      <FacilitiesPreview />
-      <NewsPreview />
     </>
   );
 }

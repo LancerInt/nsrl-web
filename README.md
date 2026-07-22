@@ -3,7 +3,7 @@
 A custom website for NSRL — a preclinical contract research organisation.
 
 Built with Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4, GSAP +
-ScrollTrigger, Framer Motion, Lenis and SplitType.
+ScrollTrigger and Framer Motion.
 
 ```bash
 npm install
@@ -81,7 +81,7 @@ src/
 │   └── globals.css       # the entire design system (Tailwind v4 @theme)
 ├── content/              # ← every fact on the site, typed. Single source of truth.
 ├── components/
-│   ├── system/           # Preloader, Cursor, SmoothScroll, ScrollProgress
+│   ├── system/           # ScrollManager, MotionProvider
 │   ├── layout/           # SiteHeader (mega menu), SiteFooter, Logo
 │   ├── ui/               # shared primitives — Section, PageHero, ActionLink…
 │   ├── visuals/          # generative SVG figures
@@ -98,38 +98,50 @@ fact; `src/content/` never contains markup.
 Everything lives in `src/app/globals.css` under `@theme`. There is no
 `tailwind.config.js` — Tailwind v4 is CSS-first.
 
+- **Direction**: a light "scientific dossier" — pages are set like the title
+  and register pages of a GLP study file: paper surfaces, hairline rules,
+  ruled title-block cards, a double rule closing each hero. The global footer
+  is the single deep-navy block (the file's back cover).
 - **Colour** is derived from the supplied logo: `ink-*` (the navy wordmark and
-  orbital), `signal-*` (the green orbital), `meniscus-*` (the liquid in the
-  flask), plus `neutral-*` and the surface tokens `canvas` / `canvas-raised` /
-  `canvas-sunken` / `deep` / `deep-raised`. Full 10–11 step scales. No component
-  contains a hex value.
-- **Type**: Manrope (display), Inter (body), IBM Plex Mono (the monospace
-  "calibration label" voice), Instrument Serif (one editorial italic accent per
-  page). Fluid display scale `text-d1`–`text-d4` via `clamp()`.
-- **Motion**: one vocabulary in `src/lib/motion.ts`. Scroll reveals ride a single
-  IntersectionObserver (`data-reveal`); GSAP handles pinning and scrub; Lenis
-  owns the scroll; Framer Motion handles menus, transitions and presence.
+  orbital), `meniscus-*` (the liquid in the flask — carries figure traces),
+  `signal-*` (the green orbital — reserved strictly for functional marks:
+  held accreditations, acceptance ticks, form feedback), plus `neutral-*` and
+  the surface tokens `canvas` / `canvas-raised` / `canvas-sunken` / `deep`.
+  No component contains a hex value.
+- **Type**: Newsreader (serif display — the document voice, weights set in the
+  tokens), Inter (body and UI), IBM Plex Mono (the monospace "calibration
+  label" voice). Fluid display scale `text-d1`–`text-d4` via `clamp()`; the
+  roman `text-editorial` register replaces the old italic accent voice.
+- **Motion**: one vocabulary in `src/lib/motion.ts`. Native scroll (no
+  smooth-scroll hijack); reveals ride a single IntersectionObserver
+  (`data-reveal`); GSAP handles pinning and scrub; Framer Motion handles
+  menus, transitions and presence. Numbers are static — a laboratory reports
+  its figures, it does not perform them.
 
 ## Imagery
 
-The site is **drawn, not photographed**. Every figure is a deterministic SVG
-(`SpecimenPlate`) derived from the logo's geometry — orbitals, chromatograms,
-plate arrays, titration curves. This was a deliberate art direction call: stock
-laboratory photography reads as generic regardless of how well it is shot, and
-these weigh nothing, never mismatch the copy and are theme-aware.
+The figure slots carry **real laboratory photography**. Every image is mapped in
+one place — `src/content/imagery.ts` — with its `alt` text written once, and the
+per-page assignments (`divisionImage`, `sectorImage`) resolved through
+`imageFor()` so a missing slug degrades to a real photo rather than crashing the
+render. `SpecimenPlate` renders an optimised `next/image` when passed a `src`,
+and falls back to its deterministic SVG drawing otherwise.
 
-When NSRL supplies real photography of the units, vivarium and instruments, it
-drops in beside `SpecimenPlate` without any layout change.
+The files in `public/images/` are **free-licence stand-ins** (CC0, public
+domain, and a few CC-BY/BY-SA with attribution recorded in
+`public/images/CREDITS.md`) — representative laboratories, not NSRL's own.
+**Replace them with NSRL's photography before launch**: drop the new files in,
+point the `src` values in `imagery.ts` at them, and no component changes are
+needed.
 
 ## Accessibility & performance notes
 
-- Motion is fully inert under `prefers-reduced-motion` — the preloader is
-  skipped, Lenis never initialises, GSAP triggers do not register, and all
-  reveals resolve immediately.
+- Motion is fully inert under `prefers-reduced-motion` — GSAP triggers do not
+  register and all reveals resolve immediately.
 - `[data-reveal]` only hides content once JavaScript has marked the document, so
   a failed hydration never leaves a blank page.
-- The custom cursor is enhancement only: it is hidden on coarse pointers and
-  never carries information absent from the DOM.
+- Anchor targets carry `scroll-margin-top`, so in-page links clear the fixed
+  header without any scroll interception.
 - Forms have no backend. They validate client-side and then compose a pre-filled
   `mailto:` so enquiries genuinely reach NSRL with zero server. Each carries a
   `TODO(nsrl):` marking exactly where to swap in a real endpoint.

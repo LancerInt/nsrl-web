@@ -1,41 +1,35 @@
 import Link from "next/link";
 
 import { accreditations } from "@/content/accreditations";
-import { Marquee } from "@/components/ui/Marquee";
 
 /**
  * The credibility strip. Placed immediately under the hero, because for a
  * regulated laboratory the accreditation list *is* the value proposition — a
  * visitor should not have to scroll to find out whether we are GLP certified.
+ *
+ * Set as a static register, not a marquee: every credential on the page at
+ * once, readable at the visitor's pace, each one a route to its certificate.
  */
 export function AccreditationTicker() {
   return (
-    <section
-      data-theme="deep"
-      aria-label="Accreditations"
-      className="relative border-t border-white/10 bg-deep-raised py-6 text-ink-100"
-    >
-      <Marquee speed={58} tone="deep">
-        {accreditations.map((accreditation) => (
-          <Link
-            key={accreditation.id}
-            href="/downloads"
-            className="group flex items-center gap-4 whitespace-nowrap px-7 transition-colors duration-400"
-            title={`${accreditation.name} — ${accreditation.issuer}`}
-          >
-            <span
-              aria-hidden
-              className="h-1.5 w-1.5 rounded-full bg-signal-500 transition-transform duration-500 group-hover:scale-150"
-            />
-            <span className="font-display text-[0.9375rem] font-semibold tracking-[-0.01em] text-white">
-              {accreditation.abbr}
-            </span>
-            <span className="label-mono text-ink-300 group-hover:text-ink-200">
-              {accreditation.category}
-            </span>
-          </Link>
-        ))}
-      </Marquee>
+    <section aria-label="Accreditations" className="bg-canvas">
+      <div className="shell flex flex-col gap-x-10 gap-y-5 py-8 lg:flex-row lg:items-center">
+        <p className="label-mono shrink-0 text-neutral-550">Accredited under</p>
+
+        <ul className="flex flex-wrap items-center gap-x-8 gap-y-3">
+          {accreditations.map((accreditation) => (
+            <li key={accreditation.id}>
+              <Link
+                href="/downloads"
+                title={`${accreditation.name} — ${accreditation.issuer}`}
+                className="font-display text-h3 text-ink-800 underline-offset-4 transition-colors duration-300 hover:text-ink-950 hover:underline"
+              >
+                {accreditation.abbr}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }

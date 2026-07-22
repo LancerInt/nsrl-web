@@ -22,22 +22,22 @@ export function InstrumentRegister() {
   return (
     <section id="instruments" className="relative bg-canvas py-[var(--section-y)]">
       <div className="shell">
-        <div className="egrid gap-y-14">
+        <div className="egrid gap-y-8">
           {/* Register head — stays beside the groups while they are opened. */}
           <div className="col-span-12 lg:col-span-4">
             <div className="lg:rail-sticky">
               <Eyebrow index="04">Instrument estate</Eyebrow>
-              <RevealText as="h2" className="mt-8 font-display text-d3 text-ink-950">
+              <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
                 Every instrument, entered on one register.
               </RevealText>
 
               {instrumentStat ? (
-                <p className="mt-10 font-display text-[clamp(3rem,6vw,5.5rem)] font-bold leading-none tracking-[-0.045em] text-ink-950">
+                <p className="mt-7 font-display text-[clamp(3rem,6vw,5.5rem)] font-medium leading-none tracking-[-0.014em] text-ink-950">
                   <CountUp value={instrumentStat.value} suffix={instrumentStat.suffix} />
                 </p>
               ) : null}
 
-              <dl className="mt-8 border-t border-ink-900/12 pt-6">
+              <dl className="mt-6 border-t border-ink-900/12 pt-6">
                 <div className="flex items-baseline justify-between gap-6 py-2">
                   <dt className="label-mono text-neutral-600">Groups</dt>
                   <dd className="label-mono text-ink-800">{pad(instrumentEstate.length)}</dd>
@@ -48,7 +48,7 @@ export function InstrumentRegister() {
                 </div>
               </dl>
 
-              <p className="measure-tight mt-8 text-small text-neutral-600">
+              <p className="measure-tight mt-6 text-small text-neutral-600">
                 The register names the instrument classes a protocol is most often written around.
                 The estate in service is larger, and every unit on it is qualified, calibrated and
                 logged against the study that used it.

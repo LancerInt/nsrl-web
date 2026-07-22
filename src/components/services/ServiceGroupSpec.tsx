@@ -20,7 +20,7 @@ export function ServiceGroupSpec({ industry }: { industry: Industry }) {
       <div className="egrid items-end gap-y-8">
         <div className="col-span-12 lg:col-span-7">
           <Eyebrow index="02">Study catalogue</Eyebrow>
-          <RevealText as="h2" className="mt-8 font-display text-d3 text-ink-950">
+          <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
             {industry.summary}.
           </RevealText>
         </div>
@@ -49,7 +49,7 @@ export function ServiceGroupSpec({ industry }: { industry: Industry }) {
             key={group.title}
             data-reveal
             style={{ "--reveal-delay": `${(i % 3) * 0.06}s` } as React.CSSProperties}
-            className="egrid gap-y-6 border-b border-ink-900/14 py-[clamp(2rem,4vw,3.25rem)]"
+            className="egrid gap-y-6 border-b border-ink-900/14 py-[clamp(1.25rem,2.5vw,2rem)]"
           >
             <div className="col-span-12 flex items-baseline gap-5 lg:col-span-4">
               <span className="label-mono shrink-0 pt-1 tabular-nums text-neutral-550">

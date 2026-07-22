@@ -14,33 +14,24 @@ import { ActionLink } from "@/components/ui/ActionLink";
  */
 export function SectorDivisions({ divisions }: { divisions: Discipline[] }) {
   return (
-    <Section tone="deep" bleed className="overflow-hidden">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute right-[-14%] top-1/4 h-[34rem] w-[34rem] rounded-full opacity-30 blur-3xl"
-        style={{
-          background:
-            "radial-gradient(circle, color-mix(in oklab, var(--color-ink-500) 45%, transparent), transparent 70%)",
-        }}
-      />
-
+    <Section bleed className="overflow-hidden">
       <div className="shell relative py-[var(--section-y)]">
         <div className="egrid items-end gap-y-8">
           <div className="col-span-12 lg:col-span-6">
-            <Eyebrow index="03" tone="deep">
+            <Eyebrow index="03">
               Who runs the work
             </Eyebrow>
-            <RevealText as="h2" className="mt-8 font-display text-d3 text-white">
+            <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
               The divisions that carry it.
             </RevealText>
           </div>
 
           <div className="col-span-12 lg:col-span-4 lg:col-start-9">
-            <p className="text-small text-ink-200">
+            <p className="text-small text-neutral-600">
               Every division below sits inside the same building, the same quality system and the
               same archive, so a programme moves between them without a transfer.
             </p>
-            <ActionLink href="/research" variant="text" tone="deep" className="mt-5">
+            <ActionLink href="/research" variant="text" className="mt-5">
               All thirteen divisions
             </ActionLink>
           </div>
@@ -56,25 +47,25 @@ export function SectorDivisions({ divisions }: { divisions: Discipline[] }) {
             >
               <Link
                 href={`/research/${division.slug}`}
-                className="group flex h-full flex-col border-t border-white/12 py-8 transition-colors duration-500 hover:border-signal-400/60"
+                className="group flex h-full flex-col border-t border-[var(--rule)] py-6 transition-colors duration-500 hover:border-ink-900/40"
               >
                 <span className="flex items-baseline justify-between gap-4">
-                  <span className="label-mono tabular-nums text-signal-400">
+                  <span className="label-mono tabular-nums text-ink-800">
                     {division.index}
                   </span>
-                  <span className="label-mono text-ink-300">{division.family}</span>
+                  <span className="label-mono text-neutral-550">{division.family}</span>
                 </span>
 
-                <span className="mt-6 block font-display text-d4 text-white transition-colors duration-500 group-hover:text-signal-300">
+                <span className="mt-6 block font-display text-d4 text-ink-950 transition-colors duration-500 group-hover:text-ink-950">
                   {division.shortName ?? division.name}
                 </span>
 
-                <span className="mt-4 flex-1 text-small text-ink-200">{division.summary}</span>
+                <span className="mt-4 flex-1 text-small text-neutral-600">{division.summary}</span>
 
-                <span className="mt-8 inline-flex items-center gap-2 border-t border-white/10 pt-5 text-small font-medium text-white/85">
+                <span className="mt-6 inline-flex items-center gap-2 border-t border-[var(--rule)] pt-5 text-small font-medium text-ink-950/85">
                   {division.claim.value}
                   {division.claim.unit ? (
-                    <span className="label-mono text-ink-200">{division.claim.unit}</span>
+                    <span className="label-mono text-neutral-600">{division.claim.unit}</span>
                   ) : null}
                   <ArrowUpRight
                     aria-hidden

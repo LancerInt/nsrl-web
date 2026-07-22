@@ -25,7 +25,7 @@ export function ArchiveRecordEntry({
     <article
       data-reveal
       style={{ "--reveal-delay": "0.08s" } as React.CSSProperties}
-      className="grid gap-x-[clamp(1.5rem,3vw,3.5rem)] gap-y-8 border-t border-ink-900/15 py-[clamp(2.25rem,4vw,3.5rem)] lg:grid-cols-[3.5rem_minmax(0,7fr)_minmax(0,4fr)]"
+      className="grid gap-x-[clamp(1.5rem,3vw,3.5rem)] gap-y-8 border-t border-ink-900/15 py-[clamp(1.25rem,2vw,1.875rem)] lg:grid-cols-[3.5rem_minmax(0,7fr)_minmax(0,4fr)]"
     >
       <span aria-hidden className="label-mono tabular-nums text-neutral-600">
         {pad(position)}
@@ -52,7 +52,7 @@ export function ArchiveRecordEntry({
 
       <div className="lg:justify-self-end">
         <p className="inline-flex flex-col items-start gap-2 rounded-[0.875rem] border border-dashed border-ink-900/15 px-5 py-4">
-          <span className="font-display text-[0.9375rem] font-semibold tracking-[-0.01em] text-neutral-500">
+          <span className="font-sans text-[0.9375rem] font-medium text-neutral-500">
             No note filed
           </span>
           <span className="label-mono text-neutral-600">Listed without a page</span>

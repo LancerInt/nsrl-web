@@ -23,7 +23,7 @@ export function SiteFooter() {
       {/* Closing call to action — the last decision point on the page. */}
       <div className="relative border-b border-white/10">
         <div
-          className="graticule pointer-events-none absolute inset-0 opacity-60"
+          className="graticule pointer-events-none absolute inset-0 opacity-40"
           style={
             {
               "--graticule-color": "rgba(255,255,255,0.04)",
@@ -31,21 +31,12 @@ export function SiteFooter() {
             } as React.CSSProperties
           }
         />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -right-40 -top-40 h-[36rem] w-[36rem] rounded-full opacity-40 blur-3xl"
-          style={{
-            background:
-              "radial-gradient(circle, color-mix(in oklab, var(--color-signal-500) 26%, transparent), transparent 68%)",
-          }}
-        />
-
-        <div className="shell relative py-[clamp(4.5rem,9vw,8rem)]">
-          <div className="egrid items-end gap-y-10">
+        <div className="shell relative py-[clamp(3rem,5vw,4.5rem)]">
+          <div className="egrid items-end gap-y-7">
             <div className="col-span-12 lg:col-span-8">
-              <p className="label-mono flex items-center gap-3 text-signal-400">
-                <span aria-hidden className="inline-block h-px w-8 bg-signal-400" />
-                Start a programme
+              <p className="label-mono flex items-baseline gap-4 text-ink-200">
+                <span>Start a programme</span>
+                <span aria-hidden className="h-px min-w-6 flex-1 self-center bg-[var(--rule-invert)]" />
               </p>
               <h2 className="mt-6 font-display text-d3 text-white">
                 Tell us the authority
@@ -59,7 +50,7 @@ export function SiteFooter() {
             </div>
 
             <div className="col-span-12 flex flex-wrap items-center gap-4 lg:col-span-4 lg:justify-end">
-              <ActionLink href="/contact" variant="solid" tone="deep" cursorLabel="Enquire">
+              <ActionLink href="/contact" variant="solid" tone="deep" >
                 Request a proposal
               </ActionLink>
               <ActionLink href="/research" variant="outline" tone="deep">
@@ -71,8 +62,8 @@ export function SiteFooter() {
       </div>
 
       {/* Directory */}
-      <div className="shell py-[clamp(3.5rem,6vw,5.5rem)]">
-        <div className="egrid gap-y-14">
+      <div className="shell py-[clamp(2.5rem,4vw,3.5rem)]">
+        <div className="egrid gap-y-8">
           <div className="col-span-12 lg:col-span-4">
             <Logo tone="deep" />
 
@@ -80,16 +71,22 @@ export function SiteFooter() {
               {site.shortDescription}
             </p>
 
-            <div className="mt-8 flex flex-col gap-2">
+            <div className="mt-6 flex flex-col gap-2">
               <a
                 href={`tel:${contact.phoneHref}`}
-                className="text-small text-white transition-colors duration-400 hover:text-signal-300"
+                className="text-small text-white transition-colors duration-400 hover:text-white"
               >
-                {contact.phoneRange}
+                {contact.phoneDisplay}
+              </a>
+              <a
+                href={`tel:${contact.mobileHref}`}
+                className="text-small text-white transition-colors duration-400 hover:text-white"
+              >
+                {contact.mobileDisplay}
               </a>
               <a
                 href={`mailto:${contact.email}`}
-                className="text-small text-white transition-colors duration-400 hover:text-signal-300"
+                className="text-small text-white transition-colors duration-400 hover:text-white"
               >
                 {contact.email}
               </a>
@@ -99,7 +96,7 @@ export function SiteFooter() {
               href={site.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="group mt-8 inline-flex items-center gap-3 rounded-full border border-white/20 px-5 py-3 text-small transition-colors duration-400 hover:border-signal-400"
+              className="group mt-6 inline-flex items-center gap-3 rounded-[3px] border border-white/20 px-5 py-3 text-small transition-colors duration-400 hover:border-white"
             >
               <LinkedInMark />
               LinkedIn
@@ -112,7 +109,7 @@ export function SiteFooter() {
 
           <nav
             aria-label="Footer"
-            className="col-span-12 grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-4 lg:col-span-8"
+            className="col-span-12 grid grid-cols-2 gap-x-8 gap-y-8 sm:grid-cols-4 lg:col-span-8"
           >
             {footerNav.map((column) => (
               <div key={column.heading}>
@@ -122,7 +119,7 @@ export function SiteFooter() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-small text-ink-100 transition-colors duration-400 hover:text-signal-300"
+                        className="text-small text-ink-100 transition-colors duration-400 hover:text-white"
                       >
                         {link.label}
                       </Link>
@@ -135,10 +132,10 @@ export function SiteFooter() {
         </div>
 
         {/* Locations */}
-        <div className="mt-16 grid gap-x-8 gap-y-10 border-t border-white/10 pt-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 grid gap-x-8 gap-y-7 border-t border-white/10 pt-8 sm:grid-cols-2 lg:grid-cols-3">
           {locations.map((location) => (
             <div key={location.id}>
-              <h2 className="label-mono text-signal-400">{location.label}</h2>
+              <h2 className="label-mono text-ink-200">{location.label}</h2>
               <p className="mt-3 text-micro text-ink-200">{location.role}</p>
               <address className="mt-4 text-small not-italic text-ink-100">
                 {location.lines.map((line) => (
@@ -154,7 +151,7 @@ export function SiteFooter() {
 
       {/* Baseline */}
       <div className="border-t border-white/10">
-        <div className="shell flex flex-col items-start justify-between gap-4 py-7 sm:flex-row sm:items-center">
+        <div className="shell flex flex-col items-start justify-between gap-4 py-5 sm:flex-row sm:items-center">
           <p className="label-mono text-ink-200">
             © {year} {site.name}. All rights reserved.
           </p>
@@ -171,7 +168,7 @@ export function SiteFooter() {
             >
               Contact
             </Link>
-            <OrbitalMark className="h-6 w-6 text-signal-400/70" />
+            <OrbitalMark className="h-6 w-6 text-ink-300/80" />
           </div>
         </div>
       </div>

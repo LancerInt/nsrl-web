@@ -16,9 +16,10 @@ export const site = {
 } as const;
 
 export const contact = {
-  phoneDisplay: "+91 44 3509 9400",
-  phoneHref: "+914435099400",
-  phoneRange: "+91 44 35099400 / 01 / 02 – 29",
+  phoneDisplay: "+91 427 2430833",
+  phoneHref: "+914272430833",
+  mobileDisplay: "+91 90470 35686",
+  mobileHref: "+919047035686",
   email: "info@nsrl.co.in",
   formNote: "Please complete the enquiry form, or write to us directly.",
 } as const;
@@ -38,40 +39,19 @@ export type Location = {
 
 export const locations: Location[] = [
   {
-    id: "head-office",
-    label: "Head Office",
-    role: "Registered office & client services",
-    lines: ["84, Sengadu", "Near Sriperumbudur", "Chennai 602 002", "Tamil Nadu, India"],
-    street: "84, Sengadu",
-    locality: "Sriperumbudur",
-    region: "Tamil Nadu",
-    postalCode: "602002",
-  },
-  {
-    id: "unit-1-2",
-    label: "Unit 1 & 2",
-    role: "Toxicology, chemistry, ecotoxicology & vivarium",
+    id: "salem",
+    label: "Office & laboratory",
+    role: "Registered office, laboratories & client services",
     lines: [
-      "84, Sengadu Village & Post",
-      "Via Manavala Nagar, Kandamangalam",
-      "Near Sriperumbudur",
-      "Kanchipuram District 602 002",
+      "472/3, SS Towers",
+      "Annapuram, Junction Main Road",
+      "Salem 636 004",
       "Tamil Nadu, India",
     ],
-    street: "84, Sengadu Village & Post, Via Manavala Nagar",
-    locality: "Kandamangalam, Kanchipuram District",
+    street: "472/3, SS Towers, Annapuram, Junction Main Road",
+    locality: "Salem",
     region: "Tamil Nadu",
-    postalCode: "602002",
-  },
-  {
-    id: "unit-3",
-    label: "Unit 3 — Discovery Center",
-    role: "Drug discovery, safety pharmacology & bioanalysis",
-    lines: ["3W29+3C, Polivakkam", "Tamil Nadu 602 002", "India"],
-    street: "3W29+3C, Polivakkam",
-    locality: "Polivakkam",
-    region: "Tamil Nadu",
-    postalCode: "602002",
+    postalCode: "636004",
   },
 ];
 

@@ -1,5 +1,5 @@
 /**
- * Physical infrastructure: units, environments and the instrument estate.
+ * Physical infrastructure: the site, its environments and the instrument estate.
  */
 
 export type Unit = {
@@ -10,20 +10,17 @@ export type Unit = {
   houses: string[];
 };
 
+/** One accredited site houses everything. */
 export const units: Unit[] = [
   {
-    id: "head-office",
-    label: "Head Office",
-    title: "Sengadu, near Sriperumbudur",
-    body: "The registered office and the front door for every programme. Study directors, regulatory strategy and client services sit here, roughly an hour from Chennai international airport.",
-    houses: ["Study direction", "Regulatory strategy", "Client services", "Archive access"],
-  },
-  {
-    id: "unit-1-2",
-    label: "Unit 1 & 2",
-    title: "Sengadu Village, Kandamangalam",
-    body: "The main laboratory estate. Toxicology, chemistry, ecotoxicology, entomology and the vivarium share a single campus, which is what allows a study to move between divisions without leaving custody.",
+    id: "salem",
+    label: "The facility",
+    title: "Salem, Tamil Nadu",
+    body: "A single accredited site houses everything — study direction, regulatory strategy and client services alongside the laboratories, the vivarium and the archive. Because chemistry, toxicology, pathology and the radioisotope laboratory sit under one roof, a study moves between divisions without ever leaving our custody.",
     houses: [
+      "Study direction",
+      "Regulatory strategy",
+      "Client services",
       "Toxicology",
       "Chemistry",
       "Ecotoxicology",
@@ -32,18 +29,10 @@ export const units: Unit[] = [
       "Microbiology",
       "Vivarium",
       "Radioisotope laboratory",
-    ],
-  },
-  {
-    id: "unit-3",
-    label: "Unit 3",
-    title: "Discovery Center, Polivakkam",
-    body: "A dedicated discovery facility for target-stage work — screening, ADME, safety pharmacology and the bioanalytical support that keeps a discovery programme moving at its own pace rather than the regulatory one.",
-    houses: [
       "Drug discovery",
       "Safety pharmacology",
       "Bioanalysis",
-      "High-throughput screening",
+      "Archive",
     ],
   },
 ];

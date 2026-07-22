@@ -13,20 +13,20 @@ import { InstrumentRegister } from "@/components/facilities/InstrumentRegister";
 import { AuditNote } from "@/components/facilities/AuditNote";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Facilities — Three Units, 150,000 sq ft of Accredited Laboratory",
+  title: "Facilities — 150,000 sq ft of Accredited Laboratory",
   description:
-    "NSRL's estate in Kanchipuram district, Tamil Nadu: three units housing toxicology, chemistry, ecotoxicology, entomology, the vivarium and a discovery centre, with 70+ clean rooms, inhalation suites, an AERB Type 2 radioisotope facility and 450+ instruments.",
+    "NSRL's accredited laboratory in Salem, Tamil Nadu: a single site housing toxicology, chemistry, ecotoxicology, entomology, the vivarium, discovery and a radioisotope laboratory, with 70+ clean rooms, inhalation suites, an AERB Type 2 radioisotope facility and 450+ instruments.",
   path: "/facilities",
   keywords: [
     "GLP laboratory facilities India",
     "AAALAC accredited vivarium",
     "inhalation toxicity chambers",
     "AERB radioisotope laboratory",
-    "preclinical laboratory Chennai",
+    "preclinical laboratory Salem Tamil Nadu",
   ],
 });
 
-/** Jump targets offered in the hero, so the estate can be entered anywhere. */
+/** Jump targets offered in the hero. */
 const contents = [
   ...units.map((unit) => ({ href: `#${unit.id}`, label: unit.label, note: unit.title })),
   { href: "#environments", label: "Environments", note: "Specification schedule" },
@@ -39,12 +39,11 @@ export default function FacilitiesPage() {
   return (
     <>
       <PageHero
-        eyebrow="The estate"
+        eyebrow="The facility"
         title="Where the work actually happens."
-        lead="Three units in Kanchipuram district, Tamil Nadu, roughly an hour from Chennai international airport. Toxicology, chemistry, ecotoxicology, entomology and the vivarium share a single campus — which is the whole reason a study can change division without changing custodian."
+        lead="A single accredited laboratory in Salem, Tamil Nadu. Chemistry, toxicology, ecotoxicology, entomology, pathology and the vivarium share one site — which is the whole reason a study can change division without changing custodian."
         crumbs={[{ label: "Home", href: "/" }, { label: "Facilities" }]}
         meta={[
-          { label: "Units", value: pad(units.length) },
           ...(space
             ? [
                 {
@@ -53,25 +52,25 @@ export default function FacilitiesPage() {
                 },
               ]
             : []),
-          { label: "District", value: "Kanchipuram" },
+          { label: "City", value: "Salem" },
         ]}
         visual={<SitePlanField />}
         aside={
-          <nav aria-label="On this page" className="glass rounded-[var(--radius-card)] p-6">
-            <p className="label-mono text-signal-400">On this page</p>
-            <ul className="mt-5">
+          <nav aria-label="On this page" className="card-elevated p-6">
+            <p className="label-mono text-neutral-550">On this page</p>
+            <ul className="mt-4">
               {contents.map((item, i) => (
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className="group flex items-baseline gap-4 border-t border-white/12 py-4 transition-colors duration-400 hover:border-signal-400/60"
+                    className="group -mx-3 flex items-baseline gap-4 rounded-lg px-3 py-3 transition-colors duration-300 hover:bg-canvas-sunken"
                   >
-                    <span className="label-mono shrink-0 tabular-nums text-ink-300 transition-colors duration-400 group-hover:text-signal-400">
+                    <span className="label-mono shrink-0 tabular-nums text-neutral-550">
                       {pad(i + 1)}
                     </span>
                     <span>
-                      <span className="block font-display text-h3 text-white">{item.label}</span>
-                      <span className="mt-1 block text-small text-ink-200">{item.note}</span>
+                      <span className="block font-display text-h3 text-ink-950">{item.label}</span>
+                      <span className="mt-1 block text-small text-neutral-600">{item.note}</span>
                     </span>
                   </a>
                 </li>

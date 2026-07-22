@@ -37,8 +37,8 @@ export function SpecList({
           className={cn(
             "group flex items-baseline gap-4 border-t py-3.5 transition-colors duration-400",
             deep
-              ? "border-white/10 text-ink-100 hover:border-signal-400/50"
-              : "border-ink-900/10 text-ink-800 hover:border-signal-500/50",
+              ? "border-white/10 text-ink-100 hover:border-ink-900/40"
+              : "border-ink-900/10 text-ink-800 hover:border-ink-900/60/50",
           )}
         >
           {numbered ? (
@@ -46,8 +46,8 @@ export function SpecList({
               className={cn(
                 "label-mono shrink-0 pt-1 tabular-nums transition-colors duration-400",
                 deep
-                  ? "text-ink-300 group-hover:text-signal-300"
-                  : "text-neutral-550 group-hover:text-signal-700",
+                  ? "text-ink-300 group-hover:text-ink-700"
+                  : "text-neutral-550 group-hover:text-ink-700",
               )}
             >
               {String(i + 1).padStart(2, "0")}
@@ -90,7 +90,7 @@ export function SpecChips({
             "label-mono rounded-full border px-3.5 py-2 transition-colors duration-400",
             deep
               ? "border-white/18 text-ink-100 hover:border-signal-400 hover:text-white"
-              : "border-ink-900/14 text-ink-700 hover:border-signal-500 hover:text-ink-950",
+              : "border-ink-900/14 text-ink-700 hover:border-ink-900/60 hover:text-ink-950",
           )}
         >
           {item}

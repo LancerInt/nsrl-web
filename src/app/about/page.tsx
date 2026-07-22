@@ -84,16 +84,16 @@ export default function AboutPage() {
         ]}
         visual={<AboutHeroVisual />}
         aside={
-          <div className="glass rounded-[var(--radius-card)] p-7">
-            <h2 className="label-mono text-signal-400">Governed by</h2>
-            <dl className="mt-6">
+          <div className="card-elevated p-7">
+            <h2 className="label-mono text-neutral-550">Governed by</h2>
+            <dl className="mt-5">
               {governing.map((item) => (
                 <div
                   key={item.id}
-                  className="border-t border-white/12 py-4 first:border-t-0 first:pt-0"
+                  className="border-t border-[var(--rule)] py-4 first:border-t-0 first:pt-0"
                 >
-                  <dt className="font-display text-h3 text-white">{item.abbr}</dt>
-                  <dd className="mt-1.5 text-micro leading-relaxed text-ink-200">
+                  <dt className="font-display text-h3 text-ink-950">{item.abbr}</dt>
+                  <dd className="mt-1.5 text-micro leading-relaxed text-neutral-600">
                     {item.issuer}
                   </dd>
                 </div>

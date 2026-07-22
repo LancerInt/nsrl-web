@@ -21,7 +21,7 @@ export function MapPlate({
   const deep = tone === "deep";
   const line = deep ? "rgba(255,255,255,0.16)" : "rgba(8,21,43,0.12)";
   const strong = deep ? "rgba(255,255,255,0.34)" : "rgba(8,21,43,0.3)";
-  const accent = "var(--color-signal-500)";
+  const accent = "var(--color-meniscus-500)";
 
   // Deterministic: the same unit always draws the same plate.
   const cx = 150 + ((seed * 47) % 5) * 22;

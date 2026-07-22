@@ -14,30 +14,30 @@ import { Section, SectionBody } from "@/components/ui/Section";
  */
 export function AcceptanceBand() {
   return (
-    <Section tone="deep" bleed id="acceptance" className="overflow-hidden">
+    <Section bleed id="acceptance" className="overflow-hidden">
       <div
         aria-hidden
-        className="graticule pointer-events-none absolute inset-0 opacity-60"
+        className="graticule pointer-events-none absolute inset-0 opacity-40"
         style={
           {
-            "--graticule-color": "rgba(255,255,255,0.03)",
+            "--graticule-color": "color-mix(in oklab, var(--color-ink-900) 2.5%, transparent)",
             "--graticule-size": "5rem",
           } as React.CSSProperties
         }
       />
 
       <SectionBody className="shell relative">
-        <div className="egrid items-end gap-y-10">
+        <div className="egrid items-end gap-y-7">
           <div className="col-span-12 lg:col-span-7">
-            <Eyebrow index="02" tone="deep">
+            <Eyebrow index="02">
               Acceptance
             </Eyebrow>
-            <RevealText as="h2" className="mt-8 font-display text-d3 text-white">
+            <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
               A certificate is only worth who accepts it.
             </RevealText>
           </div>
           <div className="col-span-12 lg:col-span-4 lg:col-start-9">
-            <p className="text-small text-ink-200">
+            <p className="text-small text-neutral-600">
               Reports issued by the laboratory have been accepted by the regulatory authorities
               below, and by agencies in the countries beside them.
             </p>
@@ -46,9 +46,9 @@ export function AcceptanceBand() {
 
         {/* ---- Stamp sheet ------------------------------------------------ */}
         <div className="mt-[clamp(3rem,6vw,5rem)]">
-          <div className="flex items-baseline justify-between gap-6 border-b border-white/12 pb-4">
-            <h3 className="label-mono text-signal-400">Accepting authorities</h3>
-            <span aria-hidden className="label-mono text-ink-300/50">
+          <div className="flex items-baseline justify-between gap-6 border-b border-[var(--rule)] pb-4">
+            <h3 className="label-mono text-signal-700">Accepting authorities</h3>
+            <span aria-hidden className="label-mono text-neutral-550/50">
               {pad(acceptingAuthorities.length)}
             </span>
           </div>
@@ -59,22 +59,22 @@ export function AcceptanceBand() {
                 key={authority}
                 data-reveal
                 style={{ "--reveal-delay": `${i * 0.05}s` } as React.CSSProperties}
-                className="group relative border-b border-r border-white/10 px-6 py-9 transition-colors duration-500 hover:border-signal-400/50 [&:nth-child(2n)]:border-r-0 sm:[&:nth-child(2n)]:border-r sm:[&:nth-child(3n)]:border-r-0 lg:[&:nth-child(3n)]:border-r lg:[&:nth-child(4n)]:border-r-0"
+                className="group relative border-b border-r border-[var(--rule)] px-6 py-6 transition-colors duration-500 hover:border-ink-900/40 [&:nth-child(2n)]:border-r-0 sm:[&:nth-child(2n)]:border-r sm:[&:nth-child(3n)]:border-r-0 lg:[&:nth-child(3n)]:border-r lg:[&:nth-child(4n)]:border-r-0"
               >
                 {/* Corner tick — the register's signature detail, at cell scale. */}
                 <span
                   aria-hidden
-                  className="absolute left-0 top-0 h-2.5 w-px bg-signal-400/0 transition-colors duration-500 group-hover:bg-signal-400"
+                  className="absolute left-0 top-0 h-2.5 w-px bg-signal-600/0 transition-colors duration-500 group-hover:bg-signal-600"
                 />
                 <span
                   aria-hidden
-                  className="absolute left-0 top-0 h-px w-2.5 bg-signal-400/0 transition-colors duration-500 group-hover:bg-signal-400"
+                  className="absolute left-0 top-0 h-px w-2.5 bg-signal-600/0 transition-colors duration-500 group-hover:bg-signal-600"
                 />
 
-                <span className="label-mono block text-ink-300 tabular-nums">
+                <span className="label-mono block text-neutral-550 tabular-nums">
                   {pad(i + 1)}
                 </span>
-                <span className="mt-4 block font-display text-h2 text-white transition-colors duration-400 group-hover:text-signal-300">
+                <span className="mt-4 block font-display text-h2 text-ink-950 transition-colors duration-400 group-hover:text-ink-700">
                   {authority}
                 </span>
               </li>
@@ -84,14 +84,14 @@ export function AcceptanceBand() {
 
         {/* ---- Countries -------------------------------------------------- */}
         <div className="mt-[clamp(3rem,6vw,5rem)]">
-          <div className="flex items-baseline justify-between gap-6 border-b border-white/12 pb-4">
-            <h3 className="label-mono text-signal-400">Reports accepted in</h3>
-            <span aria-hidden className="label-mono text-ink-300/50">
+          <div className="flex items-baseline justify-between gap-6 border-b border-[var(--rule)] pb-4">
+            <h3 className="label-mono text-signal-700">Reports accepted in</h3>
+            <span aria-hidden className="label-mono text-neutral-550/50">
               {pad(acceptingCountries.length)}
             </span>
           </div>
 
-          <ul className="mt-9 flex flex-wrap items-baseline gap-x-[clamp(1.5rem,3vw,3rem)] gap-y-5">
+          <ul className="mt-6 flex flex-wrap items-baseline gap-x-[clamp(1.5rem,3vw,3rem)] gap-y-5">
             {acceptingCountries.map((country, i) => (
               <li
                 key={country}
@@ -99,11 +99,11 @@ export function AcceptanceBand() {
                 style={{ "--reveal-delay": `${i * 0.06}s` } as React.CSSProperties}
                 className="flex items-baseline gap-[clamp(1.5rem,3vw,3rem)]"
               >
-                <span className="font-display text-d4 tracking-[-0.03em] text-white">
+                <span className="font-display text-d4 tracking-[-0.03em] text-ink-950">
                   {country}
                 </span>
                 {i < acceptingCountries.length - 1 ? (
-                  <span aria-hidden className="h-8 w-px translate-y-1.5 bg-white/15" />
+                  <span aria-hidden className="h-8 w-px translate-y-1.5 bg-canvas-raised" />
                 ) : null}
               </li>
             ))}

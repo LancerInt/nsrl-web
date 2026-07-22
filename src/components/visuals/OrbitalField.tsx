@@ -68,14 +68,14 @@ export function OrbitalField({
     >
       <defs>
         <radialGradient id="of-core" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="var(--color-signal-400)" stopOpacity="0.28" />
+          <stop offset="0%" stopColor="var(--color-meniscus-400)" stopOpacity="0.2" />
           <stop offset="55%" stopColor="var(--color-ink-400)" stopOpacity="0.1" />
           <stop offset="100%" stopColor="transparent" stopOpacity="0" />
         </radialGradient>
         <linearGradient id="of-ring" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor="var(--color-ink-300)" />
           <stop offset="55%" stopColor="var(--color-ink-400)" />
-          <stop offset="100%" stopColor="var(--color-signal-400)" />
+          <stop offset="100%" stopColor="var(--color-meniscus-500)" />
         </linearGradient>
       </defs>
 
@@ -109,7 +109,7 @@ export function OrbitalField({
       </g>
 
       <g data-depth="1.15" style={{ willChange: "transform" }}>
-        <g fill="var(--color-signal-400)">
+        <g fill="var(--color-meniscus-500)">
           <circle cx="500" cy="214" r="6" />
           <circle cx="742" cy="612" r="4.5" opacity="0.75" />
           <circle cx="272" cy="418" r="3.5" opacity="0.55" />

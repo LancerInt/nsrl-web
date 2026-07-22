@@ -4,16 +4,14 @@ import { notFound } from "next/navigation";
 import { JsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo";
 import { getIndustry, industries } from "@/content/industries";
 import { getDiscipline, type Discipline } from "@/content/disciplines";
+import { imageFor, sectorImage } from "@/content/imagery";
 import { PageHero } from "@/components/ui/PageHero";
-import { SpecimenPlate, type PlateVariant } from "@/components/visuals/SpecimenPlate";
+import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
 import { SectorHeroVisual } from "@/components/services/SectorHeroVisual";
 import { SectorBrief } from "@/components/services/SectorBrief";
 import { ServiceGroupSpec } from "@/components/services/ServiceGroupSpec";
 import { SectorDivisions } from "@/components/services/SectorDivisions";
 import { SectorClosing } from "@/components/services/SectorClosing";
-
-/** One figure per sector, fixed by position so a sector always draws the same. */
-const PLATES: PlateVariant[] = ["wave", "lattice", "orbital", "chromatogram", "gradient-well"];
 
 type SectorPageProps = { params: Promise<{ slug: string }> };
 
@@ -47,7 +45,6 @@ export default async function SectorPage({ params }: SectorPageProps) {
 
   if (!industry) notFound();
 
-  const position = industries.findIndex((entry) => entry.slug === industry.slug);
   const divisions: Discipline[] = industry.divisions
     .map((divisionSlug) => getDiscipline(divisionSlug))
     .filter((division): division is Discipline => Boolean(division));
@@ -64,13 +61,12 @@ export default async function SectorPage({ params }: SectorPageProps) {
       />
 
       <PageHero
-        tone="deep"
         eyebrow="Sector"
         index={industry.index}
         title={
           <>
             <span className="block">{industry.name}</span>
-            <span className="mt-6 block max-w-[22ch] font-editorial text-editorial font-normal italic text-signal-300">
+            <span className="mt-6 block max-w-[22ch] font-display text-editorial text-ink-800">
               {industry.promise}
             </span>
           </>
@@ -88,18 +84,15 @@ export default async function SectorPage({ params }: SectorPageProps) {
         ]}
         visual={<SectorHeroVisual />}
         aside={
-          <figure className="relative overflow-hidden rounded-[var(--radius-card)] border border-white/12">
-            <div className="aspect-[4/3]">
+          <figure className="relative img-frame">
+            <div className="relative aspect-[4/3]">
               <SpecimenPlate
-                variant={PLATES[position % PLATES.length]}
-                seed={position + 3}
-                tone="deep"
+                src={imageFor(sectorImage, industry.slug).src}
+                alt={imageFor(sectorImage, industry.slug).alt}
+                sizes="(min-width: 1024px) 33vw, 100vw"
+                priority
               />
             </div>
-            <figcaption className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-4 bg-gradient-to-t from-deep/90 to-transparent p-5">
-              <span className="label-mono text-white/75">Fig. {industry.index}</span>
-              <span className="label-mono text-signal-400">{industry.name}</span>
-            </figcaption>
           </figure>
         }
       />

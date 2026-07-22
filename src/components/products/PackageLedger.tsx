@@ -3,14 +3,22 @@ import { ArrowUpRight } from "lucide-react";
 
 import { studyPackages, type StudyPackage } from "@/content/packages";
 import { getDiscipline } from "@/content/disciplines";
+import { images, type ImageKey } from "@/content/imagery";
 import { cn, pad } from "@/lib/utils";
 import { Disclosure } from "@/components/ui/Disclosure";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RevealText } from "@/components/ui/RevealText";
 import { SpecChips, SpecList } from "@/components/ui/SpecList";
-import { SpecimenPlate, type PlateVariant } from "@/components/visuals/SpecimenPlate";
+import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
 
-const PLATES: PlateVariant[] = ["wave", "lattice", "gradient-well", "orbital", "titration", "chromatogram"];
+const FIGURES: ImageKey[] = [
+  "chemistryBench",
+  "pipetting",
+  "vials",
+  "microscope",
+  "petri",
+  "cleanroom",
+];
 
 /**
  * Six packages on one ledger.
@@ -27,7 +35,7 @@ export function PackageLedger() {
         <div className="egrid items-end gap-y-8">
           <div className="col-span-12 lg:col-span-7">
             <Eyebrow index="02">The ledger</Eyebrow>
-            <RevealText as="h2" className="mt-8 font-display text-d3 text-ink-950">
+            <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
               Six submissions, opened line by line.
             </RevealText>
           </div>
@@ -39,7 +47,7 @@ export function PackageLedger() {
           </div>
         </div>
 
-        <div className="mt-16">
+        <div className="mt-6">
           {studyPackages.map((pkg, i) => (
             <PackageRow key={pkg.slug} pkg={pkg} position={i} />
           ))}
@@ -67,7 +75,7 @@ function PackageRow({ pkg, position }: { pkg: StudyPackage; position: number }) 
               <span
                 className={cn(
                   "label-mono tabular-nums",
-                  pkg.featured ? "text-signal-700" : "text-neutral-550",
+                  pkg.featured ? "text-ink-700" : "text-neutral-550",
                 )}
               >
                 {pkg.index}
@@ -78,16 +86,16 @@ function PackageRow({ pkg, position }: { pkg: StudyPackage; position: number }) 
           </span>
         }
       >
-        <div className="egrid gap-y-12 pt-2">
+        <div className="egrid gap-y-8 pt-2">
           {/* Argument */}
           <div className="col-span-12 lg:col-span-5">
             <p className="text-lead text-ink-900">{pkg.summary}</p>
             <p className="measure mt-6 text-body text-neutral-600">{pkg.body}</p>
 
-            <h4 className="label-mono mt-10 text-neutral-600">Assembled against</h4>
+            <h4 className="label-mono mt-7 text-neutral-600">Assembled against</h4>
             <SpecChips items={pkg.frameworks} className="mt-4" />
 
-            <h4 className="label-mono mt-10 text-neutral-600">
+            <h4 className="label-mono mt-7 text-neutral-600">
               Divisions executing — {pad(divisions.length)}
             </h4>
             <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
@@ -95,7 +103,7 @@ function PackageRow({ pkg, position }: { pkg: StudyPackage; position: number }) 
                 <li key={division.slug}>
                   <Link
                     href={`/research/${division.slug}`}
-                    className="group inline-flex items-center gap-1.5 border-b border-ink-900/20 pb-1 font-display text-h3 text-ink-900 transition-colors duration-400 hover:border-signal-500 hover:text-signal-700"
+                    className="group inline-flex items-center gap-1.5 border-b border-ink-900/20 pb-1 font-display text-h3 text-ink-900 transition-colors duration-400 hover:border-ink-900/60 hover:text-ink-700"
                   >
                     {division.name}
                     <ArrowUpRight
@@ -108,23 +116,23 @@ function PackageRow({ pkg, position }: { pkg: StudyPackage; position: number }) 
             </ul>
 
             {pkg.featured ? (
-              <div className="relative mt-12 aspect-[16/10] overflow-hidden rounded-[var(--radius-card)]">
-                <SpecimenPlate variant={PLATES[position % PLATES.length]} seed={position + 1} />
-                <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-4 bg-gradient-to-t from-ink-950/70 to-transparent p-6">
-                  <p className="label-mono text-white/80">Fig. {pkg.index}</p>
-                  <p className="label-mono text-ink-100">{studies} studies</p>
-                </div>
+              <div className="relative mt-6 aspect-[16/10] img-frame">
+                <SpecimenPlate
+                  src={images[FIGURES[position % FIGURES.length]].src}
+                  alt={images[FIGURES[position % FIGURES.length]].alt}
+                  sizes="(min-width: 1024px) 55vw, 100vw"
+                />
               </div>
             ) : null}
           </div>
 
           {/* Schedule */}
           <div className="col-span-12 lg:col-span-6 lg:col-start-7">
-            <div className="grid gap-x-[clamp(1.5rem,3vw,3rem)] gap-y-10 sm:grid-cols-2">
+            <div className="grid gap-x-[clamp(1.5rem,3vw,3rem)] gap-y-7 sm:grid-cols-2">
               {pkg.includes.map((group, i) => (
                 <div key={group.title}>
                   <div className="flex items-baseline gap-3">
-                    <span className="label-mono tabular-nums text-signal-700">
+                    <span className="label-mono tabular-nums text-ink-700">
                       {pkg.index}.{pad(i + 1)}
                     </span>
                     <h4 className="font-display text-h3 text-ink-950">{group.title}</h4>

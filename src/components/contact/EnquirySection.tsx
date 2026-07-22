@@ -19,7 +19,7 @@ export function EnquirySection() {
         <div className="egrid items-end gap-y-8">
           <div className="col-span-12 lg:col-span-7">
             <Eyebrow index="01">Enquiries</Eyebrow>
-            <RevealText as="h2" className="mt-8 font-display text-d3 text-ink-950">
+            <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
               Tell us what has to be registered, and where.
             </RevealText>
           </div>
@@ -28,7 +28,7 @@ export function EnquirySection() {
           </div>
         </div>
 
-        <div className="egrid mt-14 gap-y-14 lg:mt-20">
+        <div className="egrid mt-6 gap-y-8 lg:mt-7">
           <div className="col-span-12 lg:col-span-7">
             <EnquiryForm />
           </div>
@@ -37,28 +37,31 @@ export function EnquirySection() {
             <div className="lg:rail-sticky">
               <p className="label-mono text-neutral-600">Direct lines</p>
 
-              <dl className="mt-8 border-t border-ink-900/15">
-                <div className="border-b border-ink-900/15 py-8">
+              <dl className="mt-6 border-t border-ink-900/15">
+                <div className="border-b border-ink-900/15 py-6">
                   <dt className="label-mono text-neutral-550">Telephone</dt>
-                  <dd className="mt-4">
+                  <dd className="mt-4 flex flex-col gap-2">
                     <a
                       href={`tel:${contact.phoneHref}`}
-                      className="font-display text-[clamp(1.5rem,2.1vw,2rem)] font-semibold leading-tight tracking-[-0.025em] text-ink-950 transition-colors duration-400 hover:text-signal-700"
+                      className="font-display text-[clamp(1.5rem,2vw,1.875rem)] font-medium leading-snug tracking-[-0.012em] text-ink-950 underline-offset-4 transition-colors duration-400 hover:underline"
                     >
                       {contact.phoneDisplay}
                     </a>
-                  </dd>
-                  <dd className="label-mono mt-4 leading-relaxed text-neutral-550">
-                    {contact.phoneRange}
+                    <a
+                      href={`tel:${contact.mobileHref}`}
+                      className="font-display text-[clamp(1.5rem,2vw,1.875rem)] font-medium leading-snug tracking-[-0.012em] text-ink-950 underline-offset-4 transition-colors duration-400 hover:underline"
+                    >
+                      {contact.mobileDisplay}
+                    </a>
                   </dd>
                 </div>
 
-                <div className="border-b border-ink-900/15 py-8">
+                <div className="border-b border-ink-900/15 py-6">
                   <dt className="label-mono text-neutral-550">Email</dt>
                   <dd className="mt-4">
                     <a
                       href={`mailto:${contact.email}`}
-                      className="font-display text-[clamp(1.5rem,2.1vw,2rem)] font-semibold leading-tight tracking-[-0.025em] break-words text-ink-950 transition-colors duration-400 hover:text-signal-700"
+                      className="font-display text-[clamp(1.5rem,2vw,1.875rem)] font-medium leading-snug tracking-[-0.012em] break-words text-ink-950 underline-offset-4 transition-colors duration-400 hover:underline"
                     >
                       {contact.email}
                     </a>
@@ -66,7 +69,7 @@ export function EnquirySection() {
                 </div>
               </dl>
 
-              <p className="mt-8 text-small text-neutral-600">
+              <p className="mt-6 text-small text-neutral-600">
                 Nothing typed into this page is stored anywhere. Sending an enquiry drafts the
                 message in your own mail application, addressed to the same inbox above.
               </p>

@@ -53,7 +53,6 @@ export default function NotFound() {
     <>
       {/* ---- Chapter 01 · the readout ----------------------------------- */}
       <Section
-        tone="deep"
         className="overflow-hidden"
         innerClassName="relative pb-[var(--section-y)] pt-[clamp(9rem,20vh,14rem)]"
       >
@@ -63,35 +62,35 @@ export default function NotFound() {
           className="graticule pointer-events-none absolute inset-0 -z-10"
           style={
             {
-              "--graticule-color": "rgba(255,255,255,0.035)",
+              "--graticule-color": "color-mix(in oklab, var(--color-ink-900) 2.5%, transparent)",
               "--graticule-size": "6rem",
             } as React.CSSProperties
           }
         />
         <span
           aria-hidden
-          className="pointer-events-none absolute -top-[6vw] right-[-4vw] -z-10 select-none font-display text-[min(46vw,34rem)] leading-none font-bold tracking-[-0.06em] text-white/[0.035]"
+          className="pointer-events-none absolute -top-[6vw] right-[-4vw] -z-10 select-none font-display text-[min(46vw,34rem)] leading-none font-bold tracking-[-0.06em] text-ink-950/[0.035]"
         >
           404
         </span>
         <OrbitalMark
           animate
-          className="pointer-events-none absolute -right-[10vw] bottom-[-14vw] -z-10 h-[min(52vw,40rem)] w-[min(52vw,40rem)] text-signal-400/25"
+          className="pointer-events-none absolute -right-[10vw] bottom-[-14vw] -z-10 h-[min(52vw,40rem)] w-[min(52vw,40rem)] text-ink-800/25"
         />
 
-        <div className="egrid gap-y-16">
+        <div className="egrid gap-y-9">
           <div className="col-span-12 lg:col-span-6">
-            <Eyebrow index="404" tone="deep">
+            <Eyebrow index="404">
               No record at this address
             </Eyebrow>
 
-            <h1 className="mt-9 font-display text-d2 text-white">
+            <h1 className="mt-6 font-display text-d2 text-ink-950">
               <RevealText as="span" trigger="mount" className="block">
                 This page is not
               </RevealText>
               <RevealText as="span" trigger="mount" delay={0.1} className="block">
                 in the{" "}
-                <span className="font-editorial font-normal italic tracking-[-0.02em] text-signal-300">
+                <span className="font-display text-ink-800">
                   archive.
                 </span>
               </RevealText>
@@ -100,7 +99,7 @@ export default function NotFound() {
             <p
               data-reveal
               style={{ "--reveal-delay": "0.45s" } as React.CSSProperties}
-              className="measure mt-10 text-lead text-ink-200"
+              className="measure mt-7 text-lead text-neutral-600"
             >
               The URL you followed does not resolve to anything we publish. It may have been
               retired, mistyped, or copied with a character missing. Nothing has been lost — the
@@ -110,12 +109,12 @@ export default function NotFound() {
             <div
               data-reveal
               style={{ "--reveal-delay": "0.6s" } as React.CSSProperties}
-              className="mt-12 flex flex-wrap items-center gap-4"
+              className="mt-6 flex flex-wrap items-center gap-4"
             >
-              <ActionLink href="/" variant="solid" tone="deep">
+              <ActionLink href="/" variant="solid">
                 Return to the homepage
               </ActionLink>
-              <ActionLink href="/contact" variant="outline" tone="deep" cursorLabel="Enquire">
+              <ActionLink href="/contact" variant="outline" >
                 Ask us directly
               </ActionLink>
             </div>
@@ -126,7 +125,7 @@ export default function NotFound() {
             aria-label="Suggested destinations"
             className="col-span-12 self-end lg:col-span-5 lg:col-start-8"
           >
-            <p className="label-mono text-ink-200">Try instead</p>
+            <p className="label-mono text-neutral-600">Try instead</p>
 
             <ul className="mt-6">
               {destinations.map((item, i) => (
@@ -137,18 +136,18 @@ export default function NotFound() {
                 >
                   <Link
                     href={item.href}
-                    className="group flex items-baseline gap-5 border-t border-white/12 py-5 transition-colors duration-500 [transition-timing-function:var(--ease-out-expo)] hover:border-signal-400/70"
+                    className="group flex items-baseline gap-5 border-t border-[var(--rule)] py-5 transition-colors duration-500 [transition-timing-function:var(--ease-out-expo)] hover:border-ink-900/40"
                   >
-                    <span className="label-mono shrink-0 text-ink-300">{pad(i + 1)}</span>
+                    <span className="label-mono shrink-0 text-neutral-550">{pad(i + 1)}</span>
                     <span className="flex-1">
-                      <span className="block font-display text-h2 text-white transition-colors duration-400 [transition-timing-function:var(--ease-out-expo)] group-hover:text-signal-300">
+                      <span className="block font-display text-h2 text-ink-950 transition-colors duration-400 [transition-timing-function:var(--ease-out-expo)] group-hover:text-ink-950">
                         {item.label}
                       </span>
-                      <span className="mt-1 block text-small text-ink-100">{item.note}</span>
+                      <span className="mt-1 block text-small text-neutral-600">{item.note}</span>
                     </span>
                     <span
                       aria-hidden
-                      className="mt-2 h-px w-6 shrink-0 bg-white/25 transition-all duration-500 [transition-timing-function:var(--ease-out-expo)] group-hover:w-10 group-hover:bg-signal-400"
+                      className="mt-2 h-px w-6 shrink-0 bg-canvas-raised transition-all duration-500 [transition-timing-function:var(--ease-out-expo)] group-hover:w-10 group-hover:bg-ink-900"
                     />
                   </Link>
                 </li>
@@ -158,18 +157,18 @@ export default function NotFound() {
         </div>
 
         {/* Direct line, because a dead page should still be answerable. */}
-        <div className="mt-[clamp(4rem,8vw,7rem)] flex flex-col gap-4 border-t border-white/12 pt-8 sm:flex-row sm:items-baseline sm:justify-between">
-          <p className="label-mono text-ink-200">Or speak to someone</p>
+        <div className="mt-[clamp(2rem,3.5vw,3rem)] flex flex-col gap-4 border-t border-[var(--rule)] pt-8 sm:flex-row sm:items-baseline sm:justify-between">
+          <p className="label-mono text-neutral-600">Or speak to someone</p>
           <p className="flex flex-wrap items-baseline gap-x-8 gap-y-2 font-display text-h3">
             <a
               href={`tel:${contact.phoneHref}`}
-              className="text-white transition-colors duration-400 [transition-timing-function:var(--ease-out-expo)] hover:text-signal-300"
+              className="text-ink-950 transition-colors duration-400 [transition-timing-function:var(--ease-out-expo)] hover:text-ink-950"
             >
               {contact.phoneDisplay}
             </a>
             <a
               href={`mailto:${contact.email}`}
-              className="text-white transition-colors duration-400 [transition-timing-function:var(--ease-out-expo)] hover:text-signal-300"
+              className="text-ink-950 transition-colors duration-400 [transition-timing-function:var(--ease-out-expo)] hover:text-ink-950"
             >
               {contact.email}
             </a>
@@ -180,10 +179,10 @@ export default function NotFound() {
       {/* ---- Chapter 02 · the table of contents -------------------------- */}
       <Section tone="sunken">
         <SectionBody>
-          <div className="egrid gap-y-12">
+          <div className="egrid gap-y-8">
             <div className="col-span-12 lg:col-span-4">
               <Eyebrow index="01">Division index</Eyebrow>
-              <h2 className="mt-8 font-display text-d4 text-ink-950">
+              <h2 className="mt-6 font-display text-d4 text-ink-950">
                 Every division, one click deep.
               </h2>
               <p className="measure-tight mt-6 text-body text-neutral-600">
@@ -197,10 +196,10 @@ export default function NotFound() {
                 <li key={discipline.slug}>
                   <Link
                     href={`/research/${discipline.slug}`}
-                    className="group flex items-baseline gap-4 border-t border-ink-900/12 py-4 transition-colors duration-500 [transition-timing-function:var(--ease-out-expo)] hover:border-signal-500/70"
+                    className="group flex items-baseline gap-4 border-t border-ink-900/12 py-4 transition-colors duration-500 [transition-timing-function:var(--ease-out-expo)] hover:border-ink-900/40"
                   >
                     <span className="label-mono shrink-0 text-neutral-550">{pad(i + 1)}</span>
-                    <span className="font-display text-h3 text-ink-950 transition-colors duration-400 [transition-timing-function:var(--ease-out-expo)] group-hover:text-signal-700">
+                    <span className="font-display text-h3 text-ink-950 transition-colors duration-400 [transition-timing-function:var(--ease-out-expo)] group-hover:text-ink-950">
                       {discipline.shortName ?? discipline.name}
                     </span>
                   </Link>

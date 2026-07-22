@@ -5,11 +5,10 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RevealText } from "@/components/ui/RevealText";
 
 /**
- * The shared hero frame for interior pages.
- *
- * It fixes the type scale, the breadcrumb position and the vertical rhythm —
- * everything a visitor needs to stay oriented across pages — while leaving the
- * visual layer entirely to the caller, so no two pages look alike.
+ * The shared hero frame for interior pages, set like the title page of a
+ * study file: paper surface, a ruled field label, the serif headline, and —
+ * when the page carries key facts — a bordered title block holding them as
+ * mono field rows. A double rule closes the frame before the first section.
  */
 export function PageHero({
   eyebrow,
@@ -20,7 +19,7 @@ export function PageHero({
   meta,
   visual,
   aside,
-  tone = "deep",
+  tone = "light",
   className,
 }: {
   eyebrow: string;
@@ -28,16 +27,21 @@ export function PageHero({
   title: React.ReactNode;
   lead?: React.ReactNode;
   crumbs: Crumb[];
-  /** Small key/value facts rendered under the lead. */
+  /** Small key/value facts rendered as the title block's field rows. */
   meta?: { label: string; value: string }[];
   /** Absolutely-positioned background artwork supplied by the page. */
   visual?: React.ReactNode;
-  /** Optional right-hand column content. */
+  /** Optional right-hand column content; takes the title block's place. */
   aside?: React.ReactNode;
   tone?: "light" | "deep";
   className?: string;
 }) {
   const deep = tone === "deep";
+  const panel = aside ?? (meta?.length ? <MetaBlock meta={meta} deep={deep} /> : null);
+  // When a page supplies both a custom aside and meta facts, the aside takes
+  // the right column and the facts fill the left column under the lead — so the
+  // hero never leaves a tall empty gutter beside a taller aside.
+  const inlineMeta = aside && meta?.length ? meta : null;
 
   return (
     <section
@@ -54,22 +58,19 @@ export function PageHero({
         </div>
       ) : null}
 
-      <div className="shell relative pb-[clamp(3.5rem,7vw,7rem)] pt-[clamp(8rem,13vw,12rem)]">
+      <div className="shell relative pb-[clamp(2.25rem,3.5vw,3rem)] pt-[clamp(6.25rem,8vw,7.5rem)]">
         <Breadcrumbs items={crumbs} tone={tone} baseUrl={site.url} />
 
-        <div className="egrid mt-12 gap-y-10">
-          <div className={cn(aside ? "col-span-12 lg:col-span-7" : "col-span-12 lg:col-span-9")}>
-            <Eyebrow index={index} tone={tone}>
-              {eyebrow}
-            </Eyebrow>
+        <Eyebrow index={index} tone={tone} className="mt-7">
+          {eyebrow}
+        </Eyebrow>
 
+        <div className="egrid mt-6 gap-y-8">
+          <div className={cn("col-span-12", panel ? "lg:col-span-7" : "lg:col-span-9")}>
             <RevealText
               as="h1"
               trigger="mount"
-              className={cn(
-                "mt-7 font-display text-d2",
-                deep ? "text-white" : "text-ink-950",
-              )}
+              className={cn("font-display text-d2", deep ? "text-white" : "text-ink-950")}
             >
               {title}
             </RevealText>
@@ -79,7 +80,7 @@ export function PageHero({
                 data-reveal
                 style={{ "--reveal-delay": "0.35s" } as React.CSSProperties}
                 className={cn(
-                  "measure mt-8 text-lead",
+                  "measure mt-5 text-lead",
                   deep ? "text-ink-200" : "text-neutral-600",
                 )}
               >
@@ -87,20 +88,15 @@ export function PageHero({
               </p>
             ) : null}
 
-            {meta?.length ? (
+            {inlineMeta ? (
               <dl
                 data-reveal
                 style={{ "--reveal-delay": "0.5s" } as React.CSSProperties}
-                className="mt-12 flex flex-wrap gap-x-14 gap-y-6"
+                className="mt-10 flex flex-wrap gap-x-12 gap-y-6"
               >
-                {meta.map((item) => (
+                {inlineMeta.map((item) => (
                   <div key={item.label}>
-                    <dt
-                      className={cn(
-                        "label-mono",
-                        deep ? "text-ink-200" : "text-neutral-600",
-                      )}
-                    >
+                    <dt className={cn("label-mono", deep ? "text-ink-300" : "text-neutral-550")}>
                       {item.label}
                     </dt>
                     <dd
@@ -117,17 +113,53 @@ export function PageHero({
             ) : null}
           </div>
 
-          {aside ? (
+          {panel ? (
             <div
               data-reveal
               style={{ "--reveal-delay": "0.45s" } as React.CSSProperties}
               className="col-span-12 lg:col-span-4 lg:col-start-9"
             >
-              {aside}
+              {panel}
             </div>
           ) : null}
         </div>
       </div>
     </section>
+  );
+}
+
+function MetaBlock({
+  meta,
+  deep,
+}: {
+  meta: { label: string; value: string }[];
+  deep: boolean;
+}) {
+  return (
+    <dl
+      className={cn(
+        "grid grid-cols-2 gap-px overflow-hidden rounded-[var(--radius-card)]",
+        deep ? "bg-white/10" : "card-elevated !p-0",
+      )}
+    >
+      {meta.map((item) => (
+        <div
+          key={item.label}
+          className={cn("px-5 py-4", deep ? "bg-deep-raised" : "bg-canvas-raised")}
+        >
+          <dt className={cn("label-mono", deep ? "text-white/60" : "text-neutral-550")}>
+            {item.label}
+          </dt>
+          <dd
+            className={cn(
+              "mt-2 font-display text-h2",
+              deep ? "text-white" : "text-ink-950",
+            )}
+          >
+            {item.value}
+          </dd>
+        </div>
+      ))}
+    </dl>
   );
 }

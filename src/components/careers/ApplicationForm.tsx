@@ -126,10 +126,10 @@ export function ApplicationForm() {
     [errors[field] ? `${id}-${field}-error` : null, hintId].filter(Boolean).join(" ") || undefined;
 
   const fieldShell =
-    "w-full border-b bg-transparent pb-3.5 pt-2 font-display text-h3 text-white outline-none transition-colors duration-500 [transition-timing-function:var(--ease-out-expo)] focus:border-signal-400";
+    "w-full border-b bg-transparent pb-3.5 pt-2 font-sans text-[1.0625rem] text-ink-950 outline-none transition-colors duration-500 [transition-timing-function:var(--ease-out-expo)] focus:border-ink-900";
 
   const border = (field: FieldName) =>
-    errors[field] ? "border-signal-400" : "border-white/25 hover:border-white/45";
+    errors[field] ? "border-ink-900" : "border-[var(--rule-strong)] hover:border-ink-900/50";
 
   return (
     <form
@@ -138,16 +138,16 @@ export function ApplicationForm() {
       aria-describedby={`${id}-resume-note`}
       className="relative"
     >
-      <p className="label-mono text-ink-300">Application · four lines</p>
+      <p className="label-mono text-neutral-550">Application · four lines</p>
 
-      <div className="mt-8 space-y-10">
+      <div className="mt-6 space-y-7">
         {/* 01 — Name */}
         <div>
           <div className="flex items-baseline gap-4">
-            <span aria-hidden className="label-mono w-6 shrink-0 text-signal-400">
+            <span aria-hidden className="label-mono w-6 shrink-0 text-neutral-550">
               01
             </span>
-            <label htmlFor={`${id}-name`} className="label-mono text-ink-200">
+            <label htmlFor={`${id}-name`} className="label-mono text-ink-700">
               Full name
             </label>
           </div>
@@ -169,10 +169,10 @@ export function ApplicationForm() {
         {/* 02 — Email */}
         <div>
           <div className="flex items-baseline gap-4">
-            <span aria-hidden className="label-mono w-6 shrink-0 text-signal-400">
+            <span aria-hidden className="label-mono w-6 shrink-0 text-neutral-550">
               02
             </span>
-            <label htmlFor={`${id}-email`} className="label-mono text-ink-200">
+            <label htmlFor={`${id}-email`} className="label-mono text-ink-700">
               Email address
             </label>
           </div>
@@ -195,10 +195,10 @@ export function ApplicationForm() {
         {/* 03 — Department */}
         <div>
           <div className="flex items-baseline gap-4">
-            <span aria-hidden className="label-mono w-6 shrink-0 text-signal-400">
+            <span aria-hidden className="label-mono w-6 shrink-0 text-neutral-550">
               03
             </span>
-            <label htmlFor={`${id}-department`} className="label-mono text-ink-200">
+            <label htmlFor={`${id}-department`} className="label-mono text-ink-700">
               Department
             </label>
           </div>
@@ -228,10 +228,10 @@ export function ApplicationForm() {
         {/* 04 — Message */}
         <div>
           <div className="flex items-baseline gap-4">
-            <span aria-hidden className="label-mono w-6 shrink-0 text-signal-400">
+            <span aria-hidden className="label-mono w-6 shrink-0 text-neutral-550">
               04
             </span>
-            <label htmlFor={`${id}-message`} className="label-mono text-ink-200">
+            <label htmlFor={`${id}-message`} className="label-mono text-ink-700">
               Your background
             </label>
           </div>
@@ -253,35 +253,35 @@ export function ApplicationForm() {
       {/* Résumé instruction — the honest replacement for a file input. */}
       <p
         id={`${id}-resume-note`}
-        className="mt-12 flex gap-4 border border-white/15 bg-white/[0.04] p-6 text-small text-ink-200"
+        className="mt-6 flex gap-4 border border-[var(--rule)] bg-canvas-sunken p-6 text-small text-neutral-600"
       >
-        <Paperclip aria-hidden className="mt-1 h-4 w-4 shrink-0 text-signal-400" />
+        <Paperclip aria-hidden className="mt-1 h-4 w-4 shrink-0 text-ink-800" />
         <span>
-          <span className="text-white">Attach your résumé to the email that opens.</span> Submitting
+          <span className="text-ink-900">Attach your résumé to the email that opens.</span> Submitting
           drafts a message in your own mail application with everything above already filled in —
           add the file there and send it. Nothing is uploaded from this page.
         </span>
       </p>
 
-      <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5">
+      <div className="mt-7 flex flex-wrap items-center gap-x-8 gap-y-5">
         <button
           type="submit"
           className="group/action inline-flex items-center justify-center gap-3 rounded-full bg-white px-7 py-4 font-display text-[0.9375rem] font-semibold tracking-[-0.01em] text-ink-950 transition-colors duration-500 [transition-timing-function:var(--ease-out-expo)] hover:bg-signal-400"
         >
           Draft my application
         </button>
-        <p className="label-mono text-ink-300">Opens your mail application</p>
+        <p className="label-mono text-neutral-550">Opens your mail application</p>
       </div>
 
-      <div role="status" aria-live="polite" className="mt-8 empty:mt-0">
+      <div role="status" aria-live="polite" className="mt-6 empty:mt-0">
         {status.kind === "success" ? (
-          <p className="flex items-start gap-3 border-l-2 border-signal-400 bg-white/[0.04] py-4 pl-5 pr-6 text-small text-ink-100">
-            <CheckCircle2 aria-hidden className="mt-1 h-4 w-4 shrink-0 text-signal-400" />
+          <p className="flex items-start gap-3 border-l-2 border-signal-400 bg-white/[0.04] py-4 pl-5 pr-6 text-small text-neutral-600">
+            <CheckCircle2 aria-hidden className="mt-1 h-4 w-4 shrink-0 text-ink-800" />
             <span>{status.message}</span>
           </p>
         ) : null}
         {status.kind === "error" ? (
-          <p className="flex items-start gap-3 border-l-2 border-signal-400 py-4 pl-5 pr-6 text-small text-signal-200">
+          <p className="flex items-start gap-3 border-l-2 border-signal-600 py-4 pl-5 pr-6 text-small text-signal-800">
             <AlertTriangle aria-hidden className="mt-1 h-4 w-4 shrink-0" />
             <span>{status.message}</span>
           </p>
@@ -294,7 +294,7 @@ export function ApplicationForm() {
 function FieldError({ id, message }: { id: string; message?: string }) {
   if (!message) return null;
   return (
-    <p id={id} className="mt-3 flex items-start gap-2 text-small text-signal-200">
+    <p id={id} className="mt-3 flex items-start gap-2 text-small text-signal-800">
       <AlertTriangle aria-hidden className="mt-1 h-3.5 w-3.5 shrink-0" />
       <span>{message}</span>
     </p>

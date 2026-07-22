@@ -45,12 +45,12 @@ export function ContactHeroVisual() {
           })}
         </g>
 
-        <circle cx="210" cy="190" r="5" className="fill-signal-500" />
+        <circle cx="210" cy="190" r="5" className="fill-meniscus-500" />
         <circle
           cx="210"
           cy="190"
           r="18"
-          stroke="var(--color-signal-500)"
+          stroke="var(--color-meniscus-500)"
           strokeWidth="0.9"
           opacity="0.55"
         />

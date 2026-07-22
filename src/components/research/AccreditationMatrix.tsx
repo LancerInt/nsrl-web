@@ -20,14 +20,12 @@ export function AccreditationMatrix() {
   const columns = accreditations.filter((accreditation) => held.has(accreditation.id));
 
   return (
-    <Section tone="deep" aria-labelledby="coverage">
+    <Section tone="sunken" aria-labelledby="coverage">
       <SectionBody>
         <div className="egrid items-end gap-y-8">
           <div className="col-span-12 lg:col-span-7">
-            <Eyebrow index="04" tone="deep">
-              Coverage
-            </Eyebrow>
-            <h2 id="coverage" className="mt-8 font-display text-d3 text-white">
+            <Eyebrow index="04">Coverage</Eyebrow>
+            <h2 id="coverage" className="mt-6 font-display text-d3 text-ink-950">
               <RevealText as="span" className="block">
                 Which accreditation governs which division.
               </RevealText>
@@ -35,28 +33,33 @@ export function AccreditationMatrix() {
           </div>
 
           <div className="col-span-12 lg:col-span-4 lg:col-start-9">
-            <p className="text-small text-ink-200">
+            <p className="text-small text-neutral-600">
               Read down a column to see how far an accreditation reaches; read across a row
               to see what a single division works under. Every certificate is published in
               full.
             </p>
-            <ActionLink href="/downloads" variant="text" tone="deep" className="mt-5">
+            <ActionLink href="/downloads" variant="text" className="mt-5">
               Certificates on file
             </ActionLink>
           </div>
         </div>
 
-        <div className="mt-16 overflow-x-auto">
+        <div className="mt-6 overflow-x-auto lg:overflow-x-visible">
           <table className="w-full min-w-[46rem] border-collapse text-left">
             <caption className="sr-only">
               Accreditations held by each of the thirteen scientific divisions
             </caption>
 
+            {/* The header sticks to the top of the viewport while the rows
+                scroll under it, so a mark ten rows down still names its
+                accreditation. The nav auto-hides on scroll-down, so top-0 is
+                clear during reading; the inset shadow is the ruled underline
+                that a collapsed border would not carry with a sticky cell. */}
             <thead>
               <tr>
                 <th
                   scope="col"
-                  className="label-mono border-b border-white/20 py-5 pr-6 font-normal text-ink-200"
+                  className="label-mono sticky top-0 z-10 bg-canvas-sunken py-5 pr-6 font-normal text-neutral-550 shadow-[inset_0_-1px_0_var(--rule-strong)]"
                 >
                   Division
                 </th>
@@ -64,7 +67,7 @@ export function AccreditationMatrix() {
                   <th
                     key={accreditation.id}
                     scope="col"
-                    className="label-mono border-b border-white/20 px-4 py-5 text-center font-normal text-ink-100"
+                    className="label-mono sticky top-0 z-10 bg-canvas-sunken px-4 py-5 text-center font-normal text-ink-700 shadow-[inset_0_-1px_0_var(--rule-strong)]"
                   >
                     {accreditation.abbr}
                   </th>
@@ -76,17 +79,17 @@ export function AccreditationMatrix() {
               {disciplines.map((discipline) => (
                 <tr
                   key={discipline.slug}
-                  className="border-b border-white/10 transition-colors duration-500 hover:bg-white/[0.04]"
+                  className="border-b border-[var(--rule)] transition-colors duration-500 hover:bg-canvas-raised"
                 >
                   <th scope="row" className="py-5 pr-6 font-normal">
                     <Link
                       href={`/research/${discipline.slug}`}
-                      className="group flex items-baseline gap-4 transition-colors duration-400 hover:text-signal-300"
+                      className="group flex items-baseline gap-4"
                     >
-                      <span className="label-mono tabular-nums text-ink-300 transition-colors duration-400 group-hover:text-signal-400">
+                      <span className="label-mono tabular-nums text-neutral-550">
                         {discipline.index}
                       </span>
-                      <span className="font-display text-h3 font-semibold text-white transition-colors duration-400 group-hover:text-signal-300">
+                      <span className="font-display text-h3 text-ink-950 underline-offset-4 group-hover:underline">
                         {discipline.name}
                       </span>
                     </Link>
@@ -104,10 +107,10 @@ export function AccreditationMatrix() {
                         {has ? (
                           <span
                             aria-hidden
-                            className="mx-auto block h-2 w-2 rounded-full bg-signal-400"
+                            className="mx-auto block h-2 w-2 rounded-full bg-signal-600"
                           />
                         ) : (
-                          <span aria-hidden className="mx-auto block h-px w-3.5 bg-white/20" />
+                          <span aria-hidden className="mx-auto block h-px w-3.5 bg-[var(--rule-strong)]" />
                         )}
                       </td>
                     );

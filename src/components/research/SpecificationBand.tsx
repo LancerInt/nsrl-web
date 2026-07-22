@@ -27,14 +27,14 @@ export function SpecificationBand({
   return (
     <Section tone={tone} aria-labelledby="specifications">
       <SectionBody>
-        <div className="egrid gap-y-14">
+        <div className="egrid gap-y-8">
           <div className="col-span-12 lg:col-span-4">
             <div className="lg:rail-sticky">
               <Eyebrow index={index}>Specifications</Eyebrow>
 
               <h2
                 id="specifications"
-                className="mt-8 font-display text-d4 text-ink-950"
+                className="mt-6 font-display text-d4 text-ink-950"
               >
                 <RevealText as="span" className="block">
                   On the record.

@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 
 import { industries } from "@/content/industries";
 import { getDiscipline, type Discipline } from "@/content/disciplines";
+import { images } from "@/content/imagery";
 import { Section } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RevealText } from "@/components/ui/RevealText";
@@ -21,13 +22,13 @@ import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
 export function SectorLedger() {
   return (
     <Section tone="canvas" innerClassName="py-[var(--section-y)]" id="sectors">
-      <div className="egrid items-end gap-y-12">
+      <div className="egrid items-end gap-y-8">
         <div className="col-span-12 lg:col-span-6">
           <Eyebrow index="02">Sectors served</Eyebrow>
-          <RevealText as="h2" className="mt-8 font-display text-d3 text-ink-950">
+          <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
             Five regulatory worlds, one evidence base.
           </RevealText>
-          <p className="measure mt-8 text-lead text-neutral-600">
+          <p className="measure mt-6 text-lead text-neutral-600">
             The endpoints, guidelines and species in a programme follow from the authority that
             has to approve it. These five are the contexts the laboratory is built to write for.
           </p>
@@ -35,17 +36,17 @@ export function SectorLedger() {
 
         <div
           data-reveal="scale"
-          className="relative col-span-12 aspect-[16/9] overflow-hidden rounded-[var(--radius-card)] lg:col-span-5 lg:col-start-8 lg:aspect-[4/3]"
+          className="relative col-span-12 aspect-[16/9] img-frame lg:col-span-5 lg:col-start-8 lg:aspect-[4/3]"
         >
-          <SpecimenPlate variant="titration" seed={5} />
-          <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-ink-950/70 to-transparent p-6">
-            <p className="label-mono text-white/80">Fig. 02 — Endpoint curve</p>
-            <p className="label-mono text-ink-100">NSRL</p>
-          </div>
+          <SpecimenPlate
+            src={images.chemistryBench.src}
+            alt={images.chemistryBench.alt}
+            sizes="(min-width: 1024px) 40vw, 100vw"
+          />
         </div>
       </div>
 
-      <div className="mt-[clamp(3.5rem,7vw,6rem)]">
+      <div className="mt-[clamp(2rem,3.5vw,3rem)]">
         {industries.map((industry, i) => {
           const divisions = industry.divisions
             .map((slug) => getDiscipline(slug))
@@ -57,10 +58,10 @@ export function SectorLedger() {
               id={industry.slug}
               data-reveal
               style={{ "--reveal-delay": `${i * 0.05}s` } as React.CSSProperties}
-              className="group scroll-mt-32 border-t border-ink-900/12 transition-colors duration-500 hover:border-signal-500/60"
+              className="group scroll-mt-32 border-t border-ink-900/12 transition-colors duration-500 hover:border-ink-900/40"
             >
               <div className="egrid gap-y-9 py-[clamp(2.5rem,5vw,4.5rem)]">
-                <p className="col-span-12 font-display text-[clamp(2.75rem,4.6vw,4.25rem)] font-bold leading-none tracking-[-0.045em] tabular-nums text-neutral-500 transition-colors duration-500 group-hover:text-signal-700 lg:col-span-1">
+                <p className="col-span-12 font-display text-[clamp(2.75rem,4.6vw,4.25rem)] font-medium leading-none tracking-[-0.014em] tabular-nums text-neutral-500 transition-colors duration-500 group-hover:text-ink-700 lg:col-span-1">
                   {industry.index}
                 </p>
 
@@ -68,7 +69,7 @@ export function SectorLedger() {
                   <h3 className="font-display text-d4 text-ink-950">
                     <Link
                       href={`/services/${industry.slug}`}
-                      className="inline-flex items-start gap-3 transition-colors duration-400 hover:text-signal-700"
+                      className="inline-flex items-start gap-3 transition-colors duration-400 hover:text-ink-700"
                     >
                       {industry.name}
                       <ArrowUpRight
@@ -89,7 +90,7 @@ export function SectorLedger() {
                   <p className="label-mono text-neutral-600">Written for</p>
                   <SpecChips items={industry.frameworks} className="mt-4" />
 
-                  <p className="label-mono mt-10 text-neutral-600">
+                  <p className="label-mono mt-7 text-neutral-600">
                     Divisions carrying the work
                   </p>
                   <ul className="mt-4">
@@ -97,7 +98,7 @@ export function SectorLedger() {
                       <li key={division.slug}>
                         <Link
                           href={`/research/${division.slug}`}
-                          className="flex items-baseline justify-between gap-5 border-t border-ink-900/10 py-3 text-small text-ink-800 transition-colors duration-400 hover:border-signal-500/60 hover:text-signal-700"
+                          className="flex items-baseline justify-between gap-5 border-t border-ink-900/10 py-3 text-small text-ink-800 transition-colors duration-400 hover:border-ink-900/40 hover:text-ink-700"
                         >
                           <span>{division.name}</span>
                           <span className="label-mono shrink-0 tabular-nums text-neutral-550">
