@@ -56,7 +56,7 @@ export function AccreditationMatrix() {
         <div className="relative mt-6 overflow-x-auto overscroll-x-contain lg:overflow-x-visible">
           <table className="w-full min-w-[46rem] border-collapse text-left">
             <caption className="sr-only">
-              Accreditations held by each of the thirteen scientific divisions
+              Accreditations held by each scientific division
             </caption>
 
             {/* The header sticks to the top of the viewport while the rows

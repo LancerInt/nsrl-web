@@ -8,7 +8,7 @@ export const site = {
   name: "NSRL",
   legalName: "NSRL Research Laboratories",
   shortDescription:
-    "A one-stop, fully equipped and accredited preclinical research laboratory serving agrochemical, pharmaceutical, medical device, discovery and radioisotope regulatory needs.",
+    "A one-stop, fully equipped and accredited preclinical research laboratory serving agrochemical, industrial chemical and food and feed additive regulatory needs.",
   tagline: "Complete preclinical research, start to finish.",
   url: "https://nsrl.co.in",
   locale: "en_IN",
@@ -83,8 +83,8 @@ export const primaryNav: NavGroup[] = [
     panel: {
       intro: {
         eyebrow: "Scientific divisions",
-        title: "Thirteen divisions. One chain of custody.",
-        body: "Chemistry through pathology, run under a single quality system so a molecule never leaves our care between studies.",
+        title: "Seven divisions. One chain of custody.",
+        body: "Chemistry through ecotoxicology, run under a single quality system so a substance never leaves our care between studies.",
         cta: { label: "All research divisions", href: "/research" },
       },
       columns: [
@@ -92,26 +92,20 @@ export const primaryNav: NavGroup[] = [
           heading: "Safety & toxicology",
           links: [
             { label: "Toxicology", href: "/research/toxicology" },
-            { label: "Genetic Toxicology", href: "/research/genetic-toxicology" },
             { label: "Ecotoxicology", href: "/research/ecotoxicology" },
-            { label: "Safety Pharmacology", href: "/research/safety-pharmacology" },
-            { label: "Pathology", href: "/research/pathology" },
           ],
         },
         {
           heading: "Analytical & discovery",
           links: [
             { label: "Chemistry", href: "/research/chemistry" },
-            { label: "Pharmacology & Drug Discovery", href: "/research/pharmacology-drug-discovery" },
             { label: "Microbiology", href: "/research/microbiology" },
-            { label: "Radioisotope Laboratory", href: "/research/radioisotope-laboratory" },
           ],
         },
         {
           heading: "Applied & specialist",
           links: [
             { label: "Entomology", href: "/research/entomology" },
-            { label: "Medical Device Testing", href: "/research/medical-device-testing" },
             { label: "Vivarium", href: "/research/vivarium" },
             { label: "Custom Studies", href: "/research/custom-studies" },
           ],
@@ -126,8 +120,8 @@ export const primaryNav: NavGroup[] = [
     panel: {
       intro: {
         eyebrow: "Sectors we serve",
-        title: "Regulatory dossiers, five industries deep.",
-        body: "Study programmes shaped around the authority that will read them — from CIBRC and CDSCO to EPA, EFSA, FDA and EMA.",
+        title: "Regulatory dossiers, three industries deep.",
+        body: "Study programmes shaped around the authority that will read them — from CIBRC to EPA, EFSA, FDA and EMA.",
         cta: { label: "How we work", href: "/services" },
       },
       columns: [
@@ -135,8 +129,6 @@ export const primaryNav: NavGroup[] = [
           heading: "Industries",
           links: [
             { label: "Agrochemical", href: "/services/agrochemical" },
-            { label: "Pharmaceutical", href: "/services/pharmaceutical" },
-            { label: "Medical Devices & Healthcare", href: "/services/medical-devices" },
             { label: "Industrial Chemicals", href: "/services/industrial-chemicals" },
             { label: "Food & Feed Additives", href: "/services/food-and-feed-additives" },
           ],
@@ -204,18 +196,16 @@ export const footerNav: { heading: string; links: NavLink[] }[] = [
     links: [
       { label: "All divisions", href: "/research" },
       { label: "Toxicology", href: "/research/toxicology" },
-      { label: "Genetic toxicology", href: "/research/genetic-toxicology" },
       { label: "Ecotoxicology", href: "/research/ecotoxicology" },
       { label: "Chemistry", href: "/research/chemistry" },
-      { label: "Medical device testing", href: "/research/medical-device-testing" },
+      { label: "Microbiology", href: "/research/microbiology" },
+      { label: "Entomology", href: "/research/entomology" },
     ],
   },
   {
     heading: "Industries",
     links: [
       { label: "Agrochemical", href: "/services/agrochemical" },
-      { label: "Pharmaceutical", href: "/services/pharmaceutical" },
-      { label: "Medical devices & healthcare", href: "/services/medical-devices" },
       { label: "Industrial chemicals", href: "/services/industrial-chemicals" },
       { label: "Food & feed additives", href: "/services/food-and-feed-additives" },
     ],

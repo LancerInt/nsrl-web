@@ -4,7 +4,7 @@ import { noise, type HeroFieldKind } from "./variation";
 /**
  * The hero backdrop for a division page.
  *
- * Five drawn fields, selected by the division's index, so the thirteen pages
+ * Five drawn fields, selected by the division's index, so the division pages
  * never open with the same image. Purely decorative: the SVG is inert, the
  * orbit animation is gated behind `motion-safe`, and no information lives here
  * that is not also stated in type.

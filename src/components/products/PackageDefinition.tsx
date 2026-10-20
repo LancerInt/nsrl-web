@@ -18,7 +18,7 @@ const clauses = [
   },
   {
     title: "Grouped by submission, not by department",
-    body: "A registration dossier does not arrive one division at a time. The groupings follow the schedule a regulatory affairs team actually works to, which is why a single package can cross ecotoxicology, chemistry and the radioisotope laboratory.",
+    body: "A registration dossier does not arrive one division at a time. The groupings follow the schedule a regulatory affairs team actually works to, which is why a single package can cross ecotoxicology, chemistry and entomology.",
   },
   {
     title: "A starting point, not a fixed bill",

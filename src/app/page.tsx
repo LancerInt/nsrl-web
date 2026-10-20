@@ -14,7 +14,7 @@ import { FacilityShowcase } from "@/components/home/FacilityShowcase";
 export const metadata: Metadata = pageMetadata({
   title: `${site.name} — Complete Preclinical Research, Start to Finish`,
   description:
-    "NSRL is a one-stop preclinical contract research organisation with thirteen accredited scientific divisions — GLP, NABL ISO/IEC 17025 and AAALAC accredited — serving the agrochemical, pharmaceutical, medical device, industrial chemical and food sectors.",
+    "NSRL is a one-stop preclinical contract research organisation with seven accredited scientific divisions — OECD GLP certified and NABL ISO/IEC 17025 accredited — serving the agrochemical, industrial chemical and food and feed additive sectors.",
   path: "/",
 });
 

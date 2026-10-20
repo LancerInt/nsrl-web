@@ -48,13 +48,12 @@ export const metadata: Metadata = {
     "GLP laboratory",
     "OECD GLP",
     "toxicology testing",
-    "genotoxicity testing",
     "ecotoxicology",
-    "medical device testing",
-    "ISO 10993",
+    "entomology testing",
     "agrochemical registration",
+    "REACH compliance testing",
+    "food and feed additive testing",
     "NABL ISO/IEC 17025",
-    "AAALAC accredited",
   ],
   authors: [{ name: site.name }],
   creator: site.name,
@@ -81,10 +80,16 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
-  icons: {
-    icon: [{ url: "/brand/nsrl-logo.png", type: "image/png" }],
-    apple: [{ url: "/brand/nsrl-logo.png" }],
-  },
+  /*
+    No `icons` key on purpose. The icons are file-convention assets —
+    `app/favicon.ico` (16/32/48), `app/icon.png` and `app/apple-icon.png` —
+    which Next links with the correct `sizes` and `type` derived from the
+    files themselves. Declaring `metadata.icons` here would override all
+    three, which is how the tab ended up showing the full lockup: the
+    wordmark version was pointed at by hand, and "NSRL" under a flask is
+    illegible at 16px. All three are generated from `assets/logo-favicon.png`
+    — the orbital mark alone, no wordmark.
+  */
 };
 
 export const viewport: Viewport = {

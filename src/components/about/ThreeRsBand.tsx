@@ -64,7 +64,7 @@ export function ThreeRsBand() {
                 <p className="mt-2 text-small text-neutral-600">{item.body}</p>
 
                 {extended ? (
-                  <p className="label-mono mt-4 text-signal-700">Beyond the three · CPCSEA</p>
+                  <p className="label-mono mt-4 text-signal-700">Beyond the three</p>
                 ) : null}
               </li>
             );

@@ -2,8 +2,8 @@ import type { Discipline } from "@/content/disciplines";
 import type { PlateVariant } from "@/components/visuals/SpecimenPlate";
 
 /**
- * Thirteen division pages share one template. Without a rule, they would read
- * as thirteen printings of the same page.
+ * The division pages share one template. Without a rule, they would read
+ * as repeated printings of the same page.
  *
  * Everything here is derived from the division's own index, so the variation is
  * deterministic (identical on server and client, stable across builds) while
@@ -66,7 +66,7 @@ export function methodCount(discipline: Discipline): number {
 }
 
 /**
- * The claim values range from "8" to "GLP · NABL · AAALAC". One display size
+ * The claim values range from "8" to "GLP · NABL". One display size
  * cannot serve both, so the size steps down as the string grows.
  */
 export function claimSizeClass(value: string): string {

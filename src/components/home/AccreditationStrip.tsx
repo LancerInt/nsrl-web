@@ -2,6 +2,29 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 import { accreditations } from "@/content/accreditations";
+import { cn } from "@/lib/utils";
+
+/* Static strings, because Tailwind reads the source and cannot see a class
+   name that is assembled at runtime. */
+const COLS: Record<string, Record<number, string>> = {
+  sm: { 2: "sm:grid-cols-2", 3: "sm:grid-cols-3" },
+  lg: { 3: "lg:grid-cols-3", 4: "lg:grid-cols-4", 5: "lg:grid-cols-5" },
+};
+
+/**
+ * Pick the column count that divides the register evenly.
+ *
+ * The strip was fixed at five columns, which was right for the ten records
+ * it had. The register is edited from the content layer, and the moment it
+ * held four the grid drew an empty fifth cell with a border round it — a
+ * blank box in the middle of a credibility strip. Choosing the first
+ * candidate that leaves no remainder means the strip stays a full rectangle
+ * whatever the register is trimmed to.
+ */
+function bestFit(count: number, candidates: number[], breakpoint: "sm" | "lg"): string {
+  const exact = candidates.find((n) => count % n === 0) ?? candidates[candidates.length - 1];
+  return COLS[breakpoint][Math.min(exact, count)] ?? "";
+}
 
 /**
  * The credibility strip. Placed immediately under the recorded figures,
@@ -38,7 +61,13 @@ export function AccreditationStrip() {
           </Link>
         </div>
 
-        <ul className="mt-6 grid grid-cols-2 gap-px border border-ink-900/8 bg-ink-900/8 sm:grid-cols-3 lg:grid-cols-5">
+        <ul
+          className={cn(
+            "mt-6 grid grid-cols-2 gap-px border border-ink-900/8 bg-ink-900/8",
+            bestFit(accreditations.length, [3, 2], "sm"),
+            bestFit(accreditations.length, [5, 4, 3], "lg"),
+          )}
+        >
           {accreditations.map((accreditation) => {
             const hasCertificate = Boolean(accreditation.certificateUrl);
 

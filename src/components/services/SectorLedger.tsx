@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import { industries } from "@/content/industries";
 import { getDiscipline, type Discipline } from "@/content/disciplines";
 import { images } from "@/content/imagery";
+import { numberWord } from "@/lib/utils";
 import { Section } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RevealText } from "@/components/ui/RevealText";
@@ -11,7 +12,7 @@ import { SpecChips } from "@/components/ui/SpecList";
 import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
 
 /**
- * The five sectors as ledger entries rather than cards.
+ * The sectors as ledger entries rather than cards.
  *
  * The homepage moves these horizontally as plates; here they are ruled entries
  * in an index — a large index number in the gutter, the promise set in the
@@ -26,7 +27,8 @@ export function SectorLedger() {
         <div className="col-span-12 lg:col-span-6">
           <Eyebrow index="02">Sectors served</Eyebrow>
           <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
-            Five regulatory worlds, one evidence base.
+            {numberWord(industries.length, { capitalise: true })} regulatory worlds, one
+            evidence base.
           </RevealText>
           <p className="measure mt-6 text-lead text-neutral-600">
             The endpoints, guidelines and species in a programme follow from the authority that

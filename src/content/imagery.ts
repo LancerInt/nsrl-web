@@ -143,28 +143,17 @@ export const images: Record<ImageKey, SiteImage> = library;
  */
 export const divisionImage: Record<string, ImageKey> = {
   toxicology: "scientistVials",
-  "genetic-toxicology": "microscopeDark",
   ecotoxicology: "greenhouse",
-  "safety-pharmacology": "vials",
-  pathology: "microscope",
   chemistry: "chemistryBench",
-  "pharmacology-drug-discovery": "scientistFlask",
   microbiology: "petri",
-  "radioisotope-laboratory": "cleanroom",
-  entomology: "greenhouse",
-  "medical-device-testing": "microscope",
+  entomology: "microscope",
   vivarium: "team",
-  "custom-studies": "chemistryBench",
+  "custom-studies": "scientistFlask",
 };
 
-/** The five sector pages, by slug. */
+/** The sector pages, by slug. */
 export const sectorImage: Record<string, ImageKey> = {
   agrochemical: "greenhouse",
-  pharmaceutical: "vials",
-  /* Cytotoxicity under ISO 10993 is read down a microscope, and the
-     containment frame is needed by the facility showcase on the same
-     scroll. */
-  "medical-devices": "microscope",
   /* Not the HPLC bench: that frame leads the homepage hero, and a visitor
      scrolling from one to the other would see the same room twice. */
   "industrial-chemicals": "scientistFlask",
@@ -209,13 +198,13 @@ export const facilityShowcase: ShowcaseFrame[] = [
     image: "cleanroom",
     title: "Controlled environments",
     caption:
-      "Containment and clean-room work, through to the AERB Type 2 radioisotope facility.",
+      "Containment and clean-room work, under continuous environmental monitoring.",
   },
   {
     image: "microscopeDark",
-    title: "Pathology",
+    title: "Microscopy",
     caption:
-      "Whole-slide scanning, automated microtomes and certified pathologists on staff.",
+      "Advanced microscopy, whole-slide scanning and automated tissue processing.",
   },
 ];
 

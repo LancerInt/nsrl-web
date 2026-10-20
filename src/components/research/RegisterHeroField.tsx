@@ -2,7 +2,7 @@ import { disciplines } from "@/content/disciplines";
 import { methodCount } from "./variation";
 
 /**
- * The index hero backdrop: thirteen columns, one per division, each drawn to
+ * The index hero backdrop: one column per division, each drawn to
  * the number of methods that division actually lists.
  *
  * It is decorative — the same counts are stated in type further down the page —

@@ -17,13 +17,13 @@ import { AuditNote } from "@/components/facilities/AuditNote";
 export const metadata: Metadata = pageMetadata({
   title: "Facilities — 150,000 sq ft of Accredited Laboratory",
   description:
-    "NSRL's accredited laboratory in Salem, Tamil Nadu: a single site housing toxicology, chemistry, ecotoxicology, entomology, the vivarium, discovery and a radioisotope laboratory, with 70+ clean rooms, inhalation suites, an AERB Type 2 radioisotope facility and 450+ instruments.",
+    "NSRL's accredited laboratory in Salem, Tamil Nadu: a single site housing toxicology, chemistry, ecotoxicology, entomology, microbiology and the vivarium, with 70+ clean rooms, inhalation suites and 450+ instruments.",
   path: "/facilities",
   keywords: [
     "GLP laboratory facilities India",
-    "AAALAC accredited vivarium",
+    "environmentally controlled vivarium",
     "inhalation toxicity chambers",
-    "AERB radioisotope laboratory",
+    "ecotoxicology test systems",
     "preclinical laboratory Salem Tamil Nadu",
   ],
 });
@@ -44,7 +44,7 @@ export default function FacilitiesPage() {
       <PageHero
         eyebrow="The facility"
         title="Where the work actually happens."
-        lead="A single accredited laboratory in Salem, Tamil Nadu. Chemistry, toxicology, ecotoxicology, entomology, pathology and the vivarium share one site — which is the whole reason a study can change division without changing custodian."
+        lead="A single accredited laboratory in Salem, Tamil Nadu. Chemistry, toxicology, ecotoxicology, entomology, microbiology and the vivarium share one site — which is the whole reason a study can change division without changing custodian."
         crumbs={[{ label: "Home", href: "/" }, { label: "Facilities" }]}
         meta={[
           ...(space

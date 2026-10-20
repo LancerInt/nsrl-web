@@ -1,6 +1,11 @@
 /**
- * The five sectors served. Each maps a regulatory context onto the scientific
+ * The sectors served. Each maps a regulatory context onto the scientific
  * divisions that generate the data for it.
+ *
+ * Pharmaceutical and Medical Devices & Healthcare were withdrawn at the
+ * client's instruction, along with the divisions that carried them. Nothing
+ * in the remaining three may route to a division that no longer exists, and
+ * nothing may cite an accreditation that is no longer on the register.
  */
 
 export type Industry = {
@@ -33,7 +38,10 @@ export const industries: Industry[] = [
       "Reports from this programme have been accepted by regulatory agencies in the USA, UK, Japan, China, Brazil and India, and the laboratory is recognised by the Central Insecticides Board and Registration Committee.",
       "The division's registration history includes India's first nano-fertiliser — a submission with no domestic precedent, assembled from the ground up.",
     ],
-    frameworks: ["OECD", "CIBRC", "EPA", "EFSA", "SENASA", "SENAVE"],
+    /* SENASA and SENAVE dropped with their registrations: the register no
+       longer carries either, so the site should not go on naming them as
+       authorities it files to. */
+    frameworks: ["OECD", "CIBRC", "EPA", "EFSA"],
     serviceGroups: [
       {
         title: "Ecotoxicity studies",
@@ -74,7 +82,7 @@ export const industries: Industry[] = [
         items: ["Phytotoxicity assessment", "Seed germination and seedling emergence studies"],
       },
     ],
-    divisions: ["ecotoxicology", "chemistry", "entomology", "radioisotope-laboratory", "toxicology"],
+    divisions: ["ecotoxicology", "chemistry", "entomology", "toxicology"],
     proofPoint: {
       value: "India's first",
       caption: "Nano-fertiliser registration, taken through from first study to approval",
@@ -87,146 +95,8 @@ export const industries: Industry[] = [
   },
 
   {
-    slug: "pharmaceutical",
-    index: "02",
-    name: "Pharmaceutical",
-    promise: "Unlocking possibilities for healthier lives through groundbreaking research.",
-    summary:
-      "Discovery through IND-enabling safety, under one GLP quality system",
-    body: [
-      "Pharmaceutical programmes fail on handover as often as they fail on science. Keeping discovery, ADME, safety pharmacology and toxicology inside one laboratory removes the transfer points where context and material get lost.",
-      "The work runs from target identification and high-throughput screening through lead optimisation and into IND-enabling safety packages, using bioinformatics and medicinal chemistry alongside conventional assays.",
-      "Efficacy and pharmacokinetics can be read in the species a regulator expects — small animal through canine, swine and livestock models — with bioanalytical method development and validation supporting every dose measurement.",
-    ],
-    frameworks: ["OECD GLP", "ICH", "US FDA", "EMA", "CDSCO", "Pharmacopeia standards"],
-    serviceGroups: [
-      {
-        title: "Drug discovery",
-        items: [
-          "Target identification and validation",
-          "High-throughput screening",
-          "Lead optimisation",
-          "Preclinical development",
-          "Bioinformatics and medicinal chemistry",
-        ],
-      },
-      {
-        title: "Pharmacokinetics & ADME",
-        items: [
-          "Absorption profiling",
-          "Plasma protein binding",
-          "Metabolite identification",
-          "Bioavailability and bioequivalence",
-          "Drug–drug interaction studies",
-        ],
-      },
-      {
-        title: "In vitro & in vivo pharmacology",
-        items: [
-          "Receptor binding assays",
-          "Enzyme inhibition tests",
-          "Cell-based assays",
-          "Animal efficacy models",
-          "Safety pharmacology assessment",
-        ],
-      },
-      {
-        title: "Safety & mechanism",
-        items: [
-          "Cardiovascular safety studies",
-          "Metabolic stability testing",
-          "Enzyme inhibition and induction assays",
-          "Mechanism of action research",
-        ],
-      },
-    ],
-    divisions: [
-      "pharmacology-drug-discovery",
-      "safety-pharmacology",
-      "toxicology",
-      "genetic-toxicology",
-      "pathology",
-      "chemistry",
-    ],
-    seo: {
-      title: "Pharmaceutical CRO | Drug Discovery to IND-Enabling Safety",
-      description:
-        "Preclinical pharmaceutical services: target identification, high-throughput screening, lead optimisation, ADME, PK/PD, safety pharmacology and GLP toxicology under one quality system.",
-    },
-  },
-
-  {
-    slug: "medical-devices",
-    index: "03",
-    name: "Medical Devices & Healthcare",
-    promise:
-      "Advancing healthcare with cutting-edge technologies and rigorous safety evaluations.",
-    summary:
-      "ISO 10993 biocompatibility, hemocompatibility, sterilisation validation and E&L",
-    body: [
-      "Device evaluation is a materials problem wearing a biology costume. What matters is what the material releases, how the body answers, and whether the device still performs after the cleaning cycle it was sold with.",
-      "Biocompatibility runs to ISO 10993 across cytotoxicity, sensitisation, irritation and systemic toxicity, with implantation in rodents, rabbits and mini-pigs. Blood-contacting devices go through haemolysis, coagulation, platelet activation and complement activation.",
-      "Reprocessing, sterilisation validation, shelf-life, functional and biomechanical testing and extractables and leachables complete a submission built for FDA, EU MDR and CDSCO review, conducted to ASTM, ISO and FDA guidance under GLP.",
-    ],
-    frameworks: ["ISO 10993", "ASTM", "US FDA", "EU MDR", "CDSCO"],
-    serviceGroups: [
-      {
-        title: "Biocompatibility",
-        items: [
-          "Cytotoxicity",
-          "Sensitisation",
-          "Irritation and intracutaneous reactivity",
-          "Systemic toxicity",
-          "Genotoxicity",
-          "Implantation — rodents, rabbits, mini-pigs",
-        ],
-      },
-      {
-        title: "Hemocompatibility",
-        items: ["Haemolysis", "Coagulation", "Platelet activation", "Complement activation"],
-      },
-      {
-        title: "Sterilisation & reprocessing",
-        items: [
-          "Ethylene oxide sterilisation validation",
-          "Steam sterilisation validation",
-          "Bioburden and sterility assurance",
-          "Cleaning, disinfection and reprocessing resilience",
-          "Virus inactivation testing",
-        ],
-      },
-      {
-        title: "Performance & lifetime",
-        items: [
-          "Mechanical and biomechanical testing",
-          "Tensile, compression, fatigue and wear testing",
-          "Accelerated ageing and shelf-life",
-          "Package integrity",
-          "Usability evaluation",
-        ],
-      },
-      {
-        title: "Extractables & leachables",
-        items: [
-          "Study design and protocol development",
-          "Extractables and leachables testing",
-          "Material characterisation",
-          "Container closure systems testing",
-          "Risk assessment",
-        ],
-      },
-    ],
-    divisions: ["medical-device-testing", "microbiology", "chemistry", "pathology", "toxicology"],
-    seo: {
-      title: "Medical Device Testing Services | ISO 10993, EU MDR & CDSCO",
-      description:
-        "Medical device and healthcare testing: ISO 10993 biocompatibility, hemocompatibility, sterilisation validation, reprocessing, shelf-life, functional testing and extractables and leachables.",
-    },
-  },
-
-  {
     slug: "industrial-chemicals",
-    index: "04",
+    index: "02",
     name: "Industrial Chemicals",
     promise: "Driving industrial progress with quality and compliance at the forefront.",
     summary:
@@ -278,15 +148,6 @@ export const industries: Industry[] = [
         ],
       },
       {
-        title: "Genetic toxicology",
-        items: [
-          "Bacterial reverse mutation — Ames test",
-          "Chromosomal aberration test",
-          "Micronucleus test",
-          "HPRT mammalian cell gene mutation test",
-        ],
-      },
-      {
         title: "Skin & mucous membrane",
         items: [
           "Dermal absorption studies",
@@ -318,7 +179,7 @@ export const industries: Industry[] = [
         ],
       },
     ],
-    divisions: ["chemistry", "toxicology", "genetic-toxicology", "ecotoxicology"],
+    divisions: ["chemistry", "toxicology", "ecotoxicology"],
     seo: {
       title: "Industrial Chemical Testing | REACH, RoHS, SVHC & Prop 65",
       description:
@@ -328,7 +189,7 @@ export const industries: Industry[] = [
 
   {
     slug: "food-and-feed-additives",
-    index: "05",
+    index: "03",
     name: "Food & Feed Additives",
     promise:
       "Safeguarding food integrity and enhancing nutritional value for a healthier world.",
@@ -336,7 +197,7 @@ export const industries: Industry[] = [
       "Nutritional, microbiological, allergen and contaminant analysis with shelf-life support",
     body: [
       "The food and feed additives division evaluates preservatives, flavour enhancers, antioxidants, emulsifiers and nutritional supplements through combined safety and efficacy assessment.",
-      "Analysis covers ingredient identity, contaminant identification, nutritional content and stability, alongside toxicological work spanning acute and chronic toxicity, genotoxicity and allergenicity.",
+      "Analysis covers ingredient identity, contaminant identification, nutritional content and stability, alongside toxicological work spanning acute and chronic toxicity and allergenicity.",
       "Formulation support addresses ingredient compatibility, formulation stability and dosage optimisation, and gamma radiation detection instrumentation measures radiation levels in food and feed additives directly. Scientists and regulatory specialists track current industry regulation, working to GLP and international standards.",
     ],
     frameworks: ["GLP", "FSSAI", "Codex", "ISO", "International food standards"],
@@ -402,7 +263,7 @@ export const industries: Industry[] = [
         ],
       },
     ],
-    divisions: ["chemistry", "microbiology", "toxicology", "radioisotope-laboratory"],
+    divisions: ["chemistry", "microbiology", "toxicology"],
     seo: {
       title: "Food & Feed Additive Testing | Nutrition, Allergens & Contaminants",
       description:

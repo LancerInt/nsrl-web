@@ -40,8 +40,9 @@ export function FacilityShowcase() {
             </h2>
           </div>
           <p className="max-w-[40ch] text-small text-ink-100">
-            Chemistry, toxicology, ecotoxicology, entomology, pathology and the vivarium share
-            one address. That is what lets a study change division without changing custodian.
+            Chemistry, toxicology, ecotoxicology, entomology, microbiology and the vivarium
+            share one address. That is what lets a study change division without changing
+            custodian.
           </p>
         </div>
 

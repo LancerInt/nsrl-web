@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: SectorPageProps): Promise<Met
   if (!industry) {
     return pageMetadata({
       title: "Sector not found",
-      description: "This sector page does not exist. Browse the five sectors NSRL serves.",
+      description: "This sector page does not exist. Browse the sectors NSRL serves.",
       path: "/services",
     });
   }

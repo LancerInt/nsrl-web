@@ -29,13 +29,13 @@ export type FinderFamily = {
 };
 
 /**
- * Two ways into thirteen divisions, offered together.
+ * Two ways into the division register, offered together.
  *
  * Jump links for the visitor who knows which family they want — plain
  * anchors, so they work with the bundle blocked and they survive a page that
  * never hydrates. Search for the visitor who knows the endpoint but not the
- * department, which is the more common case: "micronucleus", "OECD 408" and
- * "earthworm" all land on the division that runs them.
+ * department, which is the more common case: "earthworm", "OECD 203" and
+ * "sterility" all land on the division that runs them.
  *
  * The register itself is always rendered below this, whatever the query. The
  * finder adds a route into the page; it never becomes the only one.
@@ -86,7 +86,7 @@ export function DivisionFinder({
                 type="search"
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
-                placeholder="Micronucleus, OECD 408, earthworm…"
+                placeholder="Earthworm, OECD 203, sterility…"
                 autoComplete="off"
                 aria-describedby={`${inputId}-hint`}
                 aria-controls={resultsId}

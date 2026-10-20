@@ -1,5 +1,7 @@
 import { scaleStats } from "@/content/organisation";
+import { disciplines } from "@/content/disciplines";
 import { heroImage, images } from "@/content/imagery";
+import { numberWord } from "@/lib/utils";
 import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
 import { ActionLink } from "@/components/ui/ActionLink";
 import { CountUp } from "@/components/ui/CountUp";
@@ -75,9 +77,9 @@ export function HomeHero() {
               style={{ "--reveal-delay": "0.12s" } as React.CSSProperties}
               className="mt-6 max-w-[40rem] text-lead text-ink-100"
             >
-              One accredited laboratory, thirteen scientific divisions. A molecule that arrives
-              for chemistry moves through toxicology, pathology and radiolabelled fate work
-              without leaving our custody.
+              One accredited laboratory, {numberWord(disciplines.length)} scientific divisions.
+              A substance that arrives for chemistry moves through toxicology, ecotoxicology
+              and entomology without leaving our custody.
             </p>
 
             <div

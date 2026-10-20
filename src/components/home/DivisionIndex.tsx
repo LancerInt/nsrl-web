@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
+import { numberWord } from "@/lib/utils";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ActionLink } from "@/components/ui/ActionLink";
 
@@ -22,20 +23,20 @@ export type DivisionRow = {
 };
 
 /**
- * The thirteen divisions, under the three headings the laboratory actually
- * organises them by.
+ * The divisions, under the three headings the laboratory actually organises
+ * them by.
  *
- * A flat grid of thirteen is a list a visitor has to read end to end before
- * they know whether their question is in it. Grouped, the three headings
- * answer it first — a toxicologist, a chemist and a device manufacturer each
+ * A flat grid is a list a visitor has to read end to end before they know
+ * whether their question is in it. Grouped, the three headings answer it
+ * first — a toxicologist, a chemist and a crop protection registrant each
  * find their column before they read a single division name. The groups are
  * the families declared in `content/disciplines.ts`, so the menu, this
  * section and the research register all name them identically.
  *
- * Rows, not cards: thirteen cards is thirteen boxes, and the eye has to work
- * out that they are the same kind of thing. A ruled row with the summary
- * underneath carries more information in less space, and the hover and focus
- * states are the same one the rest of the site uses.
+ * Rows, not cards: a card per division is a field of boxes, and the eye has
+ * to work out that they are the same kind of thing. A ruled row with the
+ * summary underneath carries more information in less space, and the hover
+ * and focus states are the same one the rest of the site uses.
  */
 export function DivisionIndex({ divisions }: { divisions: DivisionRow[] }) {
   const families = Array.from(new Set(divisions.map((d) => d.family)));
@@ -47,7 +48,8 @@ export function DivisionIndex({ divisions }: { divisions: DivisionRow[] }) {
           <div>
             <Eyebrow>Scientific divisions</Eyebrow>
             <h2 id="divisions" className="mt-5 max-w-[20ch] font-display text-d2 text-ink-950">
-              Thirteen divisions, one chain of custody.
+              {numberWord(divisions.length, { capitalise: true })} divisions, one chain of
+              custody.
             </h2>
           </div>
           <ActionLink href="/research" variant="text" className="mb-1">

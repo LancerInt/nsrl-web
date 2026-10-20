@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { images, sectorImage, type ImageKey } from "@/content/imagery";
-import { cn } from "@/lib/utils";
+import { cn, numberWord } from "@/lib/utils";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ActionLink } from "@/components/ui/ActionLink";
 import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
@@ -35,9 +35,27 @@ const FALLBACK: ImageKey = "chemistryBench";
  * asymmetry a choice. Every card carries the same photographic treatment,
  * the same 16:10 frame and the same link, so the hierarchy is scale alone.
  */
+/** Column span at `lg`, by how many cards share the row. Static strings,
+    because Tailwind cannot see a class name assembled at runtime. */
+const SPAN: Record<number, string> = {
+  1: "lg:col-span-6",
+  2: "lg:col-span-3",
+  3: "lg:col-span-2",
+};
+
 export function SectorGrid({ sectors }: { sectors: SectorCard[] }) {
-  const [first, second, ...rest] = sectors;
-  const lead = [first, second].filter(Boolean);
+  /*
+   * Two lead cards then three is the composition for five sectors — it is
+   * what stops a five-up grid leaving a two-card orphan row. With fewer than
+   * five it creates the very problem it exists to solve: three sectors split
+   * 2 + 1 left a single small card alone on the second row. Below five, the
+   * sectors share one row as equals and every card gets the fuller treatment,
+   * because at that width there is room for it.
+   */
+  const split = sectors.length >= 5;
+  const lead = split ? sectors.slice(0, 2) : [];
+  const rest = sectors.slice(lead.length);
+  const restSpan = SPAN[Math.min(rest.length, 3)] ?? "lg:col-span-2";
 
   return (
     <section className="bg-canvas py-[var(--section-y)] text-ink-950" aria-labelledby="sectors">
@@ -46,7 +64,8 @@ export function SectorGrid({ sectors }: { sectors: SectorCard[] }) {
           <div>
             <Eyebrow>Sectors we serve</Eyebrow>
             <h2 id="sectors" className="mt-5 max-w-[20ch] font-display text-d2 text-ink-950">
-              Five regulatory worlds, one evidence base.
+              {numberWord(sectors.length, { capitalise: true })} regulatory worlds, one
+              evidence base.
             </h2>
           </div>
           <p className="max-w-[38ch] text-small text-neutral-600">
@@ -69,9 +88,9 @@ export function SectorGrid({ sectors }: { sectors: SectorCard[] }) {
             <SectorTile
               key={sector.slug}
               sector={sector}
-              size="rest"
-              delay={0.05 * (i + 2)}
-              className="lg:col-span-2"
+              size={split ? "rest" : "lead"}
+              delay={0.05 * (i + lead.length)}
+              className={restSpan}
             />
           ))}
         </ul>

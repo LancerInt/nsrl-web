@@ -34,11 +34,10 @@ or replaced by NSRL before this site goes live.** All of it lives in
 | Three site addresses | `src/content/site.ts` → `locations` | From reference site |
 | Founder name and role | `src/content/organisation.ts` → `leadership` | From reference site |
 | All statistics (20,000 studies, 275 clients, 150,000 sq ft, 450 instruments, 350 staff, 70 clean rooms, 26 species) | `src/content/organisation.ts`, `facilities.ts` | From reference site |
-| All 10 accreditations **and their certificate URLs** | `src/content/accreditations.ts` | From reference site — the certificate links point at the reference organisation's Google Drive and **must be repointed** |
+| The 4 remaining accreditations **and their certificate URLs** | `src/content/accreditations.ts` | From reference site — the certificate links point at the reference organisation's Google Drive and **must be repointed** |
 | Guideline numbers, test names, species, instruments | `src/content/disciplines.ts`, `industries.ts` | From reference site, reproduced verbatim |
 | One news article | `src/content/news.ts` → `articles` | From reference site |
 | One archive record with **no body** | `src/content/news.ts` → `archiveRecords` | Title and date are sourced; the body was never published, so none is shown |
-| SENAVE certificate link | `src/content/accreditations.ts` | **Missing** — the reference register reused the AERB document, so no link is shown |
 
 No dates were invented anywhere. The reference material carries achievements but
 not the years they occurred, so the site presents milestones and a study
@@ -54,8 +53,8 @@ These were applied deliberately after an audit, and are worth preserving:
   number with no test name, and the obvious guess is the wrong guideline.
 - **"Accepted by" and "certified by" are different claims.** `acceptingAuthorities`
   lists only the US FDA and the EMA, the two agencies the source says have
-  accepted study reports. Bodies that certify or license the laboratory
-  (CIBRC, AERB, AYUSH, SENASA, SENAVE) appear under accreditations instead.
+  accepted study reports. Bodies that certify or recognise the laboratory
+  (NGCMA, NABL, DSIR, CIBRC) appear under accreditations instead.
 - **No certificate is shown twice.** `accreditations.ts` throws at build time if
   two records share a certificate URL.
 - **No prose is published under a real byline unless the source contains it.**
@@ -68,6 +67,70 @@ These were applied deliberately after an audit, and are worth preserving:
 **Study Packages** (`/products`) are an editorial regrouping of studies already
 listed as individual capabilities — assembled the way a regulatory affairs team
 buys them. They assert no new capability, but should still be reviewed.
+
+---
+
+## ⚠️ Scope withdrawn — and the claims that went with it
+
+NSRL instructed the removal of six divisions, two sectors and six
+accreditations. Everything listed below went with them, because a site whose
+argument is "here is the certificate" cannot keep asserting a capability or an
+accreditation it no longer lists.
+
+**Divisions removed** (13 → 7): Genetic Toxicology, Safety Pharmacology,
+Pathology, Pharmacology & Drug Discovery, Radioisotope Laboratory, Medical
+Device Testing. Remaining: Toxicology, Ecotoxicology, Chemistry, Microbiology,
+Entomology, Vivarium, Custom Studies.
+
+**Sectors removed** (5 → 3): Pharmaceutical, Medical Devices & Healthcare.
+Remaining: Agrochemical, Industrial Chemicals, Food & Feed Additives.
+
+**Accreditations removed** (10 → 4): AAALAC, CPCSEA, AERB, AYUSH, SENASA,
+SENAVE. Remaining: OECD GLP, NABL ISO/IEC 17025, SIRO/DSIR, CIBRC. The
+`Animal welfare` and `International registration` categories no longer exist.
+
+**Knock-on removals made to keep the site internally consistent.** Each of
+these existed only because of something withdrawn above:
+
+- Study packages: *Standard Genotoxicity Battery*, *Device Biocompatibility
+  Programme*, *IND-Enabling Safety Package* (6 → 3).
+- Toxicology's `Genetic toxicology` and `Safety pharmacology` capability
+  groups, and Industrial Chemicals' `Genetic toxicology` study group — these
+  would have gone on selling Ames tests and cardiovascular safety assessment
+  from inside a page after the departments were withdrawn.
+- The AERB Type 2 radioisotope environment and the Radiometric instrument
+  group in `facilities.ts`; "Pathology", "Drug discovery", "Safety
+  pharmacology" and "Radioisotope laboratory" from the site's `houses` list.
+- Every prose assertion of AAALAC accreditation or CPCSEA registration —
+  in the Vivarium and Toxicology and Microbiology division copy, the quality
+  pillars, the 3Rs band, the About page's "governing accreditations", the
+  news article, and the page metadata.
+- The `AERB Type 2 radioisotope certification` milestone, replaced with the
+  NABL accreditation already in the register.
+- Careers departments: Geno-toxicology, Pathology, Medical Device,
+  Radioisotope (Entomology added, since that division exists and was absent).
+- SENASA/SENAVE removed from the agrochemical `frameworks` list.
+
+**Two judgement calls you may want to reverse:**
+
+1. **"Histopathological examination" is still listed** under Toxicology's
+   general and inhalation groups. A tox study's histopathology is part of the
+   tox study, so it survived the removal of the Pathology *division* — but if
+   NSRL no longer reads tissue at all, those two lines must go too.
+2. **Animal welfare copy was kept, the accreditations were not.** The
+   vivarium, the 3Rs framework and the welfare language all remain; only the
+   AAALAC and CPCSEA *claims* were stripped. If those are held and simply not
+   published, the sentences can be reinstated — they are in
+   `disciplines.ts` (vivarium, toxicology, microbiology), `organisation.ts`
+   (`qualityPillars`, `qualitySystems`, `threeRs`) and `news.ts`.
+
+**Counts are now derived, not written.** Headings, page titles and meta
+descriptions read their numbers from `disciplines.length`,
+`industries.length` and `accreditations.length` via `numberWord()` in
+`lib/utils.ts`. The accreditation strip and the sector grid also pick their
+column counts from the content length, so trimming the register again will
+not leave an empty cell or an orphan card. Nothing hardcodes "thirteen" or
+"five" any more.
 
 ---
 
@@ -124,6 +187,13 @@ Everything lives in `src/app/globals.css` under `@theme`. There is no
   label" voice). Fluid display scale `text-d1`–`text-d4` via `clamp()`.
   `label-mono` is 12px at 0.07em — the old 11px/0.2em setting read as
   decoration rather than as a field label.
+- **Icons**: `app/favicon.ico` (16/32/48), `app/icon.png` and
+  `app/apple-icon.png` are generated from `assets/logo-favicon.png` — the
+  orbital mark on its own. They are file-convention assets, so `layout.tsx`
+  deliberately declares **no** `metadata.icons`: doing so overrides all three,
+  which is how the tab previously ended up showing the full lockup with
+  "NSRL" underneath it, illegible at 16px. The 16px entry is cut from the
+  unpadded square; the larger sizes carry 6% clear space.
 - **Photography**: `SpecimenPlate` applies the shared `photo` grade
   (desaturate, hold contrast, lift the blacks) so a library assembled from a
   dozen sources reads as one shoot, and takes each image's `objectPosition`

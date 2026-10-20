@@ -47,6 +47,36 @@ export function formatCount(value: number, decimals = 0): string {
   });
 }
 
+const WORDS = [
+  "zero",
+  "one",
+  "two",
+  "three",
+  "four",
+  "five",
+  "six",
+  "seven",
+  "eight",
+  "nine",
+  "ten",
+  "eleven",
+  "twelve",
+  "thirteen",
+];
+
+/**
+ * Spell a small count, for headings that read it as a word.
+ *
+ * This exists so no heading hardcodes "thirteen". Divisions and sectors have
+ * been added and withdrawn, and every time one was, a dozen headings, page
+ * titles and meta descriptions quietly became wrong. Counts in prose now come
+ * from the same arrays the pages render.
+ */
+export function numberWord(n: number, { capitalise = false } = {}): string {
+  const word = WORDS[n] ?? String(n);
+  return capitalise ? word.charAt(0).toUpperCase() + word.slice(1) : word;
+}
+
 export function slugify(input: string): string {
   return input
     .toLowerCase()

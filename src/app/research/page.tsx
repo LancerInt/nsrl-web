@@ -7,7 +7,7 @@ import {
   disciplinesByFamily,
 } from "@/content/disciplines";
 import { pageMetadata } from "@/lib/seo";
-import { pad, slugify } from "@/lib/utils";
+import { numberWord, pad, slugify } from "@/lib/utils";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section, SectionBody } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -24,9 +24,9 @@ import { AccreditationMatrix } from "@/components/research/AccreditationMatrix";
 import { methodCount } from "@/components/research/variation";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Scientific Divisions | Thirteen Accredited Research Departments",
+  title: "Scientific Divisions | Accredited Research Departments",
   description:
-    "The thirteen NSRL research divisions — toxicology, genetic toxicology, ecotoxicology, safety pharmacology, pathology, chemistry, drug discovery, microbiology, radioisotope, entomology, medical device testing, vivarium and custom studies — with the accreditations each works under.",
+    "The NSRL research divisions — toxicology, ecotoxicology, chemistry, microbiology, entomology, the vivarium and custom studies — with the accreditations each works under.",
   path: "/research",
   keywords: [
     "preclinical research divisions",
@@ -79,7 +79,7 @@ export default function ResearchIndexPage() {
         eyebrow="Scientific divisions"
         index={String(disciplines.length)}
         crumbs={[{ label: "Home", href: "/" }, { label: "Research" }]}
-        title="Thirteen divisions, set out in full."
+        title={`${numberWord(disciplines.length, { capitalise: true })} divisions, set out in full.`}
         lead="Each division holds its own accreditations, its own instrument estate and its own species list. They share one campus, one quality system and one archive — which is why a programme can cross between them without a handover."
         meta={[
           { label: "Divisions", value: String(disciplines.length) },

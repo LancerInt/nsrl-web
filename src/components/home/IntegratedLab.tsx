@@ -1,4 +1,6 @@
 import { images } from "@/content/imagery";
+import { disciplines } from "@/content/disciplines";
+import { numberWord } from "@/lib/utils";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ActionLink } from "@/components/ui/ActionLink";
 import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
@@ -6,7 +8,7 @@ import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
 /**
  * The custody register.
  *
- * Every other way of drawing "thirteen divisions working together" implies an
+ * Every other way of drawing "the divisions working together" implies an
  * order — numbered steps, a left-to-right pipeline, a ring with an arrow. None
  * of those is true: which divisions a programme touches is set by the dossier,
  * and they run in parallel wherever the science allows.
@@ -23,8 +25,8 @@ import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
 const engagement = [
   { division: "Chemistry", contributes: "Identity, purity and stability of the test item" },
   { division: "Toxicology", contributes: "In-life conduct and dosing" },
-  { division: "Pathology", contributes: "Tissue read and histopathology" },
-  { division: "Radioisotope laboratory", contributes: "Where the compound went, and in what form" },
+  { division: "Ecotoxicology", contributes: "Effect on aquatic and terrestrial species" },
+  { division: "Vivarium", contributes: "Housing, environmental control and health monitoring" },
   { division: "Quality assurance", contributes: "Independent audit against the protocol" },
 ];
 
@@ -61,7 +63,7 @@ export function IntegratedLab() {
               id="one-laboratory"
               className="mt-4 max-w-[18ch] font-display text-d2 text-ink-950"
             >
-              One laboratory, thirteen divisions.
+              One laboratory, {numberWord(disciplines.length)} divisions.
             </h2>
 
             <div className="measure mt-5 space-y-3 text-lead text-neutral-700">

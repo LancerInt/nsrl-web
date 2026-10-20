@@ -14,7 +14,7 @@ import { ApplySection } from "@/components/careers/ApplySection";
 
 export const metadata: Metadata = pageMetadata({
   title: "Careers — Join the NSRL scientific team",
-  description: `Applications are open across ${departments.length} departments at NSRL, from chemistry and toxicology to pathology, quality assurance and archiving — with 450+ instruments and 150,000 sq ft of accredited laboratory estate in Tamil Nadu.`,
+  description: `Applications are open across ${departments.length} departments at NSRL, from chemistry and toxicology to animal science, quality assurance and archiving — with 450+ instruments and 150,000 sq ft of accredited laboratory estate in Tamil Nadu.`,
   path: "/careers",
   keywords: [
     "NSRL careers",
@@ -52,8 +52,8 @@ export default function CareersPage() {
               {departments.length}
             </p>
             <p className="mt-4 text-small text-neutral-600">
-              departments, grouped into {departmentGroups.length} families — scientific divisions,
-              animal science and pathology, quality and records, and operations.
+              departments, grouped into {departmentGroups.length} families — scientific
+              divisions, animal science, quality and records, and operations.
             </p>
             <ActionLink href="#apply" variant="outline" className="mt-6">
               Apply now

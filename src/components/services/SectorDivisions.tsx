@@ -41,7 +41,7 @@ export function SectorDivisions({ divisions }: { divisions: Discipline[] }) {
               same archive, so a programme moves between them without a transfer.
             </p>
             <ActionLink href="/research" variant="text" className="mt-5">
-              All thirteen divisions
+              All research divisions
             </ActionLink>
           </div>
         </div>

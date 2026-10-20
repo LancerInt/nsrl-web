@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { pageMetadata } from "@/lib/seo";
-import { pad } from "@/lib/utils";
+import { numberWord, pad } from "@/lib/utils";
 import { industries } from "@/content/industries";
 import { disciplines } from "@/content/disciplines";
 import { studyLifecycle } from "@/content/organisation";
@@ -15,14 +15,12 @@ import { ServicesClosing } from "@/components/services/ServicesClosing";
 export const metadata: Metadata = pageMetadata({
   title: "Services — How We Work & The Sectors We Serve",
   description:
-    "How an NSRL study runs, from scoping against the reviewing authority through GLP conduct, independent QA audit, reporting and ten-year archival — and the five sectors the laboratory writes dossiers for.",
+    "How an NSRL study runs, from scoping against the reviewing authority through GLP conduct, independent QA audit, reporting and ten-year archival — and the sectors the laboratory writes dossiers for.",
   path: "/services",
   keywords: [
     "preclinical study process",
     "GLP study lifecycle",
     "agrochemical registration testing",
-    "pharmaceutical CRO services",
-    "medical device testing services",
     "REACH compliance testing",
     "food and feed additive testing",
   ],
@@ -34,7 +32,7 @@ export default function ServicesPage() {
       <PageHero
         tone="light"
         eyebrow="Services"
-        title="Five sectors, seven stages, one chain of custody."
+        title={`${numberWord(industries.length, { capitalise: true })} sectors, ${numberWord(studyLifecycle.length)} stages, one chain of custody.`}
         lead="Every programme here is scoped from the authority that will read it, conducted inside one accredited laboratory, and reported so that each conclusion traces back to the instrument that produced it."
         crumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
         meta={[

@@ -5,6 +5,7 @@
  * achievements but not the years they occurred, and inventing a founding date
  * would be the one thing a credibility-led site cannot afford.
  */
+import { accreditations } from "@/content/accreditations";
 
 export type Stat = {
   value: number;
@@ -37,10 +38,12 @@ export const scaleStats: Stat[] = [
     caption: "Jurisdictions our study reports have travelled to",
   },
   {
-    value: 12,
-    suffix: "+",
+    /* Derived, never asserted. The register is the source of truth for how
+       many accreditations there are, so this figure cannot drift from the
+       documents actually published on /downloads. */
+    value: accreditations.length,
     label: "Accreditations",
-    caption: "Independent certifications governing how the work is done",
+    caption: "Independent certifications, every one published in full",
   },
 ];
 
@@ -62,7 +65,7 @@ export const capacityStats: Stat[] = [
     value: 350,
     suffix: "+",
     label: "Professionals",
-    caption: "Scientists, veterinarians, pathologists and quality staff",
+    caption: "Scientists, veterinarians, analysts and quality staff",
   },
   {
     value: 70,
@@ -79,9 +82,9 @@ export const capacityStats: Stat[] = [
 export const positioning = {
   eyebrow: "Contract research organisation",
   headline: "Complete preclinical research, start to finish.",
-  lead: "A one-stop, fully equipped and accredited laboratory built to meet agrochemical, pharmaceutical, medical device, discovery and radioisotope regulatory needs — without a single study leaving our custody.",
+  lead: "A one-stop, fully equipped and accredited laboratory built to meet agrochemical, industrial chemical and food and feed additive regulatory needs — without a single study leaving our custody.",
   supporting:
-    "Thirteen scientific divisions share one quality system, one archive and one chain of custody. A molecule that arrives for chemistry can move to toxicology, pathology and radiolabelled fate work without a transfer, a re-validation, or a gap in the record.",
+    "Seven scientific divisions share one quality system, one archive and one chain of custody. A substance that arrives for chemistry can move to toxicology, ecotoxicology and entomology without a transfer, a re-validation, or a gap in the record.",
 } as const;
 
 export type Differentiator = {
@@ -94,14 +97,14 @@ export type Differentiator = {
 export const differentiators: Differentiator[] = [
   {
     index: "01",
-    title: "One custodian, thirteen divisions",
-    body: "Most programmes fragment across three or four vendors, and every handover is a place where context is lost and timelines slip. Here, chemistry, toxicology, pathology, microbiology and radiolabelled work sit inside one building and one quality system.",
-    metric: "13 divisions",
+    title: "One custodian, seven divisions",
+    body: "Most programmes fragment across three or four vendors, and every handover is a place where context is lost and timelines slip. Here, chemistry, toxicology, ecotoxicology, entomology and microbiology sit inside one building and one quality system.",
+    metric: "7 divisions",
   },
   {
     index: "02",
     title: "Accreditation that travels",
-    body: "OECD GLP issued by NGCMA under the Department of Science and Technology means reports are accepted across every country in the OECD Mutual Acceptance of Data framework. NABL ISO/IEC 17025:2017 and AAALAC International accreditation cover the technical and welfare dimensions independently.",
+    body: "OECD GLP issued by NGCMA under the Department of Science and Technology means reports are accepted across every country in the OECD Mutual Acceptance of Data framework. NABL ISO/IEC 17025:2017 accreditation covers the technical dimension independently.",
     metric: "OECD MAD",
   },
   {
@@ -113,7 +116,7 @@ export const differentiators: Differentiator[] = [
   {
     index: "04",
     title: "Welfare treated as data quality",
-    body: "AAALAC accreditation, CPCSEA registration and an explicit 3Rs framework — extended with rehabilitation — are not a compliance overlay. A stressed animal is a poor model, and the welfare programme exists because the science depends on it.",
+    body: "An explicit 3Rs framework — extended with rehabilitation — is not a compliance overlay. A stressed animal is a poor model, and the welfare programme exists because the science depends on it.",
     metric: "3Rs + R",
   },
   {
@@ -191,7 +194,7 @@ export const qualityPillars = [
   },
   {
     title: "Animal welfare",
-    body: "AAALAC accreditation and CPCSEA registration govern the care and use programme, with in-house veterinarians and pathologists on staff.",
+    body: "The animal care and use programme runs to a written standard with in-house veterinarians, continuous health monitoring and environmental control treated as study parameters.",
   },
   {
     title: "Employee safety",
@@ -221,7 +224,7 @@ export const qualitySystems = [
   {
     title: "Quality assurance",
     subtitle: "Independent audit",
-    body: "The facility maintains GLP standards, AAALAC accreditation and other relevant certifications, ensuring the resulting data is accepted by regulators globally.",
+    body: "The facility maintains GLP standards and NABL ISO/IEC 17025 accreditation, ensuring the resulting data is accepted by regulators globally.",
   },
 ];
 
@@ -244,7 +247,7 @@ export const threeRs = [
   {
     letter: "R",
     word: "Rehabilitation",
-    body: "Post-study rehabilitation protocols as mandated by CPCSEA, extending our obligation beyond the point at which the data has been collected.",
+    body: "Post-study rehabilitation protocols, extending our obligation beyond the point at which the data has been collected.",
   },
 ];
 
@@ -278,10 +281,10 @@ export const milestones = [
   },
   {
     title: "Reports accepted by the FDA and EMA",
-    body: "Genotoxicity and safety data submitted to and accepted by agencies on three continents.",
+    body: "Safety data submitted to and accepted by agencies on three continents.",
   },
   {
-    title: "AERB Type 2 radioisotope certification",
-    body: "Cleared for radiolabelled work across soil, water, biological and animal matrices.",
+    title: "NABL ISO/IEC 17025:2017 accreditation",
+    body: "Technical competence assessed independently of the GLP certification, against the international standard.",
   },
 ];

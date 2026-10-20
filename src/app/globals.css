@@ -431,7 +431,7 @@
 }
 
 /* The one hover state a card is allowed: it gains depth and its border takes
-   the accent. No lift, no scale — a directory of thirteen cards that all
+   the accent. No lift, no scale — a directory of cards that all
    jump a few pixels is noise, and the brief rules out decorative motion.
    Declared once here so every card in the system behaves identically. */
 @utility card-interactive {
@@ -455,7 +455,7 @@
 }
 
 /* A linked row in a directory: the restrained alternative to a card, used
-   where thirteen entries would otherwise become thirteen boxes. */
+   where a long list would otherwise become a field of boxes. */
 @utility row-interactive {
   transition:
     background-color 0.22s var(--ease-out-quart),
@@ -623,7 +623,7 @@
        how far each element still has to travel.
 
        The delay is capped here rather than at the call sites. Roughly
-       twenty-five components stagger their children, and a thirteen-row
+       twenty-five components stagger their children, and a long
        directory at 60ms a row would take most of a second to finish
        arriving, the last row visibly lagging the first. `min()` holds
        every stagger to 80ms however large an index a call site multiplies

@@ -20,16 +20,16 @@ import { AccreditationSummary } from "@/components/about/AccreditationSummary";
 import { MilestoneStair } from "@/components/about/MilestoneStair";
 
 const description =
-  "NSRL is a one-stop preclinical contract research organisation in Tamil Nadu: thirteen scientific divisions under one quality system, one archive and one chain of custody, governed by OECD GLP, NABL ISO/IEC 17025 and AAALAC accreditation.";
+  "NSRL is a one-stop preclinical contract research organisation in Tamil Nadu: seven scientific divisions under one quality system, one archive and one chain of custody, governed by OECD GLP and NABL ISO/IEC 17025 accreditation.";
 
 export const metadata: Metadata = pageMetadata({
-  title: "About NSRL — one laboratory, thirteen divisions",
+  title: "About NSRL — one laboratory, seven divisions",
   description,
   path: "/about",
 });
 
-/** The three accreditations that govern how every study in the building runs. */
-const governing = ["glp", "nabl", "aaalac"]
+/** The accreditations that govern how every study in the building runs. */
+const governing = ["glp", "nabl"]
   .map((id) => getAccreditation(id))
   .filter((item): item is Accreditation => Boolean(item));
 

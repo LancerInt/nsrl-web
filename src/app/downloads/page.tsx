@@ -16,15 +16,14 @@ import { RegisterOutro } from "@/components/downloads/RegisterOutro";
 export const metadata: Metadata = pageMetadata({
   title: "Downloads — Accreditation Certificates & Approvals",
   description:
-    "The accreditation register: OECD GLP, NABL ISO/IEC 17025, AAALAC, CPCSEA, AERB, SIRO/DSIR, CIBRC, AYUSH, SENASA and SENAVE — each record listed with its issuing authority, scope and published certificate.",
+    "The accreditation register: OECD GLP, NABL ISO/IEC 17025, SIRO/DSIR and CIBRC — each record listed with its issuing authority, scope and published certificate.",
   path: "/downloads",
   keywords: [
     "NSRL accreditations",
     "GLP certificate",
     "NABL ISO/IEC 17025 certificate",
-    "AAALAC accreditation",
-    "CPCSEA registration",
-    "AERB certification",
+    "SIRO DSIR recognition",
+    "CIBRC recognition",
   ],
 });
 

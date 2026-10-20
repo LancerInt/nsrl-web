@@ -16,7 +16,7 @@ export const units: Unit[] = [
     id: "salem",
     label: "The facility",
     title: "Salem, Tamil Nadu",
-    body: "A single accredited site houses everything — study direction, regulatory strategy and client services alongside the laboratories, the vivarium and the archive. Because chemistry, toxicology, pathology and the radioisotope laboratory sit under one roof, a study moves between divisions without ever leaving our custody.",
+    body: "A single accredited site houses everything — study direction, regulatory strategy and client services alongside the laboratories, the vivarium and the archive. Because chemistry, toxicology, ecotoxicology and entomology sit under one roof, a study moves between divisions without ever leaving our custody.",
     houses: [
       "Study direction",
       "Regulatory strategy",
@@ -25,12 +25,8 @@ export const units: Unit[] = [
       "Chemistry",
       "Ecotoxicology",
       "Entomology",
-      "Pathology",
       "Microbiology",
       "Vivarium",
-      "Radioisotope laboratory",
-      "Drug discovery",
-      "Safety pharmacology",
       "Bioanalysis",
       "Archive",
     ],
@@ -49,7 +45,7 @@ export const environments: Environment[] = [
     index: "01",
     title: "Animal housing",
     spec: "70+ clean rooms",
-    body: "Controlled temperature, humidity, lighting and ventilation, with continuous health and body-weight monitoring. AAALAC-accredited and CPCSEA-registered, supporting rodents through livestock.",
+    body: "Controlled temperature, humidity, lighting and ventilation, with continuous health and body-weight monitoring, supporting the small animal models the toxicology programme runs on.",
   },
   {
     index: "02",
@@ -59,24 +55,18 @@ export const environments: Environment[] = [
   },
   {
     index: "03",
-    title: "Radioisotope facility",
-    spec: "AERB Type 2",
-    body: "Certified handling of radioactive material with liquid scintillation counters, biological oxidisers and a full detector complement, across soil, water, biological and animal matrices.",
-  },
-  {
-    index: "04",
     title: "Aquatic & terrestrial systems",
     spec: "Flow-through",
     body: "Flow-through aquatic systems, plant growth chambers, cold rooms and micro-applicators supporting twenty-six species across the ecotoxicology programme.",
   },
   {
-    index: "05",
+    index: "04",
     title: "Insect rearing",
     spec: "In-house colonies",
     body: "Breeding programmes maintained for every entomology test species, from cockroaches and mosquitoes to termites and stored-product insects, removing the variability of field-collected populations.",
   },
   {
-    index: "06",
+    index: "05",
     title: "Archive",
     spec: "10-year retention",
     body: "Secure storage for raw data, blocks, slides and specimens, with RAID-server redundancy held both on-site and off-site.",
@@ -110,15 +100,6 @@ export const instrumentEstate: InstrumentGroup[] = [
       "Automated microtomes",
       "Automatic stainers",
       "Fully automated tissue processors",
-    ],
-  },
-  {
-    title: "Radiometric",
-    caption: "Radiolabelled fate and metabolism",
-    instruments: [
-      "Liquid Scintillation Counters (LSC)",
-      "Biological oxidisers",
-      "Alpha, beta and gamma detectors",
     ],
   },
   {
