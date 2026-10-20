@@ -34,7 +34,10 @@ export type SiteImage = {
 const library = {
   microscope: {
     src: "/images/microscope-1.jpg",
+    /* The subject sits in the left two thirds; the rest is empty white
+       sweep, so a centred crop fills a third of the frame with nothing. */
     alt: "Compound microscope objective turret over a specimen stage",
+    position: "34% 58%",
     width: 1024,
   },
   microscopeDark: {
@@ -54,6 +57,10 @@ const library = {
   scientistVials: {
     src: "/images/chemistry-2.jpg",
     alt: "A scientist in a laboratory holding a tray of sample vials",
+    /* Held right of centre so a portrait crop keeps the sample tray in
+       frame as well as the face — the tray is the half of this photograph
+       that says "laboratory". */
+    position: "60% 48%",
     width: 1024,
   },
   scientistFlask: {
@@ -86,12 +93,6 @@ const library = {
     alt: "A tray of labelled pharmaceutical injection ampoules",
     width: 1920,
   },
-  notebook: {
-    src: "/images/documents-w3.jpg",
-    alt: "An open handwritten laboratory record book with calculations",
-    position: "50% 42%",
-    width: 1920,
-  },
   team: {
     src: "/images/team-1.jpg",
     alt: "Two scientists working together at laboratory instrumentation",
@@ -111,10 +112,19 @@ export type ImageKey = keyof typeof library;
 export const images: Record<ImageKey, SiteImage> = library;
 
 /*
- * `pipette-1.jpg` was withdrawn, not reassigned: the file carries a visible
- * "rawpixel" watermark across the whole frame, which no amount of cropping
- * removes. It stays in `public/images/` and in CREDITS.md so the withdrawal is
- * traceable, but nothing on the site may reference it. See README.md.
+ * Two files are on disk, credited, and deliberately absent from the map
+ * above. Neither may be reinstated; both are on the shot list in README.md.
+ *
+ *  · `pipette-1.jpg` carries a visible "rawpixel" watermark across the whole
+ *    frame, which no amount of cropping removes.
+ *
+ *  · `documents-w3.jpg` is a handwritten laboratory ledger photographed in a
+ *    museum case, period magazine in shot. It was standing in for the
+ *    ten-year archive, and it communicates the opposite of what a secure,
+ *    validated, RAID-backed archive is. A weak photograph of the right
+ *    subject could be re-graded; this is the right photograph of the wrong
+ *    subject, so it is withdrawn rather than re-captioned, and no unrelated
+ *    stock has been substituted for it.
  */
 
 /* -------------------------------------------------------------------------- */
@@ -133,25 +143,28 @@ export const images: Record<ImageKey, SiteImage> = library;
  */
 export const divisionImage: Record<string, ImageKey> = {
   toxicology: "scientistVials",
-  "genetic-toxicology": "microscope",
+  "genetic-toxicology": "microscopeDark",
   ecotoxicology: "greenhouse",
   "safety-pharmacology": "vials",
-  pathology: "microscopeDark",
+  pathology: "microscope",
   chemistry: "chemistryBench",
   "pharmacology-drug-discovery": "scientistFlask",
   microbiology: "petri",
   "radioisotope-laboratory": "cleanroom",
   entomology: "greenhouse",
-  "medical-device-testing": "cleanroom",
+  "medical-device-testing": "microscope",
   vivarium: "team",
-  "custom-studies": "notebook",
+  "custom-studies": "chemistryBench",
 };
 
 /** The five sector pages, by slug. */
 export const sectorImage: Record<string, ImageKey> = {
   agrochemical: "greenhouse",
   pharmaceutical: "vials",
-  "medical-devices": "cleanroom",
+  /* Cytotoxicity under ISO 10993 is read down a microscope, and the
+     containment frame is needed by the facility showcase on the same
+     scroll. */
+  "medical-devices": "microscope",
   /* Not the HPLC bench: that frame leads the homepage hero, and a visitor
      scrolling from one to the other would see the same room twice. */
   "industrial-chemicals": "scientistFlask",
@@ -162,15 +175,18 @@ export const sectorImage: Record<string, ImageKey> = {
 export const heroImage: ImageKey = "chemistryBench";
 
 /**
- * The homepage facility showcase.
+ * The homepage facility showcase: analytical equipment, containment, and
+ * pathology — one larger frame and two stacked beside it.
  *
- * Three frames, not four, and specifically the three subjects the homepage
- * does not already carry: the sector cards above it take the greenhouse, the
- * ampoules, the safety cabinet, the flask and the culture plate, and the hero
- * takes the analytical bench. Picking a fourth would have meant showing one
- * of those twice inside a single scroll, which is the exact failure this
- * module exists to prevent — eleven photographs, eleven slots, none repeated
- * on the page.
+ * Three frames, and specifically three subjects the homepage does not
+ * already carry: the sector cards above take the nursery, the ampoules, the
+ * microscope, the flask and the culture plate, the hero takes the analytical
+ * bench, and the laboratory section takes the sample tray. Ten photographs,
+ * ten slots, nothing repeated on the page.
+ *
+ * There is no fourth frame because there is no fourth subject. The archive
+ * belongs here — it is the ten-year retention the whole quality argument
+ * rests on — and the library has no photograph of one.
  *
  * Captions describe the kind of environment in the frame. They do not claim
  * the photograph is of NSRL's own site; the library is free-licence
@@ -185,19 +201,21 @@ export type ShowcaseFrame = {
 export const facilityShowcase: ShowcaseFrame[] = [
   {
     image: "team",
-    title: "Instrument floor",
+    title: "Analytical instrument floor",
     caption:
-      "Analytical and in-life equipment in continuous service, qualified and logged against the study that used it.",
+      "Chromatography, mass spectrometry and bioanalysis in continuous service — every instrument qualified, calibrated and logged against the study that used it.",
+  },
+  {
+    image: "cleanroom",
+    title: "Controlled environments",
+    caption:
+      "Containment and clean-room work, through to the AERB Type 2 radioisotope facility.",
   },
   {
     image: "microscopeDark",
     title: "Pathology",
-    caption: "Whole-slide scanning, automated microtomes, certified pathologists.",
-  },
-  {
-    image: "notebook",
-    title: "The archive",
-    caption: "Raw data, blocks, slides and specimens, held for ten years.",
+    caption:
+      "Whole-slide scanning, automated microtomes and certified pathologists on staff.",
   },
 ];
 
@@ -206,10 +224,10 @@ export const facilityShowcase: ShowcaseFrame[] = [
  *
  * The gallery covers four of the six environments specified in
  * `content/facilities.ts`. The other two — the inhalation suites and the
- * insect rearing colonies — have no photograph in the library at all, and
- * the animal housing has none either. Those three are the most
- * consequential gaps in the shot list; see README.md. Nothing here invents a
- * frame to fill them.
+ * insect rearing colonies — have no photograph in the library at all; the
+ * animal housing has none either, and nor does the archive since the ledger
+ * was withdrawn. Those four are the shot list; see README.md. Nothing here
+ * invents a frame to fill them, and no unrelated stock stands in.
  */
 export const facilityLead: ImageKey = "cleanroom";
 

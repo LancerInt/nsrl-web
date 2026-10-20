@@ -9,11 +9,19 @@ const hero = images[heroImage];
 /**
  * The opening.
  *
- * One photograph, held at a deliberate composition: the crop puts the
- * instrument stack right of centre and the navy overlay releases toward it,
- * so the headline sits on the quiet half of the frame and the photograph
- * still reads as a photograph on the other. The still does not drift, pan or
- * zoom — a laboratory's opening statement should hold still while it is read.
+ * The source is a 3:2 room photograph, and a full-bleed band is far wider
+ * than that — so `object-fit: cover` always shows its *entire* width and the
+ * frame becomes the whole busy room, with the eye landing nowhere. The scale
+ * below is the fix: enlarging past the frame and holding the origin
+ * right-of-centre crops the cluttered near bench out of shot altogether and
+ * brings the instrument stack and its monitor up to a size where they read
+ * as the subject. It is a crop, not a motion effect — the still holds
+ * perfectly still while it is read.
+ *
+ * The grade is heavier than the site default for the same reason: the
+ * original is lit by ageing fluorescent tubes and carries a yellow-green
+ * cast that fights the navy. Desaturating hard and letting the overlay
+ * supply the colour is what makes the photograph belong to this palette.
  *
  * The recorded figures sit *below* the image on their own band rather than
  * floating on it in a glass panel: the numbers are evidence, and evidence is
@@ -27,13 +35,14 @@ export function HomeHero() {
         className="relative isolate flex min-h-[min(44rem,82svh)] flex-col justify-end overflow-hidden bg-deep text-white"
       >
         {/* Photograph */}
-        <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 -z-10 overflow-hidden">
           <SpecimenPlate
             src={hero.src}
             alt={hero.alt}
             position={hero.position}
             sizes="100vw"
             priority
+            className="origin-[72%_46%] scale-[1.45] [--photo-grade:saturate(0.42)_contrast(1.14)_brightness(0.9)] sm:scale-[1.32]"
           />
           <div aria-hidden className="scrim" />
         </div>

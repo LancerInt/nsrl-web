@@ -67,14 +67,16 @@
   --color-neutral-300: #bbc3cf;
   --color-neutral-400: #9098a6;
   --color-neutral-500: #68707f;
-  /* The quiet register for label-mono on light surfaces. It is the lightest
-     grey that clears WCAG 2.2 AA (4.5:1) at the small label size on EVERY
-     light surface: 5.05:1 on canvas, 5.28:1 on canvas-raised, 4.73:1 on
-     canvas-sunken. Note it sits between 500 and 600, not between 400 and 500 —
-     neutral-500 itself falls under 4.5:1 on canvas-sunken, so no step lighter
-     than 500 can pass, and neutral-400 must never carry text on a light
-     surface at all. */
-  --color-neutral-550: #656c7a;
+  /* The quiet register for label-mono on light surfaces. Clears WCAG 2.2 AA
+     (4.5:1) at the small label size on EVERY light surface with room to
+     spare: 5.5:1 on canvas, 5.8:1 on canvas-raised, 5.2:1 on canvas-sunken.
+     It was a step lighter and sat at 4.7:1 on the sunken band — passing, but
+     with nothing in hand, and subdued small text is exactly where a
+     borderline ratio is felt. Note it sits between 500 and 600, not between
+     400 and 500: neutral-500 falls under 4.5:1 on canvas-sunken, so no step
+     lighter than 500 can pass, and neutral-400 must never carry text on a
+     light surface at all. */
+  --color-neutral-550: #5f6675;
   --color-neutral-600: #4b515d;
   --color-neutral-700: #333842;
   --color-neutral-800: #22262e;
@@ -159,18 +161,23 @@
   --text-body--line-height: 1.72;
 
   --text-small: 0.9375rem;
-  --text-small--line-height: 1.65;
+  --text-small--line-height: 1.6;
 
-  --text-micro: 0.75rem;
-  --text-micro--line-height: 1.5;
+  /* The smallest type on the site, and it still has to be read: captions,
+     stat descriptions and the baseline row. 13px with a generous line
+     height, not 12px — at 12px these were legible in the abstract and
+     skipped in practice. */
+  --text-micro: 0.8125rem;
+  --text-micro--line-height: 1.55;
 
   /* Calibration labels — the monospace "instrument" voice.
-     12px, not 11px, and tracked at 0.07em rather than 0.2em: the wide
+     12px, not 11px, and tracked at 0.06em rather than 0.2em: the wide
      tracking read as decoration and cost the labels their legibility, which
-     is the opposite of what a field label is for. */
+     is the opposite of what a field label is for. Mono already carries
+     plenty of built-in spacing; uppercase needs only a hair more. */
   --text-label: 0.75rem;
-  --text-label--line-height: 1.35;
-  --text-label--letter-spacing: 0.07em;
+  --text-label--line-height: 1.4;
+  --text-label--letter-spacing: 0.06em;
 
   /* --- Motion ----------------------------------------------------------- */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -486,11 +493,11 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(
-      96deg,
-      color-mix(in oklab, var(--color-deep) 90%, transparent) 0%,
-      color-mix(in oklab, var(--color-deep) 80%, transparent) 28%,
-      color-mix(in oklab, var(--color-deep) 52%, transparent) 58%,
-      color-mix(in oklab, var(--color-deep) 20%, transparent) 100%
+      94deg,
+      color-mix(in oklab, var(--color-deep) 95%, transparent) 0%,
+      color-mix(in oklab, var(--color-deep) 90%, transparent) 32%,
+      color-mix(in oklab, var(--color-deep) 58%, transparent) 62%,
+      color-mix(in oklab, var(--color-deep) 12%, transparent) 100%
     ),
     linear-gradient(
       to top,
@@ -576,26 +583,54 @@
 
 /* --------------------------------------------------------------------------
    Reveal primitives — driven by IntersectionObserver via useReveal().
-   Elements only start hidden once JS marks the document, so a no-JS or
-   failed-hydration visitor still sees every word.
+
+   Content is visible by default and the animation is pure enhancement. The
+   hidden state is gated on `[data-armed]`, an attribute the hook sets *only*
+   on elements that start below the fold; nothing else is ever hidden, by
+   anything, at any point. A no-JS visitor, a blocked bundle, a failed
+   hydration, a restored mid-page scroll position and an observer that never
+   fires all end in the same place: the words are on the screen.
+
+   `transition: none` while armed makes arming instantaneous — the element
+   must not be seen fading out on its way to being hidden. The transition is
+   declared on the revealed state instead, which is the one that animates.
    -------------------------------------------------------------------------- */
 @layer components {
-  html.js [data-reveal] {
+  html.js [data-reveal][data-armed] {
     opacity: 0;
-    transform: translate3d(0, var(--reveal-y, 1.25rem), 0);
-    transition:
-      opacity 0.8s var(--ease-out-expo) var(--reveal-delay, 0s),
-      transform 0.9s var(--ease-out-expo) var(--reveal-delay, 0s);
+    transform: translate3d(0, var(--reveal-y, 0.625rem), 0);
+    transition: none;
     will-change: opacity, transform;
   }
 
-  html.js [data-reveal="scale"] {
-    transform: translate3d(0, var(--reveal-y, 1.5rem), 0) scale(0.985);
+  html.js [data-reveal="scale"][data-armed] {
+    transform: translate3d(0, var(--reveal-y, 0.625rem), 0) scale(0.99);
   }
 
   html.js [data-reveal].is-inview {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
+    /* Short, and the same curve as every other transition on the site. A
+       reveal is a hint that something arrived, not an event in itself.
+
+       Two decisions worth keeping:
+
+       The stagger rides the *transform* only. A delay on opacity is a
+       window during which the element is fully transparent while already
+       being treated as revealed — which is precisely the blank section
+       this whole mechanism was reported for. Opacity therefore starts
+       immediately, every time, and the stagger survives as a difference in
+       how far each element still has to travel.
+
+       The delay is capped here rather than at the call sites. Roughly
+       twenty-five components stagger their children, and a thirteen-row
+       directory at 60ms a row would take most of a second to finish
+       arriving, the last row visibly lagging the first. `min()` holds
+       every stagger to 80ms however large an index a call site multiplies
+       up. */
+    transition:
+      opacity 0.35s var(--ease-out-quart),
+      transform 0.4s var(--ease-out-quart) min(var(--reveal-delay, 0s), 0.08s);
     will-change: auto;
   }
 }
@@ -650,7 +685,8 @@
     scroll-behavior: auto !important;
   }
 
-  html.js [data-reveal] {
+  html.js [data-reveal],
+  html.js [data-reveal][data-armed] {
     opacity: 1 !important;
     transform: none !important;
   }

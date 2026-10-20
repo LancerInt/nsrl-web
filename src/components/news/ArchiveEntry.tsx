@@ -6,7 +6,7 @@ import { images, type ImageKey } from "@/content/imagery";
 import { cn, pad } from "@/lib/utils";
 import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
 
-const FIGURES: ImageKey[] = ["scientistFlask", "microscope", "notebook", "team"];
+const FIGURES: ImageKey[] = ["scientistFlask", "microscope", "team", "petri"];
 
 /**
  * One entry in the newsroom archive.

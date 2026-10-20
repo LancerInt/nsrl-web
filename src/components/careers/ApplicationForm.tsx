@@ -219,7 +219,7 @@ export function ApplicationForm() {
               </option>
             ))}
           </select>
-          <p id={`${id}-department-hint`} className="label-mono mt-3 text-ink-300">
+          <p id={`${id}-department-hint`} className="label-mono mt-3 text-ink-200">
             {departments.length} departments accept applications
           </p>
           <FieldError id={`${id}-department-error`} message={errors.department} />

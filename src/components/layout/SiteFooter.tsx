@@ -3,7 +3,6 @@ import { ArrowUpRight } from "lucide-react";
 
 import { contact, footerNav, locations, site } from "@/content/site";
 import { Logo } from "@/components/layout/Logo";
-import { ActionLink } from "@/components/ui/ActionLink";
 
 /** Inlined because lucide dropped brand marks in v1. */
 function LinkedInMark() {
@@ -15,18 +14,14 @@ function LinkedInMark() {
 }
 
 /**
- * The closing action and the directory.
+ * The directory.
  *
- * One proposal ask per page, and this is it — which is why no page adds a
- * second closing band of its own. The ask is specific rather than generic
- * ("tell us the authority you need to satisfy" asks for the one fact that
- * actually shapes a quote), and the phone number sits beside it because a
- * regulatory affairs lead with a deadline would rather call.
- *
- * The directory below is a single grid: brand and contact, four link
- * columns, and the address as a column of its own rather than a separate
- * band underneath. With one site, a full-width band for one address was
- * mostly empty space.
+ * The closing proposal ask used to be the band at the top of this element;
+ * it now lives in `ClosingCta`, on a light surface, immediately above the
+ * footer — see that file for why. What remains here is one grid: brand and
+ * contact, four link columns, and the address as a column of its own rather
+ * than a separate band underneath. With one site, a full-width band for one
+ * address was mostly empty space.
  */
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -34,50 +29,15 @@ export function SiteFooter() {
 
   return (
     <footer data-theme="deep" className="relative isolate overflow-hidden bg-deep text-ink-100">
-      {/* Closing call to action — the last decision point on the page. */}
-      <div className="border-b border-white/10 bg-deep-raised">
-        <div className="shell py-[clamp(3rem,5vw,4.5rem)]">
-          <div className="grid items-center gap-x-12 gap-y-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
-            <div>
-              <p className="label-mono text-meniscus-300">Start a programme</p>
-              <h2 className="mt-4 max-w-[18ch] font-display text-d3 text-white">
-                Tell us the authority you need to satisfy.
-              </h2>
-              <p className="mt-5 max-w-[48ch] text-lead text-ink-200">
-                We will map the endpoints, the guidelines and the divisions from there — and
-                tell you plainly if a study you have asked for is one you do not need.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-start gap-5 lg:items-end">
-              <div className="flex flex-wrap gap-3">
-                <ActionLink href="/contact" variant="solid" tone="deep">
-                  Request a proposal
-                </ActionLink>
-                <ActionLink href="/products" variant="outline" tone="deep">
-                  Study packages
-                </ActionLink>
-              </div>
-              <a
-                href={`tel:${contact.phoneHref}`}
-                className="font-display text-h2 text-white transition-colors duration-200 hover:text-meniscus-200"
-              >
-                {contact.phoneDisplay}
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Directory — brand, links and the address in one grid. */}
-      <div className="shell py-[clamp(2.5rem,4vw,3.5rem)]">
+      <div className="shell py-[clamp(2.75rem,4.5vw,4rem)]">
         <div className="grid gap-x-10 gap-y-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <Logo tone="deep" />
 
             <p className="mt-6 max-w-[36ch] text-small text-ink-200">{site.shortDescription}</p>
 
-            <h2 className="label-mono mt-7 text-ink-300">{office.label}</h2>
+            <h2 className="label-mono mt-7 text-ink-200">{office.label}</h2>
             <address className="mt-3 text-small not-italic leading-relaxed text-ink-100">
               {office.lines.map((line) => (
                 <span key={line} className="block">
@@ -128,7 +88,7 @@ export function SiteFooter() {
           >
             {footerNav.map((column) => (
               <div key={column.heading}>
-                <h2 className="label-mono mb-4 text-ink-300">{column.heading}</h2>
+                <h2 className="label-mono mb-4 text-ink-200">{column.heading}</h2>
                 {/* The rows carry their own height rather than relying on
                     list spacing: on a phone these are the only navigation
                     left, and a 19px target is not one. */}

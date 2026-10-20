@@ -603,7 +603,7 @@ function MobileMenu({
                       <div className="-mt-1 space-y-4 pb-5">
                         {group.panel.columns.map((column) => (
                           <div key={column.heading}>
-                            <p className="label-mono text-ink-300">{column.heading}</p>
+                            <p className="label-mono text-ink-200">{column.heading}</p>
                             <ul className="mt-0.5">
                               {column.links.map((link) => (
                                 <li key={link.href}>

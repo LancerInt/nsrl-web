@@ -6,6 +6,7 @@ import "./globals.css";
 import { site } from "@/content/site";
 import { JsonLd, organisationJsonLd, websiteJsonLd } from "@/lib/seo";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { ClosingCta } from "@/components/layout/ClosingCta";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { MotionProvider } from "@/components/system/MotionProvider";
 import { ScrollManager } from "@/components/system/ScrollManager";
@@ -134,6 +135,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <ScrollManager>
             <SiteHeader />
             <main id="main">{children}</main>
+            <ClosingCta />
             <SiteFooter />
           </ScrollManager>
         </MotionProvider>

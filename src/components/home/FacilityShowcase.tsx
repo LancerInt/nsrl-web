@@ -8,23 +8,22 @@ import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
 /**
  * The facility, shown rather than described.
  *
- * Four frames, each captioned with what it depicts, set against the recorded
- * capacity figures. The composition is varied — one tall frame, three wide —
- * so the band reads as a plate of photographs rather than a row of thumbnails,
- * but every frame shares one grade and one caption treatment so the variation
- * never becomes noise.
+ * One tall frame and two stacked beside it, sized so the three fill a single
+ * clean rectangle with no dead corner — the lead runs the full height of the
+ * block and each stacked frame takes half of it less the gap. Laying it out
+ * as spans in a shared row left the two small frames floating at the top of
+ * a column twice their height; this is a two-column flex instead, which has
+ * no such gap to leave.
+ *
+ * Captions sit directly beneath their own frame, inside it, so a caption is
+ * never ambiguous about which photograph it belongs to.
  *
  * The captions describe the kind of environment in the frame. They do not
- * claim the photograph is of NSRL's own site, because the current library is
- * free-licence stand-ins — see `content/imagery.ts` and README.md.
+ * claim the photograph is of NSRL's own site — the current library is
+ * free-licence stand-ins. See `content/imagery.ts` and README.md.
  */
-/**
- * Column spans at `lg`: one lead frame at half the row, two at a quarter
- * each. Variation in scale, not in shape — every frame keeps the same 4:3.
- */
-const SPANS = ["sm:col-span-2 lg:col-span-6", "lg:col-span-3", "lg:col-span-3"];
-
 export function FacilityShowcase() {
+  const [lead, ...stacked] = facilityShowcase;
 
   return (
     <section
@@ -36,44 +35,56 @@ export function FacilityShowcase() {
         <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-5" data-reveal>
           <div>
             <Eyebrow tone="deep">The facility</Eyebrow>
-            <h2 id="facility" className="mt-5 max-w-[22ch] font-display text-d2 text-white">
+            <h2 id="facility" className="mt-4 max-w-[22ch] font-display text-d2 text-white">
               One accredited site in Salem, Tamil Nadu.
             </h2>
           </div>
-          <p className="max-w-[40ch] text-small text-ink-200">
+          <p className="max-w-[40ch] text-small text-ink-100">
             Chemistry, toxicology, ecotoxicology, entomology, pathology and the vivarium share
             one address. That is what lets a study change division without changing custodian.
           </p>
         </div>
 
-        {/* `items-end` is what makes one-big-two-small read as a composition
-            rather than as a large frame with two orphans floating above it:
-            the three frames sit on a shared baseline, and the extra height
-            goes above the small pair where it belongs. */}
-        <div className="mt-[clamp(2rem,3.2vw,3rem)] grid gap-x-4 gap-y-8 sm:grid-cols-2 lg:grid-cols-12 lg:items-end">
-          {facilityShowcase.map((frame, i) => (
-            <Frame
-              key={frame.title}
-              frame={frame}
-              delay={0.05 * i}
-              className={SPANS[i % SPANS.length]}
-              sizes={
-                i === 0
-                  ? "(min-width: 1024px) 48vw, 100vw"
-                  : "(min-width: 1024px) 24vw, (min-width: 640px) 50vw, 100vw"
-              }
-            />
-          ))}
+        <div
+          data-reveal
+          className="mt-[clamp(1.75rem,3vw,2.5rem)] flex flex-col gap-4 lg:flex-row lg:items-stretch"
+        >
+          {/* Lead frame — full height of the block. */}
+          <Frame
+            frame={lead}
+            className="lg:w-[58%]"
+            mediaClassName="aspect-[4/3] lg:aspect-auto lg:flex-1"
+            sizes="(min-width: 1024px) 58vw, 100vw"
+          />
+
+          {/* Two stacked, each half the block less the gap. */}
+          <div className="flex flex-col gap-4 lg:w-[42%]">
+            {/* `min-h` on the stacked media is what actually sets the
+                height of the whole block: both columns stretch, so the
+                shortest definite height in the group wins and the lead
+                flexes to match it. Set too low, the two small frames
+                letterbox to a 3:1 slot and their subjects get cropped out
+                of their own photographs. */}
+            {stacked.map((frame) => (
+              <Frame
+                key={frame.title}
+                frame={frame}
+                className="lg:flex-1"
+                mediaClassName="aspect-[16/9] lg:aspect-auto lg:flex-1 lg:min-h-[14rem]"
+                sizes="(min-width: 1024px) 42vw, 100vw"
+              />
+            ))}
+          </div>
         </div>
 
         {/* Recorded capacity — the numbers the photographs are evidence of. */}
         <dl
           data-reveal
-          className="mt-10 grid gap-x-8 gap-y-6 border-t border-white/12 pt-8 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-10 grid gap-x-8 gap-y-6 border-t border-white/15 pt-8 sm:grid-cols-2 lg:grid-cols-4"
         >
           {capacityStats.map((stat) => (
             <div key={stat.label}>
-              <dt className="label-mono text-ink-200">{stat.label}</dt>
+              <dt className="label-mono text-ink-100">{stat.label}</dt>
               <dd className="mt-2 font-display text-h1 text-white">
                 {formatCount(stat.value)}
                 {stat.suffix ?? ""}
@@ -95,23 +106,21 @@ export function FacilityShowcase() {
 function Frame({
   frame,
   className,
+  mediaClassName,
   sizes,
-  delay = 0,
 }: {
   frame: (typeof facilityShowcase)[number];
   className?: string;
+  mediaClassName: string;
   sizes: string;
-  delay?: number;
 }) {
   const image = images[frame.image];
 
   return (
     <figure
-      data-reveal
-      style={{ "--reveal-delay": `${delay}s` } as React.CSSProperties}
-      className={className}
+      className={`flex flex-col overflow-hidden rounded-[var(--radius-card)] bg-deep-raised ${className ?? ""}`}
     >
-      <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] bg-deep-raised">
+      <div className={`relative overflow-hidden ${mediaClassName}`}>
         <SpecimenPlate
           src={image.src}
           alt={image.alt}
@@ -120,9 +129,9 @@ function Frame({
           className="photo-deep"
         />
       </div>
-      <figcaption className="mt-3.5">
+      <figcaption className="px-4 py-3.5 sm:px-5 sm:py-4">
         <span className="block font-display text-h3 text-white">{frame.title}</span>
-        <span className="mt-1 block max-w-[52ch] text-small text-ink-200">{frame.caption}</span>
+        <span className="mt-1 block text-small leading-snug text-ink-100">{frame.caption}</span>
       </figcaption>
     </figure>
   );

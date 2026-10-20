@@ -96,7 +96,7 @@ export function PageHero({
               >
                 {inlineMeta.map((item) => (
                   <div key={item.label}>
-                    <dt className={cn("label-mono", deep ? "text-ink-300" : "text-neutral-550")}>
+                    <dt className={cn("label-mono", deep ? "text-ink-200" : "text-neutral-550")}>
                       {item.label}
                     </dt>
                     <dd

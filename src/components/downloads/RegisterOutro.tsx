@@ -56,8 +56,9 @@ export function RegisterOutro() {
             className="relative col-span-12 aspect-[4/3] self-end img-frame sm:col-span-8 lg:col-span-4 lg:col-start-9 lg:aspect-[3/4]"
           >
             <SpecimenPlate
-              src={images.notebook.src}
-              alt={images.notebook.alt}
+              src={images.team.src}
+              alt={images.team.alt}
+              position={images.team.position}
               sizes="(min-width: 1024px) 33vw, 100vw"
             />
           </div>

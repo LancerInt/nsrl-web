@@ -139,7 +139,15 @@ function SectorTile({
           >
             {sector.name}
           </span>
-          <span className="mt-2 flex-1 text-small text-neutral-600">{sector.promise}</span>
+
+          {/* `summary`, not `promise`. The promise line is the brochure
+              sentence — "growing a sustainable future through innovative
+              solutions" — which is true of any agrochemical business and
+              tells a registration manager nothing. The summary is the scope:
+              what is actually tested, in the words the dossier uses. */}
+          <span className="mt-2 text-small leading-snug text-neutral-600">
+            {sector.summary}.
+          </span>
 
           {isLead ? (
             <span className="mt-4 flex flex-wrap gap-1.5">
@@ -154,7 +162,10 @@ function SectorTile({
             </span>
           ) : null}
 
-          <span className="mt-5 inline-flex items-center gap-2 text-[0.875rem] font-medium text-meniscus-600">
+          {/* `mt-auto` rather than a fixed margin: the summaries are close in
+              length but not identical, and the links have to sit on one line
+              across the row whatever the copy does. */}
+          <span className="mt-auto inline-flex items-center gap-2 pt-5 text-[0.875rem] font-medium text-meniscus-600">
             View programmes
             <ArrowRight
               aria-hidden

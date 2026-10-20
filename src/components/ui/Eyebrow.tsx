@@ -21,8 +21,12 @@ export function Eyebrow({
   return (
     <p
       className={cn(
-        "label-mono flex items-center gap-3",
-        deep ? "text-white/70" : "text-ink-700",
+        "label-mono flex items-center gap-2.5",
+        /* A defined token, not `white/70`. A percentage of white resolves
+           against whatever the band happens to be, so the same label was
+           5.1:1 on one dark surface and less on the next; `ink-100` is
+           7.3:1 on every one of them. */
+        deep ? "text-ink-100" : "text-ink-700",
         className,
       )}
     >

@@ -36,7 +36,7 @@ export function CareersHeroVisual() {
               return (
                 <span key={department} className="flex items-center justify-end gap-3">
                   {major ? (
-                    <span className="label-mono tabular-nums text-ink-300">{pad(i + 1)}</span>
+                    <span className="label-mono tabular-nums text-ink-200">{pad(i + 1)}</span>
                   ) : null}
                   <span
                     className={cn(

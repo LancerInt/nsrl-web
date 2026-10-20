@@ -130,10 +130,19 @@ Everything lives in `src/app/globals.css` under `@theme`. There is no
   from its record in `content/imagery.ts` rather than from the layout.
 - **Motion**: one vocabulary in `src/lib/motion.ts`. Transitional only —
   there are no perpetual animations anywhere (no drifting hero, no rotating
-  orbitals, no marquee). Native scroll; reveals ride a single
-  IntersectionObserver (`data-reveal`); Framer Motion handles menus and
+  orbitals, no marquee). Native scroll; Framer Motion handles menus and
   transitions. Numbers are static — a laboratory reports its figures, it
   does not perform them.
+- **Reveals** are *enhancement only*, and the contract is enforced in four
+  places (`hooks/useReveal.ts` + the reveal block in `globals.css`):
+  nothing is hidden until the hook arms it; only elements starting below the
+  fold are ever armed; the observer's root extends 20% *past* the fold so a
+  fade finishes before the element is on screen; and a 1.2s safety timer
+  resolves anything the observer never reported. The stagger rides the
+  transform, never opacity — a delay on opacity is by definition a window
+  of blank content. No JavaScript, a blocked bundle, a dead
+  `IntersectionObserver` and a restored mid-page scroll all end with the
+  words on the screen.
 - **Focus** is declared *unlayered* at the top of `globals.css`, not in
   `@layer base`. Tailwind's `transition-colors` includes `outline-color`, so
   a layered rule loses to any element with a colour transition and the ring
@@ -157,31 +166,47 @@ needed.
 
 ### ⚠ Photography still outstanding
 
-The homepage uses eleven photographs in eleven slots with nothing repeated.
-That is the whole library — there is no slack left, and these gaps are the
-reason several pages share a frame.
+**There is not one photograph of NSRL on this site.** Every file in
+`public/images/` is a free-licence stand-in of somebody else's laboratory.
+Nothing is captioned as NSRL's premises, and no caption claims a room in a
+photograph is a room at Salem — the captions name the *kind* of environment
+and the specification behind it, both of which come from `content/`. That is
+the most the current library honestly supports, and it is why the list below
+matters more than any design change in this repo.
+
+The homepage uses ten photographs in ten slots with nothing repeated. That is
+the whole usable library — there is no slack left, and these gaps are why
+some pages share a frame.
 
 | Priority | Shot needed | Why |
 |---|---|---|
-| **1** | **Hero plate, ≥2560px wide**, laboratory interior, subject weighted right | The hero runs full-bleed. The widest file in the library is 1920px, so on a 1440px screen at 2× it is upscaled and slightly soft. |
-| **1** | **Animal housing / vivarium** — clean rooms, racks, environmental control | Specified on `/facilities` as "70+ clean rooms" with no photograph at all. The single largest credibility gap on the site. |
+| **1** | **The archive** — organised record storage, labelled boxes, specimen or block storage, the RAID cabinet | The ten-year retention is the foundation of the quality argument, it had a frame in the facility showcase, and that frame has been **removed** rather than filled with unrelated stock. The showcase now runs three frames instead of four because of this. |
+| **1** | **Hero plate, ≥2560px wide**, laboratory interior with a quiet left third and instrument detail right | The hero runs full-bleed. The widest file in the library is 1920px, and it is now enlarged ~1.3× to find a focal point, so it is noticeably soft on a 1440px screen at 2×. This is the single highest-impact replacement. |
+| **1** | **Animal housing / vivarium** — clean rooms, racks, environmental control | Specified on `/facilities` as "70+ clean rooms" with no photograph at all. |
 | **1** | **Inhalation suites** | Specified, no photograph. One of the capabilities the laboratory is differentiated on. |
 | **2** | **Insect rearing colonies** | Specified, no photograph. |
-| **2** | **Second controlled-environment frame** | `cleanroom-w2.jpg` currently leads the Medical Devices sector *and* the facilities page. Both are the same technician at the same cabinet. |
 | **2** | **Entomology** | Shares the nursery frame with ecotoxicology. |
-| **3** | **A modern archive / records room** | `documents-w3.jpg` is a 1941 laboratory notebook photographed in a museum case, with a period magazine in frame. It is honestly captioned, but it does not read as a current GLP archive. |
+| **2** | **Second containment frame** | `cleanroom-w2.jpg` carries both the homepage facility showcase and the facilities page lead. |
 | **3** | **Exterior / site establishing shot** | Nothing on the site shows the building. |
 
-**Withdrawn from use:** `public/images/pipette-1.jpg` carries a visible
-`rawpixel` watermark across the whole frame. It is still on disk and still
-credited, but nothing references it — see the note in `imagery.ts`. Do not
-reinstate it; replace it.
+**Withdrawn from use — on disk, credited, referenced by nothing:**
+
+- `pipette-1.jpg` — a visible `rawpixel` watermark across the whole frame.
+- `documents-w3.jpg` — a handwritten ledger photographed in a museum case
+  with a period magazine in shot. It was standing in for the archive and
+  communicated the opposite of a secure, validated, backed-up one. A weak
+  photograph of the right subject can be re-graded; this was the right
+  photograph of the wrong subject.
+
+Neither may be reinstated. `imagery.ts` records why next to the map.
 
 **Quality caveats on what is in use:** `chemistry-w1.jpg` (the hero) is a
-fluorescent-lit room with a strong yellow cast and visibly dated instruments;
-the shared `photo` grade pulls the cast back but cannot fix the lighting.
-`cleanroom-w2.jpg` is underexposed and carries a third-party equipment brand
-mark. Both are the best available for their slot, not good choices.
+fluorescent-lit room with a yellow-green cast and visibly dated instruments —
+the hero grade desaturates hard and lets the navy overlay supply the colour,
+which works, but it is a rescue rather than a choice. `cleanroom-w2.jpg` is
+underexposed and carries a third-party equipment brand mark. `pharma-w2.jpg`
+shows a named third-party pharmaceutical product and is used only as a
+small sector card for that reason.
 
 ## Accessibility & performance notes
 
