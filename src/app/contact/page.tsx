@@ -91,20 +91,20 @@ export default function ContactPage() {
 
             <a
               href={`tel:${contact.phoneHref}`}
-              className="mt-6 block font-display text-h1 text-ink-950 transition-colors duration-400 hover:text-signal-700"
+              className="mt-6 block font-display text-h1 text-ink-950 transition-colors duration-400 hover:text-meniscus-600"
             >
               {contact.phoneDisplay}
             </a>
             <a
               href={`tel:${contact.mobileHref}`}
-              className="mt-2 block font-display text-h2 text-ink-950 transition-colors duration-400 hover:text-signal-700"
+              className="mt-2 block font-display text-h2 text-ink-950 transition-colors duration-400 hover:text-meniscus-600"
             >
               {contact.mobileDisplay}
             </a>
 
             <a
               href={`mailto:${contact.email}`}
-              className="mt-7 block break-words font-display text-h2 text-ink-950 underline decoration-ink-900/20 underline-offset-[6px] transition-colors duration-400 hover:text-signal-700 hover:decoration-signal-500"
+              className="mt-7 block break-words font-display text-h2 text-ink-950 underline decoration-ink-900/20 underline-offset-[6px] transition-colors duration-400 hover:text-meniscus-600 hover:decoration-meniscus-500"
             >
               {contact.email}
             </a>
@@ -120,7 +120,7 @@ export default function ContactPage() {
 
             <a
               href="#locations"
-              className="label-mono mt-6 inline-block text-ink-700 underline decoration-ink-900/25 underline-offset-4 transition-colors duration-400 hover:text-signal-700"
+              className="label-mono mt-5 inline-flex min-h-9 items-center text-ink-700 underline decoration-ink-900/25 underline-offset-4 transition-colors duration-200 hover:text-meniscus-600 hover:decoration-meniscus-500"
             >
               Full address
             </a>

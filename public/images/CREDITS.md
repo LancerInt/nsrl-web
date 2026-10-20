@@ -8,6 +8,12 @@ These are stand-in stock photographs of representative laboratories, not of
 NSRL's own facilities. Replace them with NSRL's photography before launch — see
 `src/content/imagery.ts`, where each file is referenced once.
 
+⚠ **`pipette-1.jpg` is withdrawn and unused.** The downloaded file carries a
+visible `rawpixel` watermark tiled across the whole frame, which no crop
+removes. It is kept here only so the withdrawal is traceable. Nothing on the
+site references it, and nothing should until it is replaced with a clean
+original.
+
 | File | Depicts | Licence | Credit | Source |
 |---|---|---|---|---|
 | `microscope-1.jpg` | Microscope objective turret | CC0 | — | rawpixel.com/image/5921725 |
@@ -15,7 +21,7 @@ NSRL's own facilities. Replace them with NSRL's photography before launch — se
 | `chemistry-w1.jpg` ★ | HPLC instruments on a bench | CC BY-SA 3.0 | Root66 (Wikimedia Commons) | commons.wikimedia.org, "Laboratoires Arkopharma – Chromatographie liquide" |
 | `chemistry-2.jpg` | Scientist holding sample vials | Public domain | U.S. Forest Service Photography | flickr.com/photos/140082569@N07/52814902432 |
 | `glassware-2.jpg` | Scientist with a flask | Public domain | USDA | flickr.com/photos/41284017@N08/16734379808 |
-| `pipette-1.jpg` | Researcher pipetting a sample | CC0 | U.S. Dept. of Energy (PNNL) | rawpixel.com/image/3322308 |
+| `pipette-1.jpg` ⚠ | Researcher pipetting a sample | CC0 | U.S. Dept. of Energy (PNNL) | rawpixel.com/image/3322308 |
 | `petri-1.jpg` | Bacterial culture on a petri dish | CC0 | — | rawpixel.com/image/5903671 |
 | `cleanroom-w2.jpg` ★ | Class II biological safety cabinet | CC BY-SA 2.0 | José Eugenio Gómez Rodríguez (Wikimedia Commons) | commons.wikimedia.org, "Mixing the medications at the laminar flow cabinet" |
 | `greenhouse-1.jpg` | Seedlings in a research nursery | Public domain | Glacier NPS | flickr.com/photos/43288043@N04/51510834042 |

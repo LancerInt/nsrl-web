@@ -17,12 +17,21 @@ export function SectorClosing({ industry }: { industry: Industry }) {
   const others = industries.filter((entry) => entry.slug !== industry.slug);
 
   return (
-    <Section tone="canvas" innerClassName="py-[var(--section-y)]">
+    <Section
+      id="proposal"
+      tone="canvas"
+      innerClassName="py-[var(--section-y)]"
+      aria-labelledby="proposal-heading"
+    >
       <div className="egrid gap-y-9">
         <div className="col-span-12 lg:col-span-6">
           <Eyebrow index="04">Next step</Eyebrow>
 
-          <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
+          <RevealText
+            as="h2"
+            id="proposal-heading"
+            className="mt-6 font-display text-d3 text-ink-950"
+          >
             Scope a programme for this sector.
           </RevealText>
 

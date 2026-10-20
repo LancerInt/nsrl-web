@@ -58,8 +58,8 @@ export function SpecList({
               className={cn(
                 "mt-2.5 h-1 w-1 shrink-0 rounded-full transition-colors duration-400",
                 deep
-                  ? "bg-ink-300/50 group-hover:bg-signal-300"
-                  : "bg-neutral-400 group-hover:bg-signal-600",
+                  ? "bg-ink-300/50 group-hover:bg-meniscus-300"
+                  : "bg-neutral-400 group-hover:bg-meniscus-500",
               )}
             />
           )}
@@ -87,10 +87,10 @@ export function SpecChips({
         <li
           key={item}
           className={cn(
-            "label-mono rounded-full border px-3.5 py-2 transition-colors duration-400",
+            "label-mono rounded-[var(--radius-control)] border px-3 py-1.5 transition-colors duration-200",
             deep
-              ? "border-white/18 text-ink-100 hover:border-signal-400 hover:text-white"
-              : "border-ink-900/14 text-ink-700 hover:border-ink-900/60 hover:text-ink-950",
+              ? "border-white/20 text-ink-100 hover:border-meniscus-300 hover:text-white"
+              : "border-ink-900/14 text-ink-700 hover:border-meniscus-500/60 hover:text-meniscus-600",
           )}
         >
           {item}

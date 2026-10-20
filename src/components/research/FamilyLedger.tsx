@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 import type { Discipline } from "@/content/disciplines";
+import { slugify } from "@/lib/utils";
 import { Section, SectionBody } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RevealText } from "@/components/ui/RevealText";
@@ -40,17 +41,19 @@ export function FamilyLedger({
   items: Discipline[];
   tone: "canvas" | "sunken";
 }) {
-  const id = `family-${index}`;
+  // The anchor is derived from the family name, not its position, so the jump
+  // links in the finder keep working if a family is ever reordered.
+  const id = slugify(family);
 
   return (
-    <Section tone={tone} aria-labelledby={id}>
+    <Section id={id} tone={tone} aria-labelledby={`${id}-heading`} className="scroll-mt-[var(--nav-h)]">
       <SectionBody>
         <div className="egrid gap-y-8">
           <div className="col-span-12 lg:col-span-3">
             <div className="lg:rail-sticky">
               <Eyebrow index={index}>Family</Eyebrow>
 
-              <h2 id={id} className="mt-7 font-display text-d4 text-ink-950">
+              <h2 id={`${id}-heading`} className="mt-7 font-display text-d4 text-ink-950">
                 <RevealText as="span" className="block">
                   {family}
                 </RevealText>

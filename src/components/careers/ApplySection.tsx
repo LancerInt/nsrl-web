@@ -39,7 +39,7 @@ export function ApplySection() {
                   <dd className="mt-3">
                     <a
                       href={`mailto:${contact.email}`}
-                      className="font-display text-h1 text-ink-950 underline decoration-white/25 underline-offset-[6px] transition-colors duration-400 hover:text-ink-950 hover:decoration-signal-400"
+                      className="font-display text-h1 text-ink-950 underline decoration-white/25 underline-offset-[6px] transition-colors duration-400 hover:text-ink-950 hover:decoration-meniscus-300"
                     >
                       {contact.email}
                     </a>

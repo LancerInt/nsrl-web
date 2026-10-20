@@ -73,7 +73,7 @@ export function ServicesClosing() {
             </a>
             <a
               href={`mailto:${contact.email}`}
-              className="text-small text-neutral-600 underline decoration-white/25 underline-offset-4 transition-colors duration-400 hover:text-ink-950 hover:decoration-signal-400"
+              className="text-small text-neutral-600 underline decoration-white/25 underline-offset-4 transition-colors duration-400 hover:text-ink-950 hover:decoration-meniscus-500"
             >
               {contact.email}
             </a>

@@ -7,10 +7,10 @@ import { cn } from "@/lib/utils";
  */
 export function OrbitalMark({
   className,
-  animate = false,
   strokeWidth = 1.5,
 }: {
   className?: string;
+  /** Accepted for call-site compatibility; the mark no longer rotates. */
   animate?: boolean;
   strokeWidth?: number;
 }) {
@@ -21,12 +21,7 @@ export function OrbitalMark({
       aria-hidden
       className={cn("overflow-visible", className)}
     >
-      <g
-        stroke="currentColor"
-        strokeWidth={strokeWidth}
-        className={cn(animate && "origin-center motion-safe:animate-[orbit_26s_linear_infinite]")}
-        style={{ transformOrigin: "60px 60px" }}
-      >
+      <g stroke="currentColor" strokeWidth={strokeWidth}>
         <ellipse cx="60" cy="60" rx="26" ry="52" transform="rotate(-32 60 60)" opacity="0.75" />
         <ellipse cx="60" cy="60" rx="26" ry="52" transform="rotate(32 60 60)" opacity="0.45" />
       </g>

@@ -100,32 +100,53 @@ Everything lives in `src/app/globals.css` under `@theme`. There is no
 
 - **Direction**: a light "scientific dossier" — pages are set like the title
   and register pages of a GLP study file: paper surfaces, hairline rules,
-  ruled title-block cards, a double rule closing each hero. The global footer
-  is the single deep-navy block (the file's back cover).
-- **Colour** is derived from the supplied logo: `ink-*` (the navy wordmark and
-  orbital), `meniscus-*` (the liquid in the flask — carries figure traces),
-  `signal-*` (the green orbital — reserved strictly for functional marks:
-  held accreditations, acceptance ticks, form feedback), plus `neutral-*` and
-  the surface tokens `canvas` / `canvas-raised` / `canvas-sunken` / `deep`.
-  No component contains a hex value.
+  ruled cards, photographic bands. The global footer is the single deep-navy
+  block (the file's back cover).
+- **Colour** is anchored on the brand palette: deep navy `#0B1730`
+  (`ink-900`, and the `deep` surface), primary accent blue `#2868B2`
+  (`ink-400` / `meniscus-500`), paper `#FAFAF8` (`canvas`) and the cool
+  secondary band `#EEF3F7` (`canvas-sunken`). `signal-*` (green) is reserved
+  strictly for *held* credentials and success feedback; `alert-*` (red) is
+  the only error colour; everything interactive — links, hovers, active
+  states, focus rings — is the accent blue. No component contains a hex
+  value.
+- **Measure and rhythm**: one content width (`--shell-max: 80rem`, 1280px
+  outer) and one vertical scale (`--section-y`, 56px → 104px, with
+  `--section-y-tight` for bands that sit against the one above).
+- **Controls**: two heights (`--control-h` 46px, `--control-h-sm` 40px) and
+  three radii (`--radius-control` 6px, `--radius-card` 12px, `--radius-lg`
+  16px). Every button, input and chip resolves to one of each, so mixed rows
+  line up without hand-tuning. `ActionLink` is the single CTA component;
+  `card-interactive` and `row-interactive` are the only two hover states a
+  surface may have.
 - **Type**: Newsreader (serif display — the document voice, weights set in the
   tokens), Inter (body and UI), IBM Plex Mono (the monospace "calibration
-  label" voice). Fluid display scale `text-d1`–`text-d4` via `clamp()`; the
-  roman `text-editorial` register replaces the old italic accent voice.
-- **Motion**: one vocabulary in `src/lib/motion.ts`. Native scroll (no
-  smooth-scroll hijack); reveals ride a single IntersectionObserver
-  (`data-reveal`); GSAP handles pinning and scrub; Framer Motion handles
-  menus, transitions and presence. Numbers are static — a laboratory reports
-  its figures, it does not perform them.
+  label" voice). Fluid display scale `text-d1`–`text-d4` via `clamp()`.
+  `label-mono` is 12px at 0.07em — the old 11px/0.2em setting read as
+  decoration rather than as a field label.
+- **Photography**: `SpecimenPlate` applies the shared `photo` grade
+  (desaturate, hold contrast, lift the blacks) so a library assembled from a
+  dozen sources reads as one shoot, and takes each image's `objectPosition`
+  from its record in `content/imagery.ts` rather than from the layout.
+- **Motion**: one vocabulary in `src/lib/motion.ts`. Transitional only —
+  there are no perpetual animations anywhere (no drifting hero, no rotating
+  orbitals, no marquee). Native scroll; reveals ride a single
+  IntersectionObserver (`data-reveal`); Framer Motion handles menus and
+  transitions. Numbers are static — a laboratory reports its figures, it
+  does not perform them.
+- **Focus** is declared *unlayered* at the top of `globals.css`, not in
+  `@layer base`. Tailwind's `transition-colors` includes `outline-color`, so
+  a layered rule loses to any element with a colour transition and the ring
+  fades up from the element's own text colour. Leave it unlayered.
 
 ## Imagery
 
-The figure slots carry **real laboratory photography**. Every image is mapped in
-one place — `src/content/imagery.ts` — with its `alt` text written once, and the
-per-page assignments (`divisionImage`, `sectorImage`) resolved through
-`imageFor()` so a missing slug degrades to a real photo rather than crashing the
-render. `SpecimenPlate` renders an optimised `next/image` when passed a `src`,
-and falls back to its deterministic SVG drawing otherwise.
+Every image is mapped in one place — `src/content/imagery.ts` — with its `alt`
+text and crop (`position`) written once, and the per-page assignments
+(`divisionImage`, `sectorImage`, `heroImage`, `facilityShowcase`,
+`facilityLead`, `facilityGallery`) resolved from there. `SpecimenPlate`
+renders an optimised `next/image` when passed a `src`, and falls back to its
+deterministic SVG drawing otherwise.
 
 The files in `public/images/` are **free-licence stand-ins** (CC0, public
 domain, and a few CC-BY/BY-SA with attribution recorded in
@@ -134,10 +155,48 @@ domain, and a few CC-BY/BY-SA with attribution recorded in
 point the `src` values in `imagery.ts` at them, and no component changes are
 needed.
 
+### ⚠ Photography still outstanding
+
+The homepage uses eleven photographs in eleven slots with nothing repeated.
+That is the whole library — there is no slack left, and these gaps are the
+reason several pages share a frame.
+
+| Priority | Shot needed | Why |
+|---|---|---|
+| **1** | **Hero plate, ≥2560px wide**, laboratory interior, subject weighted right | The hero runs full-bleed. The widest file in the library is 1920px, so on a 1440px screen at 2× it is upscaled and slightly soft. |
+| **1** | **Animal housing / vivarium** — clean rooms, racks, environmental control | Specified on `/facilities` as "70+ clean rooms" with no photograph at all. The single largest credibility gap on the site. |
+| **1** | **Inhalation suites** | Specified, no photograph. One of the capabilities the laboratory is differentiated on. |
+| **2** | **Insect rearing colonies** | Specified, no photograph. |
+| **2** | **Second controlled-environment frame** | `cleanroom-w2.jpg` currently leads the Medical Devices sector *and* the facilities page. Both are the same technician at the same cabinet. |
+| **2** | **Entomology** | Shares the nursery frame with ecotoxicology. |
+| **3** | **A modern archive / records room** | `documents-w3.jpg` is a 1941 laboratory notebook photographed in a museum case, with a period magazine in frame. It is honestly captioned, but it does not read as a current GLP archive. |
+| **3** | **Exterior / site establishing shot** | Nothing on the site shows the building. |
+
+**Withdrawn from use:** `public/images/pipette-1.jpg` carries a visible
+`rawpixel` watermark across the whole frame. It is still on disk and still
+credited, but nothing references it — see the note in `imagery.ts`. Do not
+reinstate it; replace it.
+
+**Quality caveats on what is in use:** `chemistry-w1.jpg` (the hero) is a
+fluorescent-lit room with a strong yellow cast and visibly dated instruments;
+the shared `photo` grade pulls the cast back but cannot fix the lighting.
+`cleanroom-w2.jpg` is underexposed and carries a third-party equipment brand
+mark. Both are the best available for their slot, not good choices.
+
 ## Accessibility & performance notes
 
-- Motion is fully inert under `prefers-reduced-motion` — GSAP triggers do not
-  register and all reveals resolve immediately.
+- Motion is fully inert under `prefers-reduced-motion` — all reveals resolve
+  immediately, and there are no perpetual animations to suppress in the
+  first place.
+- The focus ring is 2px of accent blue at a 3px offset, applied unlayered so
+  no utility can remove it and it never animates in. Verified on every
+  tabbable element in the header, hero and card grids.
+- The accreditation matrix on `/research` is a horizontally scrolling table
+  below `lg`. Its wrapper **must** keep `position: relative`: `sr-only` is
+  `position: absolute`, so without a positioned scroll container every cell's
+  screen-reader label resolves against the section instead, takes its static
+  position from inside a 736px table, and pushes the whole document 330px
+  wider than a phone viewport.
 - `[data-reveal]` only hides content once JavaScript has marked the document, so
   a failed hydration never leaves a blank page.
 - Anchor targets carry `scroll-margin-top`, so in-page links clear the fixed

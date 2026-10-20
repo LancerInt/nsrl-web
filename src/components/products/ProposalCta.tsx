@@ -67,7 +67,7 @@ export function ProposalCta() {
                 <dd className="mt-2">
                   <a
                     href={`tel:${contact.phoneHref}`}
-                    className="font-display text-h2 text-ink-950 transition-colors duration-400 hover:text-ink-950"
+                    className="inline-flex min-h-9 items-center font-display text-h2 text-ink-950 transition-colors duration-200 hover:text-meniscus-600"
                   >
                     {contact.phoneDisplay}
                   </a>
@@ -78,7 +78,7 @@ export function ProposalCta() {
                 <dd className="mt-2">
                   <a
                     href={`mailto:${contact.email}`}
-                    className="font-display text-h2 text-ink-950 transition-colors duration-400 hover:text-ink-950"
+                    className="inline-flex min-h-9 items-center font-display text-h2 text-ink-950 transition-colors duration-200 hover:text-meniscus-600"
                   >
                     {contact.email}
                   </a>

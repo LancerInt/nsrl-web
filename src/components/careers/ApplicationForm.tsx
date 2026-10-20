@@ -264,9 +264,12 @@ export function ApplicationForm() {
       </p>
 
       <div className="mt-7 flex flex-wrap items-center gap-x-8 gap-y-5">
+        {/* The same geometry as every other primary action on the site: one
+            control height, one radius, one hover. The pill-and-green it used
+            to be belonged to no other button here. */}
         <button
           type="submit"
-          className="group/action inline-flex items-center justify-center gap-3 rounded-full bg-white px-7 py-4 font-display text-[0.9375rem] font-semibold tracking-[-0.01em] text-ink-950 transition-colors duration-500 [transition-timing-function:var(--ease-out-expo)] hover:bg-signal-400"
+          className="inline-flex h-[var(--control-h)] items-center justify-center gap-2 rounded-[var(--radius-control)] bg-white px-6 font-sans text-[0.9375rem] font-medium text-ink-950 transition-colors duration-200 ease-[var(--ease-out-quart)] hover:bg-ink-50"
         >
           Draft my application
         </button>
@@ -281,7 +284,9 @@ export function ApplicationForm() {
           </p>
         ) : null}
         {status.kind === "error" ? (
-          <p className="flex items-start gap-3 border-l-2 border-signal-600 py-4 pl-5 pr-6 text-small text-signal-800">
+          /* On the deep careers band, so the light end of the alert ramp:
+             alert-700 on navy would not clear 4.5:1. */
+          <p className="flex items-start gap-3 border-l-2 border-alert-500 bg-alert-500/10 py-4 pl-5 pr-6 text-small text-alert-200">
             <AlertTriangle aria-hidden className="mt-1 h-4 w-4 shrink-0" />
             <span>{status.message}</span>
           </p>
@@ -294,7 +299,7 @@ export function ApplicationForm() {
 function FieldError({ id, message }: { id: string; message?: string }) {
   if (!message) return null;
   return (
-    <p id={id} className="mt-3 flex items-start gap-2 text-small text-signal-800">
+    <p id={id} className="mt-3 flex items-start gap-2 text-small text-alert-200">
       <AlertTriangle aria-hidden className="mt-1 h-3.5 w-3.5 shrink-0" />
       <span>{message}</span>
     </p>

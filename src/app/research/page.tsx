@@ -7,13 +7,18 @@ import {
   disciplinesByFamily,
 } from "@/content/disciplines";
 import { pageMetadata } from "@/lib/seo";
-import { pad } from "@/lib/utils";
+import { pad, slugify } from "@/lib/utils";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section, SectionBody } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RevealText } from "@/components/ui/RevealText";
 import { ActionLink } from "@/components/ui/ActionLink";
 import { RegisterHeroField } from "@/components/research/RegisterHeroField";
+import {
+  DivisionFinder,
+  type FinderEntry,
+  type FinderFamily,
+} from "@/components/research/DivisionFinder";
 import { FamilyLedger } from "@/components/research/FamilyLedger";
 import { AccreditationMatrix } from "@/components/research/AccreditationMatrix";
 import { methodCount } from "@/components/research/variation";
@@ -41,6 +46,32 @@ const citedGuidelines = new Set(
   disciplines.flatMap((discipline) => discipline.guidelines ?? []),
 ).size;
 
+/* The finder's index, assembled on the server. `terms` is every string a
+   sponsor might plausibly search for — method names, guideline numbers,
+   species and instruments — flattened once here so the client ships one
+   string per division rather than the whole capability tree. */
+const finderEntries: FinderEntry[] = disciplines.map((discipline) => ({
+  slug: discipline.slug,
+  name: discipline.name,
+  family: discipline.family,
+  summary: discipline.summary,
+  terms: [
+    discipline.shortName ?? "",
+    ...discipline.capabilities.flatMap((group) => [group.title, ...group.items]),
+    ...(discipline.guidelines ?? []),
+    ...(discipline.species ?? []),
+    ...(discipline.instruments ?? []),
+  ]
+    .join(" ")
+    .toLowerCase(),
+}));
+
+const finderFamilies: FinderFamily[] = disciplineFamilies.map((family) => ({
+  id: slugify(family),
+  name: family,
+  count: disciplinesByFamily(family).length,
+}));
+
 export default function ResearchIndexPage() {
   return (
     <>
@@ -59,7 +90,10 @@ export default function ResearchIndexPage() {
         visual={<RegisterHeroField />}
       />
 
-      {/* The register, family by family. Chapters alternate light and sunken. */}
+      <DivisionFinder entries={finderEntries} families={finderFamilies} />
+
+      {/* The register, family by family. Every division is on the page
+          whatever the finder above is doing. */}
       {disciplineFamilies.map((family, i) => (
         <FamilyLedger
           key={family}

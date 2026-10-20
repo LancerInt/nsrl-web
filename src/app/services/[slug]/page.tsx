@@ -6,6 +6,7 @@ import { getIndustry, industries } from "@/content/industries";
 import { getDiscipline, type Discipline } from "@/content/disciplines";
 import { imageFor, sectorImage } from "@/content/imagery";
 import { PageHero } from "@/components/ui/PageHero";
+import { PageNav } from "@/components/ui/PageNav";
 import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
 import { SectorHeroVisual } from "@/components/services/SectorHeroVisual";
 import { SectorBrief } from "@/components/services/SectorBrief";
@@ -49,6 +50,8 @@ export default async function SectorPage({ params }: SectorPageProps) {
     .map((divisionSlug) => getDiscipline(divisionSlug))
     .filter((division): division is Discipline => Boolean(division));
 
+  const photo = imageFor(sectorImage, industry.slug);
+
   return (
     <>
       <JsonLd
@@ -84,17 +87,25 @@ export default async function SectorPage({ params }: SectorPageProps) {
         ]}
         visual={<SectorHeroVisual />}
         aside={
-          <figure className="relative img-frame">
-            <div className="relative aspect-[4/3]">
-              <SpecimenPlate
-                src={imageFor(sectorImage, industry.slug).src}
-                alt={imageFor(sectorImage, industry.slug).alt}
-                sizes="(min-width: 1024px) 33vw, 100vw"
-                priority
-              />
-            </div>
+          <figure className="relative img-frame aspect-[4/3]">
+            <SpecimenPlate
+              src={photo.src}
+              alt={photo.alt}
+              position={photo.position}
+              sizes="(min-width: 1024px) 33vw, 100vw"
+              priority
+            />
           </figure>
         }
+      />
+
+      <PageNav
+        items={[
+          { href: "#programme", label: "The programme" },
+          { href: "#catalogue", label: "Study catalogue" },
+          { href: "#divisions", label: "Divisions" },
+          { href: "#proposal", label: "Request a proposal" },
+        ]}
       />
 
       <SectorBrief industry={industry} />

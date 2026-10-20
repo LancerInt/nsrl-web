@@ -12,14 +12,21 @@ export function RevealText({
   as: Tag = "span",
   children,
   className,
+  id,
 }: {
   as?: React.ElementType;
   children: React.ReactNode;
   className?: string;
+  /** Anchor target, when the heading is one. */
+  id?: string;
   /** Accepted for call-site compatibility; no longer used. */
   delay?: number;
   stagger?: number;
   trigger?: "scroll" | "mount";
 }) {
-  return <Tag className={cn(className)}>{children}</Tag>;
+  return (
+    <Tag id={id} className={cn(className)}>
+      {children}
+    </Tag>
+  );
 }

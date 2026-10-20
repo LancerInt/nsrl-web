@@ -12,8 +12,8 @@ import { SpecChips, SpecList } from "@/components/ui/SpecList";
 import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
 
 const FIGURES: ImageKey[] = [
-  "chemistryBench",
-  "pipetting",
+  "scientistVials",
+  "microscopeDark",
   "vials",
   "microscope",
   "petri",

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ActionLink } from "@/components/ui/ActionLink";
@@ -22,56 +22,82 @@ export type DivisionRow = {
 };
 
 /**
- * The thirteen divisions as an airy three-column index. Each entry is a link
- * that lifts on hover; the only rule is a whisper between rows. Every
- * division is visible at once, which is what a directory is for.
+ * The thirteen divisions, under the three headings the laboratory actually
+ * organises them by.
+ *
+ * A flat grid of thirteen is a list a visitor has to read end to end before
+ * they know whether their question is in it. Grouped, the three headings
+ * answer it first — a toxicologist, a chemist and a device manufacturer each
+ * find their column before they read a single division name. The groups are
+ * the families declared in `content/disciplines.ts`, so the menu, this
+ * section and the research register all name them identically.
+ *
+ * Rows, not cards: thirteen cards is thirteen boxes, and the eye has to work
+ * out that they are the same kind of thing. A ruled row with the summary
+ * underneath carries more information in less space, and the hover and focus
+ * states are the same one the rest of the site uses.
  */
 export function DivisionIndex({ divisions }: { divisions: DivisionRow[] }) {
+  const families = Array.from(new Set(divisions.map((d) => d.family)));
+
   return (
-    <section className="bg-canvas-sunken py-[var(--section-y)] text-ink-950">
+    <section className="bg-canvas py-[var(--section-y)] text-ink-950" aria-labelledby="divisions">
       <div className="shell">
         <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-5" data-reveal>
           <div>
-            <Eyebrow index="02">Scientific divisions</Eyebrow>
-            <h2 className="mt-6 font-display text-d2 text-ink-950">
+            <Eyebrow>Scientific divisions</Eyebrow>
+            <h2 id="divisions" className="mt-5 max-w-[20ch] font-display text-d2 text-ink-950">
               Thirteen divisions, one chain of custody.
             </h2>
           </div>
           <ActionLink href="/research" variant="text" className="mb-1">
-            All divisions
+            The full research register
           </ActionLink>
         </div>
 
-        <ul
-          data-reveal
-          style={{ "--reveal-delay": "0.08s" } as React.CSSProperties}
-          className="mt-7 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          {divisions.map((discipline) => (
-            <li key={discipline.slug}>
-              <Link
-                href={`/research/${discipline.slug}`}
-                className="group flex items-center gap-4 rounded-[var(--radius-card)] px-4 py-4 transition-colors duration-300 hover:bg-canvas-raised"
+        <div className="mt-[clamp(2rem,3.2vw,3rem)] grid gap-x-10 gap-y-10 lg:grid-cols-3">
+          {families.map((family, familyIndex) => (
+            <section
+              key={family}
+              data-reveal
+              style={{ "--reveal-delay": `${0.05 * familyIndex}s` } as React.CSSProperties}
+              aria-labelledby={`family-${familyIndex}`}
+            >
+              <h3
+                id={`family-${familyIndex}`}
+                className="label-mono border-b border-ink-900/12 pb-3 text-meniscus-600"
               >
-                <span className="label-mono w-7 shrink-0 tabular-nums text-neutral-550">
-                  {discipline.index}
-                </span>
-                <span className="flex-1">
-                  <span className="block font-display text-h2 text-ink-950">
-                    {discipline.name}
-                  </span>
-                  <span className="label-mono mt-1 block text-neutral-550">
-                    {discipline.family}
-                  </span>
-                </span>
-                <ArrowUpRight
-                  aria-hidden
-                  className="h-4 w-4 shrink-0 text-neutral-400 transition-all duration-300 group-hover:text-ink-900 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                />
-              </Link>
-            </li>
+                {family}
+              </h3>
+
+              <ul className="mt-1">
+                {divisions
+                  .filter((division) => division.family === family)
+                  .map((division) => (
+                    <li key={division.slug} className="border-b border-ink-900/8 last:border-b-0">
+                      <Link
+                        href={`/research/${division.slug}`}
+                        className="group row-interactive -mx-3 block rounded-[var(--radius-control)] px-3 py-3.5"
+                      >
+                        <span className="flex items-baseline gap-3">
+                          <span className="flex-1 font-display text-h3 text-ink-950 transition-colors duration-200 group-hover:text-meniscus-600">
+                            {division.name}
+                          </span>
+                          <ArrowRight
+                            aria-hidden
+                            className="h-4 w-4 shrink-0 -translate-x-1 self-center text-meniscus-500 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100"
+                          />
+                        </span>
+                        <span className="mt-1 block text-small leading-snug text-neutral-600">
+                          {division.summary}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+              </ul>
+            </section>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );

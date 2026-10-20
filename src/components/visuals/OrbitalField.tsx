@@ -86,8 +86,6 @@ export function OrbitalField({
           stroke="url(#of-ring)"
           strokeWidth="1"
           opacity="0.5"
-          className="origin-center motion-safe:animate-[orbit_120s_linear_infinite]"
-          style={{ transformOrigin: "500px 500px" }}
         >
           <ellipse cx="500" cy="500" rx="180" ry="400" transform="rotate(-30 500 500)" />
           <ellipse cx="500" cy="500" rx="180" ry="400" transform="rotate(30 500 500)" />
@@ -100,8 +98,6 @@ export function OrbitalField({
           stroke="url(#of-ring)"
           strokeWidth="1.25"
           opacity="0.75"
-          className="origin-center motion-safe:animate-[orbit_84s_linear_infinite_reverse]"
-          style={{ transformOrigin: "500px 500px" }}
         >
           <ellipse cx="500" cy="500" rx="118" ry="286" transform="rotate(-34 500 500)" />
           <ellipse cx="500" cy="500" rx="118" ry="286" transform="rotate(34 500 500)" />

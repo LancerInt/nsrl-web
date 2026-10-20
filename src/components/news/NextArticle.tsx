@@ -31,7 +31,7 @@ export function NextArticle({
           </h2>
           <Link
             href="/news"
-            className="label-mono group inline-flex items-center gap-2.5 text-neutral-550 transition-colors duration-400 hover:text-ink-700"
+            className="label-mono group inline-flex min-h-9 items-center gap-2.5 text-neutral-550 transition-colors duration-200 hover:text-meniscus-600"
           >
             <ArrowUpLeft
               aria-hidden

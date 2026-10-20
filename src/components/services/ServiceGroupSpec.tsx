@@ -16,11 +16,20 @@ export function ServiceGroupSpec({ industry }: { industry: Industry }) {
   const studyCount = industry.serviceGroups.reduce((sum, group) => sum + group.items.length, 0);
 
   return (
-    <Section tone="sunken" innerClassName="py-[var(--section-y)]">
+    <Section
+      id="catalogue"
+      tone="sunken"
+      innerClassName="py-[var(--section-y)]"
+      aria-labelledby="catalogue-heading"
+    >
       <div className="egrid items-end gap-y-8">
         <div className="col-span-12 lg:col-span-7">
           <Eyebrow index="02">Study catalogue</Eyebrow>
-          <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
+          <RevealText
+            as="h2"
+            id="catalogue-heading"
+            className="mt-6 font-display text-d3 text-ink-950"
+          >
             {industry.summary}.
           </RevealText>
         </div>

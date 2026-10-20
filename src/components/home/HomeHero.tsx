@@ -1,93 +1,113 @@
 import { scaleStats } from "@/content/organisation";
-import { images } from "@/content/imagery";
+import { heroImage, images } from "@/content/imagery";
 import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
 import { ActionLink } from "@/components/ui/ActionLink";
 import { CountUp } from "@/components/ui/CountUp";
 
+const hero = images[heroImage];
+
 /**
- * The cinematic opening: a full-bleed laboratory photograph carrying an
- * elegant scrim, the thesis set large in the serif display voice, and the
- * recorded figures floating along the base as a quiet glass rail. One
- * confident image, one confident statement — the site's focal moment.
+ * The opening.
+ *
+ * One photograph, held at a deliberate composition: the crop puts the
+ * instrument stack right of centre and the navy overlay releases toward it,
+ * so the headline sits on the quiet half of the frame and the photograph
+ * still reads as a photograph on the other. The still does not drift, pan or
+ * zoom — a laboratory's opening statement should hold still while it is read.
+ *
+ * The recorded figures sit *below* the image on their own band rather than
+ * floating on it in a glass panel: the numbers are evidence, and evidence is
+ * easier to trust when it is set on paper.
  */
 export function HomeHero() {
   return (
-    <section
-      data-theme="deep"
-      className="relative isolate flex min-h-[78svh] flex-col justify-end overflow-hidden bg-deep text-white"
-    >
-      {/* Photograph */}
-      <div className="absolute inset-0 -z-10">
-        <SpecimenPlate
-          src={images.chemistryBench.src}
-          alt={images.chemistryBench.alt}
-          sizes="100vw"
-          priority
-          className="scale-105 [animation:hero-drift_24s_var(--ease-in-out-expo)_infinite_alternate] motion-reduce:animate-none"
-        />
-        <div aria-hidden className="scrim" />
-      </div>
+    <>
+      <section
+        data-theme="deep"
+        className="relative isolate flex min-h-[min(44rem,82svh)] flex-col justify-end overflow-hidden bg-deep text-white"
+      >
+        {/* Photograph */}
+        <div className="absolute inset-0 -z-10">
+          <SpecimenPlate
+            src={hero.src}
+            alt={hero.alt}
+            position={hero.position}
+            sizes="100vw"
+            priority
+          />
+          <div aria-hidden className="scrim" />
+        </div>
 
-      <div className="shell w-full pb-[clamp(2.5rem,4vw,3.5rem)] pt-[clamp(9rem,18vh,14rem)]">
-        <div className="max-w-[52rem]">
-          <p
-            data-reveal
-            className="label-mono text-white/70"
-          >
-            Contract research organisation · Tamil Nadu, India
-          </p>
+        <div className="shell w-full pb-[clamp(3rem,5vw,4.5rem)] pt-[clamp(9rem,17vh,13rem)]">
+          {/* Sized to hold "Complete preclinical research," on one line at
+              every width above `sm`, which is the whole point of setting the
+              break by hand. */}
+          <div className="max-w-[56rem]">
+            <p data-reveal className="label-mono text-meniscus-200">
+              Contract research organisation · Salem, Tamil Nadu
+            </p>
 
-          <h1
-            data-reveal
-            style={{ "--reveal-delay": "0.08s" } as React.CSSProperties}
-            className="mt-6 font-display font-[450] leading-[1.02] tracking-[-0.02em] text-[clamp(2.75rem,6.4vw,6.25rem)]"
-          >
-            Complete preclinical research,
-            <br className="hidden sm:block" /> start to finish.
-          </h1>
+            {/* Two lines on a desktop, three on a phone, and never a widow:
+                the break is set, not left to the measure. */}
+            <h1
+              data-reveal
+              style={{ "--reveal-delay": "0.06s" } as React.CSSProperties}
+              className="mt-5 font-display text-[clamp(2.25rem,4vw,3.75rem)] font-[450] leading-[1.08] tracking-[-0.018em]"
+            >
+              Complete preclinical research,
+              {/* Below `sm` the first line will not fit whatever the size, so
+                  the hard break is dropped and the measure takes over. */}
+              <br className="hidden sm:inline" />{" "}
+              start to finish.
+            </h1>
 
-          <p
-            data-reveal
-            style={{ "--reveal-delay": "0.18s" } as React.CSSProperties}
-            className="mt-7 max-w-[40rem] text-lead text-white/80"
-          >
-            One accredited laboratory. Thirteen scientific divisions. A molecule that arrives for
-            chemistry can move through toxicology, pathology and radiolabelled fate work without
-            once leaving our custody.
-          </p>
+            <p
+              data-reveal
+              style={{ "--reveal-delay": "0.12s" } as React.CSSProperties}
+              className="mt-6 max-w-[40rem] text-lead text-ink-100"
+            >
+              One accredited laboratory, thirteen scientific divisions. A molecule that arrives
+              for chemistry moves through toxicology, pathology and radiolabelled fate work
+              without leaving our custody.
+            </p>
 
-          <div
-            data-reveal
-            style={{ "--reveal-delay": "0.28s" } as React.CSSProperties}
-            className="mt-9 flex flex-wrap items-center gap-3"
-          >
-            <ActionLink href="/contact" variant="solid" tone="deep">
-              Request a proposal
-            </ActionLink>
-            <ActionLink href="/research" variant="outline" tone="deep">
-              Explore the divisions
-            </ActionLink>
+            <div
+              data-reveal
+              style={{ "--reveal-delay": "0.18s" } as React.CSSProperties}
+              className="mt-9 flex flex-wrap items-center gap-3"
+            >
+              <ActionLink href="/contact" variant="solid" tone="deep">
+                Request a proposal
+              </ActionLink>
+              <ActionLink href="/research" variant="outline" tone="deep">
+                Explore divisions
+              </ActionLink>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Recorded figures — a quiet glass rail on the photograph. */}
-      <div
-        data-reveal
-        style={{ "--reveal-delay": "0.36s" } as React.CSSProperties}
-        className="shell w-full pb-[clamp(1.5rem,3vw,2.5rem)]"
-      >
-        <dl className="glass grid grid-cols-2 gap-px overflow-hidden rounded-[var(--radius-card)] lg:grid-cols-4">
-          {scaleStats.map((stat) => (
-            <div key={stat.label} className="bg-white/[0.03] px-6 py-5 backdrop-blur-md">
-              <dd className="font-display text-[clamp(1.75rem,2.6vw,2.5rem)] font-[450] leading-none text-white">
-                <CountUp value={stat.value} suffix={stat.suffix} />
-              </dd>
-              <dt className="label-mono mt-2 text-white/60">{stat.label}</dt>
-            </div>
-          ))}
-        </dl>
-      </div>
-    </section>
+      {/* Recorded figures. A crisp strip, ruled into four, sitting on the
+          navy so it reads as the base of the hero rather than the top of the
+          page. */}
+      <section aria-label="NSRL in numbers" data-theme="deep" className="bg-deep-raised">
+        <div className="shell">
+          {/* gap-px over a lit background rather than `divide-*`: in a grid
+              that reflows from four columns to two, divide utilities leave
+              rules on the wrong edges. */}
+          <dl className="grid grid-cols-2 gap-px bg-white/12 lg:grid-cols-4">
+            {scaleStats.map((stat) => (
+              <div key={stat.label} className="bg-deep-raised px-5 py-6 sm:px-7 sm:py-7">
+                <dt className="label-mono text-ink-200">{stat.label}</dt>
+                <dd className="mt-2 font-display text-[clamp(1.75rem,2.4vw,2.375rem)] font-[450] leading-none text-white">
+                  <CountUp value={stat.value} suffix={stat.suffix} />
+                </dd>
+                <p className="mt-2.5 text-micro leading-relaxed text-ink-200">{stat.caption}</p>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+    </>
   );
 }

@@ -7,25 +7,34 @@
    ========================================================================== */
 
 @theme {
-  /* --- Primary · Ink (navy). The institutional anchor. ------------------- */
-  --color-ink-50: #eef4fc;
-  --color-ink-100: #cfe0f3;
-  --color-ink-200: #9bbee4;
-  --color-ink-300: #5d93d0;
-  --color-ink-400: #2e6bb8;
-  --color-ink-500: #154c97;
-  --color-ink-600: #103c78;
-  --color-ink-700: #0e2e5c;
-  --color-ink-800: #0b2143;
-  --color-ink-900: #08152b;
-  --color-ink-950: #050b16;
+  /* --- Primary · Ink (navy). The institutional anchor. -------------------
+     Anchored on the brand deep navy #0B1730 at step 900. Steps 400–600 are
+     tuned so the scale passes *through* the primary accent rather than
+     running beside it: ink-400 is the accent, which keeps links, active
+     states and figure traces inside one family. */
+  --color-ink-50: #eef3f9;
+  --color-ink-100: #d3e2f1;
+  --color-ink-200: #a6c2de;
+  --color-ink-300: #6f9bc9;
+  --color-ink-400: #2868b2;
+  --color-ink-500: #1f5494;
+  --color-ink-600: #194477;
+  --color-ink-700: #14365e;
+  --color-ink-800: #0f2442;
+  --color-ink-900: #0b1730;
+  --color-ink-950: #060e1f;
 
-  /* --- Secondary · Meniscus (the liquid in the flask). ------------------- */
-  --color-meniscus-100: #e4f0fb;
-  --color-meniscus-200: #bcd9f3;
-  --color-meniscus-300: #8fbde8;
-  --color-meniscus-400: #5c9bd6;
-  --color-meniscus-500: #3a7cbe;
+  /* --- Secondary · Meniscus (the liquid in the flask). -------------------
+     The working accent. `meniscus-500` is the brand primary blue #2868B2 —
+     5.4:1 on canvas, so it carries links and small marks on paper; the
+     lighter 300/400 steps carry the same accent on navy. */
+  --color-meniscus-100: #e7f0f9;
+  --color-meniscus-200: #c6daf0;
+  --color-meniscus-300: #93b9e2;
+  --color-meniscus-400: #5b93ce;
+  --color-meniscus-500: #2868b2;
+  --color-meniscus-600: #1f5494;
+  --color-meniscus-700: #17406f;
 
   /* --- Accent · Signal (the green orbital). ------------------------------ */
   --color-signal-50: #effaef;
@@ -39,36 +48,49 @@
   --color-signal-800: #1b5a20;
   --color-signal-900: #123d14;
 
+  /* --- Alert · the one red on the site. ---------------------------------
+     Forms previously reported their errors in the signal green, which made
+     "we have your enquiry" and "this field is wrong" the same colour. Error
+     is the only thing that is ever red here, and it is always paired with
+     an icon and a sentence — colour never carries the meaning alone.
+     `alert-700` is 6.3:1 on canvas. */
+  --color-alert-50: #fdf2f1;
+  --color-alert-200: #f3c7c3;
+  --color-alert-500: #cf3b2d;
+  --color-alert-700: #b3261e;
+  --color-alert-900: #7a1812;
+
   /* --- Neutral · cool grey, tinted toward the navy. ---------------------- */
-  --color-neutral-50: #f6f7f9;
-  --color-neutral-100: #edeff3;
-  --color-neutral-200: #dcdfe6;
-  --color-neutral-300: #bfc4ce;
-  --color-neutral-400: #949aa6;
-  --color-neutral-500: #6b7280;
+  --color-neutral-50: #f5f7f9;
+  --color-neutral-100: #eaeef3;
+  --color-neutral-200: #d8dee7;
+  --color-neutral-300: #bbc3cf;
+  --color-neutral-400: #9098a6;
+  --color-neutral-500: #68707f;
   /* The quiet register for label-mono on light surfaces. It is the lightest
-     grey that clears WCAG 2.2 AA (4.5:1) at the 11px label size on EVERY light
-     surface: 5.14:1 on canvas, 5.28:1 on canvas-raised, 4.79:1 on
+     grey that clears WCAG 2.2 AA (4.5:1) at the small label size on EVERY
+     light surface: 5.05:1 on canvas, 5.28:1 on canvas-raised, 4.73:1 on
      canvas-sunken. Note it sits between 500 and 600, not between 400 and 500 —
-     neutral-500 itself only reaches 4.39:1 on canvas-sunken, so no step lighter
-     than 500 can pass, and neutral-400 (2.56–2.83:1) must never carry text on a
-     light surface at all. */
+     neutral-500 itself falls under 4.5:1 on canvas-sunken, so no step lighter
+     than 500 can pass, and neutral-400 must never carry text on a light
+     surface at all. */
   --color-neutral-550: #656c7a;
-  --color-neutral-600: #4c525e;
-  --color-neutral-700: #343943;
+  --color-neutral-600: #4b515d;
+  --color-neutral-700: #333842;
   --color-neutral-800: #22262e;
   --color-neutral-900: #14171d;
   --color-neutral-950: #0a0c10;
 
-  /* --- Surface ---------------------------------------------------------- */
-  /* A whisper of warmth in the paper — "expensive off-white" rather than
-     clinical blue-white — read against the cool navy for contrast. */
-  --color-canvas: #faf9f7;
+  /* --- Surface ----------------------------------------------------------
+     Paper is a near-neutral warm white; the sunken band is a cool blue-grey
+     drawn from the navy, so alternating sections read as paper / plate
+     rather than paper / darker paper. */
+  --color-canvas: #fafaf8;
   --color-canvas-raised: #ffffff;
-  --color-canvas-sunken: #f1efeb;
-  --color-deep: #060a12;
-  --color-deep-raised: #0c1422;
-  --color-deep-sunken: #03070e;
+  --color-canvas-sunken: #eef3f7;
+  --color-deep: #0b1730;
+  --color-deep-raised: #122440;
+  --color-deep-sunken: #070f21;
 
   /* --- Typography ------------------------------------------------------- */
   /* The document voice: Newsreader, an optical-size serif built for print-like
@@ -142,10 +164,13 @@
   --text-micro: 0.75rem;
   --text-micro--line-height: 1.5;
 
-  /* Calibration labels — the monospace "instrument" voice. */
-  --text-label: 0.6875rem;
-  --text-label--line-height: 1.2;
-  --text-label--letter-spacing: 0.2em;
+  /* Calibration labels — the monospace "instrument" voice.
+     12px, not 11px, and tracked at 0.07em rather than 0.2em: the wide
+     tracking read as decoration and cost the labels their legibility, which
+     is the opposite of what a field label is for. */
+  --text-label: 0.75rem;
+  --text-label--line-height: 1.35;
+  --text-label--letter-spacing: 0.07em;
 
   /* --- Motion ----------------------------------------------------------- */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -153,17 +178,24 @@
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  --animate-drift: drift 28s linear infinite;
-  --animate-orbit-slow: orbit 40s linear infinite;
-  --animate-marquee: marquee 42s linear infinite;
-  --animate-pulse-ring: pulse-ring 3.2s var(--ease-out-quart) infinite;
-  --animate-scan: scan 5s var(--ease-in-out-expo) infinite;
+  /* No perpetual animations are declared. Drifting backgrounds, slow
+     orbits, marquees and scan lines were all removed: on a page whose job is
+     to carry scientific information, continuous motion in the periphery is
+     the thing a reader has to work around. Motion here is transitional
+     only — see the reveal and page-enter blocks below. */
 
-  /* --- Structure -------------------------------------------------------- */
-  /* Softened corners — refined, not razor-sharp, not a pill. */
-  --radius-card: 0.875rem;
-  --radius-lg: 1.25rem;
+  /* --- Structure --------------------------------------------------------
+     Three radii, one job each: controls, cards, framed photographs. Nothing
+     on the site may invent a fourth. */
+  --radius-control: 0.375rem;
+  --radius-card: 0.75rem;
+  --radius-lg: 1rem;
   --breakpoint-3xl: 96rem;
+
+  /* Control geometry. Every button, input and pill resolves to one of these
+     two heights, so a row of mixed controls lines up without hand-tuning. */
+  --control-h: 2.875rem;
+  --control-h-sm: 2.5rem;
 
   /* --- Elevation -------------------------------------------------------- */
   /* Soft, navy-tinted, multi-layer shadows. Depth is what separates a
@@ -180,77 +212,22 @@
    Runtime variables (not token-generating)
    -------------------------------------------------------------------------- */
 :root {
-  --shell-pad: clamp(1.25rem, 3.5vw, 4rem);
-  --shell-max: 84rem;
-  /* Vertical rhythm: enough air to feel considered, tight enough that a
-     content-rich page does not become an endless scroll. */
-  --section-y: clamp(2.25rem, 3.4vw, 3.5rem);
+  /* One content measure for the whole site: 1280px outer, ~1184px of live
+     column at desktop. Every band shares it, so nothing drifts. */
+  --shell-pad: clamp(1.25rem, 4vw, 3rem);
+  --shell-max: 80rem;
+  /* Vertical rhythm: 56px on a phone rising to 104px on a wide desktop. The
+     previous scale topped out at 56px, which is why dense sections read as
+     one continuous wall rather than a sequence of chapters. */
+  --section-y: clamp(3.5rem, 6.2vw, 6.5rem);
+  /* A tighter step, for bands that sit against the one above them. */
+  --section-y-tight: clamp(2.5rem, 4.2vw, 4rem);
   /* Hairlines are a whisper now, and used sparingly. */
-  --rule: color-mix(in oklab, var(--color-ink-900) 7%, transparent);
-  --rule-strong: color-mix(in oklab, var(--color-ink-900) 13%, transparent);
+  --rule: color-mix(in oklab, var(--color-ink-900) 9%, transparent);
+  --rule-strong: color-mix(in oklab, var(--color-ink-900) 16%, transparent);
   --rule-invert: color-mix(in oklab, white 12%, transparent);
   --rule-invert-strong: color-mix(in oklab, white 22%, transparent);
   --nav-h: 5rem;
-}
-
-@keyframes drift {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-50%, 0, 0);
-  }
-}
-
-@keyframes orbit {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Slow cinematic drift for the hero photograph — a barely-perceptible push
-   that keeps the still image alive without reading as a gimmick. */
-@keyframes hero-drift {
-  from {
-    transform: scale(1.05) translate3d(0, 0, 0);
-  }
-  to {
-    transform: scale(1.12) translate3d(-1.5%, -1.5%, 0);
-  }
-}
-
-@keyframes marquee {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-50%, 0, 0);
-  }
-}
-
-@keyframes pulse-ring {
-  0% {
-    transform: scale(0.82);
-    opacity: 0.7;
-  }
-  70%,
-  100% {
-    transform: scale(1.9);
-    opacity: 0;
-  }
-}
-
-@keyframes scan {
-  0%,
-  100% {
-    transform: translateY(-110%);
-  }
-  50% {
-    transform: translateY(110%);
-  }
 }
 
 /* --------------------------------------------------------------------------
@@ -308,16 +285,6 @@
     color: var(--color-ink-950);
   }
 
-  :focus-visible {
-    outline: 2px solid var(--color-signal-500);
-    outline-offset: 3px;
-    border-radius: 2px;
-  }
-
-  [data-theme="deep"] :focus-visible {
-    outline-color: var(--color-signal-400);
-  }
-
   img,
   svg,
   video {
@@ -345,6 +312,33 @@
       scrollbar-width: thin;
     }
   }
+}
+
+/* --------------------------------------------------------------------------
+   Focus.
+
+   Deliberately unlayered. Everything else in this file sits in `base`, which
+   loses to Tailwind's `utilities` layer — and `transition-colors` includes
+   `outline-color`, so a nav link with `duration-200` would animate its focus
+   ring up from its own text colour and the indicator would be the wrong
+   colour for the first fifth of a second. Unlayered rules outrank every
+   layer, so the ring is this colour, instantly, on every element, and no
+   utility can quietly remove it.
+
+   The accent, not the signal green: green means "this credential is held",
+   and a focus ring is an interaction state. The 3px offset puts the ring on
+   the page surface rather than on the control, so it clears 3:1 even around
+   a navy-filled button.
+   -------------------------------------------------------------------------- */
+:focus-visible {
+  outline: 2px solid var(--color-meniscus-500);
+  outline-offset: 3px;
+  border-radius: 2px;
+  transition-property: none;
+}
+
+[data-theme="deep"] :focus-visible {
+  outline-color: var(--color-meniscus-300);
 }
 
 /* --------------------------------------------------------------------------
@@ -390,20 +384,11 @@
   margin-block: -0.08em;
 }
 
-/* Frosted panel used over dark imagery. */
-@utility glass {
-  background: color-mix(in oklab, white 7%, transparent);
-  backdrop-filter: blur(20px) saturate(1.4);
-  -webkit-backdrop-filter: blur(20px) saturate(1.4);
-  border: 1px solid var(--rule-invert);
-}
-
-@utility glass-light {
-  background: color-mix(in oklab, white 72%, transparent);
-  backdrop-filter: blur(20px) saturate(1.4);
-  -webkit-backdrop-filter: blur(20px) saturate(1.4);
-  border: 1px solid var(--rule);
-}
+/* The two frosted-glass utilities were removed with their last call sites.
+   A translucent panel takes its contrast from whatever happens to be behind
+   it, which on a photographic hero means the text is legible or not
+   depending on the image — the stats rail and the downloads register key
+   both failed that way. Panels here are solid. */
 
 /* Fine engineering graticule. */
 @utility graticule {
@@ -435,7 +420,47 @@
   border-radius: var(--radius-card);
   background-color: var(--color-canvas-raised);
   box-shadow: var(--shadow-md);
-  border: 1px solid color-mix(in oklab, var(--color-ink-900) 4%, transparent);
+  border: 1px solid color-mix(in oklab, var(--color-ink-900) 6%, transparent);
+}
+
+/* The one hover state a card is allowed: it gains depth and its border takes
+   the accent. No lift, no scale — a directory of thirteen cards that all
+   jump a few pixels is noise, and the brief rules out decorative motion.
+   Declared once here so every card in the system behaves identically. */
+@utility card-interactive {
+  transition:
+    box-shadow 0.25s var(--ease-out-quart),
+    border-color 0.25s var(--ease-out-quart),
+    background-color 0.25s var(--ease-out-quart);
+
+  &:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: color-mix(in oklab, var(--color-meniscus-500) 38%, transparent);
+  }
+
+  /* Keyboard parity: the ring is drawn by :focus-visible, but the card's own
+     hover affordance has to appear too, or tabbing through a grid looks
+     like nothing is selected. */
+  &:focus-visible {
+    box-shadow: var(--shadow-lg);
+    border-color: color-mix(in oklab, var(--color-meniscus-500) 38%, transparent);
+  }
+}
+
+/* A linked row in a directory: the restrained alternative to a card, used
+   where thirteen entries would otherwise become thirteen boxes. */
+@utility row-interactive {
+  transition:
+    background-color 0.22s var(--ease-out-quart),
+    color 0.22s var(--ease-out-quart);
+
+  &:hover {
+    background-color: color-mix(in oklab, var(--color-meniscus-500) 7%, transparent);
+  }
+
+  &:focus-visible {
+    background-color: color-mix(in oklab, var(--color-meniscus-500) 7%, transparent);
+  }
 }
 
 /* A framed photograph: rounded, clipped, floated on a soft shadow. */
@@ -444,30 +469,61 @@
   overflow: hidden;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
+  background-color: var(--color-ink-900);
 }
 
-/* Cinematic scrim: keeps overlaid type legible over a photograph without
-   flattening it to black. Left-weighted for a left-set headline. */
+/* Directional navy overlay.
+
+   Three stacked gradients, each with one job. The horizontal pass protects
+   the left-set headline and releases toward the right so the photograph keeps
+   its detail exactly where the composition puts it. The vertical pass seats
+   the hero on the band below it. The top pass keeps the fixed header legible
+   over a bright upper edge.
+
+   Deliberately navy (#0B1730) rather than black: a black scrim greys the
+   image out, while the brand navy reads as a colour grade over it. */
 @utility scrim {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-      100deg,
+      96deg,
       color-mix(in oklab, var(--color-deep) 90%, transparent) 0%,
-      color-mix(in oklab, var(--color-deep) 64%, transparent) 44%,
-      color-mix(in oklab, var(--color-deep) 22%, transparent) 100%
+      color-mix(in oklab, var(--color-deep) 80%, transparent) 28%,
+      color-mix(in oklab, var(--color-deep) 52%, transparent) 58%,
+      color-mix(in oklab, var(--color-deep) 20%, transparent) 100%
     ),
     linear-gradient(
       to top,
-      color-mix(in oklab, var(--color-deep) 72%, transparent) 0%,
-      transparent 42%
+      color-mix(in oklab, var(--color-deep) 70%, transparent) 0%,
+      transparent 46%
     ),
-    /* Keeps the fixed header legible over a bright top edge. */
-      linear-gradient(
-        to bottom,
-        color-mix(in oklab, var(--color-deep) 55%, transparent) 0%,
-        transparent 18%
-      );
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--color-deep) 58%, transparent) 0%,
+      transparent 20%
+    );
+}
+
+/* Photographic treatment.
+
+   The library is assembled from a dozen free-licence sources shot on
+   different cameras under different light, and side by side they read as a
+   mood board rather than one laboratory. A single grade — lift the blacks a
+   touch, hold the contrast, pull the saturation back off the yellows — is
+   what makes them look commissioned together. Applied by every frame, so no
+   call site decides its own.
+
+   `--photo-grade` lets one frame opt out (a figure where colour is the
+   information, say) without inventing a second utility. */
+@utility photo {
+  object-fit: cover;
+  filter: var(--photo-grade, saturate(0.82) contrast(1.06) brightness(1.02));
+}
+
+/* A framed photograph on a dark band wants the opposite correction. */
+@utility photo-deep {
+  object-fit: cover;
+  filter: saturate(0.74) contrast(1.1) brightness(0.92);
 }
 
 /* Retained for compatibility; now a plain soft card. */

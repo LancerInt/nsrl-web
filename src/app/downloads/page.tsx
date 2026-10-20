@@ -39,7 +39,10 @@ export default function DownloadsPage() {
         title={
           <>
             Every certificate,{" "}
-            <span className="text-signal-300">open for inspection.</span>
+            {/* The one accented phrase on the page, and it is the claim the
+                page exists to make. Signal green is reserved for "held";
+                this is emphasis, so it takes the primary accent. */}
+            <span className="text-meniscus-500">open for inspection.</span>
           </>
         }
         lead="Accreditations, statutory registrations and sector approvals, held as a single register. Each record names the authority that issued it and the scope it covers — and where the laboratory has published the certificate, links straight to it."
@@ -55,19 +58,22 @@ export default function DownloadsPage() {
         ]}
         visual={<RegisterVisual />}
         aside={
-          <div className="glass rounded-[var(--radius-card)] p-7">
-            <h2 className="label-mono text-signal-400">Register key</h2>
-            <dl className="mt-6">
-              <div className="border-t border-white/12 py-5">
-                <dt className="font-display text-h3 text-white">Certificate filed</dt>
-                <dd className="mt-2 text-small text-ink-200">
+          /* A solid card, not frosted glass: the hero is a light surface, and
+             the white-on-translucent-white it used to be was all but
+             unreadable. */
+          <div className="card-elevated p-6 sm:p-7">
+            <h2 className="label-mono text-meniscus-600">Register key</h2>
+            <dl className="mt-5">
+              <div className="border-t border-ink-900/10 py-4 first:border-t-0 first:pt-0">
+                <dt className="font-display text-h3 text-ink-950">Certificate filed</dt>
+                <dd className="mt-1.5 text-small text-neutral-600">
                   The certificate is published by the laboratory. The record links to it and the
                   link opens in a new tab.
                 </dd>
               </div>
-              <div className="border-t border-white/12 py-5">
-                <dt className="font-display text-h3 text-white">No certificate filed</dt>
-                <dd className="mt-2 text-small text-ink-200">
+              <div className="border-t border-ink-900/10 py-4 last:pb-0">
+                <dt className="font-display text-h3 text-ink-950">No certificate filed</dt>
+                <dd className="mt-1.5 text-small text-neutral-600">
                   The record is listed in full but carries no link, because no certificate has
                   been published for it.
                 </dd>

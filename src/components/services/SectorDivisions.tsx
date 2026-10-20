@@ -14,14 +14,23 @@ import { ActionLink } from "@/components/ui/ActionLink";
  */
 export function SectorDivisions({ divisions }: { divisions: Discipline[] }) {
   return (
-    <Section bleed className="overflow-hidden">
+    <Section
+      bleed
+      id="divisions"
+      className="overflow-hidden"
+      aria-labelledby="sector-divisions-heading"
+    >
       <div className="shell relative py-[var(--section-y)]">
         <div className="egrid items-end gap-y-8">
           <div className="col-span-12 lg:col-span-6">
             <Eyebrow index="03">
               Who runs the work
             </Eyebrow>
-            <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
+            <RevealText
+              as="h2"
+              id="sector-divisions-heading"
+              className="mt-6 font-display text-d3 text-ink-950"
+            >
               The divisions that carry it.
             </RevealText>
           </div>

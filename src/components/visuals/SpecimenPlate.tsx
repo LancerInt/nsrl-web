@@ -95,6 +95,7 @@ export function SpecimenPlate({
   tone = "light",
   src,
   alt = "",
+  position,
   sizes = "(min-width: 1024px) 40vw, 100vw",
   priority = false,
 }: {
@@ -105,11 +106,15 @@ export function SpecimenPlate({
   /** When set, the figure is a real photograph instead of a drawing. */
   src?: string;
   alt?: string;
+  /** `object-position` for the crop — comes from the image's own record. */
+  position?: string;
   sizes?: string;
   priority?: boolean;
 }) {
   // A supplied photograph takes the drawing's place, filling the same frame.
-  // The caller owns the aspect ratio via its positioned wrapper.
+  // The caller owns the aspect ratio via its positioned wrapper; the image's
+  // own record owns the crop, and `photo` applies the shared colour grade
+  // that makes a library of mixed sources read as one shoot.
   if (src) {
     return (
       <Image
@@ -118,7 +123,8 @@ export function SpecimenPlate({
         fill
         sizes={sizes}
         priority={priority}
-        className={cn("object-cover", className)}
+        style={position ? { objectPosition: position } : undefined}
+        className={cn("photo", className)}
       />
     );
   }
@@ -220,13 +226,7 @@ function OrbitalFigure({
   return (
     <g>
       <circle cx={cx} cy={cy} r="120" fill={`url(#${id}-glow)`} />
-      <g
-        stroke={stroke}
-        strokeWidth="0.9"
-        opacity="0.7"
-        className="origin-center motion-safe:animate-[orbit_60s_linear_infinite]"
-        style={{ transformOrigin: `${cx}px ${cy}px` }}
-      >
+      <g stroke={stroke} strokeWidth="0.9" opacity="0.7">
         {rings.map((ring, i) => (
           <ellipse
             key={i}

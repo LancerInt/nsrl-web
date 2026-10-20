@@ -5,10 +5,11 @@ import { disciplines } from "@/content/disciplines";
 import { industries } from "@/content/industries";
 import { pageMetadata } from "@/lib/seo";
 import { HomeHero } from "@/components/home/HomeHero";
-import { AccreditationTicker } from "@/components/home/AccreditationTicker";
-import { Thesis } from "@/components/home/Thesis";
+import { AccreditationStrip } from "@/components/home/AccreditationStrip";
+import { IntegratedLab } from "@/components/home/IntegratedLab";
 import { DivisionIndex, type DivisionRow } from "@/components/home/DivisionIndex";
-import { SectorScroll, type SectorCard } from "@/components/home/SectorScroll";
+import { SectorGrid, type SectorCard } from "@/components/home/SectorGrid";
+import { FacilityShowcase } from "@/components/home/FacilityShowcase";
 
 export const metadata: Metadata = pageMetadata({
   title: `${site.name} — Complete Preclinical Research, Start to Finish`,
@@ -20,11 +21,11 @@ export const metadata: Metadata = pageMetadata({
 /**
  * Server-side projections.
  *
- * `DivisionIndex` and `SectorScroll` are client components, so anything they
- * import is bundled for the browser. The discipline and industry modules are
- * mostly long-form body copy, capability trees and SEO strings that neither
- * component reads, so the page narrows each record to the handful of fields
- * that actually cross the client boundary and passes those as props.
+ * The discipline and industry modules are mostly long-form body copy,
+ * capability trees and SEO strings that neither section reads. Narrowing each
+ * record here keeps the sections honest about what they actually render, and
+ * keeps the modules out of any client bundle if one of them ever needs to
+ * become interactive.
  */
 const divisionRows: DivisionRow[] = disciplines.map((discipline) => ({
   slug: discipline.slug,
@@ -46,19 +47,30 @@ const sectorCards: SectorCard[] = industries.map((industry) => ({
 }));
 
 /**
- * A conventional corporate home: masthead with the recorded figures, the
- * credibility strip, one short argument, then two directories — divisions and
- * sectors — that route out to their own pages. Facilities, the quality
- * system, careers and the newsroom live on their pages, not here.
+ * The page is ordered around the question a prospective sponsor actually
+ * arrives with — "can you run my programme?" — and answers it in the order
+ * they ask it:
+ *
+ *   hero            what the laboratory does, and the recorded scale
+ *   accreditation   whether the data will be accepted, with the certificates
+ *   sectors         whether it works in my regulatory world  ← the first
+ *                   real choice, so it comes before the science
+ *   one laboratory  why a single custodian is the point
+ *   divisions       which department owns my question
+ *   facility        what the place is actually like
+ *
+ * The closing proposal action lives in the global footer rather than here;
+ * one closing ask per page, not two.
  */
 export default function HomePage() {
   return (
     <>
       <HomeHero />
-      <AccreditationTicker />
-      <Thesis />
+      <AccreditationStrip />
+      <SectorGrid sectors={sectorCards} />
+      <IntegratedLab />
       <DivisionIndex divisions={divisionRows} />
-      <SectorScroll sectors={sectorCards} />
+      <FacilityShowcase />
     </>
   );
 }

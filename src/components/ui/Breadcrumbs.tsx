@@ -46,11 +46,17 @@ export function Breadcrumbs({
           return (
             <li key={`${item.label}-${i}`} className="flex items-center gap-3">
               {item.href && !last ? (
+                /* `inline-flex` with a minimum height rather than bare
+                   inline text: a 16px-tall tap target is the smallest thing
+                   on a phone screen, and a breadcrumb is how a visitor gets
+                   back out of a division page. */
                 <Link
                   href={item.href}
                   className={cn(
-                    "transition-colors duration-300",
-                    tone === "deep" ? "hover:text-white" : "hover:text-ink-900",
+                    "inline-flex min-h-6 items-center transition-colors duration-200",
+                    tone === "deep"
+                      ? "hover:text-white"
+                      : "hover:text-meniscus-600",
                   )}
                 >
                   {item.label}

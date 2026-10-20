@@ -39,8 +39,9 @@ export function SectorLedger() {
           className="relative col-span-12 aspect-[16/9] img-frame lg:col-span-5 lg:col-start-8 lg:aspect-[4/3]"
         >
           <SpecimenPlate
-            src={images.chemistryBench.src}
-            alt={images.chemistryBench.alt}
+            src={images.scientistVials.src}
+            alt={images.scientistVials.alt}
+            position={images.scientistVials.position}
             sizes="(min-width: 1024px) 40vw, 100vw"
           />
         </div>

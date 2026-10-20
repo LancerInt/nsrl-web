@@ -51,7 +51,7 @@ export default function ServicesPage() {
                 <li key={industry.slug}>
                   <Link
                     href={`#${industry.slug}`}
-                    className="flex items-baseline justify-between gap-5 border-t border-ink-900/12 py-3.5 transition-colors duration-400 hover:border-signal-500/60 hover:text-signal-700"
+                    className="flex items-baseline justify-between gap-5 border-t border-ink-900/12 py-3.5 transition-colors duration-400 hover:border-meniscus-500/60 hover:text-meniscus-600"
                   >
                     <span className="font-display text-h3 text-ink-900">{industry.name}</span>
                     <span className="label-mono shrink-0 tabular-nums text-neutral-550">

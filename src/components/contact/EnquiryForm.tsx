@@ -126,10 +126,10 @@ export function EnquiryForm() {
     [errors[field] ? `${id}-${field}-error` : null, hintId].filter(Boolean).join(" ") || undefined;
 
   const control =
-    "mt-3 w-full rounded-lg border bg-canvas px-4 py-3.5 text-body text-ink-950 outline-none transition-colors duration-400 [transition-timing-function:var(--ease-out-expo)] focus:border-signal-500";
+    "mt-3 w-full rounded-[var(--radius-control)] border bg-canvas px-4 py-3.5 text-body text-ink-950 outline-none transition-colors duration-200 ease-[var(--ease-out-quart)] focus:border-meniscus-500";
 
   const border = (field: FieldName) =>
-    errors[field] ? "border-signal-600" : "border-ink-900/15 hover:border-ink-900/30";
+    errors[field] ? "border-alert-500" : "border-ink-900/15 hover:border-ink-900/30";
 
   const labelClass = "label-mono text-ink-700";
 
@@ -242,9 +242,12 @@ export function EnquiryForm() {
       </div>
 
       <div className="mt-7 flex flex-wrap items-center gap-x-8 gap-y-5 border-t border-ink-900/10 pt-8">
+        {/* Matches ActionLink's geometry exactly — same height token, same
+            radius, same type size — so the one real <button> on the site
+            does not read as a different control from every link-button. */}
         <button
           type="submit"
-          className="inline-flex items-center justify-center gap-3 rounded-[3px] bg-ink-900 px-6 py-3.5 font-sans text-[0.9375rem] font-medium text-white transition-colors duration-300 hover:bg-ink-700"
+          className="inline-flex h-[var(--control-h)] items-center justify-center gap-2 rounded-[var(--radius-control)] bg-ink-900 px-6 font-sans text-[0.9375rem] font-medium text-white transition-colors duration-200 ease-[var(--ease-out-quart)] hover:bg-ink-700"
         >
           Send enquiry
         </button>
@@ -259,8 +262,8 @@ export function EnquiryForm() {
           </p>
         ) : null}
         {status.kind === "error" ? (
-          <p className="flex items-start gap-3 border-l-2 border-signal-600 py-4 pl-5 pr-6 text-small text-signal-800">
-            <AlertTriangle aria-hidden className="mt-1 h-4 w-4 shrink-0" />
+          <p className="flex items-start gap-3 border-l-2 border-alert-500 bg-alert-50 py-4 pl-5 pr-6 text-small text-alert-900">
+            <AlertTriangle aria-hidden className="mt-1 h-4 w-4 shrink-0 text-alert-700" />
             <span>{status.message}</span>
           </p>
         ) : null}
@@ -272,7 +275,7 @@ export function EnquiryForm() {
 function FieldError({ id, message }: { id: string; message?: string }) {
   if (!message) return null;
   return (
-    <p id={id} className="mt-2.5 flex items-start gap-2 text-small text-signal-800">
+    <p id={id} className="mt-2.5 flex items-start gap-2 text-small text-alert-700">
       <AlertTriangle aria-hidden className="mt-1 h-3.5 w-3.5 shrink-0" />
       <span>{message}</span>
     </p>

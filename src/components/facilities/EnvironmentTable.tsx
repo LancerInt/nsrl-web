@@ -70,7 +70,7 @@ export function EnvironmentTable() {
                     {environment.title}
                   </th>
                   <td className="px-6 py-5">
-                    <span className="label-mono inline-block rounded-full border border-signal-600/30 px-3 py-2 text-signal-700">
+                    <span className="label-mono inline-block rounded-[var(--radius-control)] border border-meniscus-500/35 bg-meniscus-500/6 px-3 py-1.5 text-meniscus-600">
                       {environment.spec}
                     </span>
                   </td>

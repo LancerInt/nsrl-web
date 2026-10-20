@@ -62,18 +62,18 @@ export default function ProductsPage() {
             aria-label="Package index"
             className="rounded-[var(--radius-card)] border border-ink-900/12 bg-canvas-raised p-6"
           >
-            <p className="label-mono text-signal-700">Index</p>
+            <p className="label-mono text-meniscus-600">Index</p>
             <ol className="mt-5">
               {studyPackages.map((pkg) => (
                 <li key={pkg.slug}>
                   <a
                     href={`#${pkg.slug}`}
-                    className="group flex items-baseline gap-4 border-t border-ink-900/12 py-3.5 transition-colors duration-400 hover:border-signal-500/60"
+                    className="group flex items-baseline gap-4 border-t border-ink-900/12 py-3.5 transition-colors duration-400 hover:border-meniscus-500/60"
                   >
-                    <span className="label-mono shrink-0 tabular-nums text-neutral-550 transition-colors duration-400 group-hover:text-signal-700">
+                    <span className="label-mono shrink-0 tabular-nums text-neutral-550 transition-colors duration-400 group-hover:text-meniscus-600">
                       {pkg.index}
                     </span>
-                    <span className="text-small text-ink-800 transition-colors duration-400 group-hover:text-signal-700">
+                    <span className="text-small text-ink-800 transition-colors duration-400 group-hover:text-meniscus-600">
                       {pkg.name}
                     </span>
                   </a>

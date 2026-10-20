@@ -44,7 +44,16 @@ export function AccreditationMatrix() {
           </div>
         </div>
 
-        <div className="mt-6 overflow-x-auto lg:overflow-x-visible">
+        {/* `relative` is load-bearing. Every cell carries an `sr-only` span,
+            and `sr-only` is `position: absolute` — so without a positioned
+            scroll container those spans resolve against the section instead,
+            take their static position from inside a 736px-wide table, and
+            push the *document* 330px wider than the viewport on a phone.
+            Positioning the scroll box makes it their containing block, and
+            the overflow stays where it belongs: inside this div.
+            `overscroll-behavior-x` stops a sideways swipe in the table from
+            triggering browser back-navigation. */}
+        <div className="relative mt-6 overflow-x-auto overscroll-x-contain lg:overflow-x-visible">
           <table className="w-full min-w-[46rem] border-collapse text-left">
             <caption className="sr-only">
               Accreditations held by each of the thirteen scientific divisions

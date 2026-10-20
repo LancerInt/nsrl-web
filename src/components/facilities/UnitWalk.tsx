@@ -7,7 +7,7 @@ import { RevealText } from "@/components/ui/RevealText";
 import { SpecList } from "@/components/ui/SpecList";
 import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
 
-const FIGURES: ImageKey[] = ["chemistryBench", "cleanroom", "team"];
+const FIGURES: ImageKey[] = ["team", "cleanroom", "microscopeDark"];
 
 /**
  * The single accredited site, presented as one full band.
@@ -61,6 +61,7 @@ export function UnitWalk() {
                     <SpecimenPlate
                       src={images[FIGURES[i % FIGURES.length]].src}
                       alt={images[FIGURES[i % FIGURES.length]].alt}
+                      position={images[FIGURES[i % FIGURES.length]].position}
                       sizes="(min-width: 1024px) 40vw, 100vw"
                     />
                   </div>

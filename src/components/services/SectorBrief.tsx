@@ -11,7 +11,12 @@ import { SpecChips } from "@/components/ui/SpecList";
  */
 export function SectorBrief({ industry }: { industry: Industry }) {
   return (
-    <Section tone="canvas" innerClassName="py-[var(--section-y)]">
+    <Section
+      id="programme"
+      tone="canvas"
+      innerClassName="py-[var(--section-y)]"
+      aria-labelledby="programme-heading"
+    >
       <div className="egrid gap-y-8">
         <div className="col-span-12 lg:col-span-4">
           <div className="lg:rail-sticky">
@@ -28,7 +33,11 @@ export function SectorBrief({ industry }: { industry: Industry }) {
         </div>
 
         <div className="col-span-12 lg:col-span-7 lg:col-start-6">
-          <RevealText as="h2" className="font-display text-d3 text-ink-950">
+          <RevealText
+            as="h2"
+            id="programme-heading"
+            className="font-display text-d3 text-ink-950"
+          >
             What the dossier has to prove.
           </RevealText>
 

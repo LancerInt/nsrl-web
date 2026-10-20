@@ -6,6 +6,7 @@ import { imageFor, divisionImage } from "@/content/imagery";
 import { JsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo";
 import { cn, pad } from "@/lib/utils";
 import { PageHero } from "@/components/ui/PageHero";
+import { PageNav, type PageNavItem } from "@/components/ui/PageNav";
 import { Section, SectionBody } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RevealText } from "@/components/ui/RevealText";
@@ -51,6 +52,7 @@ export default async function DivisionPage({ params }: PageProps) {
 
   const variation = divisionVariation(discipline);
   const methods = methodCount(discipline);
+  const divisionPhoto = imageFor(divisionImage, discipline.slug);
 
   const hasSpecs = Boolean(
     discipline.guidelines?.length ||
@@ -68,6 +70,21 @@ export default async function DivisionPage({ params }: PageProps) {
     "alongside",
   ];
   const step = (key: string) => pad(order.indexOf(key) + 1);
+
+  /* The contents strip is derived from the same `order` array, so a division
+     with no specification band never offers a link to one. */
+  const NAV_LABELS: Record<string, string> = {
+    overview: "Overview",
+    claim: "In short",
+    capabilities: "Capabilities",
+    specifications: "Specifications",
+    credentials: "Accreditations",
+    alongside: "Works alongside",
+  };
+  const navItems: PageNavItem[] = order.map((key) => ({
+    href: `#${key}`,
+    label: NAV_LABELS[key],
+  }));
 
   /* Hero facts: the claim first, then whatever specification counts exist. */
   const meta: { label: string; value: string }[] = [
@@ -168,8 +185,9 @@ export default async function DivisionPage({ params }: PageProps) {
           <figure>
             <div className="relative aspect-[4/5] img-frame">
               <SpecimenPlate
-                src={imageFor(divisionImage, discipline.slug).src}
-                alt={imageFor(divisionImage, discipline.slug).alt}
+                src={divisionPhoto.src}
+                alt={divisionPhoto.alt}
+                position={divisionPhoto.position}
                 sizes="(min-width: 1024px) 33vw, 100vw"
                 priority
               />
@@ -180,6 +198,8 @@ export default async function DivisionPage({ params }: PageProps) {
           </figure>
         }
       />
+
+      <PageNav items={navItems} />
 
       {/* Overview — the orientation rail swaps sides with the division index. */}
       <Section tone="canvas" aria-labelledby="overview">

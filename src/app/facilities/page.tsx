@@ -6,6 +6,8 @@ import { formatCount, pad } from "@/lib/utils";
 import { pageMetadata } from "@/lib/seo";
 import { PageHero } from "@/components/ui/PageHero";
 import { SitePlanField } from "@/components/facilities/SitePlanField";
+import { FacilityLead } from "@/components/facilities/FacilityLead";
+import { FacilityGallery } from "@/components/facilities/FacilityGallery";
 import { UnitWalk } from "@/components/facilities/UnitWalk";
 import { CapacityPanel } from "@/components/facilities/CapacityPanel";
 import { EnvironmentTable } from "@/components/facilities/EnvironmentTable";
@@ -29,6 +31,7 @@ export const metadata: Metadata = pageMetadata({
 /** Jump targets offered in the hero. */
 const contents = [
   ...units.map((unit) => ({ href: `#${unit.id}`, label: unit.label, note: unit.title })),
+  { href: "#gallery", label: "Around the site", note: "Captioned gallery" },
   { href: "#environments", label: "Environments", note: "Specification schedule" },
   { href: "#instruments", label: "Instruments", note: "Equipment register" },
 ];
@@ -80,7 +83,9 @@ export default function FacilitiesPage() {
         }
       />
 
+      <FacilityLead />
       <UnitWalk />
+      <FacilityGallery />
       <CapacityPanel />
       <EnvironmentTable />
       <InstrumentRegister />

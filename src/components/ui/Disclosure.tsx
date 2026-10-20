@@ -72,8 +72,8 @@ export function Disclosure({
             className={cn(
               "grid h-10 w-10 shrink-0 place-items-center rounded-full border transition-all duration-500 [transition-timing-function:var(--ease-out-expo)]",
               deep
-                ? "border-white/20 group-hover:border-signal-400"
-                : "border-ink-900/15 group-hover:border-ink-900/60",
+                ? "border-white/20 group-hover:border-meniscus-300"
+                : "border-ink-900/15 group-hover:border-meniscus-500/60",
               open && "rotate-45",
             )}
           >

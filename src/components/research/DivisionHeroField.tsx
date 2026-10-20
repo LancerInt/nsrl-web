@@ -65,12 +65,7 @@ function RingsField() {
   return (
     <g>
       <circle cx="940" cy="290" r="320" fill="url(#hf-glow)" />
-      <g
-        stroke={HAIR}
-        strokeWidth="1"
-        className="origin-center motion-safe:animate-[orbit_150s_linear_infinite]"
-        style={{ transformOrigin: "940px 290px" }}
-      >
+      <g stroke={HAIR} strokeWidth="1">
         <ellipse cx="940" cy="290" rx="132" ry="292" transform="rotate(-30 940 290)" />
         <ellipse cx="940" cy="290" rx="132" ry="292" transform="rotate(30 940 290)" />
         <ellipse cx="940" cy="290" rx="292" ry="132" />
