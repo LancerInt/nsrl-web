@@ -1,0 +1,1832 @@
+https://nsrl-web.vercel.app/
+NSRL — Complete Preclinical Research, Start to Finish
+Contract research organisation · Salem, Tamil Nadu
+Complete preclinical research, start to finish.
+One accredited laboratory, seven scientific divisions. A substance that arrives for chemistry moves through toxicology, ecotoxicology and entomology without leaving our custody. Request a proposal Explore divisions
+GLP studies
+20,000 +
+Completed and reported under Good Laboratory Practice
+Clients
+275 +
+Sponsors who have brought a programme through the laboratory
+Countries
+50 +
+Jurisdictions our study reports have travelled to
+Accreditations
+4
+Independent certifications, every one published in full
+Accredited, certified and registered under All certificates on file
+OECD GLP Certificate — Good Laboratory Practice certification , opens the certificate in a new tab
+NABL ISO/IEC 17025:2017 Certificate — ISO/IEC 17025:2017 accreditation , opens the certificate in a new tab
+SIRO / DSIR Certificate — Scientific and Industrial Research Organisation recognition , opens the certificate in a new tab
+CIBRC Certificate — Central Insecticides Board and Registration Committee recognition , opens the certificate in a new tab
+Sectors we serve
+Three regulatory worlds, one evidence base.
+The endpoints, guidelines and species in a programme follow from the authority that has to approve it. Start with the dossier you have to file.
+Agrochemical Full registration packages — ecotoxicity, residue, environmental fate, metabolism and field efficacy . OECD CIBRC EPA EFSA View programmes
+Industrial Chemicals REACH, RoHS, CLP, GHS and California Proposition 65 compliance data . REACH RoHS CLP GHS View programmes
+Food & Feed Additives Nutritional, microbiological, allergen and contaminant analysis with shelf-life support . GLP FSSAI Codex ISO View programmes How a programme is assembled
+Why one laboratory
+One laboratory, seven divisions.
+Most preclinical programmes are assembled from three or four vendors, and every boundary between them re-ships material, re-validates methods and loses weeks to email.
+Here the divisions share one campus, one quality system, one archive and one chain of custody. Nothing is handed over, because nothing leaves.
+One test item · one custody record
+Chemistry Identity, purity and stability of the test item
+Toxicology In-life conduct and dosing
+Ecotoxicology Effect on aquatic and terrestrial species
+Vivarium Housing, environmental control and health monitoring
+Quality assurance Independent audit against the protocol
+An illustration, not a pipeline. Which divisions a programme engages — and in what order — follows from the dossier it has to satisfy, and they run in parallel wherever the science allows. How the laboratory is organised The quality system
+Scientific divisions
+Seven divisions, one chain of custody. Explore all divisions
+Safety & toxicology
+Toxicology Acute through multi-year carcinogenicity, run under GLP in our own vivaria
+Ecotoxicology India's largest ecotoxicology department — 26 species across water, soil and air
+Analytical & discovery
+Chemistry Analytical chemistry that underwrites every other division's numbers
+Microbiology Sterility, endotoxin and environmental monitoring against ISO, USP and OECD methods
+Applied & specialist
+Entomology Insecticide efficacy and resistance work on colonies we breed ourselves
+Vivarium Over 70 environmentally controlled clean rooms for small animal models
+Custom Studies For the programme no standard guideline was written to cover
+The facility
+One accredited site in Salem, Tamil Nadu.
+Chemistry, toxicology, ecotoxicology, entomology, microbiology and the vivarium share one address. That is what lets a study change division without changing custodian. Instrument operation Every instrument qualified, calibrated and logged against the study that used it. Containment work Clean-room procedures under continuous environmental monitoring. Microscopy Optical examination and whole-slide scanning.
+Laboratory space
+1,50,000 sq ft
+Instruments
+450 +
+Professionals
+350 +
+Clean rooms
+70 + Walk the facility
+
+https://nsrl-web.vercel.app/about
+About NSRL — one laboratory, seven divisions | NSRL
+Home /
+About
+About NSRL
+Who we are, in the terms a regulator would use.
+A one-stop, fully equipped and accredited preclinical research laboratory serving agrochemical, industrial chemical and food and feed additive regulatory needs.
+Legal name
+NSRL Research Laboratories
+Divisions
+7
+Certificates on file
+4
+Governed by
+OECD GLP
+Good Laboratory Practice certification NGCMA, Department of Science and Technology, Government of India
+ISO/IEC 17025:2017
+NABL accreditation National Accreditation Board for Testing and Calibration Laboratories
+Contract research organisation
+One custodian, from receipt to archive.
+A one-stop, fully equipped and accredited laboratory built to meet agrochemical, industrial chemical and food and feed additive regulatory needs — without a single study leaving our custody.
+Seven scientific divisions share one quality system, one archive and one chain of custody. A substance that arrives for chemistry can move to toxicology, ecotoxicology and entomology without a transfer, a re-validation, or a gap in the record.
+Complete preclinical research, start to finish. The whole remit, in one sentence
+Notes
+01 7 divisions One custodian, seven divisions Most programmes fragment across three or four vendors, and every handover is a place where context is lost and timelines slip. Here, chemistry, toxicology, ecotoxicology, entomology and microbiology sit inside one building and one quality system.
+02 OECD MAD Accreditation that travels OECD GLP issued by NGCMA under the Department of Science and Technology means reports are accepted across every country in the OECD Mutual Acceptance of Data framework. NABL ISO/IEC 17025:2017 accreditation covers the technical dimension independently.
+03 FDA · EMA An acceptance record, not a promise Reports issued by this laboratory have been submitted to and accepted by the US FDA, the EMA, and agencies in the UK, Japan, China, Brazil and India. Registration work includes India's first nano-fertiliser.
+04 3Rs + R Welfare treated as data quality An explicit 3Rs framework — extended with rehabilitation — is not a compliance overlay. A stressed animal is a poor model, and the welfare programme exists because the science depends on it.
+05 10 years Evidence kept for a decade Raw data, blocks, slides and samples are archived for ten years on RAID servers held both on-site and off-site. A study is only defensible for as long as the material behind it survives.
+The record
+What the ledger says.
+Four running totals, kept because they are the ones a sponsor asks for first. Each is a count of work completed and reported, not of capacity available.
+Ref. · Measure
+Recorded 01
+GLP studies
+Completed and reported under Good Laboratory Practice
+20,000 + 02
+Clients
+Sponsors who have brought a programme through the laboratory
+275 + 03
+Countries
+Jurisdictions our study reports have travelled to
+50 + 04
+Accreditations
+Independent certifications, every one published in full
+4
+Quality system
+Written down, audited, and kept.
+Five commitments and three mechanisms. Nothing here is aspirational — each line is something an auditor can ask us to evidence on the day they walk in. Certificates on file
+Part A — Commitments
+05 clauses A. 1
+Ethics compliance
+Every study is designed and conducted within the ethical framework that governs it, reviewed before work begins rather than defended afterwards. A. 2
+Animal welfare
+The animal care and use programme runs to a written standard with in-house veterinarians, continuous health monitoring and environmental control treated as study parameters. A. 3
+Employee safety
+Handling protocols, containment and monitoring protect the people who work with hazardous test items, radioactive material and biological agents. A. 4
+Data security
+Redundancy and resilience with multiple backups stored on RAID servers, both on-site and off-site, with archival capacity extending ten years. A. 5
+Timely completion
+Schedule is treated as a quality attribute. A study delivered late has failed the sponsor as surely as one delivered wrong.
+Part B — Mechanisms
+03 systems B. 1
+Test item management TSC / TICO
+Separate storage zones are maintained for pharmaceutical and non-pharmaceutical products. Sponsors receive receipt confirmation within 48 hours, with stability guidance issued alongside. B. 2
+Data management Redundancy & resilience
+Multiple backups are stored on RAID servers held both on-site and off-site, with archival capacity extending ten years for raw data, specimens and reports. B. 3
+Quality assurance Independent audit
+The facility maintains GLP standards and NABL ISO/IEC 17025 accreditation, ensuring the resulting data is accepted by regulators globally.
+Animal welfare
+Three Rs. And a fourth.
+Welfare is treated as a data-quality question, not a compliance overlay. A stressed animal is a poor model — the programme exists because the science depends on it. Inside the vivarium
+01
+Replacement
+In vitro and in silico methods substituted for animal work wherever the endpoint permits — including SAR, QSAR and cell-based assays that answer the question earlier and at lower cost.
+02
+Refinement
+Improved procedures that minimise harm and distress, from housing and enrichment through to analgesia, handling and humane endpoints.
+03
+Reduction
+Animal numbers optimised against statistical validity, so that no study uses more animals than the question requires — or fewer than it can answer with.
+04
+Rehabilitation
+Post-study rehabilitation protocols, extending our obligation beyond the point at which the data has been collected.
+Beyond the three NSRL Research Laboratories Office of the Managing Director
+Leadership
+Dr. C. Tamilselvan
+Founder · Test Facility Management & Managing Director
+The laboratory was founded by Dr. C. Tamilselvan, a visionary leader with decades of experience in the research industry. As Test Facility Management he holds ultimate responsibility under the GLP principles for the resourcing, personnel and quality system that every study depends on.
+Responsibility under OECD GLP
+Test Facility Management is the office the GLP principles hold ultimately accountable. Three things sit with it, and cannot be delegated away from it:
+0 1
+Resourcing
+0 2
+Personnel
+0 3
+Quality system The system it answers for
+Evidence on file
+Nothing here is asserted without a certificate. Open the certificates
+4 accreditations, approvals and registrations, each one published in full so a sponsor can verify the scope before the first conversation.
+Reports accepted by
+US FDA
+EMA
+Good Laboratory Practice
+OECD GLP Good Laboratory Practice certification NGCMA, Department of Science and Technology, Government of India
+Testing & calibration
+NABL ISO/IEC 17025:2017 accreditation National Accreditation Board for Testing and Calibration Laboratories
+Sector approval
+SIRO / DSIR Scientific and Industrial Research Organisation recognition Department of Scientific and Industrial Research, Ministry of Science and Technology
+CIBRC Central Insecticides Board and Registration Committee recognition Central Insecticides Board and Registration Committee, Government of India
+Firsts
+Work that had no precedent to follow.
+Stated without dates, because the record we hold carries the achievement and not the year — and a year we could not evidence would be worth less than none. 01
+India's first nano-fertiliser registration
+Taken from first study through to approval, with no domestic precedent to follow. 02
+India's largest ecotoxicology department
+Twenty-six species spanning aquatic, terrestrial, avian and pollinator models. 03
+Reports accepted by the FDA and EMA
+Safety data submitted to and accepted by agencies on three continents. 04
+NABL ISO/IEC 17025:2017 accreditation
+Technical competence assessed independently of the GLP certification, against the international standard.
+Next Walk the facilities Ask us something specific
+
+https://nsrl-web.vercel.app/careers
+Careers — Join the NSRL scientific team | NSRL
+01 07 09 13
+Home /
+Careers
+Join us
+A career measured in studies, not job titles.
+As a contract research organisation working across agrochemicals, industrial chemicals and food and feed additives, we offer diverse opportunities for talented people at every stage of a scientific career.
+Professionals
+350+
+Instruments
+450+
+Laboratory space
+1,50,000 sq ft
+Open to application
+16
+departments, grouped into 4 families — scientific divisions, animal science, quality and records, and operations. Apply now
+Join us
+Be part of our scientific team
+As a contract research organisation working across agrochemicals, industrial chemicals and food and feed additives, we offer diverse opportunities for talented people at every stage of a scientific career.
+A collaborative and diverse team fosters innovation, creativity and continuous learning. Employees have access to state-of-the-art facilities and advanced technologies from the first week, not after a probation period.
+Professional development runs through training programmes, workshops and industry conferences, so that the people conducting the studies stay current with the guidelines and methods those studies are judged against.
+Where the work happens
+Three sites · Tamil Nadu
+The facility
+Salem, Tamil Nadu
+A single accredited site houses everything — study direction, regulatory strategy and client services alongside the laboratories, the vivarium and the archive. Because chemistry, toxicology, ecotoxicology and entomology sit under one roof, a study moves between divisions without ever leaving our custody.
+Study direction · Regulatory strategy · Client services · Toxicology · Chemistry · Ecotoxicology · Entomology · Microbiology · Vivarium · Bioanalysis · Archive
+Instrument families in service
+Chromatography & mass spectrometry
+Spectroscopy & thermal analysis
+Microscopy & cell analysis
+In-life & environmental
+What you get out of it
+Four things this laboratory can offer that a job description usually cannot.
+4 propositions · read downward
+01
+Facilities you can actually use
+450+ instruments across chromatography, mass spectrometry, spectroscopy and microscopy, in a 150,000 sq ft estate. Access is part of the job description.
+02
+Work that leaves the building
+Reports from these divisions have been accepted by the FDA, the EMA and agencies across six countries. The studies you run become regulatory record.
+03
+Continuous development
+Training programmes, workshops and industry conferences to stay current with the latest advancements in a field where the guidelines move every year.
+04
+A team, not a silo
+Every division sits in one quality system, which means a chemist and a toxicologist talk about the same study. Careers here tend to widen rather than narrow.
+Departments
+16 departments, 4 families, one register.
+Applications are accepted against any name on this list. Pick the one closest to your training — if none of them fits, the register ends with Others , and that is a real answer. Go to the application form
+Family 01 / 04
+Scientific divisions
+06 departments
+01 Chemistry
+02 Toxicology
+03 Eco-toxicology
+04 Entomology
+05 Bio-Chemistry
+06 Microbiology
+Family 02 / 04
+Animal science
+02 departments
+07 AHF
+08 Veterinarian
+Family 03 / 04
+Quality & records
+04 departments
+09 Quality Assurance
+10 Unit Quality Control
+11 Archivist
+12 Database
+Family 04 / 04
+Operations
+04 departments
+13 Administration
+14 Senior Management
+15 Electrical
+16 Others
+Apply
+Tell us where you fit.
+Applications go to the same address as everything else here, and they are read by people who know what the departments do.
+Write to us
+info@nsrl.co.in
+Call the laboratory
++91 427 2430833 +91 90470 35686
+Application · four lines 01 Full name 02 Email address 03 Department Select a department Chemistry Toxicology Eco-toxicology Entomology AHF Veterinarian Bio-Chemistry Microbiology Administration Senior Management Database Quality Assurance Unit Quality Control Electrical Archivist Others
+16 departments accept applications 04 Your background
+Attach your résumé to the email that opens. Submitting drafts a message in your own mail application with everything above already filled in — add the file there and send it. Nothing is uploaded from this page. Draft my application
+Opens a pre-filled draft in your mail application — you still need to send it
+
+https://nsrl-web.vercel.app/contact
+Contact — talk to NSRL about a study | NSRL
+Home /
+Contact
+Contact
+Start with a conversation, not a quotation.
+Tell us the test item, the sector and the authority that has to accept the dossier. We will tell you which studies that implies, which of our divisions run them, and what the programme looks like end to end.
+Direct lines +91 427 2430833 +91 90470 35686 info@nsrl.co.in
+Office & laboratory
+Registered office, laboratories & client services Full address
+Enquiries
+Tell us what has to be registered, and where.
+Please complete the enquiry form, or write to us directly. Name Telephone Email Company
+Optional What can we help with?
+Test item, sector and the authority the dossier is going to, if you know them Compose enquiry email
+Opens a pre-filled draft in your mail application — you still need to send it
+Direct lines
+Telephone
++91 427 2430833 +91 90470 35686
+Email
+info@nsrl.co.in
+Nothing typed into this page is stored anywhere and nothing is submitted from it. The form drafts the message in your own mail application, addressed to the inbox above, and you send it from there. Where to find us
+Where to find us
+One office, in Salem.
+The address below opens in your own map application. Sponsors are welcome to audit the facility — tell us when you are coming and we will meet you there.
+Office & laboratory
+Registered office, laboratories & client services
+472/3, SS Towers
+Annapuram, Junction Main Road
+Salem 636 004
+Tamil Nadu, India Open in Google Maps (opens in a new tab)
+
+https://nsrl-web.vercel.app/downloads
+Downloads — Accreditation Certificates & Approvals | NSRL
+Home /
+Downloads
+Evidence on file
+Every certificate, open for inspection.
+Accreditations, statutory registrations and sector approvals, held as a single register. Each record names the authority that issued it and the scope it covers — and where the laboratory has published the certificate, links straight to it.
+Records
+04
+Certificates filed
+04
+Authorities
+02
+Countries
+06
+Register key
+Certificate filed
+The certificate is published by the laboratory. The record links to it and the link opens in a new tab.
+No certificate filed
+The record is listed in full but carries no link, because no certificate has been published for it.
+The register
+Every record, filed by category.
+Each record carries the abbreviation the certificate is known by, the authority that issued it and the scope it covers. Where the laboratory has published the certificate, the record links straight to it.
+Records 04 Certificates filed 04 Categories 03
+01 Good Laboratory Practice ( 1 )
+02 Testing & calibration ( 1 )
+03 Sector approval ( 2 ) S. 01
+Good Laboratory Practice
+01 record
+01 OECD GLP
+Good Laboratory Practice certification
+Issued by
+NGCMA, Department of Science and Technology, Government of India
+Compliance with OECD Principles of Good Laboratory Practice, the basis on which study reports are accepted across all OECD Mutual Acceptance of Data countries. Open certificate External link — opens in a new tab
+S. 02
+Testing & calibration
+01 record
+02 NABL
+ISO/IEC 17025:2017 accreditation
+Issued by
+National Accreditation Board for Testing and Calibration Laboratories
+Technical competence of the testing laboratory against the international standard for testing and calibration laboratories. Open certificate External link — opens in a new tab
+S. 03
+Sector approval
+02 records
+03 SIRO / DSIR
+Scientific and Industrial Research Organisation recognition
+Issued by
+Department of Scientific and Industrial Research, Ministry of Science and Technology
+Government recognition as an in-house scientific and industrial research organisation. Open certificate External link — opens in a new tab
+04 CIBRC
+Central Insecticides Board and Registration Committee recognition
+Issued by
+Central Insecticides Board and Registration Committee, Government of India
+Recognition to generate data supporting the registration of insecticides and agrochemicals in India. Open certificate External link — opens in a new tab
+Acceptance
+A certificate is only worth who accepts it.
+Reports issued by the laboratory have been accepted by the regulatory authorities below, and by agencies in the countries beside them.
+Accepting authorities 02
+01 US FDA
+02 EMA
+Reports accepted in 06
+USA
+United Kingdom
+Japan
+China
+Brazil
+India
+Anything else
+A register can only hold what has been published.
+Scope detail, quality documentation or a certificate that is not linked above — ask directly and we will point you to it. The phone is the fastest route. +91 427 2430833 info@nsrl.co.in Talk to the laboratory The quality system
+
+https://nsrl-web.vercel.app/facilities
+Facilities — 150,000 sq ft of Accredited Laboratory | NSRL
+Home /
+Facilities
+The facility
+Where the work actually happens.
+A single accredited laboratory in Salem, Tamil Nadu. Chemistry, toxicology, ecotoxicology, entomology, microbiology and the vivarium share one site — which is the whole reason a study can change division without changing custodian.
+Laboratory space
+1,50,000 sq ft
+City
+Salem
+On this page
+01 The facility Salem, Tamil Nadu
+02 Around the site Captioned gallery
+03 Environments Specification schedule
+04 Instruments Equipment register
+Registered office, laboratories & client services
+Salem , Tamil Nadu
+The facility
+One site. One chain of custody.
+Every division works from the same accredited site in Salem. What that buys is not convenience — it is that a study can change division without changing custodian. The facility Salem, Tamil Nadu
+A single accredited site houses everything — study direction, regulatory strategy and client services alongside the laboratories, the vivarium and the archive. Because chemistry, toxicology, ecotoxicology and entomology sit under one roof, a study moves between divisions without ever leaving our custody.
+Registered office, laboratories & client services 472/3, SS Towers Annapuram, Junction Main Road Salem 636 004 Tamil Nadu, India Houses — 11 functions
+01 Study direction
+02 Regulatory strategy
+03 Client services
+04 Toxicology
+05 Chemistry
+06 Ecotoxicology
+07 Entomology
+08 Microbiology
+09 Vivarium
+10 Bioanalysis
+11 Archive
+Around the site
+Environments, and what each is held to.
+Five controlled environments carry the in-life and analytical programme. The full specification schedule is below.
+Aquatic & terrestrial systems Plant growth chambers, flow-through aquatic systems and micro-applicators supporting twenty-six ecotoxicology species.
+Microbiology Sterility, endotoxin and environmental monitoring against ISO, USP and OECD methods.
+Microscopy & cell analysis Fluorescence microscopes, cell sorters, whole-slide scanners and automated tissue processors.
+Chemistry & bioanalysis Identity, purity, concentration and stability established before a single dose is prepared.
+Capacity
+The estate, in numbers that can be counted.
+Floor area, instruments, people and clean rooms. Four measurements a sponsor can verify on a site visit, which is the only kind worth publishing.
+Capacity readout
+NSRL · Salem CH 01
+Laboratory space
+1,50,000 sq ft
+At a single accredited site in Salem, Tamil Nadu CH 02
+Instruments
+450 +
+Analytical, environmental and in-life equipment in service CH 03
+Professionals
+350 +
+Scientists, veterinarians, analysts and quality staff CH 04
+Clean rooms
+70 +
+Environmentally controlled animal housing
+Controlled environments
+Five conditions, each held to a stated specification.
+Studies here run for days or for years. The specification column is the part that has to survive the whole duration — and be demonstrable afterwards. Controlled environments — specification schedule Ref Environment Specification What is held, and for what 01 Animal housing 70+ clean rooms Controlled temperature, humidity, lighting and ventilation, with continuous health and body-weight monitoring, supporting the small animal models the toxicology programme runs on. 02 Inhalation suites Multiple chambers State-of-the-art inhalation chambers for acute and repeat-dose inhalation toxicity in small animals — the capability that decides whether an airborne chemical or inhaled drug can be evaluated at all. 03 Aquatic & terrestrial systems Flow-through Flow-through aquatic systems, plant growth chambers, cold rooms and micro-applicators supporting twenty-six species across the ecotoxicology programme. 04 Insect rearing In-house colonies Breeding programmes maintained for every entomology test species, from cockroaches and mosquitoes to termites and stored-product insects, removing the variability of field-collected populations. 05 Archive 10-year retention Secure storage for raw data, blocks, slides and specimens, with RAID-server redundancy held both on-site and off-site.
+Instrument estate
+Every instrument, entered on one register.
+450 +
+Groups
+04
+Named below
+23
+The register names the instrument classes a protocol is most often written around. The estate in service is larger, and every unit on it is qualified, calibrated and logged against the study that used it.
+R- 01 Chromatography & mass spectrometry 05 named
+Separation and identification at trace concentration
+HPLC
+GC-MS
+GC-MS/MS
+LC-MS/MS
+ICP-MS
+R- 02 Spectroscopy & thermal analysis 06 named
+Structure, composition and thermal behaviour
+FTIR
+NMR
+DSC
+TGA
+Spectrophotometers
+Plate readers
+R- 03 Microscopy & cell analysis 06 named
+Reading the biology directly
+Advanced fluorescence microscopes
+Fluorescence-activated cell sorters
+Whole-slide scanners
+Automated microtomes
+Automatic stainers
+Fully automated tissue processors
+R- 04 In-life & environmental 06 named
+Exposure, housing and environmental control
+Inhalation chambers
+Plant growth chambers
+Flow-through aquatic systems
+Cold rooms
+Micro-applicators
+High-Throughput Screening platform
+Open to inspection
+Sponsors are welcome to audit the facility.
+A laboratory you can walk through is the only kind worth describing.
+Client services and every laboratory function on this page sit at one accredited site in Salem, Tamil Nadu. Tell us which divisions and which study type you need to see, and we will scope the visit from there. Arrange a site visit The quality system
+Units open
+01
+Direct line
++91 427 2430833
+Email
+info@nsrl.co.in
+
+https://nsrl-web.vercel.app/news
+News & Events — Notes from the Laboratory | NSRL
+Home /
+News & events
+Newsroom
+Notes from the laboratory, written up in full.
+A short archive by design. What is here is a complete note rather than a headline — and anything that moves faster than a written note is posted to LinkedIn as it happens.
+Records
+02
+Longest read
+4 min
+Live updates
+LinkedIn
+The archive
+Everything the laboratory has published here.
+Notes with a published body are reproduced in full. An entry whose text was never published here keeps its number and its date in the sequence and is listed without a page, rather than being written up after the fact or dropped from the record.
+02 records · 01 with a note 01 Pharmacology 26 September 2023 4 min read
+Optimizing quality in the clinical laboratory: focus on preclinical drug discovery
+Preclinical drug discovery is the phase that decides which compounds are worth a clinical trial. The accuracy of the data behind that decision is not a quality-department concern — it is the whole argument. Read the note
+In this note
+Target validation and high-throughput screening
+In vivo efficacy studies
+ADME-Tox assessments 02 News 8 May 2023 NSRL
+What's new this year?
+Listed for the record. The text of this entry is not published here, so there is nothing to link to — and a page written to fill the gap would not be the entry.
+No note filed Listed without a page
+End of archive — 02 records
+Newer updates are posted to LinkedIn
+Live updates
+Events
+Conference appearances, capability announcements and laboratory updates are posted to LinkedIn as they happen. Follow for live updates
+LinkedIn — opens in a new tab
+
+https://nsrl-web.vercel.app/products
+Study Packages — Regulatory Study Sets, Assembled by Submission | NSRL
+Home /
+Study packages
+Study packages
+Studies we already run, grouped the way you file them.
+A package is an assembly of studies this laboratory already runs, arranged around a single submission so that one quality system, one archive and one chain of custody carry the whole dossier.
+Packages
+03
+Studies listed
+67
+Frameworks
+15
+Index
+01 Agrochemical Registration Dossier
+02 REACH & Chemical Compliance
+03 Food & Feed Safety Panel
+What a package is
+An assembly, not an invention.
+The catalogue does not change. Only the order you read it in.
+Packages
+03
+Studies listed
+67 The divisions that run them
+01
+Nothing here is new
+Every study named in every package is already run by a named division of this laboratory, under the accreditation that division already holds. Packaging changes the order of the list, not the list.
+02
+Grouped by submission, not by department
+A registration dossier does not arrive one division at a time. The groupings follow the schedule a regulatory affairs team actually works to, which is why a single package can cross ecotoxicology, chemistry and entomology.
+03
+A starting point, not a fixed bill
+Scope is set by the authority reading the dossier and by the properties of the item itself — a surface-contact device should not be paying for implantation work it does not need. Every package is trimmed, and often extended, before it becomes a protocol.
+The ledger
+Three submissions, opened line by line.
+Open a row to see the whole schedule: the frameworks it is assembled against, the divisions that execute it, and every study group inside it.
+01 Agrochemical Registration Dossier Crop protection & fertiliser registrants 24 studies
+Ecotoxicity, residue, environmental fate and efficacy assembled as one submission
+Built for registrants filing into several jurisdictions at once. Aquatic, terrestrial and avian ecotoxicity run alongside residue analysis, environmental fate and field efficacy, assembled as one body of evidence rather than a stack of unrelated studies. Assembled against
+OECD
+CIBRC
+EPA
+EFSA Divisions executing — 04
+Ecotoxicology
+Chemistry
+Entomology
+Toxicology 01 . 01 Aquatic ecotoxicity
+Fish acute toxicity (OECD 203)
+Daphnia acute immobilisation (OECD 202)
+Daphnia reproduction (OECD 211)
+Algal growth inhibition (OECD 201)
+Bioaccumulation in fish (OECD 305) 01 . 02 Terrestrial ecotoxicity
+Earthworm acute toxicity (OECD 207)
+Earthworm reproduction (OECD 222)
+Honeybee toxicity (OECD 213)
+Terrestrial plant seedling growth (OECD 208)
+OECD 218
+Avian oral toxicity 01 . 03 Environmental fate
+Ready biodegradability (OECD 301)
+Aerobic and anaerobic soil transformation (OECD 307)
+Adsorption/desorption batch equilibrium (OECD 106)
+Adsorption coefficient by HPLC (OECD 121)
+Photodegradation, leaching and volatility 01 . 04 Residue & metabolism
+Pesticide residue analysis in crops and soil
+Multi-residue analytical method development
+Plant metabolism pathway identification
+Metabolite profiling and identification 01 . 05 Efficacy & crop safety
+Field efficacy trials
+Crop tolerance studies
+Phytotoxicity assessment
+Seed germination and seedling emergence
+02 REACH & Chemical Compliance Industrial chemical manufacturers & importers 21 studies
+Physicochemical, toxicological and environmental data for multi-market declarations
+One evidence base supporting REACH, RoHS, CLP, GHS and California Proposition 65 declarations, including the specialist testing — Chromium VI, SVHC, packaging compatibility — that generic packages leave out. Assembled against
+REACH
+RoHS
+CLP
+GHS
+California Proposition 65
+SVHC
+CE Divisions executing — 03
+Chemistry
+Toxicology
+Ecotoxicology 02 . 01 Physicochemical
+Chemical characterisation and identification
+Physicochemical property determination
+Stability and shelf life
+Packaging and container compatibility
+Transport worthiness 02 . 02 Human health
+Acute toxicity
+Skin and eye irritation / serious damage
+Skin sensitisation
+Subacute, subchronic and chronic toxicity
+Developmental and reproductive toxicity
+Endocrine disruptor screening
+Carcinogenicity 02 . 03 Environmental
+Biodegradation
+Bioaccumulation potential
+Adsorption, desorption and mobility
+Aquatic and terrestrial toxicity
+Environmental risk assessment 02 . 04 Specialist declarations
+Chromium VI testing
+SVHC declarations
+CE label support
+Occupational exposure assessment
+03 Food & Feed Safety Panel Food, feed & nutraceutical manufacturers 22 studies
+Nutrition, microbiology, allergens, contaminants and shelf-life in one panel
+Release-and-label testing for additives and finished products, extended with the toxicological and stability work that a new additive approval requires. Assembled against
+GLP
+FSSAI
+Codex
+ISO Divisions executing — 03
+Chemistry
+Microbiology
+Toxicology 03 . 01 Nutritional analysis
+Proximate analysis — moisture, ash, fat, protein, carbohydrate
+Vitamin and mineral content
+Dietary fibre
+Fatty acid profile
+Caloric value 03 . 02 Microbiology
+Total viable count
+Pathogen detection — Salmonella, E. coli, Listeria
+Yeast and mould count
+Coliform and Enterobacteriaceae count 03 . 03 Allergens & contaminants
+Allergen-specific ELISA and PCR
+Gluten testing
+Mycotoxins — aflatoxins, ochratoxin
+Heavy metals — lead, mercury, cadmium, arsenic
+Pesticide and veterinary drug residues
+PAH analysis
+Gamma radiation level measurement 03 . 04 Stability & shelf life
+Microbiological stability
+Oxidative stability
+Nutrient degradation
+Sensory and organoleptic evaluation
+Temperature and light stress testing
+Packaging integrity
+If none of them fit
+Start from the authority instead.
+A package is a shortcut through the catalogue, not a boundary around it. Where the submission is unusual, the sector pages set out the frameworks in full — and a study can be designed from scratch. Custom studies
+01 Agrochemical Full registration packages — ecotoxicity, residue, environmental fate, metabolism and field efficacy OECD · CIBRC · EPA · EFSA
+02 Industrial Chemicals REACH, RoHS, CLP, GHS and California Proposition 65 compliance data REACH · RoHS · CLP · GHS
+03 Food & Feed Additives Nutritional, microbiological, allergen and contaminant analysis with shelf-life support GLP · FSSAI · Codex · ISO
+Next step
+Send us the dossier you have to file.
+Scoping starts from the authority that will read the submission, not from the study list — so the fastest route to a real quotation is telling us the market, the submission type and the test item.
+Stage 01 · Scope — Regulatory strategy · guideline mapping · study design Request a scoped proposal How we work
+Direct line
++91 427 2430833
+Email
+info@nsrl.co.in
+
+https://nsrl-web.vercel.app/research
+Scientific Divisions | Accredited Research Departments | NSRL
+Home /
+Research
+Scientific divisions
+Seven divisions, set out in full.
+Each division holds its own accreditations, its own instrument estate and its own species list. They share one campus, one quality system and one archive — which is why a programme can cross between them without a handover.
+Divisions
+7
+Families
+3
+Listed methods
+132
+Guidelines cited
+35 Search the divisions
+Matches division names, summaries, guideline numbers, species and method names.
+Or jump to a family
+Safety & toxicology 2 divisions
+Analytical & discovery 2 divisions
+Applied & specialist 3 divisions
+Family
+Safety & toxicology
+2 divisions
+The divisions that establish what a substance does to a living system, and the dose at which it starts doing it.
+01
+Toxicology
+Acute through multi-year carcinogenicity, run under GLP in our own vivaria
+Key capability
+Multi-year
+Methods
+19
+02
+Ecotoxicology
+India's largest ecotoxicology department — 26 species across water, soil and air
+species
+26
+Methods
+18
+Guidelines
+16
+Family
+Analytical & discovery
+2 divisions
+The divisions that identify, quantify and trace. Every safety conclusion elsewhere in the laboratory rests on a number produced here.
+03
+Chemistry
+Analytical chemistry that underwrites every other division's numbers
+platforms
+8
+Methods
+15
+04
+Microbiology
+Sterility, endotoxin and environmental monitoring against ISO, USP and OECD methods
+Key capability
+GLP · NABL
+Methods
+43
+Guidelines
+19
+Family
+Applied & specialist
+3 divisions
+Divisions built around a particular problem — an insect, an animal facility, or a study no guideline was written to cover.
+05
+Entomology
+Insecticide efficacy and resistance work on colonies we breed ourselves
+Key capability
+In-house
+Methods
+17
+06
+Vivarium
+Over 70 environmentally controlled clean rooms for small animal models
+clean rooms
+70+
+Methods
+6
+Species listed
+4
+07
+Custom Studies
+For the programme no standard guideline was written to cover
+Key capability
+Bespoke
+Methods
+14
+Coverage
+Which accreditation governs which division.
+Read down a column to see how far an accreditation reaches; read across a row to see what a single division works under. Every certificate is published in full. Certificates on file Accreditations held by each scientific division Division OECD GLP NABL 01 Toxicology OECD GLP: held NABL: not applicable 02 Ecotoxicology OECD GLP: held NABL: held 03 Chemistry OECD GLP: held NABL: held 04 Microbiology OECD GLP: held NABL: held 05 Entomology OECD GLP: held NABL: not applicable 06 Vivarium OECD GLP: held NABL: not applicable 07 Custom Studies OECD GLP: held NABL: not applicable
+Where to start
+Not sure which division owns your question?
+Most of them touch three or four. Tell us what you need to prove and to which authority, and we will map it back to the divisions that can prove it — and to the guideline numbers a reviewer will look for. Request a proposal Study packages
+Direct line +91 427 2430833 info@nsrl.co.in
+Please complete the enquiry form, or write to us directly.
+
+https://nsrl-web.vercel.app/research/chemistry
+Analytical Chemistry Services | HPLC, LC-MS/MS, ICP-MS & NMR | NSRL
+Home /
+Research /
+Chemistry
+Analytical & discovery
+Chemistry
+Analytical chemistry that underwrites every other division's numbers
+platforms
+8
+Listed methods
+15
+Instruments
+8 Division 03 of 7
+On this page
+Overview
+In short
+Capabilities
+Specifications
+Accreditations
+Works alongside
+Overview
+The work, in outline.
+Family
+Analytical & discovery
+Capability groups
+4
+Chemistry is the division no study can proceed without. Identity, purity, concentration and stability are established here, and every dose administered anywhere in the laboratory traces back to a chemistry result.
+The GLP-certified laboratory runs HPLC, GC-MS/MS, LC-MS/MS, ICP-MS, FTIR, NMR, DSC and TGA — a spread that covers organic and inorganic, volatile and involatile, thermal and spectroscopic characterisation without outsourcing a step.
+Method development and validation, impurity profiling and characterisation, five-batch analysis and stability programmes are handled end to end, with samples and data archived for ten years.
+The headline
+8 platforms
+Chromatographic, spectroscopic, elemental and thermal, all in-house
+Capabilities
+4 groups, 15 listed methods.
+Every method below runs inside the same quality system, against the same archive, with the same chain of custody. Study designs are assembled from this catalogue rather than improvised around it. 01
+Chemical analysis
+6 methods
+Identification
+Elemental analysis
+Spectroscopic analysis
+Chromatographic techniques
+Thermal analysis
+Particle size analysis 02
+Method development & validation
+3 methods
+Analytical method development
+Method validation to international standards
+Method transfer 03
+Impurity & stability
+4 methods
+Impurity profiling and characterisation
+Five-batch analysis
+Stability studies
+Shelf-life determination 04
+Quality & materials
+2 methods
+Quality control and quality assurance
+Material testing and characterisation
+Specifications
+On the record.
+Guideline numbers, test species and instrument names are reproduced exactly as the laboratory publishes them, because a method is only portable across borders if it can be named precisely.
+Instrument estate 8 platforms
+01 HPLC
+02 GC-MS/MS
+03 LC-MS/MS
+04 ICP-MS
+05 FTIR
+06 NMR
+07 DSC
+08 TGA
+Under accreditation
+What governs this work.
+Chemistry operates inside the quality system audited under the certifications listed here.
+OECD GLP
+NABL
+Good Laboratory Practice certification OECD GLP
+NGCMA, Department of Science and Technology, Government of India
+Compliance with OECD Principles of Good Laboratory Practice, the basis on which study reports are accepted across all OECD Mutual Acceptance of Data countries. View the certificate
+ISO/IEC 17025:2017 accreditation NABL
+National Accreditation Board for Testing and Calibration Laboratories
+Technical competence of the testing laboratory against the international standard for testing and calibration laboratories. View the certificate
+Runs alongside
+Nothing here works alone.
+Most programmes cross three or four divisions. On one campus, under one quality system, that crossing costs a corridor rather than a shipment.
+Talk to a study director +91 427 2430833 info@nsrl.co.in Request a proposal All divisions
+01 Toxicology Acute through multi-year carcinogenicity, run under GLP in our own vivaria
+02 Ecotoxicology India's largest ecotoxicology department — 26 species across water, soil and air
+04 Microbiology Sterility, endotoxin and environmental monitoring against ISO, USP and OECD methods
+
+https://nsrl-web.vercel.app/research/custom-studies
+Custom Preclinical Studies | Bespoke GLP Study Design | NSRL
+Home /
+Research /
+Custom Studies
+Applied & specialist
+Custom Studies
+For the programme no standard guideline was written to cover
+Key capability
+Bespoke
+Listed methods
+14 Division 07 of 7
+On this page
+Overview
+In short
+Capabilities
+Accreditations
+Works alongside
+Overview
+The work, in outline.
+Family
+Applied & specialist
+Capability groups
+4
+Custom Services exists to bridge the gaps in research and development — the studies that fall between guidelines, combine two disciplines, or need a model that does not yet exist.
+Because the design work happens inside the same GLP quality system that runs our routine studies, a bespoke protocol carries the same defensibility as a standard one. That is the difference between a custom study and an improvised one.
+Support runs across the whole product lifecycle: study design, assay development and validation, biomarker analysis, formulation development, biostatistics and regulatory support, through to data analysis and reporting.
+The headline
+Bespoke
+Protocols designed to order, inside the same GLP quality system
+Capabilities
+4 groups, 14 listed methods.
+Every method below runs inside the same quality system, against the same archive, with the same chain of custody. Study designs are assembled from this catalogue rather than improvised around it. 01
+Design & development
+4 methods
+Customised study design
+Assay development and validation
+Formulation development
+Customised animal models 02
+Analysis
+4 methods
+Biomarker analysis
+Genomic and proteomic analysis
+Pharmacogenomics
+Pharmacokinetic studies 03
+Evaluation
+3 methods
+Toxicology evaluations
+Efficacy assessments
+In vitro and in vivo studies 04
+Reporting & regulatory
+3 methods
+Data analysis and reporting
+Biostatistics
+Regulatory support
+Under accreditation
+What governs this work.
+Custom Studies operates inside the quality system audited under the certifications listed here.
+OECD GLP
+Good Laboratory Practice certification OECD GLP
+NGCMA, Department of Science and Technology, Government of India
+Compliance with OECD Principles of Good Laboratory Practice, the basis on which study reports are accepted across all OECD Mutual Acceptance of Data countries. View the certificate
+Runs alongside
+Nothing here works alone.
+Most programmes cross three or four divisions. On one campus, under one quality system, that crossing costs a corridor rather than a shipment.
+Talk to a study director +91 427 2430833 info@nsrl.co.in Request a proposal All divisions
+01 Toxicology Acute through multi-year carcinogenicity, run under GLP in our own vivaria
+03 Chemistry Analytical chemistry that underwrites every other division's numbers
+04 Microbiology Sterility, endotoxin and environmental monitoring against ISO, USP and OECD methods
+
+https://nsrl-web.vercel.app/research/ecotoxicology
+Ecotoxicology Testing | Aquatic, Terrestrial & Environmental Fate | NSRL
+Home /
+Research /
+Ecotoxicology
+Safety & toxicology
+Ecotoxicology
+India's largest ecotoxicology department — 26 species across water, soil and air
+species
+26
+Listed methods
+18
+Guidelines
+16
+Species
+12 Division 02 of 7
+On this page
+Overview
+In short
+Capabilities
+Specifications
+Accreditations
+Works alongside
+This is India's largest ecotoxicology department, and the breadth is the point: 26 species spanning birds, fish, algae, plants, honeybees, earthworms, crustaceans, molluscs, collembolans, ladybugs and lacewings. An environmental risk assessment is only as credible as the number of trophic levels behind it.
+The division works to GLP and NABL standards, and its regulatory history includes registering India's first nano-fertiliser — a dossier with no domestic precedent to follow.
+Aquatic, terrestrial and environmental-fate work runs in parallel rather than in sequence. Flow-through systems, plant growth chambers, cold rooms and micro-applicators let a single substance be characterised for acute aquatic toxicity, soil degradation and adsorption behaviour inside one programme.
+Overview
+The work, in outline.
+Family
+Safety & toxicology
+Capability groups
+3
+The headline
+26 species
+Across birds, fish, algae, plants, pollinators and soil fauna
+Capabilities
+3 groups, 18 listed methods.
+Every method below runs inside the same quality system, against the same archive, with the same chain of custody. Study designs are assembled from this catalogue rather than improvised around it. 01
+Aquatic toxicity
+6 methods
+Fish acute toxicity (OECD 203)
+Daphnia acute immobilisation (OECD 202)
+Daphnia reproduction (OECD 211)
+Algal growth inhibition (OECD 201)
+Bioaccumulation in fish (OECD 305)
+Marine and freshwater mollusc toxicity 02
+Terrestrial toxicity
+7 methods
+Earthworm acute toxicity (OECD 207)
+Earthworm reproduction (OECD 222)
+Honeybee toxicity (OECD 213)
+Terrestrial plant seedling growth (OECD 208)
+Vegetative vigour (OECD 227)
+OECD 218
+Avian oral toxicity 03
+Environmental fate
+5 methods
+Ready biodegradability (OECD 301)
+Biodegradation simulation (OECD 314)
+Aerobic and anaerobic soil transformation (OECD 307)
+Adsorption/desorption using a batch equilibrium method (OECD 106)
+Estimation of adsorption coefficient by HPLC (OECD 121)
+Specifications
+On the record.
+Guideline numbers, test species and instrument names are reproduced exactly as the laboratory publishes them, because a method is only portable across borders if it can be named precisely.
+Guidelines worked to 16 on file
+OECD 106
+OECD 121
+OECD 201
+OECD 202
+OECD 203
+OECD 207
+OECD 208
+OECD 211
+OECD 213
+OECD 218
+OECD 222
+OECD 227
+OECD 301
+OECD 305
+OECD 307
+OECD 314
+Test species 12 listed
+Birds
+Fish
+Algae
+Higher plants
+Honeybees
+Earthworms
+Crustaceans
+Molluscs
+Collembolans
+Ladybugs
+Lacewings
+Mussels and snails
+Instrument estate 4 platforms
+01 Plant growth chambers
+02 Cold rooms
+03 Flow-through systems
+04 Micro-applicators
+Under accreditation
+What governs this work.
+Ecotoxicology operates inside the quality system audited under the certifications listed here.
+OECD GLP
+NABL
+Good Laboratory Practice certification OECD GLP
+NGCMA, Department of Science and Technology, Government of India
+Compliance with OECD Principles of Good Laboratory Practice, the basis on which study reports are accepted across all OECD Mutual Acceptance of Data countries. View the certificate
+ISO/IEC 17025:2017 accreditation NABL
+National Accreditation Board for Testing and Calibration Laboratories
+Technical competence of the testing laboratory against the international standard for testing and calibration laboratories. View the certificate
+Runs alongside
+Nothing here works alone.
+Most programmes cross three or four divisions. On one campus, under one quality system, that crossing costs a corridor rather than a shipment.
+Talk to a study director +91 427 2430833 info@nsrl.co.in Request a proposal All divisions
+05 Entomology Insecticide efficacy and resistance work on colonies we breed ourselves
+03 Chemistry Analytical chemistry that underwrites every other division's numbers
+04 Microbiology Sterility, endotoxin and environmental monitoring against ISO, USP and OECD methods
+
+https://nsrl-web.vercel.app/research/entomology
+Entomology Testing | Insecticide Efficacy, Repellency & Resistance | NSRL
+Home /
+Research /
+Entomology
+Applied & specialist
+Entomology
+Insecticide efficacy and resistance work on colonies we breed ourselves
+Key capability
+In-house
+Listed methods
+17
+Species
+1 Division 05 of 7
+On this page
+Overview
+In short
+Capabilities
+Specifications
+Accreditations
+Works alongside
+Overview
+The work, in outline.
+Family
+Applied & specialist
+Capability groups
+3
+Efficacy data is only as good as the insects behind it. This division maintains in-house breeding programmes for its test species, which removes the variability that makes field-collected populations unreliable as a baseline.
+Contact, residual and knockdown efficacy, repellency, larvicidal and adulticidal activity and fumigant testing all run under Good Laboratory Practice, against the agriculturally and economically important pest species a product has to be effective on.
+Resistance is treated as a first-class question rather than an afterthought: molecular assays detect insecticide resistance directly, and resistance monitoring, vector competence studies and pest risk assessment place a single product inside a longer epidemiological picture.
+The headline
+In-house
+Breeding programmes for every test species, controlling the baseline
+Capabilities
+3 groups, 17 listed methods.
+Every method below runs inside the same quality system, against the same archive, with the same chain of custody. Study designs are assembled from this catalogue rather than improvised around it. 01
+Efficacy
+7 methods
+Contact toxicity test
+Residual efficacy test
+Knockdown efficacy test
+Larvicidal activity test
+Adulticidal activity test
+Fumigant activity test
+Biopesticide efficacy testing 02
+Repellency & exposure
+5 methods
+Repellency test
+Direct application exposure testing
+Impregnated material testing
+Dose–response assays
+Mortality and fecundity assays 03
+Resistance & surveillance
+5 methods
+Insecticide susceptibility testing
+Molecular assays for insecticide resistance detection
+Resistance monitoring
+Vector competence studies
+Pest risk assessment
+Specifications
+On the record.
+Guideline numbers, test species and instrument names are reproduced exactly as the laboratory publishes them, because a method is only portable across borders if it can be named precisely.
+Test species
+Agriculturally and economically important pest species
+Under accreditation
+What governs this work.
+Entomology operates inside the quality system audited under the certifications listed here.
+OECD GLP
+Good Laboratory Practice certification OECD GLP
+NGCMA, Department of Science and Technology, Government of India
+Compliance with OECD Principles of Good Laboratory Practice, the basis on which study reports are accepted across all OECD Mutual Acceptance of Data countries. View the certificate
+Runs alongside
+Nothing here works alone.
+Most programmes cross three or four divisions. On one campus, under one quality system, that crossing costs a corridor rather than a shipment.
+Talk to a study director +91 427 2430833 info@nsrl.co.in Request a proposal All divisions
+02 Ecotoxicology India's largest ecotoxicology department — 26 species across water, soil and air
+03 Chemistry Analytical chemistry that underwrites every other division's numbers
+07 Custom Studies For the programme no standard guideline was written to cover
+
+https://nsrl-web.vercel.app/research/microbiology
+Microbiology Testing | Sterility, Endotoxin & Environmental Monitoring | NSRL
+Home /
+Research /
+Microbiology
+Analytical & discovery
+Microbiology
+Sterility, endotoxin and environmental monitoring against ISO, USP and OECD methods
+Key capability
+GLP · NABL
+Listed methods
+43
+Guidelines
+19 Division 04 of 7
+On this page
+Overview
+In short
+Capabilities
+Specifications
+Accreditations
+Works alongside
+The microbiology division is certified by NGCMA for GLP and accredited by NABL to ISO/IEC 17025, and operates under Good Laboratory Practice with recognition from the FDA and EMA.
+Its method set is deliberately standard-anchored. Sterility runs to ISO 11737-1:2018 and USP 71; endotoxin to USP 85; microbial limits to ISO 4833-1:2013; susceptibility to ISO 20776-1:2019. Naming the method is how a result travels across borders intact.
+Alongside routine release testing, the division carries preservation efficacy challenge testing, biofilm and water testing, cleanroom monitoring, and cleaning and sanitisation validation — the work that keeps a manufacturing site inside its own specification.
+Overview
+The work, in outline.
+Family
+Analytical & discovery
+Capability groups
+7
+The headline
+GLP · NABL
+Three independent accreditations governing one method set
+Capabilities
+7 groups, 43 listed methods.
+Every method below runs inside the same quality system, against the same archive, with the same chain of custody. Study designs are assembled from this catalogue rather than improvised around it.
+Identification & characterisation 5 methods
+Culture-based identification of bacteria, fungi and yeast
+Molecular techniques — PCR and DNA sequencing
+Phenotypic and biochemical characterisation
+OECD Guideline 107
+ISO 7218:2007
+Antimicrobial susceptibility 6 methods
+Susceptibility determination
+Minimum inhibitory concentration (MIC) testing
+Disk diffusion — Kirby-Bauer
+Broth dilution method
+Etest method
+ISO 20776-1:2019
+Sterility & microbial limits 9 methods
+Membrane filtration method
+Direct inoculation method
+Growth promotion testing
+Viable microorganism enumeration
+Total aerobic microbial count
+Total yeast and mould count
+ISO 11737-1:2018
+USP 71
+ISO 4833-1:2013
+Endotoxin 4 methods
+Bacterial endotoxin detection and quantification
+LAL assay
+Chromogenic and turbidimetric methods
+USP 85
+Environmental monitoring 6 methods
+Air, water, surface and equipment testing
+Total viable count
+Indicator organism detection
+Cleanroom monitoring
+Cleaning and sanitisation validation
+ISO 14698 series
+Challenge, biofilm & water 9 methods
+Preservation efficacy evaluation
+Product inoculation studies
+ISO 14698-1:2003 and ISO 14698-2:2003
+OECD Guideline 471
+ISO 10993-1:2018
+ASTM E2111-18
+ASTM E2562-20
+ISO 22196:2011
+ISO 6222:1999
+Environmental microbiology 4 methods
+ASTM D5465-21
+ISO 10381-1:2002
+OECD Guideline 473
+ISO 10993-3:2014
+Specifications
+On the record.
+Guideline numbers, test species and instrument names are reproduced exactly as the laboratory publishes them, because a method is only portable across borders if it can be named precisely.
+Guidelines worked to 19 on file
+USP 71
+USP 85
+ISO 7218:2007
+ISO 4833-1:2013
+ISO 6222:1999
+ISO 11737-1:2018
+ISO 20776-1:2019
+ISO 22196:2011
+ISO 14698-1:2003
+ISO 14698-2:2003
+ISO 10993-1:2018
+ISO 10993-3:2014
+ISO 10381-1:2002
+ASTM E2111-18
+ASTM E2562-20
+ASTM D5465-21
+OECD 107
+OECD 471
+OECD 473
+Under accreditation
+What governs this work.
+Microbiology operates inside the quality system audited under the certifications listed here.
+OECD GLP
+NABL
+Good Laboratory Practice certification OECD GLP
+NGCMA, Department of Science and Technology, Government of India
+Compliance with OECD Principles of Good Laboratory Practice, the basis on which study reports are accepted across all OECD Mutual Acceptance of Data countries. View the certificate
+ISO/IEC 17025:2017 accreditation NABL
+National Accreditation Board for Testing and Calibration Laboratories
+Technical competence of the testing laboratory against the international standard for testing and calibration laboratories. View the certificate
+Runs alongside
+Nothing here works alone.
+Most programmes cross three or four divisions. On one campus, under one quality system, that crossing costs a corridor rather than a shipment.
+Talk to a study director +91 427 2430833 info@nsrl.co.in Request a proposal All divisions
+03 Chemistry Analytical chemistry that underwrites every other division's numbers
+01 Toxicology Acute through multi-year carcinogenicity, run under GLP in our own vivaria
+07 Custom Studies For the programme no standard guideline was written to cover
+
+https://nsrl-web.vercel.app/research/toxicology
+Toxicology Studies | GLP Acute, Chronic & Carcinogenicity | NSRL
+Home /
+Research /
+Toxicology
+Safety & toxicology
+Toxicology
+Acute through multi-year carcinogenicity, run under GLP in our own vivaria
+Key capability
+Multi-year
+Listed methods
+19
+Instruments
+6 Division 01 of 7
+On this page
+Overview
+In short
+Capabilities
+Specifications
+Accreditations
+Works alongside
+Overview
+The work, in outline.
+Family
+Safety & toxicology
+Capability groups
+4
+Toxicology is the division the rest of the laboratory is built around. It runs under GLP certification, operates multiple vivaria, and is staffed by toxicologists holding DABT credentials — the board certification that regulators outside India look for first.
+The work spans the full duration axis. Acute studies resolve in days; subchronic and chronic programmes run for months; carcinogenicity bioassays run for years without a gap in the record. Multiple state-of-the-art inhalation chambers let us run inhalation toxicity studies on small animals, which is essential for evaluating airborne chemicals and inhaled drug products.
+Trace-level analytical support sits inside the division rather than beside it. LC-MS/MS, ICP-MS and GC-MS detect chemicals at the concentrations that matter for dose confirmation and tissue distribution, and a High-Throughput Screening platform front-loads the decisions that would otherwise cost a full study to answer.
+The headline
+Multi-year
+Carcinogenicity bioassays carried without a break in the chain of custody
+Capabilities
+4 groups, 19 listed methods.
+Every method below runs inside the same quality system, against the same archive, with the same chain of custody. Study designs are assembled from this catalogue rather than improvised around it. 01
+General toxicology
+9 methods
+Acute toxicity — oral, dermal and inhalation
+Subchronic and chronic toxicity
+NOEL and NOAEL determination
+Developmental and reproductive toxicity
+Carcinogenicity
+Immunotoxicity
+Neurotoxicity
+Endocrine disruptor studies
+Histopathological examination 02
+Dermal toxicology
+4 methods
+Acute dermal testing
+Skin sensitisation — LLNA and GPMT
+Irritation and corrosion testing
+Dermal penetration studies 03
+Inhalation toxicology
+4 methods
+Acute inhalation testing
+Respiratory sensitisation
+Lung function assessment
+Histopathological examination 04
+Systemic toxicity
+2 methods
+Liver, kidney, lung and heart organ toxicity
+Specialised staining techniques
+Specifications
+On the record.
+Guideline numbers, test species and instrument names are reproduced exactly as the laboratory publishes them, because a method is only portable across borders if it can be named precisely.
+Instrument estate 6 platforms
+01 Liquid chromatography–tandem mass spectrometry (LC-MS/MS)
+02 Inductively coupled plasma mass spectrometry (ICP-MS)
+03 Gas chromatography–mass spectrometry (GC-MS)
+04 High-Throughput Screening (HTS) platform
+05 Multiple inhalation chambers
+06 Advanced microscopy
+Under accreditation
+What governs this work.
+Toxicology operates inside the quality system audited under the certifications listed here.
+OECD GLP
+Good Laboratory Practice certification OECD GLP
+NGCMA, Department of Science and Technology, Government of India
+Compliance with OECD Principles of Good Laboratory Practice, the basis on which study reports are accepted across all OECD Mutual Acceptance of Data countries. View the certificate
+Runs alongside
+Nothing here works alone.
+Most programmes cross three or four divisions. On one campus, under one quality system, that crossing costs a corridor rather than a shipment.
+Talk to a study director +91 427 2430833 info@nsrl.co.in Request a proposal All divisions
+06 Vivarium Over 70 environmentally controlled clean rooms for small animal models
+03 Chemistry Analytical chemistry that underwrites every other division's numbers
+07 Custom Studies For the programme no standard guideline was written to cover
+
+https://nsrl-web.vercel.app/research/vivarium
+Vivarium | Environmentally Controlled Animal Facility | NSRL
+Home /
+Research /
+Vivarium
+Applied & specialist
+Vivarium
+Over 70 environmentally controlled clean rooms for small animal models
+clean rooms
+70+
+Listed methods
+6
+Species
+4 Division 06 of 7
+On this page
+Overview
+In short
+Capabilities
+Specifications
+Accreditations
+Works alongside
+Animal welfare and data quality are the same problem viewed from two directions. A stressed animal is a poor model, which is why environmental control and health monitoring are treated as study parameters rather than as housekeeping.
+More than 70 clean rooms hold small animal models under controlled temperature, humidity, lighting and ventilation, with continuous health monitoring, body weight checks and feed and water quality evaluation.
+The facility supports in vivo work in mice, rats, guinea pigs and rabbits — pharmacokinetic studies, and toxicity and efficacy assessments — alongside the toxicology programme that depends on it.
+Overview
+The work, in outline.
+Family
+Applied & specialist
+Capability groups
+2
+The headline
+70+ clean rooms
+Under continuous environmental control and health monitoring
+Capabilities
+2 groups, 6 listed methods.
+Every method below runs inside the same quality system, against the same archive, with the same chain of custody. Study designs are assembled from this catalogue rather than improvised around it. 01
+Housing & care
+3 methods
+Environmental control — temperature, humidity, lighting, ventilation
+Health monitoring and body weight checks
+Feed and water quality evaluation 02
+Small animal studies
+3 methods
+In vivo experiments — mice, rats, guinea pigs
+Pharmacokinetic studies
+Toxicity and efficacy assessments
+Specifications
+On the record.
+Guideline numbers, test species and instrument names are reproduced exactly as the laboratory publishes them, because a method is only portable across borders if it can be named precisely.
+Test species 4 listed
+Mice
+Rats
+Guinea pigs
+Rabbits
+Under accreditation
+What governs this work.
+Vivarium operates inside the quality system audited under the certifications listed here.
+OECD GLP
+Good Laboratory Practice certification OECD GLP
+NGCMA, Department of Science and Technology, Government of India
+Compliance with OECD Principles of Good Laboratory Practice, the basis on which study reports are accepted across all OECD Mutual Acceptance of Data countries. View the certificate
+Runs alongside
+Nothing here works alone.
+Most programmes cross three or four divisions. On one campus, under one quality system, that crossing costs a corridor rather than a shipment.
+Talk to a study director +91 427 2430833 info@nsrl.co.in Request a proposal All divisions
+01 Toxicology Acute through multi-year carcinogenicity, run under GLP in our own vivaria
+07 Custom Studies For the programme no standard guideline was written to cover
+03 Chemistry Analytical chemistry that underwrites every other division's numbers
+
+https://nsrl-web.vercel.app/services
+Services — How We Work & The Sectors We Serve | NSRL
+Home /
+Services
+Services
+Three sectors, seven stages, one chain of custody.
+Every programme here is scoped from the authority that will read it, conducted inside one accredited laboratory, and reported so that each conclusion traces back to the instrument that produced it.
+Sectors
+3
+Stages
+07
+Divisions
+7
+Jump to a sector
+Agrochemical 01
+Industrial Chemicals 02
+Food & Feed Additives 03
+Dossiers written for
+16 frameworks & authorities
+OECD
+CIBRC
+EPA
+EFSA
+REACH
+RoHS
+CLP
+GHS
+California Proposition 65
+SVHC
+CE marking
+GLP
+FSSAI
+Codex
+ISO
+International food standards
+The working method
+What happens between your first call and your report.
+We start from the authority that will read the dossier, not from a study list. Divisions run in parallel wherever the science allows, and the record stays unbroken from receipt through to the tenth year of archival. How the quality system governs it
+01
+Scope
+We start from the authority that will read the dossier, not from the study list. The endpoints, guidelines and species follow from that decision.
+Regulatory strategy · guideline mapping · study design
+02
+Receipt
+Test items enter through a controlled Test Item Control Office with separate storage zones for pharmaceutical and non-pharmaceutical products. Sponsors receive confirmation within 48 hours.
+TSC / TICO · segregated storage · 48-hour receipt
+03
+Characterise
+Identity, purity, concentration and stability are established in chemistry before a dose is prepared. Every number generated downstream depends on this step being right.
+Identity · purity · stability guidance
+04
+Conduct
+Studies run in accredited facilities with continuous in-life monitoring and veterinary oversight. Divisions run in parallel where the science allows, which is where the timeline is actually won.
+GLP conduct · in-life monitoring · parallel divisions
+05
+Audit
+An independent Quality Assurance unit audits the study against the protocol and the GLP principles. QA reports to management, not to the study director.
+Independent QA · protocol compliance · phase inspection
+06
+Report
+Data are compiled into a study report written for the submitting authority, with the raw data traceable from every conclusion back to the instrument that produced it.
+Traceable reporting · regulatory format
+07
+Archive
+Raw data, specimens and reports are held for ten years with redundant backup on RAID servers, on-site and off-site.
+10-year archive · on-site and off-site redundancy
+Sectors served
+Three regulatory worlds, one evidence base.
+The endpoints, guidelines and species in a programme follow from the authority that has to approve it. These five are the contexts the laboratory is built to write for.
+01
+Agrochemical
+Growing a sustainable future through innovative solutions.
+Full registration packages — ecotoxicity, residue, environmental fate, metabolism and field efficacy .
+Written for
+OECD
+CIBRC
+EPA
+EFSA
+Divisions carrying the work
+Ecotoxicology 02
+Chemistry 03
+Entomology 05
+Toxicology 01
+02
+Industrial Chemicals
+Driving industrial progress with quality and compliance at the forefront.
+REACH, RoHS, CLP, GHS and California Proposition 65 compliance data .
+Written for
+REACH
+RoHS
+CLP
+GHS
+California Proposition 65
+SVHC
+CE marking
+Divisions carrying the work
+Chemistry 03
+Toxicology 01
+Ecotoxicology 02
+03
+Food & Feed Additives
+Safeguarding food integrity and enhancing nutritional value for a healthier world.
+Nutritional, microbiological, allergen and contaminant analysis with shelf-life support .
+Written for
+GLP
+FSSAI
+Codex
+ISO
+International food standards
+Divisions carrying the work
+Chemistry 03
+Microbiology 04
+Toxicology 01
+Where to start
+Assembled programmes, or a protocol of your own.
+3 study packages are already mapped to the guidelines they satisfy. Where no guideline fits, custom study design runs inside the same GLP quality system as everything else. Study packages Request a proposal
+Pre-assembled study packages 01
+Agrochemical Registration Dossier
+Crop protection & fertiliser registrants 02
+REACH & Chemical Compliance
+Industrial chemical manufacturers & importers 03
+Food & Feed Safety Panel
+Food, feed & nutraceutical manufacturers +91 427 2430833 info@nsrl.co.in
+
+https://nsrl-web.vercel.app/services/agrochemical
+Agrochemical Testing | Ecotoxicity, Residue & Environmental Fate | NSRL
+Home /
+Services /
+Agrochemical
+Sector
+Agrochemical Growing a sustainable future through innovative solutions.
+Full registration packages — ecotoxicity, residue, environmental fate, metabolism and field efficacy.
+Study groups
+6
+Divisions engaged
+4
+Frameworks
+4
+On this page
+The programme
+Study catalogue
+Divisions
+Request a proposal
+The programme
+Frameworks & authorities
+OECD
+CIBRC
+EPA
+EFSA
+Sector 01 · 6 study groups · 4 divisions
+What the dossier has to prove.
+An agrochemical dossier is one of the hardest submissions in regulatory science: it has to satisfy authorities in several countries at once, each with a different view of which endpoints matter. We build the package as a single body of evidence rather than a stack of unrelated studies.
+Reports from this programme have been accepted by regulatory agencies in the USA, UK, Japan, China, Brazil and India, and the laboratory is recognised by the Central Insecticides Board and Registration Committee.
+The division's registration history includes India's first nano-fertiliser — a submission with no domestic precedent, assembled from the ground up.
+Proof
+India's first
+Nano-fertiliser registration, taken through from first study to approval
+Study catalogue
+Full registration packages — ecotoxicity, residue, environmental fate, metabolism and field efficacy .
+Groups
+06
+Study types
+17 01
+Ecotoxicity studies
+Aquatic organisms — fish, invertebrates and algae
+Terrestrial species — earthworms and bees
+Higher plants
+Sediment toxicity assessment 02
+Residue analysis
+Pesticide residue analysis in crops and soil
+Multi-residue analytical method development 03
+Environmental fate
+Degradation studies
+Soil adsorption
+Leaching
+Volatility
+Photodegradation 04
+Field efficacy
+Crop protection effectiveness
+Crop tolerance studies 05
+Plant metabolism
+Metabolism pathway identification
+Metabolite profiling and identification 06
+Crop safety
+Phytotoxicity assessment
+Seed germination and seedling emergence studies
+Who runs the work
+The divisions that carry it.
+Every division below sits inside the same building, the same quality system and the same archive, so a programme moves between them without a transfer. All research divisions
+02 Safety & toxicology Ecotoxicology India's largest ecotoxicology department — 26 species across water, soil and air 26 species
+03 Analytical & discovery Chemistry Analytical chemistry that underwrites every other division's numbers 8 platforms
+05 Applied & specialist Entomology Insecticide efficacy and resistance work on colonies we breed ourselves In-house
+01 Safety & toxicology Toxicology Acute through multi-year carcinogenicity, run under GLP in our own vivaria Multi-year
+Next step
+Scope a programme for this sector.
+Send the substance, the markets you are filing into and the date you need the report by. We will map the endpoints and come back with a protocol schedule rather than a price list. Request a proposal Study packages +91 427 2430833 info@nsrl.co.in
+The other sectors
+02 Industrial Chemicals REACH, RoHS, CLP, GHS and California Proposition 65 compliance data
+03 Food & Feed Additives Nutritional, microbiological, allergen and contaminant analysis with shelf-life support How we work
+
+https://nsrl-web.vercel.app/services/food-and-feed-additives
+Food & Feed Additive Testing | Nutrition, Allergens & Contaminants | NSRL
+Home /
+Services /
+Food & Feed Additives
+Sector
+Food & Feed Additives Safeguarding food integrity and enhancing nutritional value for a healthier world.
+Nutritional, microbiological, allergen and contaminant analysis with shelf-life support.
+Study groups
+6
+Divisions engaged
+3
+Frameworks
+5
+On this page
+The programme
+Study catalogue
+Divisions
+Request a proposal
+The programme
+Frameworks & authorities
+GLP
+FSSAI
+Codex
+ISO
+International food standards
+Sector 03 · 6 study groups · 3 divisions
+What the dossier has to prove.
+The food and feed additives division evaluates preservatives, flavour enhancers, antioxidants, emulsifiers and nutritional supplements through combined safety and efficacy assessment.
+Analysis covers ingredient identity, contaminant identification, nutritional content and stability, alongside toxicological work spanning acute and chronic toxicity and allergenicity.
+Formulation support addresses ingredient compatibility, formulation stability and dosage optimisation, and gamma radiation detection instrumentation measures radiation levels in food and feed additives directly. Scientists and regulatory specialists track current industry regulation, working to GLP and international standards.
+Study catalogue
+Nutritional, microbiological, allergen and contaminant analysis with shelf-life support .
+Groups
+06
+Study types
+30 01
+Microbiological testing
+Total viable count
+Pathogen detection — Salmonella, E. coli, Listeria and others
+Yeast and mould count
+Coliform count
+Enterobacteriaceae count
+Spoilage organism detection 02
+Allergen testing
+Allergen-specific ELISA and PCR
+Gluten testing for gluten-free labelling
+Milk, egg, soy, peanut and tree nut detection
+Cross-contamination assessment 03
+Nutritional analysis
+Proximate analysis — moisture, ash, fat, protein, carbohydrate
+Vitamin and mineral content
+Dietary fibre analysis
+Fatty acid profile
+Caloric value determination 04
+Contaminant analysis
+Mycotoxin testing — aflatoxins, ochratoxin and others
+Heavy metals — lead, mercury, cadmium, arsenic
+Pesticide residue analysis
+Veterinary drug residue analysis
+Polycyclic aromatic hydrocarbon (PAH) analysis
+Gamma radiation level measurement 05
+Shelf-life determination
+Microbiological stability testing
+Sensory and organoleptic evaluation
+Nutrient degradation analysis
+Oxidative stability testing
+Packaging integrity assessment 06
+Stability testing
+Physical stability — phase separation and sedimentation
+Chemical stability and degradation kinetics
+Temperature stress testing
+Light exposure testing
+Who runs the work
+The divisions that carry it.
+Every division below sits inside the same building, the same quality system and the same archive, so a programme moves between them without a transfer. All research divisions
+03 Analytical & discovery Chemistry Analytical chemistry that underwrites every other division's numbers 8 platforms
+04 Analytical & discovery Microbiology Sterility, endotoxin and environmental monitoring against ISO, USP and OECD methods GLP · NABL
+01 Safety & toxicology Toxicology Acute through multi-year carcinogenicity, run under GLP in our own vivaria Multi-year
+Next step
+Scope a programme for this sector.
+Send the substance, the markets you are filing into and the date you need the report by. We will map the endpoints and come back with a protocol schedule rather than a price list. Request a proposal Study packages +91 427 2430833 info@nsrl.co.in
+The other sectors
+01 Agrochemical Full registration packages — ecotoxicity, residue, environmental fate, metabolism and field efficacy
+02 Industrial Chemicals REACH, RoHS, CLP, GHS and California Proposition 65 compliance data How we work
+
+https://nsrl-web.vercel.app/services/industrial-chemicals
+Industrial Chemical Testing | REACH, RoHS, SVHC & Prop 65 | NSRL
+Home /
+Services /
+Industrial Chemicals
+Sector
+Industrial Chemicals Driving industrial progress with quality and compliance at the forefront.
+REACH, RoHS, CLP, GHS and California Proposition 65 compliance data.
+Study groups
+5
+Divisions engaged
+3
+Frameworks
+7
+On this page
+The programme
+Study catalogue
+Divisions
+Request a proposal
+The programme
+Frameworks & authorities
+REACH
+RoHS
+CLP
+GHS
+California Proposition 65
+SVHC
+CE marking
+Sector 02 · 5 study groups · 3 divisions
+What the dossier has to prove.
+Chemical compliance regimes are proliferating faster than most manufacturers can track. We generate the data behind REACH, RoHS, CLP, GHS and California Proposition 65 declarations, so a single substance can be placed on several markets from one evidence base.
+The programme covers toxicological studies, physicochemical property assessment, environmental fate, and specialist testing including Chromium VI and product packaging.
+Gas and liquid chromatography, mass spectrometry and elemental analysis support the work, conducted under GLP and international guidelines for clients in pharmaceuticals, agrochemicals, cosmetics, household products and industrial manufacturing.
+Study catalogue
+REACH, RoHS, CLP, GHS and California Proposition 65 compliance data .
+Groups
+05
+Study types
+37 01
+Toxicology
+Acute toxicity
+Skin and eye irritation / serious damage
+Skin sensitisation
+Inhalation toxicity
+Subacute and subchronic toxicity
+Chronic toxicity
+Neurotoxicity
+Immunotoxicity
+Developmental and reproductive toxicity
+Endocrine disruptor screening
+Carcinogenicity 02
+Chemistry
+Chemical characterisation and identification
+Physicochemical property determination
+Stability and shelf life
+Packaging, container compatibility and transport worthiness
+Environmental fate studies
+Adsorption and desorption
+Mobility
+Biodegradation
+Bioaccumulation potential
+Environmental monitoring and analytical services 03
+Skin & mucous membrane
+Dermal absorption studies
+Skin penetration studies
+Skin irritation testing
+Skin corrosion testing
+Skin sensitisation testing
+Mucous membrane irritation testing 04
+Environmental monitoring
+Soil and water analysis for chemical contaminants
+Air quality monitoring
+Environmental risk assessment
+Environmental fate and behaviour studies 05
+Occupational health & safety
+Occupational exposure assessment and monitoring
+Hazard identification and risk assessment
+SVHC declarations
+REACH registration support
+CE label support
+Chromium VI testing
+Who runs the work
+The divisions that carry it.
+Every division below sits inside the same building, the same quality system and the same archive, so a programme moves between them without a transfer. All research divisions
+03 Analytical & discovery Chemistry Analytical chemistry that underwrites every other division's numbers 8 platforms
+01 Safety & toxicology Toxicology Acute through multi-year carcinogenicity, run under GLP in our own vivaria Multi-year
+02 Safety & toxicology Ecotoxicology India's largest ecotoxicology department — 26 species across water, soil and air 26 species
+Next step
+Scope a programme for this sector.
+Send the substance, the markets you are filing into and the date you need the report by. We will map the endpoints and come back with a protocol schedule rather than a price list. Request a proposal Study packages +91 427 2430833 info@nsrl.co.in
+The other sectors
+01 Agrochemical Full registration packages — ecotoxicity, residue, environmental fate, metabolism and field efficacy
+03 Food & Feed Additives Nutritional, microbiological, allergen and contaminant analysis with shelf-life support How we work
+
+https://nsrl-web.vercel.app/news/optimizing-quality-in-the-clinical-laboratory
+Optimizing quality in the clinical laboratory: focus on preclinical drug discovery | NSRL
+Home /
+News & events /
+Optimizing quality in the clinical laboratory: focus on preclinical drug discovery
+Pharmacology Entry 01 of 01
+Optimizing quality in the clinical laboratory: focus on preclinical drug discovery
+Preclinical drug discovery is the phase that decides which compounds are worth a clinical trial. The accuracy of the data behind that decision is not a quality-department concern — it is the whole argument.
+Written by
+NSRL
+Published
+26 September 2023
+Reading time
+4 min
+01
+Filed under
+Pharmacology
+Date
+26 September 2023
+Length
+4 min
+In the field of preclinical drug discovery, the importance of optimizing quality in the clinical laboratory cannot be overstated.
+Preclinical drug discovery is a pivotal phase that precedes clinical trials. It involves comprehensive research to evaluate the safety, efficacy, and pharmacokinetic properties of potential drug candidates.
+The accuracy and reliability of preclinical data are vital to make informed decisions about which compounds to progress to the clinical testing phase.
+Our laboratory brings together a team of highly skilled and experienced scientists who are experts in various disciplines, including pharmacology, toxicology, genetics, and more. The laboratories are equipped with state-of-the-art infrastructure and cutting-edge technologies.
+Preclinical drug discovery services encompass a wide range of offerings to address diverse research needs — from target validation and high-throughput screening through in vivo efficacy studies, ADME-Tox assessments and safety evaluations.
+The laboratory upholds the highest standards of animal welfare in its preclinical research studies, and maintains GLP compliance and ethical animal treatment standards throughout.
+End of entry — NSRL
+What the note covers
+01 Target validation and high-throughput screening
+02 In vivo efficacy studies
+03 ADME-Tox assessments
+04 Safety evaluations under GLP
+05 Animal welfare standards upheld throughout
+End of the published notes All news & events
+This is the only note published in full. The rest of the archive is listed on the newsroom index.

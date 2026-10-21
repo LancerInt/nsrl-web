@@ -39,7 +39,7 @@ export const careerPillars = [
 export const departments = [
   "Chemistry",
   "Toxicology",
-  "Eco-toxicology",
+  "Ecotoxicology",
   "Entomology",
   "AHF",
   "Veterinarian",
@@ -64,7 +64,7 @@ export const departmentGroups: { heading: string; items: string[] }[] = [
     items: [
       "Chemistry",
       "Toxicology",
-      "Eco-toxicology",
+      "Ecotoxicology",
       "Entomology",
       "Bio-Chemistry",
       "Microbiology",

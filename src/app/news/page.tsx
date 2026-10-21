@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { archiveRecords, articles } from "@/content/news";
+import { articles } from "@/content/news";
 import { pad } from "@/lib/utils";
 import { pageMetadata } from "@/lib/seo";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -8,7 +8,6 @@ import { PageHero } from "@/components/ui/PageHero";
 import { Section, SectionBody } from "@/components/ui/Section";
 import { NewsroomVisual } from "@/components/news/NewsroomVisual";
 import { ArchiveEntry } from "@/components/news/ArchiveEntry";
-import { ArchiveRecordEntry } from "@/components/news/ArchiveRecordEntry";
 import { EventsBand } from "@/components/news/EventsBand";
 
 export const metadata: Metadata = pageMetadata({
@@ -21,8 +20,8 @@ export const metadata: Metadata = pageMetadata({
 
 const longestRead = Math.max(...articles.map((article) => article.readingMinutes));
 
-/** Everything the archive holds — published notes and listed records alike. */
-const totalRecords = articles.length + archiveRecords.length;
+/** Published notes only: the bodyless records are no longer listed. */
+const totalRecords = articles.length;
 
 export default function NewsIndexPage() {
   const [lead, ...rest] = articles;
@@ -36,7 +35,7 @@ export default function NewsIndexPage() {
         lead="A short archive by design. What is here is a complete note rather than a headline — and anything that moves faster than a written note is posted to LinkedIn as it happens."
         crumbs={[{ label: "Home", href: "/" }, { label: "News & events" }]}
         meta={[
-          { label: "Records", value: pad(totalRecords) },
+          { label: "Notes published", value: pad(totalRecords) },
           { label: "Longest read", value: `${longestRead} min` },
           { label: "Live updates", value: "LinkedIn" },
         ]}
@@ -51,15 +50,17 @@ export default function NewsIndexPage() {
               <h2 className="mt-6 font-display text-d4 text-ink-950">
                 Everything the laboratory has published here.
               </h2>
+              {/* This paragraph used to explain the bodyless records that
+                  were listed below it. They are not listed any more, so the
+                  explanation went with them — copy describing behaviour the
+                  page no longer has is worse than no copy at all. */}
               <p className="measure mt-6 text-body text-neutral-600">
-                Notes with a published body are reproduced in full. An entry whose text was
-                never published here keeps its number and its date in the sequence and is listed
-                without a page, rather than being written up after the fact or dropped from the
-                record.
+                Every note here is reproduced in full, as published. Nothing is written up
+                after the fact.
               </p>
             </div>
             <p className="label-mono text-neutral-600">
-              {pad(totalRecords)} records · {pad(articles.length)} with a note
+              {pad(totalRecords)} {totalRecords === 1 ? "note" : "notes"}
             </p>
           </div>
 
@@ -75,21 +76,25 @@ export default function NewsIndexPage() {
               />
             ))}
 
-            {/* Listed, dated, numbered — and deliberately unlinked. */}
-            {archiveRecords.map((record, i) => (
-              <ArchiveRecordEntry
-                key={`${record.date}-${record.title}`}
-                record={record}
-                position={articles.length + i + 1}
-              />
-            ))}
+            {/*
+              The bodyless archive records are no longer listed publicly.
+
+              Showing a real, dated headline beside a dashed "No note filed"
+              panel was the honest way to carry a record whose body was never
+              published — but on a launch newsroom holding two entries it
+              read as an unfinished page rather than as scrupulousness, which
+              is the opposite of what it was for. The records stay in
+              `content/news.ts` with their TODO: supply the body and they
+              become articles, or delete them. Nothing was invented either
+              way.
+            */}
           </div>
 
           {/* End-of-archive marker: the short archive is stated, not hidden. */}
           <div className="flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-[var(--rule)] pt-6">
             <span aria-hidden className="h-2.5 w-px bg-ink-900" />
             <p className="label-mono text-neutral-500">
-              End of archive — {pad(totalRecords)} records
+              End of archive — {pad(totalRecords)} {totalRecords === 1 ? "note" : "notes"}
             </p>
             <p className="label-mono text-neutral-600">Newer updates are posted to LinkedIn</p>
           </div>

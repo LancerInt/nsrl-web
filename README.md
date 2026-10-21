@@ -82,6 +82,51 @@ buys them. They assert no new capability, but should still be reviewed.
 
 ---
 
+## ⚠️ Open items from the 21 Oct 2026 content & imagery review
+
+The review document and its extraction archive are in
+`assets/NSRL-Content-and-Review/`. Everything in it that could be fixed in
+code has been. What remains needs either NSRL's own facts or assets that were
+not delivered.
+
+### Blocked on assets that were not supplied
+
+The review refers to **eight AI-generated editorial images** (analytical
+hero, agrochemical, industrial chemical, food & feed, ecotoxicology,
+entomology, microbiology, toxicology) and ships a `replacement-image-map.csv`
+placing each one. **No image files were included in the drop** — only the
+briefs in `image-prompts.txt` and the map. Nothing could be installed. When
+they arrive, the map gives the placement and crop for each, and
+`src/content/imagery.ts` is the single file to edit.
+
+Two rules from the review travel with them, and both match the standing
+policy in this repo:
+
+> Use the images as illustrations of services. Do not caption them as
+> photographs of NSRL, its staff or its actual instrument estate.
+
+> Use generated images to illustrate services; use authentic photographs to
+> document facilities, staff, housing and equipment ownership.
+
+So the generated set, when it lands, may carry the sector and division
+illustrations. It may **not** carry the facility showcase, the vivarium, the
+leadership portrait or anything captioned as NSRL's own premises — those
+still need the authentic photography already listed below.
+
+### Blocked on NSRL's facts or sign-off
+
+| Review item | What is needed |
+|---|---|
+| Enquiry and application delivery | A real endpoint. Both forms still hand off to `mailto:` and now say so plainly. The review also asks the enquiry to collect name, work email, company, sector and a short brief with phone optional — worth doing in the same change as the endpoint, not before. |
+| Claim evidence | An internal owner and an as-of date for 20,000+ studies, 275+ clients, 350+ professionals, 450+ instruments, 70+ clean rooms, "India's largest", the first nano-fertiliser registration and FDA/EMA acceptance. The site asserts all of these on the reference material alone. |
+| Certificate detail | Certificate number, validity date, scope and address per record, so `/downloads` can show them. Division-level badges should then be matched to the actual certificate scope rather than implying blanket coverage. |
+| Species register | An approved list, so counts can state species rather than groups. Until then ecotoxicology's twelve entries are labelled **Organism groups** and entomology's single general statement carries no counter. |
+| Method titles | OECD 218 is still published as a bare number because the source gave no title, and guessing one names the wrong guideline. The scientific owner should supply it and approve the grouping of "methods", "platforms" and "frameworks". |
+| Hero supporting line | The review proposes "Chemistry, toxicology and environmental testing for agrochemical, industrial chemical and food & feed submissions" and explicitly gates it on NSRL approving the service scope. **Not applied.** |
+| Newsroom | The two 2023 records are no longer listed. Publish current, dated, owned updates — or supply the body for the withdrawn record and it becomes an article. |
+
+---
+
 ## ⚠️ Scope withdrawn — and the claims that went with it
 
 NSRL instructed the removal of six divisions, two sectors and six

@@ -94,8 +94,11 @@ export default async function DivisionPage({ params }: PageProps) {
   if (discipline.guidelines?.length) {
     meta.push({ label: "Guidelines", value: String(discipline.guidelines.length) });
   }
-  if (discipline.species?.length) {
-    meta.push({ label: "Species", value: String(discipline.species.length) });
+  /* `> 1` for the same reason as the register: entomology's entry is one
+     general statement, so the hero was reporting "Species · 1". A count is
+     only worth showing when it counts something. */
+  if (discipline.species && discipline.species.length > 1) {
+    meta.push({ label: discipline.speciesLabel ?? "Species", value: String(discipline.species.length) });
   }
   if (discipline.instruments?.length) {
     meta.push({ label: "Instruments", value: String(discipline.instruments.length) });

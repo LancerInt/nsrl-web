@@ -62,7 +62,7 @@ export function SpecificationBand({
                  claims, so counting them as maintained species understated
                  the programme and contradicted the headline figure. */
               <SpecBlock
-                title="Test species"
+                title={discipline.speciesLabel ?? "Test species"}
                 count={species.length > 1 ? `${species.length} listed` : undefined}
               >
                 <SpecChips items={species} className="mt-7" />

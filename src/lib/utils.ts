@@ -39,9 +39,17 @@ export function pad(n: number, width = 2): string {
   return String(n).padStart(width, "0");
 }
 
-/** Formats a large integer with thin thousands separators. */
+/**
+ * Formats a large integer with thousands separators.
+ *
+ * `en-GB`, not `en-IN`. The Indian grouping renders 150000 as "1,50,000",
+ * which is correct in India and unreadable to the sponsors this site is
+ * written for — the same figure appeared as both "1,50,000 sq ft" and
+ * "150,000 sq ft" on neighbouring pages depending on whether it had gone
+ * through this function. One grouping, the international one, everywhere.
+ */
 export function formatCount(value: number, decimals = 0): string {
-  return value.toLocaleString("en-IN", {
+  return value.toLocaleString("en-GB", {
     minimumFractionDigits: decimals,
     maximumFractionDigits: decimals,
   });

@@ -145,7 +145,12 @@ export const divisionImage: Record<string, ImageKey> = {
   toxicology: "scientistVials",
   ecotoxicology: "greenhouse",
   chemistry: "chemistryBench",
-  microbiology: "petri",
+  /* Not the culture plate. The Food & Feed sector card needs that frame —
+     microbiological testing is a named part of its scope — and the two were
+     showing the same photograph. The safety cabinet is the better fit here
+     anyway: sterility and environmental monitoring are done at one, not on
+     a plated dish. */
+  microbiology: "cleanroom",
   entomology: "microscope",
   vivarium: "team",
   "custom-studies": "scientistFlask",

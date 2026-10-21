@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, Search, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { contact } from "@/content/site";
 
 /**
  * The searchable projection of a division. Built on the server in
@@ -105,6 +106,30 @@ export function DivisionFinder({
             </div>
             <p id={`${inputId}-hint`} className="mt-2.5 text-micro text-neutral-600">
               Matches division names, summaries, guideline numbers, species and method names.
+            </p>
+
+            {/* The route out for a visitor whose study does not land on one
+                division — most cross three or four. This used to be a
+                closing band at the foot of the page, which put it after
+                everything and directly above the site-wide proposal
+                section. It belongs here, at the moment the question is
+                actually being asked. */}
+            <p className="mt-4 text-small text-neutral-600">
+              Most programmes touch three or four divisions. If yours does not land on one,{" "}
+              <a
+                href={`tel:${contact.phoneHref}`}
+                className="font-medium text-meniscus-600 underline decoration-meniscus-500/35 underline-offset-[5px] transition-colors duration-200 hover:decoration-meniscus-500"
+              >
+                call {contact.phoneDisplay}
+              </a>{" "}
+              or{" "}
+              <Link
+                href="/contact"
+                className="font-medium text-meniscus-600 underline decoration-meniscus-500/35 underline-offset-[5px] transition-colors duration-200 hover:decoration-meniscus-500"
+              >
+                tell us what you need to prove
+              </Link>
+              .
             </p>
           </div>
 

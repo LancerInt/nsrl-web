@@ -116,7 +116,10 @@ function LedgerRow({ discipline, delay }: { discipline: Discipline; delay: numbe
   /* `> 1` because entomology's entry is a single general statement rather
      than an enumeration, and "Species listed · 1" says less than nothing. */
   if (discipline.species && discipline.species.length > 1 && !claimStatesSpecies) {
-    facts.push({ label: "Species listed", value: String(discipline.species.length) });
+    facts.push({
+      label: discipline.speciesLabel ?? "Species listed",
+      value: String(discipline.species.length),
+    });
   }
 
   return (

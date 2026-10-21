@@ -1,5 +1,7 @@
 import { careersIntro } from "@/content/careers";
 import { instrumentEstate, units } from "@/content/facilities";
+import { locations } from "@/content/site";
+import { numberWord } from "@/lib/utils";
 import { Section, SectionBody } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RevealText } from "@/components/ui/RevealText";
@@ -44,7 +46,13 @@ export function CareersIntro() {
         <div className="mt-[clamp(2rem,4vw,3.25rem)]">
           <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-4">
             <h3 className="font-display text-h1 text-ink-950">Where the work happens</h3>
-            <p className="label-mono text-neutral-600">Three sites · Tamil Nadu</p>
+            {/* Derived. This read "Three sites · Tamil Nadu" against a
+                single-site content record, contradicting About, Facilities
+                and the footer on the one fact a candidate checks first. */}
+            <p className="label-mono text-neutral-600">
+              {numberWord(locations.length, { capitalise: true })}{" "}
+              {locations.length === 1 ? "site" : "sites"} · {locations[0].region}
+            </p>
           </div>
 
           <dl className="mt-7 grid border-t border-ink-900/12 md:grid-cols-3">

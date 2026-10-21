@@ -32,7 +32,7 @@ export function ClosingCta() {
               id="closing-cta"
               className="mt-3 max-w-[18ch] font-display text-d3 text-ink-950"
             >
-              Tell us the authority you need to satisfy.
+              Plan your next regulatory study.
             </h2>
             <p className="mt-4 max-w-[52ch] text-lead text-neutral-700">
               We will map the endpoints, the guidelines and the divisions from there — and tell

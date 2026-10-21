@@ -29,6 +29,16 @@ export type Discipline = {
   instruments?: string[];
   guidelines?: string[];
   species?: string[];
+  /**
+   * What the `species` entries actually are, where "species" would be wrong.
+   *
+   * Ecotoxicology's twelve entries are taxonomic groups — "Birds",
+   * "Crustaceans" — covering the 26 species the division claims, so calling
+   * them species both understated the programme and contradicted the
+   * headline figure. Defaults to "Test species" where it is left unset,
+   * which is every other division.
+   */
+  speciesLabel?: string;
   accreditationRefs: string[];
   /** Divisions whose work most often runs alongside this one. */
   adjacent: string[];
@@ -209,6 +219,7 @@ export const disciplines: Discipline[] = [
       "Lacewings",
       "Mussels and snails",
     ],
+    speciesLabel: "Organism groups",
     accreditationRefs: ["glp", "nabl"],
     adjacent: ["entomology", "chemistry", "microbiology"],
     seo: {

@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
 
-import { contact } from "@/content/site";
 import {
   disciplineFamilies,
   disciplines,
   disciplinesByFamily,
 } from "@/content/disciplines";
 import { pageMetadata } from "@/lib/seo";
-import { numberWord, pad, slugify } from "@/lib/utils";
+import { pad, slugify } from "@/lib/utils";
 import { PageHero } from "@/components/ui/PageHero";
-import { Section, SectionBody } from "@/components/ui/Section";
-import { Eyebrow } from "@/components/ui/Eyebrow";
-import { RevealText } from "@/components/ui/RevealText";
-import { ActionLink } from "@/components/ui/ActionLink";
 import { RegisterHeroField } from "@/components/research/RegisterHeroField";
 import {
   DivisionFinder,
@@ -79,7 +74,7 @@ export default function ResearchIndexPage() {
         eyebrow="Scientific divisions"
         index={String(disciplines.length)}
         crumbs={[{ label: "Home", href: "/" }, { label: "Research" }]}
-        title={`${numberWord(disciplines.length, { capitalise: true })} divisions, set out in full.`}
+        title="Explore our scientific divisions."
         lead="Each division holds its own accreditations, its own instrument estate and its own species list. They share one campus, one quality system and one archive — which is why a programme can cross between them without a handover."
         meta={[
           { label: "Divisions", value: String(disciplines.length) },
@@ -106,57 +101,15 @@ export default function ResearchIndexPage() {
 
       <AccreditationMatrix />
 
-      <Section tone="canvas" aria-labelledby="route-in">
-        <SectionBody>
-          <div className="egrid items-end gap-y-8">
-            <div className="col-span-12 lg:col-span-6">
-              <Eyebrow index="05">Where to start</Eyebrow>
-
-              <h2 id="route-in" className="mt-6 font-display text-d3 text-ink-950">
-                <RevealText as="span" className="block">
-                  Not sure which division owns your question?
-                </RevealText>
-              </h2>
-
-              <p className="measure mt-6 text-lead text-neutral-600">
-                Most of them touch three or four. Tell us what you need to prove and to
-                which authority, and we will map it back to the divisions that can prove it
-                — and to the guideline numbers a reviewer will look for.
-              </p>
-
-              <div className="mt-7 flex flex-wrap gap-3">
-                <ActionLink href="/contact" variant="solid" >
-                  Request a proposal
-                </ActionLink>
-                <ActionLink href="/products" variant="outline">
-                  Study packages
-                </ActionLink>
-              </div>
-            </div>
-
-            <div className="col-span-12 lg:col-span-4 lg:col-start-9">
-              <div className="border-t border-ink-900/12 pt-8">
-                <p className="label-mono text-neutral-600">Direct line</p>
-                <a
-                  href={`tel:${contact.phoneHref}`}
-                  className="mt-4 block font-display text-h1 text-ink-950 transition-colors duration-400 hover:text-ink-700"
-                >
-                  {contact.phoneDisplay}
-                </a>
-                <a
-                  href={`mailto:${contact.email}`}
-                  className="mt-3 block text-small text-neutral-600 transition-colors duration-400 hover:text-ink-950"
-                >
-                  {contact.email}
-                </a>
-                <p className="mt-6 max-w-[30ch] text-small text-neutral-600">
-                  {contact.formNote}
-                </p>
-              </div>
-            </div>
-          </div>
-        </SectionBody>
-      </Section>
+      {/*
+        The page used to close with its own "Not sure which division owns
+        your question?" band, and the shared proposal section follows every
+        page immediately after it — two conversion blocks back to back, each
+        weakening the other. The shared one stays, because it is the single
+        closing ask the whole site is built around. What this page lost with
+        it was the direct line, so that moved into the finder at the top,
+        where a visitor who cannot place their study is actually standing.
+      */}
     </>
   );
 }

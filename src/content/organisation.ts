@@ -42,8 +42,12 @@ export const scaleStats: Stat[] = [
        many accreditations there are, so this figure cannot drift from the
        documents actually published on /downloads. */
     value: accreditations.length,
-    label: "Accreditations",
-    caption: "Independent certifications, every one published in full",
+    /* "& recognitions", because the four are not all accreditations: GLP is
+       a certification, NABL is an accreditation, and SIRO/DSIR and CIBRC are
+       recognitions. Totalling them under one word overstated what three of
+       them are. */
+    label: "Accreditations & recognitions",
+    caption: "Independently issued, every one published in full",
   },
 ];
 

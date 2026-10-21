@@ -81,7 +81,7 @@ export default function ContactPage() {
       <PageHero
         tone="light"
         eyebrow="Contact"
-        title="Start with a conversation, not a quotation."
+        title="Discuss your study requirements."
         lead="Tell us the test item, the sector and the authority that has to accept the dossier. We will tell you which studies that implies, which of our divisions run them, and what the programme looks like end to end."
         crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
         visual={<ContactHeroVisual />}
