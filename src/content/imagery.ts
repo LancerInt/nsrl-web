@@ -177,9 +177,15 @@ export const heroImage: ImageKey = "chemistryBench";
  * belongs here — it is the ten-year retention the whole quality argument
  * rests on — and the library has no photograph of one.
  *
- * Captions describe the kind of environment in the frame. They do not claim
- * the photograph is of NSRL's own site; the library is free-licence
- * stand-ins until NSRL's photography lands.
+ * Captions describe what is visible in the frame and nothing more. They used
+ * to carry the capability — "chromatography, mass spectrometry and
+ * bioanalysis" under a photograph of an optical bench — which asked the
+ * reader to accept a claim the image did not support, and on a page whose
+ * argument is evidence that is the wrong way round. The instrument estate is
+ * enumerated on `/facilities`, where it belongs. Nor do these captions claim
+ * the photograph is of NSRL's own site: the library is free-licence
+ * stand-ins until NSRL's photography lands, and a caption naming the room
+ * would be the point at which a stand-in became a false statement.
  */
 export type ShowcaseFrame = {
   image: ImageKey;
@@ -190,28 +196,26 @@ export type ShowcaseFrame = {
 export const facilityShowcase: ShowcaseFrame[] = [
   {
     image: "team",
-    title: "Analytical instrument floor",
+    title: "Instrument operation",
     caption:
-      "Chromatography, mass spectrometry and bioanalysis in continuous service — every instrument qualified, calibrated and logged against the study that used it.",
+      "Every instrument qualified, calibrated and logged against the study that used it.",
   },
   {
     image: "cleanroom",
-    title: "Controlled environments",
-    caption:
-      "Containment and clean-room work, under continuous environmental monitoring.",
+    title: "Containment work",
+    caption: "Clean-room procedures under continuous environmental monitoring.",
   },
   {
     image: "microscopeDark",
     title: "Microscopy",
-    caption:
-      "Advanced microscopy, whole-slide scanning and automated tissue processing.",
+    caption: "Optical examination and whole-slide scanning.",
   },
 ];
 
 /**
  * The facilities page: one lead frame, then a gallery.
  *
- * The gallery covers four of the six environments specified in
+ * The gallery covers four of the five environments specified in
  * `content/facilities.ts`. The other two — the inhalation suites and the
  * insect rearing colonies — have no photograph in the library at all; the
  * animal housing has none either, and nor does the archive since the ledger

@@ -70,8 +70,9 @@ export function EnquirySection() {
               </dl>
 
               <p className="mt-6 text-small text-neutral-600">
-                Nothing typed into this page is stored anywhere. Sending an enquiry drafts the
-                message in your own mail application, addressed to the same inbox above.
+                Nothing typed into this page is stored anywhere and nothing is submitted from
+                it. The form drafts the message in your own mail application, addressed to the
+                inbox above, and you send it from there.
               </p>
 
               <ActionLink href="#locations" variant="text" className="mt-6">

@@ -13,15 +13,13 @@ import { ProposalCta } from "@/components/products/ProposalCta";
 export const metadata: Metadata = pageMetadata({
   title: "Study Packages — Regulatory Study Sets, Assembled by Submission",
   description:
-    "Six study packages assembled from NSRL's existing accredited catalogue: agrochemical registration, the OECD genotoxicity battery, ISO 10993 device biocompatibility, IND-enabling safety, REACH compliance and food & feed safety.",
+    "Study packages assembled from NSRL's existing accredited catalogue: agrochemical registration, REACH and chemical compliance, and the food & feed safety panel.",
   path: "/products",
   keywords: [
     "agrochemical registration dossier",
-    "genotoxicity battery OECD",
-    "ISO 10993 biocompatibility testing",
-    "IND-enabling studies",
     "REACH compliance testing",
     "food safety testing panel",
+    "ecotoxicity study package",
   ],
 });
 

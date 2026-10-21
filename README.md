@@ -63,6 +63,18 @@ These were applied deliberately after an audit, and are worth preserving:
 - **No comparative market claims** ("one of a small number", "the only") unless
   the source states them. "India's largest ecotoxicology department" and
   "India's first nano-fertiliser" are kept because the source asserts both.
+- **A count in prose is derived, never typed.** Division, sector,
+  accreditation, package and environment counts all read their arrays
+  through `numberWord()`. Two bugs came from hand-written counts — "thirteen
+  divisions" after six were withdrawn, and "six controlled environments"
+  over a five-row table — and neither can recur.
+- **`species` counts what is *listed*, not what is held.** Ecotoxicology
+  claims 26 species and its array holds 12 entries, because those entries
+  are taxonomic groups ("Birds", "Crustaceans") covering the 26. The ledger
+  therefore suppresses the derived count wherever the headline claim already
+  states a species figure, and labels it "Species listed" everywhere else.
+  **If NSRL wants the twelve groups replaced by twenty-six named species,
+  that is a content edit in `disciplines.ts` and the suppression can go.**
 
 **Study Packages** (`/products`) are an editorial regrouping of studies already
 listed as individual capabilities — assembled the way a regulatory affairs team
@@ -251,7 +263,8 @@ some pages share a frame.
 | Priority | Shot needed | Why |
 |---|---|---|
 | **1** | **The archive** — organised record storage, labelled boxes, specimen or block storage, the RAID cabinet | The ten-year retention is the foundation of the quality argument, it had a frame in the facility showcase, and that frame has been **removed** rather than filled with unrelated stock. The showcase now runs three frames instead of four because of this. |
-| **1** | **Hero plate, ≥2560px wide**, laboratory interior with a quiet left third and instrument detail right | The hero runs full-bleed. The widest file in the library is 1920px, and it is now enlarged ~1.3× to find a focal point, so it is noticeably soft on a 1440px screen at 2×. This is the single highest-impact replacement. |
+| **1** | **Hero plate, ≥2560px wide**, laboratory interior with a quiet left third and instrument detail right | The hero runs full-bleed. The widest file in the library is 1920px, and it is now enlarged ~1.3× to find a focal point, so it is noticeably soft on a 1440px screen at 2×. The crop and grade have taken it as far as they can; the frame is still a busy room with no natural subject. This is the single highest-impact replacement. |
+| **1** | **Named room/equipment shots for the homepage showcase** — the analytical bench, a containment room, the microscopy station | The three showcase captions now describe only what is visible ("Instrument operation", "Containment work") rather than naming the capability, because the stand-in photographs do not show chromatography or mass spectrometry and a caption that said they did was asking the reader to take the image on trust. With real photographs the captions should name the room and the instruments in it. |
 | **1** | **Animal housing / vivarium** — clean rooms, racks, environmental control | Specified on `/facilities` as "70+ clean rooms" with no photograph at all. |
 | **1** | **Inhalation suites** | Specified, no photograph. One of the capabilities the laboratory is differentiated on. |
 | **2** | **Insect rearing colonies** | Specified, no photograph. |
@@ -296,6 +309,15 @@ small sector card for that reason.
   a failed hydration never leaves a blank page.
 - Anchor targets carry `scroll-margin-top`, so in-page links clear the fixed
   header without any scroll interception.
-- Forms have no backend. They validate client-side and then compose a pre-filled
-  `mailto:` so enquiries genuinely reach NSRL with zero server. Each carries a
-  `TODO(nsrl):` marking exactly where to swap in a real endpoint.
+- **Forms have no backend, and now say so.** They validate client-side and
+  then compose a pre-filled `mailto:`. The enquiry button reads **"Compose
+  enquiry email"** and the helper text reads "you still need to send it",
+  because "Send enquiry" promised a submission this page cannot make — an
+  enquiry only reaches NSRL once the visitor sends the draft themselves, and
+  anything they abandon is simply lost.
+
+  **This is the site's weakest point for lead capture and it is not a
+  labelling problem.** A real endpoint with server-side confirmation and
+  error handling is the fix; both forms carry a `TODO(nsrl):` marking
+  exactly where to POST, with the mailto kept as the fallback for when that
+  request fails. When it lands, the button reverts to "Send enquiry".

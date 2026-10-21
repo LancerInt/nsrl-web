@@ -118,7 +118,7 @@ export function EnquiryForm() {
 
     setStatus({
       kind: "success",
-      message: `Your enquiry is drafted and addressed to ${contact.email}. Send it from your mail application and it reaches us directly.`,
+      message: `Your enquiry is drafted and addressed to ${contact.email}. It has not been sent yet — send it from your mail application and it reaches us directly.`,
     });
   };
 
@@ -249,9 +249,17 @@ export function EnquiryForm() {
           type="submit"
           className="inline-flex h-[var(--control-h)] items-center justify-center gap-2 rounded-[var(--radius-control)] bg-ink-900 px-6 font-sans text-[0.9375rem] font-medium text-white transition-colors duration-200 ease-[var(--ease-out-quart)] hover:bg-ink-700"
         >
-          Send enquiry
+          Compose enquiry email
         </button>
-        <p className="label-mono text-neutral-500">Opens your mail application</p>
+        {/* The button says what it does. "Send enquiry" promised a
+            submission this page cannot make — there is no endpoint behind
+            it, and the enquiry only reaches NSRL once the visitor sends the
+            draft themselves. See the TODO above: when a real endpoint
+            exists, this reverts to "Send enquiry" and the mailto becomes
+            the failure fallback. */}
+        <p className="text-micro text-neutral-600">
+          Opens a pre-filled draft in your mail application — you still need to send it
+        </p>
       </div>
 
       <div role="status" aria-live="polite" className="mt-7 empty:mt-0">

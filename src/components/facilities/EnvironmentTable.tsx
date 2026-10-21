@@ -1,9 +1,10 @@
 import { environments } from "@/content/facilities";
+import { numberWord } from "@/lib/utils";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RevealText } from "@/components/ui/RevealText";
 
 /**
- * The six controlled environments as a specification schedule.
+ * The controlled environments as a specification schedule.
  *
  * A real <table>, because this is tabular data: every environment has a stated
  * specification, and putting the spec in its own column is what lets a reader
@@ -17,7 +18,8 @@ export function EnvironmentTable() {
           <div className="col-span-12 lg:col-span-7">
             <Eyebrow index="03">Controlled environments</Eyebrow>
             <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
-              Six conditions, each held to a stated specification.
+              {numberWord(environments.length, { capitalise: true })} conditions, each held to
+              a stated specification.
             </RevealText>
           </div>
           <div className="col-span-12 lg:col-span-4 lg:col-start-9">

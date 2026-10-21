@@ -88,7 +88,7 @@ export default async function DivisionPage({ params }: PageProps) {
 
   /* Hero facts: the claim first, then whatever specification counts exist. */
   const meta: { label: string; value: string }[] = [
-    { label: discipline.claim.unit ?? "Claim", value: discipline.claim.value },
+    { label: discipline.claim.unit ?? "Key capability", value: discipline.claim.value },
     { label: "Listed methods", value: String(methods) },
   ];
   if (discipline.guidelines?.length) {

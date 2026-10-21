@@ -273,7 +273,9 @@ export function ApplicationForm() {
         >
           Draft my application
         </button>
-        <p className="label-mono text-neutral-550">Opens your mail application</p>
+        <p className="text-micro text-neutral-550">
+          Opens a pre-filled draft in your mail application — you still need to send it
+        </p>
       </div>
 
       <div role="status" aria-live="polite" className="mt-6 empty:mt-0">

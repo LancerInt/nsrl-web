@@ -53,7 +53,7 @@ export function DivisionIndex({ divisions }: { divisions: DivisionRow[] }) {
             </h2>
           </div>
           <ActionLink href="/research" variant="text" className="mb-1">
-            The full research register
+            Explore all divisions
           </ActionLink>
         </div>
 

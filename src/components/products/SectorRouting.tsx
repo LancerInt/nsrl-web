@@ -9,7 +9,7 @@ import { ActionLink } from "@/components/ui/ActionLink";
 /**
  * The escape hatch.
  *
- * Six packages cannot cover every submission, and pretending otherwise is how a
+ * A short catalogue cannot cover every submission, and pretending otherwise is how a
  * catalogue loses a reader. This band routes anyone whose dossier does not fit
  * to the sector page — or to custom studies — instead of leaving them to force
  * their programme into the nearest box.
@@ -21,7 +21,7 @@ export function SectorRouting() {
         <div className="egrid gap-y-7">
           <div className="col-span-12 lg:col-span-4">
             <div className="lg:rail-sticky">
-              <Eyebrow index="03">If none of the six fit</Eyebrow>
+              <Eyebrow index="03">If none of them fit</Eyebrow>
               <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
                 Start from the authority instead.
               </RevealText>

@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import { studyPackages, type StudyPackage } from "@/content/packages";
 import { getDiscipline } from "@/content/disciplines";
 import { images, type ImageKey } from "@/content/imagery";
-import { cn, pad } from "@/lib/utils";
+import { cn, numberWord, pad } from "@/lib/utils";
 import { Disclosure } from "@/components/ui/Disclosure";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RevealText } from "@/components/ui/RevealText";
@@ -21,7 +21,7 @@ const FIGURES: ImageKey[] = [
 ];
 
 /**
- * Six packages on one ledger.
+ * The packages on one ledger.
  *
  * Each row is a disclosure, because the full contents run to more than a
  * hundred study lines and a page that printed all of them at once would be
@@ -36,7 +36,8 @@ export function PackageLedger() {
           <div className="col-span-12 lg:col-span-7">
             <Eyebrow index="02">The ledger</Eyebrow>
             <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
-              Six submissions, opened line by line.
+              {numberWord(studyPackages.length, { capitalise: true })} submissions, opened
+              line by line.
             </RevealText>
           </div>
           <div className="col-span-12 lg:col-span-4 lg:col-start-9">

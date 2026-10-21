@@ -1,4 +1,6 @@
 import { facilityGallery, images } from "@/content/imagery";
+import { environments } from "@/content/facilities";
+import { numberWord } from "@/lib/utils";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
 
@@ -30,8 +32,9 @@ export function FacilityGallery() {
             </h2>
           </div>
           <p className="max-w-[40ch] text-small text-neutral-600">
-            Six controlled environments carry the in-life and analytical programme. The full
-            specification schedule is below.
+            {numberWord(environments.length, { capitalise: true })} controlled environments
+            carry the in-life and analytical programme. The full specification schedule is
+            below.
           </p>
         </div>
 

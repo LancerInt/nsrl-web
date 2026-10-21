@@ -57,7 +57,14 @@ export function SpecificationBand({
             ) : null}
 
             {species?.length ? (
-              <SpecBlock title="Test species" count={`${species.length} maintained`}>
+              /* "listed", not "maintained": for ecotoxicology these entries
+                 are species groups covering the 26 species the division
+                 claims, so counting them as maintained species understated
+                 the programme and contradicted the headline figure. */
+              <SpecBlock
+                title="Test species"
+                count={species.length > 1 ? `${species.length} listed` : undefined}
+              >
                 <SpecChips items={species} className="mt-7" />
               </SpecBlock>
             ) : null}
@@ -84,14 +91,15 @@ function SpecBlock({
   children,
 }: {
   title: string;
-  count: string;
+  /** Omitted where a count would say less than the list itself. */
+  count?: string;
   children: React.ReactNode;
 }) {
   return (
     <div data-reveal className="border-t border-ink-900/12 pt-8 first:border-t-0 first:pt-0">
       <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
         <h3 className="font-display text-h2 text-ink-950">{title}</h3>
-        <span className="label-mono text-neutral-600">{count}</span>
+        {count ? <span className="label-mono text-neutral-600">{count}</span> : null}
       </div>
       {children}
     </div>

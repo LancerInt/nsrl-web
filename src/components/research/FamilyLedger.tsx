@@ -20,7 +20,7 @@ const FAMILY_NOTES: Record<Family, string> = {
   "Analytical & discovery":
     "The divisions that identify, quantify and trace. Every safety conclusion elsewhere in the laboratory rests on a number produced here.",
   "Applied & specialist":
-    "Divisions built around a particular problem — an insect, a device, an animal facility, or a study no guideline was written to cover.",
+    "Divisions built around a particular problem — an insect, an animal facility, or a study no guideline was written to cover.",
 };
 
 /**
@@ -85,7 +85,11 @@ export function FamilyLedger({
 function LedgerRow({ discipline, delay }: { discipline: Discipline; delay: number }) {
   const facts: { label: string; value: string }[] = [
     {
-      label: discipline.claim.unit ?? "Claim",
+      /* "Key capability", not "Claim". The visitor is reading a capability;
+         "claim" is the content layer's word for the field, and leaking an
+         internal field name into the page makes a confident statement
+         sound like a caveat. */
+      label: discipline.claim.unit ?? "Key capability",
       value: discipline.claim.value,
     },
     { label: "Methods", value: String(methodCount(discipline)) },
@@ -94,8 +98,25 @@ function LedgerRow({ discipline, delay }: { discipline: Discipline; delay: numbe
   if (discipline.guidelines?.length) {
     facts.push({ label: "Guidelines", value: String(discipline.guidelines.length) });
   }
-  if (discipline.species?.length) {
-    facts.push({ label: "Species", value: String(discipline.species.length) });
+
+  /*
+   * Two species figures in one row was a straight contradiction.
+   *
+   * Ecotoxicology's headline claim is "26 species", and the derived count of
+   * its `species` array is 12 — so the row read "Species 26 … Species 12".
+   * They are not the same measurement: the array holds taxonomic *groups*
+   * ("Birds", "Crustaceans", "Molluscs") and the 26 is the species total
+   * those groups cover, which is exactly what the body copy says. Where the
+   * claim already carries a species figure, the derived count is suppressed
+   * rather than contradicting it; everywhere else it is labelled "listed",
+   * because it counts what is enumerated on the page and not what the
+   * laboratory holds.
+   */
+  const claimStatesSpecies = /species/i.test(discipline.claim.unit ?? "");
+  /* `> 1` because entomology's entry is a single general statement rather
+     than an enumeration, and "Species listed · 1" says less than nothing. */
+  if (discipline.species && discipline.species.length > 1 && !claimStatesSpecies) {
+    facts.push({ label: "Species listed", value: String(discipline.species.length) });
   }
 
   return (
