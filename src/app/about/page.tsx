@@ -92,16 +92,20 @@ export default function AboutPage() {
                   key={item.id}
                   className="border-t border-[var(--rule)] py-4 first:border-t-0 first:pt-0"
                 >
-                  <dt className="font-display text-h3 text-ink-950">{item.abbr}</dt>
-                  {/* The standard, then who issues it. The card used to show
-                      the abbreviation and the issuing body only, which meant
-                      the ISO standard NABL accredits against — ISO/IEC
-                      17025:2017, the thing a reviewer actually looks for —
-                      appeared nowhere on the page. It was already in the
-                      record; it just was not rendered. */}
+                  {/* The heading is the *standard*, not the accrediting
+                      body, wherever there is one. "Governed by" asks what
+                      governs the work, and what governs it is ISO/IEC
+                      17025:2017 — NABL is who assesses against it. Leading
+                      with the body buried the standard a reviewer scans
+                      for, first out of the card entirely and then as a
+                      sub-line. For OECD GLP the two are the same string, so
+                      the heading is unchanged. */}
+                  <dt className="font-display text-h3 text-ink-950">
+                    {item.standard ?? item.abbr}
+                  </dt>
                   <dd className="mt-1.5">
                     <span className="block text-small leading-snug text-ink-800">
-                      {item.name}
+                      {item.standard ? `${item.abbr} accreditation` : item.name}
                     </span>
                     <span className="mt-1 block text-micro leading-relaxed text-neutral-600">
                       {item.issuer}
