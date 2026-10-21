@@ -93,8 +93,19 @@ export default function AboutPage() {
                   className="border-t border-[var(--rule)] py-4 first:border-t-0 first:pt-0"
                 >
                   <dt className="font-display text-h3 text-ink-950">{item.abbr}</dt>
-                  <dd className="mt-1.5 text-micro leading-relaxed text-neutral-600">
-                    {item.issuer}
+                  {/* The standard, then who issues it. The card used to show
+                      the abbreviation and the issuing body only, which meant
+                      the ISO standard NABL accredits against — ISO/IEC
+                      17025:2017, the thing a reviewer actually looks for —
+                      appeared nowhere on the page. It was already in the
+                      record; it just was not rendered. */}
+                  <dd className="mt-1.5">
+                    <span className="block text-small leading-snug text-ink-800">
+                      {item.name}
+                    </span>
+                    <span className="mt-1 block text-micro leading-relaxed text-neutral-600">
+                      {item.issuer}
+                    </span>
                   </dd>
                 </div>
               ))}

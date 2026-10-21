@@ -162,7 +162,14 @@ export const primaryNav: NavGroup[] = [
         {
           heading: "Documents",
           links: [
-            { label: "Accreditations & certificates", href: "/downloads" },
+            {
+              label: "Accreditations & certificates",
+              href: "/downloads",
+              /* Names the standards, not just the register. "ISO/IEC 17025"
+                 is what a quality or regulatory reviewer scans a menu for,
+                 and it was reachable only two clicks in. */
+              description: "OECD GLP, ISO/IEC 17025 and sector approvals",
+            },
             { label: "Quality system", href: "/about#quality-system" },
             { label: "Study packages", href: "/products" },
           ],

@@ -74,6 +74,15 @@ export function AccreditationStrip() {
             const inner = (
               <>
                 <span className="font-display text-h3 text-ink-950">{accreditation.abbr}</span>
+                {/* The standard, where the accreditation is to one. "NABL"
+                    alone does not tell a visitor the laboratory is
+                    accredited to ISO/IEC 17025, and that is the string a
+                    reviewer scans for. */}
+                {accreditation.standard ? (
+                  <span className="mt-1 block text-micro leading-snug text-ink-800">
+                    {accreditation.standard}
+                  </span>
+                ) : null}
                 <span className="mt-1.5 block text-micro leading-snug text-neutral-550">
                   {hasCertificate ? "Certificate" : "On the register"}
                 </span>

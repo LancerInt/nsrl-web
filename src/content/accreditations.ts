@@ -19,6 +19,17 @@ export type Accreditation = {
   abbr: string;
   name: string;
   issuer: string;
+  /**
+   * The published standard the accreditation is assessed against, in the
+   * short form a reviewer would search for.
+   *
+   * Only set where the accreditation *is* accreditation to a named external
+   * standard, which in this register is NABL alone. It exists because the
+   * compact listings have room for an abbreviation and not for a full
+   * record name, and "NABL" on its own does not tell a visitor that the
+   * laboratory is accredited to ISO/IEC 17025.
+   */
+  standard?: string;
   scope: string;
   /** Grouping used by the downloads page and the accreditation wall. */
   category: "Good Laboratory Practice" | "Testing & calibration" | "Sector approval";
@@ -42,6 +53,7 @@ export const accreditations: Accreditation[] = [
     abbr: "NABL",
     name: "ISO/IEC 17025:2017 accreditation",
     issuer: "National Accreditation Board for Testing and Calibration Laboratories",
+    standard: "ISO/IEC 17025:2017",
     scope:
       "Technical competence of the testing laboratory against the international standard for testing and calibration laboratories.",
     category: "Testing & calibration",
