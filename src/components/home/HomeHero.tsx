@@ -1,7 +1,7 @@
 import { scaleStats } from "@/content/organisation";
 import { disciplines } from "@/content/disciplines";
 import { heroImage, images } from "@/content/imagery";
-import { numberWord } from "@/lib/utils";
+import { cn, numberWord } from "@/lib/utils";
 import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
 import { ActionLink } from "@/components/ui/ActionLink";
 import { CountUp } from "@/components/ui/CountUp";
@@ -15,53 +15,71 @@ const hero = images[heroImage];
  * is empty navy and whose right half carries the rising ribbon of sample
  * platforms and the NSRL plinth. So there is no crop to engineer and no
  * grade to apply — the enlargement, the hard desaturation and the overlay
- * that used to fight a yellow-cast stock photograph are all gone. What is
- * left is `object-fit: cover` and a crop held right of centre, which keeps
- * the platforms and the wordmark in frame as the band narrows.
+ * that used to fight a yellow-cast stock photograph are all gone.
  *
- * The overlay is now the lightest it can be while still guaranteeing text
- * contrast. The image is already the right navy; darkening it further would
- * only bury the artwork the set was commissioned for. Below `sm` the copy
- * sits on a stronger vertical wash instead, because at that width the
- * platforms run under the text rather than beside it.
+ * The image is shown whole and dropped to the floor of the section, with the
+ * headline on the empty upper-left. The overlay is the lightest it can be
+ * while still guaranteeing text contrast: the image is already the right
+ * navy, and darkening it further would only bury the artwork the set was
+ * commissioned for.
  *
- * The recorded figures sit *below* the image on their own band rather than
- * floating on it in a glass panel: the numbers are evidence, and evidence is
- * easier to trust when it is set on paper.
+ * The recorded figures are a frosted rail along the foot, so the blur has
+ * the plinth and the lower platforms to work on.
  */
 export function HomeHero() {
   return (
     <>
       <section
         data-theme="deep"
-        className="relative isolate flex flex-col overflow-hidden bg-deep text-white sm:min-h-[min(44rem,82svh)] sm:justify-end"
+        className="relative isolate flex flex-col overflow-hidden bg-deep text-white xl:min-h-[min(36rem,74svh)] xl:justify-end"
       >
         {/*
-          Two layouts, because one crop cannot serve both.
+          Two layouts, because one composition cannot serve both.
 
-          From `sm` up the artwork is the background and the copy sits on its
-          empty left half, which is the composition it was drawn for.
+          From `xl` up the artwork is the background and the copy sits on its
+          empty left half, which is what it was drawn for.
 
-          Below `sm` the frame is portrait and the artwork is a 1.9:1
-          landscape, so `cover` would show roughly a quarter of its width —
-          a blurred slice of platforms with no plinth, no wordmark and no
-          subject, sitting under the headline. Stacking instead gives the
+          Below `xl` there is not enough width for that: the lead runs past
+          the empty half and onto the ribbon of platforms, which is the
+          busiest, lightest part of the image. Stacking instead gives the
           copy a clean navy field and the artwork its own 16:10 band where
           the whole composition is visible. `order` does the swap, so the
           markup keeps the heading first either way.
+
+          `xl` is measured, not guessed. Sampling the declared ink against
+          the pixel each glyph actually lands on: at 1024 the lead crosses
+          the petri dish at 1.62:1, and at 1280 its worst backdrop is still
+          the navy field, at 13.7:1. The boundary is where the copy stops
+          colliding with the subject — nowhere near where a device stops
+          being a tablet, which is why the obvious `sm` and `lg` are both
+          wrong here.
         */}
-        <div className="relative order-2 aspect-[16/10] w-full overflow-hidden sm:absolute sm:inset-0 sm:order-none sm:-z-10 sm:aspect-auto">
+        <div className="relative order-2 aspect-[16/10] w-full overflow-hidden xl:absolute xl:inset-0 xl:order-none xl:-z-10 xl:aspect-auto">
+          {/*
+            `contain`, not `cover`, from `xl` up — so the illustration is
+            shown entire rather than cropped top and bottom, which is what
+            was clipping the sample plate under the header and shearing the
+            NSRL plinth at the foot.
+
+            It works here only because the artwork's own background is this
+            navy: anchored bottom-right on a `bg-deep` section, the fill
+            either side of it is the same colour as the field it is drawn
+            on, so there is no letterbox to see. Bottom anchoring is what
+            drops the artwork clear of the navigation and leaves the quiet
+            upper-left for the headline.
+          */}
           <SpecimenPlate
             src={hero.src}
             alt={hero.alt}
             position={hero.position}
             sizes="100vw"
             priority
+            className="xl:object-contain xl:object-right-bottom"
           />
-          <div aria-hidden className="scrim hidden sm:block" />
+          <div aria-hidden className="scrim hidden xl:block" />
         </div>
 
-        <div className="shell order-1 w-full pb-[clamp(2.5rem,5vw,4.5rem)] pt-[clamp(7.5rem,17vh,13rem)] sm:order-none">
+        <div className="shell order-1 w-full pb-[clamp(2rem,4vw,3rem)] pt-[clamp(7rem,14vh,9.5rem)] xl:order-none">
           {/* Sized to hold "Complete preclinical research," on one line at
               every width above `sm`, which is the whole point of setting the
               break by hand. */}
@@ -108,28 +126,55 @@ export function HomeHero() {
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Recorded figures. A crisp strip, ruled into four, sitting on the
-          navy so it reads as the base of the hero rather than the top of the
-          page. */}
-      <section aria-label="NSRL in numbers" data-theme="deep" className="bg-deep-raised">
-        <div className="shell">
-          {/* gap-px over a lit background rather than `divide-*`: in a grid
-              that reflows from four columns to two, divide utilities leave
-              rules on the wrong edges. */}
-          <dl className="grid grid-cols-2 gap-px bg-white/12 lg:grid-cols-4">
-            {scaleStats.map((stat) => (
-              <div key={stat.label} className="bg-deep-raised px-5 py-6 sm:px-7 sm:py-7">
-                <dt className="label-mono text-ink-200">{stat.label}</dt>
-                <dd className="mt-2 font-display text-[clamp(1.75rem,2.4vw,2.375rem)] font-[450] leading-none text-white">
-                  <CountUp value={stat.value} suffix={stat.suffix} />
-                </dd>
-                <p className="mt-2.5 text-micro leading-relaxed text-ink-200">{stat.caption}</p>
-              </div>
-            ))}
-          </dl>
-        </div>
+        {/*
+          Recorded figures, as a frosted rail along the foot of the hero.
+
+          It sits *inside* the section rather than in a band beneath it, so
+          the blur has the artwork to work on — glass over a flat colour is
+          just a lighter flat colour. `order-3` keeps it last in the stacked
+          layout, under the artwork; from `xl` it is the final flex child
+          and the section's `justify-end` brings it to the floor.
+        */}
+        <section
+          aria-label="NSRL in numbers"
+          className="glass-deep relative order-3 border-t border-white/15 xl:order-none"
+        >
+          <div className="shell">
+            {/*
+              Rules are drawn per cell, not by a lit background behind a
+              `gap-px` grid. That trick needs the grid to carry a colour, and
+              the grid is shell-width while the frosted rail is full-bleed —
+              so the colour showed as a brighter band with a hard vertical
+              seam at each gutter. Explicit borders keep the frosting
+              uniform edge to edge.
+
+              The indices are doing real work: no left rule at the start of
+              a row, and a top rule only on the second row, which is two
+              columns below `lg` and four at and above it.
+            */}
+            <dl className="grid grid-cols-2 lg:grid-cols-4">
+              {scaleStats.map((stat, i) => (
+                <div
+                  key={stat.label}
+                  className={cn(
+                    "border-white/12 px-5 py-5 sm:px-7 sm:py-6",
+                    i % 2 !== 0 && "border-l",
+                    i % 4 !== 0 && "lg:border-l",
+                    i % 4 === 0 && "lg:border-l-0",
+                    i >= 2 && "border-t lg:border-t-0",
+                  )}
+                >
+                  <dt className="label-mono text-ink-100">{stat.label}</dt>
+                  <dd className="mt-1.5 font-display text-[clamp(1.625rem,2.2vw,2.125rem)] font-[450] leading-none text-white">
+                    <CountUp value={stat.value} suffix={stat.suffix} />
+                  </dd>
+                  <p className="mt-2 text-micro leading-relaxed text-ink-100">{stat.caption}</p>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
       </section>
     </>
   );

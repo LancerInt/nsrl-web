@@ -391,11 +391,60 @@
   margin-block: -0.08em;
 }
 
-/* The two frosted-glass utilities were removed with their last call sites.
-   A translucent panel takes its contrast from whatever happens to be behind
-   it, which on a photographic hero means the text is legible or not
-   depending on the image — the stats rail and the downloads register key
-   both failed that way. Panels here are solid. */
+/* Frosted glass.
+
+   The earlier objection to these still stands — a translucent panel takes
+   its contrast from whatever happens to be behind it — so both variants are
+   deliberately *heavy*: 78% and 68% with a wide blur and a saturation lift,
+   not the 7% wash that made the old stats rail unreadable over a bright
+   photograph. At those values the type behind never shows through as more
+   than a soft field of colour, and the measured contrast holds.
+
+   `backdrop-filter` is unsupported in a few older engines, so the
+   background colour alone has to carry legibility. It does: both fills are
+   opaque enough to set the contrast on their own, and nothing depends on
+   the blur landing.
+
+   `glass-deep` tints *down*, not up, and that is the whole trick. A white
+   wash was the obvious choice for a dark surface and it was wrong: it only
+   lightens what is already navy, so it set no floor at all where something
+   bright passed behind. Measured over the steel plinth in the hero artwork,
+   a 14% white wash left the captions at 1.70:1. Tinting with the surface's
+   own navy instead means the darkest thing in the stack is the fill, so the
+   worst case is bounded by the fill rather than by the artwork — the same
+   caption measures 6.4:1 over that plinth and the rail stays legible
+   wherever it is dragged. Lowering the percentage lets more of the artwork
+   through and walks back toward that failure: AA for the 12px captions runs
+   out at about 50%. */
+@utility glass-light {
+  background-color: color-mix(in oklab, var(--color-canvas) 78%, transparent);
+  backdrop-filter: blur(20px) saturate(1.6);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
+}
+
+/* The same surface, raised to the point where it stops being see-through.
+
+   78% is fine for the header bar — a thin strip with nothing but body copy
+   passing under it. It is not fine for the mega panel, which is tall enough
+   to sit over the hero headline: a 60px white serif behind a 78% wash stays
+   legible through it, and the menu links end up crossing the words. Twenty
+   per cent of a very bright thing is still bright, and no amount of blur
+   fixes it, because blur spreads the glyph rather than dimming it.
+
+   So the panel keeps the blur, the saturation and the canvas hue — it still
+   belongs to the same material as the bar — and simply gives up the
+   transparency it cannot afford. */
+@utility glass-panel {
+  background-color: color-mix(in oklab, var(--color-canvas) 97%, transparent);
+  backdrop-filter: blur(20px) saturate(1.6);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
+}
+
+@utility glass-deep {
+  background-color: color-mix(in oklab, var(--color-deep-raised) 68%, transparent);
+  backdrop-filter: blur(22px) saturate(1.3);
+  -webkit-backdrop-filter: blur(22px) saturate(1.3);
+}
 
 /* Fine engineering graticule. */
 @utility graticule {
