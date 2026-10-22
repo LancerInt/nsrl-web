@@ -43,7 +43,7 @@ export default function FacilitiesPage() {
     <>
       <PageHero
         eyebrow="The facility"
-        title="Where the work actually happens."
+        title="Facilities and equipment"
         lead="A single accredited laboratory in Salem, Tamil Nadu. Chemistry, toxicology, ecotoxicology, entomology, microbiology and the vivarium share one site — which is the whole reason a study can change division without changing custodian."
         crumbs={[{ label: "Home", href: "/" }, { label: "Facilities" }]}
         meta={[

@@ -64,7 +64,7 @@ export function SectorLedger() {
               className="group scroll-mt-32 border-t border-ink-900/12 transition-colors duration-500 hover:border-ink-900/40"
             >
               <div className="egrid gap-y-9 py-[clamp(2.5rem,5vw,4.5rem)]">
-                <p className="col-span-12 font-display text-[clamp(2.75rem,4.6vw,4.25rem)] font-medium leading-none tracking-[-0.014em] tabular-nums text-neutral-500 transition-colors duration-500 group-hover:text-ink-700 lg:col-span-1">
+                <p className="col-span-12 font-display text-[clamp(2.75rem,4.6vw,4.25rem)] font-medium leading-none tracking-[-0.014em] tabular-nums text-neutral-550 transition-colors duration-500 group-hover:text-ink-700 lg:col-span-1">
                   {industry.index}
                 </p>
 

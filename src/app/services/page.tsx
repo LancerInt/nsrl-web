@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { pageMetadata } from "@/lib/seo";
-import { numberWord, pad } from "@/lib/utils";
+import { pad } from "@/lib/utils";
 import { industries } from "@/content/industries";
 import { disciplines } from "@/content/disciplines";
 import { studyLifecycle } from "@/content/organisation";
@@ -32,7 +32,10 @@ export default function ServicesPage() {
       <PageHero
         tone="light"
         eyebrow="Services"
-        title={`${numberWord(industries.length, { capitalise: true })} sectors, ${numberWord(studyLifecycle.length)} stages, one chain of custody.`}
+        /* The old title counted sectors and stages at the reader before
+           saying what the page was for. Those counts are still on the page,
+           in the meta row directly beneath, where a number belongs. */
+        title="Plan your regulatory study"
         lead="Every programme here is scoped from the authority that will read it, conducted inside one accredited laboratory, and reported so that each conclusion traces back to the instrument that produced it."
         crumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
         meta={[

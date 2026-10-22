@@ -113,7 +113,7 @@ export default function ContactPage() {
               {locations.map((location) => (
                 <li key={location.id} className="border-b border-ink-900/10 py-4 last:border-b-0">
                   <p className="text-small font-medium text-ink-900">{location.label}</p>
-                  <p className="mt-1 text-micro text-neutral-500">{location.role}</p>
+                  <p className="mt-1 text-micro text-neutral-550">{location.role}</p>
                 </li>
               ))}
             </ul>

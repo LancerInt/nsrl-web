@@ -1,0 +1,29 @@
+Slot,Observed current path,Observed desktop CSS size px,Recommended ratio and master,Delivery status,Supplied file,Notes
+Home hero,/images/nsrl/home-hero.webp,1353x832,16:9; 2560x1440 preferred master,DELIVERED,assets/hero-editorial.png,Actual 1672x941 PNG. Use split hero and sensible rendered size; do not claim 2560 master supplied.
+Sector card,/images/nsrl/home-agrochemical.webp,379x237,8:5; 1600x1000,PROMPT ONLY,,Seedling and soil sample; ordinary realistic research materials
+Sector card,/images/nsrl/home-industrial-chemicals.webp,379x237,8:5; 1600x1000,PROMPT ONLY,,Amber reagent vial and glassware on ivory surface
+Sector card,/images/nsrl/home-food-feed.webp,379x237,8:5; 1600x1000,PROMPT ONLY,,"Grain, oil and feed samples on shallow ceramic dishes"
+Integrated research,/images/nsrl/home-integrated-research.webp,473x753,SVG viewBox 800x580,DELIVERED,assets/shared-quality-network.svg,Replace eight-sphere artwork with exactly seven labelled divisions. Change slot to landscape.
+Home facility,/images/nsrl/home-instrument-operation.webp,677x565 or 491x224–234,Actual photo; 1800px+ source,REAL PHOTO NEEDED,,Use verified NSRL photography; conceptual illustration requires visible caption.
+Home facility,/images/nsrl/home-containment.webp,677x565 or 491x224–234,Actual photo; 1800px+ source,REAL PHOTO NEEDED,,Use verified NSRL photography; conceptual illustration requires visible caption.
+Home facility,/images/nsrl/home-microscopy.webp,677x565 or 491x224–234,Actual photo; 1800px+ source,REAL PHOTO NEEDED,,Use verified NSRL photography; conceptual illustration requires visible caption.
+Division hero,/images/nsrl/division-toxicology.webp,378x473,4:5; 1600x2000 preferred master,DELIVERED,assets/toxicology-editorial.png,Delivered portrait actual 1122x1402
+Division hero,/images/nsrl/division-ecotoxicology.webp,378x473,4:5; 1600x2000 preferred master,DELIVERED,assets/ecotoxicology-editorial.png,Delivered portrait actual 1122x1402
+Division hero,/images/nsrl/division-chemistry.webp,378x473,4:5; 1600x2000 preferred master,ICON + PROMPT ONLY,assets/icon-chemistry.svg,"Icon is for UI, not a substitute for the full photographic hero."
+Division hero,/images/nsrl/division-microbiology.webp,378x473,4:5; 1600x2000 preferred master,ICON + PROMPT ONLY,assets/icon-microbiology.svg,"Icon is for UI, not a substitute for the full photographic hero."
+Division hero,/images/nsrl/division-entomology.webp,378x473,4:5; 1600x2000 preferred master,ICON + PROMPT ONLY,assets/icon-entomology.svg,"Icon is for UI, not a substitute for the full photographic hero."
+Division hero,/images/nsrl/division-vivarium.webp,378x473,4:5; 1600x2000 preferred master,ICON + PROMPT ONLY,assets/icon-vivarium.svg,"Icon is for UI, not a substitute for the full photographic hero."
+Division hero,/images/nsrl/division-custom-studies.webp,378x473,4:5; 1600x2000 preferred master,ICON + PROMPT ONLY,assets/icon-custom-studies.svg,"Icon is for UI, not a substitute for the full photographic hero."
+Facilities,/images/nsrl/facilities-overview.webp,1184x666,16:9; 2400x1350,REAL PHOTO NEEDED,,If photography is unavailable show explicit conceptual caption; no invented facility tour.
+Facilities,/images/nsrl/facilities-integrated-site.webp,479x672,5:7; 1500x2100,REAL PHOTO NEEDED,,If photography is unavailable show explicit conceptual caption; no invented facility tour.
+Facilities,/images/nsrl/facilities-ecotoxicology.webp,582x388,3:2; 1800x1200,REAL PHOTO NEEDED,,If photography is unavailable show explicit conceptual caption; no invented facility tour.
+Facilities,/images/nsrl/facilities-microbiology.webp,582x388,3:2; 1800x1200,REAL PHOTO NEEDED,,If photography is unavailable show explicit conceptual caption; no invented facility tour.
+Facilities,/images/nsrl/facilities-microscopy.webp,582x388,3:2; 1800x1200,REAL PHOTO NEEDED,,If photography is unavailable show explicit conceptual caption; no invented facility tour.
+Facilities,/images/nsrl/facilities-chemistry.webp,582x388,3:2; 1800x1200,REAL PHOTO NEEDED,,If photography is unavailable show explicit conceptual caption; no invented facility tour.
+Services overview,/images/nsrl/services-integrated.webp,474x356,4:3; 1600x1200,SVG ALTERNATIVE,assets/shared-quality-network.svg,Use complete integrated-research graphic rather than redundant shiny specimen podium.
+Sector hero,/images/nsrl/service-agrochemical.webp,378x284,4:3; 1600x1200,PROMPT ONLY,,Use same photographic family as corresponding home card.
+Sector hero,/images/nsrl/service-industrial-chemicals.webp,378x284,4:3; 1600x1200,PROMPT ONLY,,Use same photographic family as corresponding home card.
+Sector hero,/images/nsrl/service-food-feed.webp,378x284,4:3; 1600x1200,PROMPT ONLY,,Use same photographic family as corresponding home card.
+Study packages,/images/nsrl/study-packages.webp,479x299,8:5; 1600x1000,VECTOR ALTERNATIVE,assets/motif-sample-grid.svg,Prefer an interactive study selector with real labels instead of another decorative still life.
+Downloads,/images/nsrl/downloads-evidence.webp,375x499,3:4; 1200x1600,DOCUMENT UI PREFERRED,,Show actual certificate preview and metadata; retain originals and destinations.
+News,/images/nsrl/news-research.webp,378x473,4:5; 1600x2000,ARTICLE IMAGES PREFERRED,,"Use actual article/event photos or branded editorial illustration, not generic notebooks."

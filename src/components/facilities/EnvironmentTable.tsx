@@ -30,12 +30,27 @@ export function EnvironmentTable() {
           </div>
         </div>
 
+        {/*
+          `tabIndex={0}` with a role and a name because this scrolls
+          horizontally below about 52rem. A region that only a pointer can
+          pan is unreachable by keyboard: there is nothing focusable inside
+          the table, so without this a keyboard user can see the first three
+          columns of the schedule and has no way to reach the rest.
+
+          `relative` is load-bearing and separate: the row labels inside use
+          `sr-only`, which is absolutely positioned, and without a positioned
+          ancestor here they resolve against the section and push the page
+          wider than the viewport at 390px.
+        */}
         <div
           data-reveal
-          className="mt-6 overflow-x-auto rounded-[var(--radius-card)] border border-ink-900/12 bg-canvas-raised"
+          tabIndex={0}
+          role="region"
+          aria-label="Controlled environments — specification schedule"
+          className="relative mt-6 overflow-x-auto rounded-[var(--radius-card)] border border-ink-900/12 bg-canvas-raised"
         >
           <table className="w-full min-w-[52rem] border-collapse text-left">
-            <caption className="label-mono border-b border-ink-900/12 px-6 py-5 text-left text-neutral-500">
+            <caption className="label-mono border-b border-ink-900/12 px-6 py-5 text-left text-neutral-550">
               Controlled environments — specification schedule
             </caption>
 

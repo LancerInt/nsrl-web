@@ -37,11 +37,11 @@ export function ArchiveEntry({
     <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
       <span className="label-mono text-ink-700">{article.category}</span>
       <span aria-hidden className="h-3 w-px bg-ink-900/15" />
-      <time dateTime={article.date} className="label-mono text-neutral-500">
+      <time dateTime={article.date} className="label-mono text-neutral-550">
         {article.dateDisplay}
       </time>
       <span aria-hidden className="h-3 w-px bg-ink-900/15" />
-      <span className="label-mono text-neutral-500">{article.readingMinutes} min read</span>
+      <span className="label-mono text-neutral-550">{article.readingMinutes} min read</span>
     </div>
   );
 

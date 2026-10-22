@@ -1,3 +1,4 @@
+import { ConceptualLabel } from "@/components/visuals/ConceptualLabel";
 import { facilityLead, images } from "@/content/imagery";
 import { locations } from "@/content/site";
 import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
@@ -28,7 +29,7 @@ export function FacilityLead() {
             sizes="(min-width: 1280px) 1184px, 100vw"
             priority
           />
-          {/* A navy foot, so the caption sits on the photograph with the same
+          {/* A navy foot, so the caption sits on the artwork with the same
               contrast whatever the frame's own exposure is. */}
           <span
             aria-hidden
@@ -39,6 +40,10 @@ export function FacilityLead() {
             <p className="mt-1.5 font-display text-h2 text-white">
               {office.locality}, {office.region}
             </p>
+            {/* The lead frame on the facilities page is the single most
+                likely image on the site to be taken as documentation of the
+                Salem site, because the heading above it names the site. */}
+            <ConceptualLabel tone="deep" className="mt-2" />
           </figcaption>
         </figure>
       </div>

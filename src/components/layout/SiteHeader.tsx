@@ -89,12 +89,36 @@ export function SiteHeader() {
     setOverDeep(false);
   }
 
-  /* -- Escape closes everything ------------------------------------------ */
+  /* -- Escape closes everything, and gives focus back --------------------- */
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
       if (event.key !== "Escape") return;
+
+      /*
+        Find the trigger *before* closing. Once `setOpen(null)` has
+        rendered there is no `aria-expanded="true"` left to find, and a
+        keyboard user who opened a menu and pressed Escape would be
+        returned to the top of the document — which is the bug this
+        replaces. The mobile sheet already restored focus through
+        `menuTrigger`; the desktop panel never did.
+
+        Reading the DOM rather than threading a ref through the nav map:
+        the open trigger is the one that says it is open, and there is
+        exactly one.
+      */
+      const trigger = headerRef.current?.querySelector<HTMLElement>(
+        'button[aria-expanded="true"]',
+      );
+
       setOpen(null);
       setMobileOpen(false);
+
+      /* Only pull focus if it is somewhere inside the header. Escape
+         pressed while reading the page should not yank the viewport back
+         up to the navigation. */
+      if (trigger && headerRef.current?.contains(document.activeElement)) {
+        trigger.focus();
+      }
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
@@ -190,25 +214,29 @@ export function SiteHeader() {
         className="fixed inset-x-0 top-0 z-[90]"
         onMouseLeave={scheduleClose}
       >
-        {/* Frosted once the page moves — but solid while a mega panel is
-            open, and that is not an inconsistency.
+        {/* Opaque the moment the page moves, and opaque while a panel is
+            open. No frosting at all now.
 
-            The bar is 4.5rem tall, so the 3% the frosting lets through is
-            confined to a strip and reads as a haze. The panel is seven
-            times that, and over an area that large the eye resolves a 3%
-            step into shapes: the hero headline was still legible behind the
-            menu. The panel therefore goes fully opaque, and the bar joins it
-            so the two do not meet as a 97%/100% step. Frosting is worth
-            having where it costs nothing and not worth defending where it
-            costs the menu. */}
+            The brief is explicit that underlying headings and stats must not
+            show through, and the measurement behind that is worth keeping:
+            translucency here was tried at 78%, at 93% and at 97%, and the
+            hero headline was legible through the first two. 97% was clean
+            enough on the bar but the same 97% resolved into readable words
+            across the mega panel, because what the eye can pick out of a
+            low-contrast field depends on how much of it there is. The
+            honest conclusion is that a bar sitting over a large serif
+            headline has no transparency budget worth spending.
+
+            A contrast audit passed throughout, incidentally — the nav ink
+            measured 11:1 against its own backdrop while the headline was
+            plainly visible behind it. Contrast asks whether ink separates
+            from its backdrop, not whether the backdrop is quiet. */}
         <div
           className={cn(
-            "transition-[background-color,border-color,box-shadow] duration-300 ease-[var(--ease-out-quart)]",
-            openLabel
-              ? "border-b border-ink-900/10 bg-canvas shadow-[var(--shadow-sm)]"
-              : condensed
-                ? "glass-light border-b border-ink-900/10 shadow-[var(--shadow-sm)]"
-                : "border-b border-transparent bg-transparent",
+            "transition-[background-color,border-color,box-shadow] duration-200 ease-[var(--ease-out-quart)]",
+            condensed || openLabel
+              ? "border-b border-[--rule] bg-canvas shadow-[var(--shadow-sm)]"
+              : "border-b border-transparent bg-transparent",
           )}
         >
           <div className="shell">
@@ -297,7 +325,7 @@ export function SiteHeader() {
                                 "grid h-9 w-7 place-items-center rounded-[var(--radius-control)] transition-colors duration-200",
                                 onDark
                                   ? "text-ink-200 hover:text-white"
-                                  : "text-neutral-500 hover:text-ink-950",
+                                  : "text-neutral-550 hover:text-ink-950",
                               )}
                             >
                               <ChevronDown
@@ -443,7 +471,7 @@ function MegaPanel({
                             {link.label}
                           </span>
                           {link.description ? (
-                            <span className="text-micro text-neutral-500">{link.description}</span>
+                            <span className="text-micro text-neutral-550">{link.description}</span>
                           ) : null}
                         </span>
                         <ArrowRight

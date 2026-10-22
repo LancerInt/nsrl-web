@@ -1,3 +1,4 @@
+import { ConceptualLabel } from "@/components/visuals/ConceptualLabel";
 import { capacityStats } from "@/content/organisation";
 import { facilityShowcase, images } from "@/content/imagery";
 import { formatCount } from "@/lib/utils";
@@ -16,11 +17,13 @@ import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
  * no such gap to leave.
  *
  * Captions sit directly beneath their own frame, inside it, so a caption is
- * never ambiguous about which photograph it belongs to.
+ * never ambiguous about which image it belongs to.
  *
- * The captions describe the kind of environment in the frame. They do not
- * claim the photograph is of NSRL's own site — the current library is
- * free-licence stand-ins. See `content/imagery.ts` and README.md.
+ * The captions describe the kind of environment shown and each frame says
+ * in type that it is a conceptual illustration. This section is the one on
+ * the homepage that names the Salem site, which is precisely why its
+ * artwork has to disclaim being a record of it. ASSET_MANIFEST.csv marks
+ * all three of these slots REAL PHOTO NEEDED.
  */
 export function FacilityShowcase() {
   const [lead, ...stacked] = facilityShowcase;
@@ -129,9 +132,10 @@ function Frame({
           sizes={sizes}
         />
       </div>
-      <figcaption className="px-4 py-3.5 sm:px-5 sm:py-4">
+      <figcaption className="space-y-1 px-4 py-3.5 sm:px-5 sm:py-4">
         <span className="block font-display text-h3 text-white">{frame.title}</span>
         <span className="mt-1 block text-small leading-snug text-ink-100">{frame.caption}</span>
+        <ConceptualLabel tone="deep" className="pt-1" />
       </figcaption>
     </figure>
   );

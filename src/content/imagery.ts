@@ -1,61 +1,82 @@
 /**
  * The site's artwork, mapped one record per placement.
  *
- * Every image here is a commissioned NSRL illustration delivered in
- * `assets/NSRL-All-29-Image-Replacements/` and served from
- * `public/images/nsrl/`. Twenty-nine files, twenty-nine slots, nothing
- * shared — which is the point of the set. The free-licence stock library
- * that preceded it had eleven files doing twenty-nine jobs, so the same
- * bench appeared on a sector card and a division page at different aspect
- * ratios, and no crop suited both.
+ * Two sets live here, and the difference matters:
+ *
+ * - **Editorial stills** from the redesign kit
+ *   (`assets/NSRL_Redesign_Kit/`), served from `public/images/editorial/`.
+ *   Warm-white staged still lifes: the homepage hero, Toxicology and
+ *   Ecotoxicology. Three files, and the manifest marks them DELIVERED.
+ * - **Conceptual illustrations** commissioned earlier
+ *   (`assets/NSRL-All-29-Image-Replacements/`), served from
+ *   `public/images/nsrl/`, holding every slot the kit marks PROMPT ONLY or
+ *   REAL PHOTO NEEDED.
  *
  * ── What these images are ──────────────────────────────────────────────
  *
- * They are branded conceptual illustrations: staged glass, instruments and
- * specimens rendered in the NSRL navy and teal, several carrying the NSRL
- * wordmark on a plinth. They are **not** photographs, and nothing on the
- * site may caption them as a photograph of NSRL's premises, staff,
- * equipment, certificates or results. The alt text below describes the
- * illustration rather than asserting a room — that distinction is the whole
- * reason the previous stock set had to be captioned so carefully.
+ * All of them are **conceptual**. None is a photograph, and nothing on the
+ * site may caption one as a photograph of NSRL's premises, staff,
+ * equipment, certificates or results. `kind` below is what makes that
+ * enforceable rather than a convention: a frame can read it and decide for
+ * itself whether a visible label is required, instead of every call site
+ * having to remember. The day a verified NSRL photograph arrives, it is
+ * entered as `kind: "photograph"` and the label disappears on its own.
  *
- * The supplier's own note, worth keeping: "Review all species and method
- * depictions with the scientific owner."
+ * The kit's note, worth keeping: artwork does not document NSRL premises,
+ * real equipment, clinical data or test outcomes. The earlier supplier's:
+ * "Review all species and method depictions with the scientific owner."
  *
  * ── Conventions ────────────────────────────────────────────────────────
  *
- * `width`/`height` are the delivered export dimensions, so a call site can
- * pick sensible `sizes` and a reviewer can see at a glance whether a frame
- * is asking a 1200px-wide file to fill 1400px.
+ * `width`/`height` are the delivered export dimensions — the real ones. The
+ * kit is explicit that its bitmaps are 1672×941 and 1122×1402, have not
+ * been upscaled, and must not be relabelled as larger masters. A call site
+ * reads these to pick `sizes` and to avoid asking a 1122px file to fill
+ * 1600px.
  *
  * `position` is set only where the subject is off-centre and a crop would
- * otherwise cut it — chiefly the hero, whose composition deliberately keeps
- * its left half empty for the headline.
+ * otherwise cut it.
  */
 export type SiteImage = {
   src: string;
   alt: string;
-  /** Delivered export width in pixels. */
+  /** Delivered export width in pixels. The real one — never a target. */
   width: number;
   /** Delivered export height in pixels. */
   height: number;
   /** `object-position`, where the subject is not centred. */
   position?: string;
+  /**
+   * What the viewer is actually looking at.
+   *
+   * `editorial` and `illustration` are both conceptual and both require a
+   * visible label wherever the surrounding copy could be read as a claim
+   * about NSRL's premises or equipment. `photograph` is reserved for
+   * verified NSRL photography and is currently unused — see
+   * ASSET_MANIFEST.csv for the slots waiting on it.
+   */
+  kind: "editorial" | "illustration" | "photograph";
 };
 
 const nsrl = (file: string) => `/images/nsrl/${file}`;
+const editorial = (file: string) => `/images/editorial/${file}`;
 
 const library = {
   /* ── Homepage ─────────────────────────────────────────────────────── */
   homeHero: {
-    src: nsrl("home-hero.webp"),
-    alt: "NSRL illustration: a ribbon of glass platforms rising across a navy field, carrying a sample vial, a stained tissue slide, a water droplet, a culture dish, a leaf with an insect, a cell model and a sample plate, above a steel plinth marked NSRL.",
-    width: 2560,
-    height: 1332,
-    /* The left half of this artwork is deliberately empty navy, because the
-       headline sits there. Holding the crop right of centre keeps the
-       platforms and the NSRL plinth in frame as the band narrows. */
-    position: "68% 50%",
+    src: editorial("hero-editorial.webp"),
+    alt: "Still life on a warm white bench: a labelled amber sample bottle beside a rack of capped clear vials, a shallow glass dish holding seed and a single leaf, in daylight.",
+    /* 1672×941, the delivered size. The kit's manifest names 2560×1440 as a
+       preferred future master and is explicit that no such file was
+       supplied, so this is what the frame is allowed to assume. */
+    width: 1672,
+    height: 941,
+    /* The composition keeps its left third nearly empty and groups the
+       focal objects right of centre. Holding the crop there is what
+       protects them as the frame narrows; the empty third is for the
+       headline on a desktop, and is cropped away on a phone where the
+       artwork sits under the copy instead of behind it. */
+    position: "72% 50%",
   },
   homeAgrochemical: {
     src: nsrl("home-agrochemical.webp"),
@@ -176,10 +197,13 @@ const library = {
     height: 1500,
   },
   divisionEcotoxicology: {
-    src: nsrl("division-ecotoxicology.webp"),
-    alt: "NSRL illustration: a glass column holding fish in water above a planted soil layer, under a dosing bulb.",
-    width: 1200,
-    height: 1500,
+    src: editorial("ecotoxicology-editorial.webp"),
+    /* The kit is specific that this depicts two separate research themes
+       side by side — aquatic and terrestrial — and is not a study protocol
+       in which one feeds the other. The alt text is written to match. */
+    alt: "Still life on a warm white bench: a glass tank of water holding two small fish, beside a separate glass box of soil with a rooted seedling, a pipette and a sample pot in front.",
+    width: 1122,
+    height: 1402,
   },
   divisionEntomology: {
     src: nsrl("division-entomology.webp"),
@@ -194,10 +218,10 @@ const library = {
     height: 1500,
   },
   divisionToxicology: {
-    src: nsrl("division-toxicology.webp"),
-    alt: "NSRL illustration: a microscope beside stained tissue slides and an amber dosing vial.",
-    width: 1200,
-    height: 1500,
+    src: editorial("toxicology-editorial.webp"),
+    alt: "Still life on a warm white bench: a light microscope with a stained tissue section on the stage, two further stained slides on a ceramic tray, an amber vial, and an enlarged view of the section alongside.",
+    width: 1122,
+    height: 1402,
   },
   divisionVivarium: {
     src: nsrl("division-vivarium.webp"),
@@ -231,7 +255,7 @@ const library = {
     width: 1600,
     height: 1200,
   },
-} satisfies Record<string, SiteImage>;
+} satisfies Record<string, Omit<SiteImage, "kind">>;
 
 export type ImageKey = keyof typeof library;
 
@@ -240,8 +264,26 @@ export type ImageKey = keyof typeof library;
  * `ImageKey` to the real key names; re-exporting it as a `Record` is what
  * gives every entry the full `SiteImage` shape, so a call site can read
  * `.position` on an image that happens not to declare one.
+ *
+ * `kind` is derived from the path rather than written out per entry. Written
+ * by hand it would be twenty-eight copies of one fact, and the copy that
+ * drifts is the one that matters: an illustration mislabelled `photograph`
+ * silently drops the visible conceptual caption. Derivation cannot drift —
+ * a file either lives in the editorial directory or it does not. When
+ * verified NSRL photography arrives it gets its own directory and its own
+ * branch here, and every frame serving it stops captioning itself.
  */
-export const images: Record<ImageKey, SiteImage> = library;
+export const images: Record<ImageKey, SiteImage> = Object.fromEntries(
+  Object.entries(library).map(([key, image]) => [
+    key,
+    { ...image, kind: image.src.startsWith("/images/editorial/") ? "editorial" : "illustration" },
+  ]),
+) as Record<ImageKey, SiteImage>;
+
+/** True for anything the site must visibly label as not a photograph. */
+export function isConceptual(image: SiteImage): boolean {
+  return image.kind !== "photograph";
+}
 
 /* -------------------------------------------------------------------------- */
 /*  Placements                                                                */

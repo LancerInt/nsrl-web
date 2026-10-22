@@ -214,7 +214,7 @@ export function EnquiryForm() {
             aria-describedby={describedBy("company", `${id}-company-hint`)}
             className={cn(control, border("company"))}
           />
-          <p id={`${id}-company-hint`} className="label-mono mt-2.5 text-neutral-500">
+          <p id={`${id}-company-hint`} className="label-mono mt-2.5 text-neutral-550">
             Optional
           </p>
         </div>
@@ -234,7 +234,7 @@ export function EnquiryForm() {
             aria-describedby={describedBy("message", `${id}-message-hint`)}
             className={cn(control, "resize-y", border("message"))}
           />
-          <p id={`${id}-message-hint`} className="label-mono mt-2.5 text-neutral-500">
+          <p id={`${id}-message-hint`} className="label-mono mt-2.5 text-neutral-550">
             Test item, sector and the authority the dossier is going to, if you know them
           </p>
           <FieldError id={`${id}-message-error`} message={errors.message} />

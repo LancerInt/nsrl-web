@@ -63,13 +63,11 @@ export default function AboutPage() {
       <JsonLd data={aboutPageJsonLd()} />
 
       <PageHero
-        eyebrow="About NSRL"
-        title={
-          <>
-            Who we are, in the terms
-            <br />a regulator would use.
-          </>
-        }
+        eyebrow="The organisation"
+        /* Was "Who we are, in the terms a regulator would use." — a line
+           about our own positioning rather than about NSRL. The eyebrow has
+           taken the plain subject and the H1 now says what the page is. */
+        title="About NSRL"
         lead={site.shortDescription}
         crumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
         meta={[

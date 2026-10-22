@@ -20,13 +20,12 @@ export function MilestoneStair() {
               Work that had no precedent to follow.
             </RevealText>
           </div>
-          <div className="col-span-12 lg:col-span-4 lg:col-start-9 lg:self-end">
-            <p className="text-small text-neutral-600">
-              Stated without dates, because the record we hold carries the
-              achievement and not the year — and a year we could not evidence would
-              be worth less than none.
-            </p>
-          </div>
+          {/* The paragraph that sat here explained why these entries carry
+              no dates. That is an editorial note about how the page was
+              assembled, and a visitor reading about a first nano-fertiliser
+              registration is not asking about our sourcing policy. The
+              entries simply do not state years; nothing needs to apologise
+              for it. */}
         </div>
 
         <div className="mt-[clamp(2rem,3.5vw,3rem)] grid gap-x-[clamp(2rem,4vw,4rem)] gap-y-8 sm:grid-cols-2">

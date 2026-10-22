@@ -40,7 +40,12 @@ export function Logo({
         aria-hidden
         className={cn(
           "hidden border-l pl-3 text-[0.6875rem] font-medium leading-tight tracking-[0.14em] uppercase sm:block",
-          tone === "deep" ? "border-white/20 text-ink-200" : "border-ink-900/15 text-neutral-500",
+          /* `neutral-550`, not `500`. At 11px this lockup needs 4.5:1 and
+             `neutral-500` measured 4.09:1 on the warm white — it cleared
+             the old cooler paper and stopped clearing this one. The ramp
+             was retuned for the new palette; this was the one call site
+             sitting close enough to the line to notice. */
+          tone === "deep" ? "border-white/20 text-ink-200" : "border-ink-900/15 text-neutral-550",
         )}
       >
         Contract

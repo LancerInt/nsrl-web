@@ -7,6 +7,7 @@ import { JsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo";
 import { cn, pad } from "@/lib/utils";
 import { PageHero } from "@/components/ui/PageHero";
 import { PageNav, type PageNavItem } from "@/components/ui/PageNav";
+import { ActionLink } from "@/components/ui/ActionLink";
 import { Section, SectionBody } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RevealText } from "@/components/ui/RevealText";
@@ -183,20 +184,44 @@ export default async function DivisionPage({ params }: PageProps) {
         title={discipline.name}
         lead={discipline.summary}
         meta={meta.slice(0, 4)}
-        visual={<DivisionHeroField kind={variation.field} seed={variation.seed} />}
+        visual={<DivisionHeroField family={discipline.family} />}
+        /* Named for the division rather than a generic "Contact us", so a
+           reader on the Ecotoxicology page is offered an ecotoxicology
+           conversation. The destination is the existing enquiry route; no
+           new submission behaviour is implied. */
+        actions={
+          <ActionLink href="/contact" variant="solid">
+            Discuss a {discipline.name.toLowerCase()} study
+          </ActionLink>
+        }
         aside={
           <figure>
+            {/* 4:5, which is the delivered ratio of the editorial stills
+                (1122×1402) and the kit's recommendation for this slot — so
+                the frame crops nothing and asks for nothing the file cannot
+                supply. `sizes` is set to the real rendered width rather
+                than being left to default to 100vw, which is what had this
+                slot requesting a 3840px file to fill about 380px. */}
             <div className="relative aspect-[4/5] img-frame">
               <SpecimenPlate
                 src={divisionPhoto.src}
                 alt={divisionPhoto.alt}
                 position={divisionPhoto.position}
-                sizes="(min-width: 1024px) 33vw, 100vw"
+                sizes="(min-width: 1024px) 32vw, (min-width: 640px) 50vw, 100vw"
                 priority
               />
             </div>
-            <figcaption className="label-mono mt-4 text-neutral-600">
-              Division {discipline.index} of {disciplines.length}
+            <figcaption className="mt-3 space-y-1">
+              <span className="label-mono block text-neutral-600">
+                Division {discipline.index} of {disciplines.length}
+              </span>
+              {/* Stated, not implied. None of this artwork documents NSRL's
+                  premises or equipment, and a microscope photographed on a
+                  bench beside the words "our laboratory" will be read as
+                  one unless it says otherwise. */}
+              <span className="block text-micro text-neutral-550">
+                Conceptual illustration — not a photograph of NSRL equipment or premises.
+              </span>
             </figcaption>
           </figure>
         }

@@ -80,7 +80,7 @@ export function DivisionFinder({
             <div className="relative mt-3">
               <Search
                 aria-hidden
-                className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-500"
+                className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-550"
               />
               <input
                 id={inputId}
@@ -91,7 +91,7 @@ export function DivisionFinder({
                 autoComplete="off"
                 aria-describedby={`${inputId}-hint`}
                 aria-controls={resultsId}
-                className="h-[var(--control-h)] w-full rounded-[var(--radius-control)] border border-ink-900/15 bg-canvas-raised pl-11 pr-11 text-small text-ink-950 transition-colors duration-200 placeholder:text-neutral-500 hover:border-ink-900/30 focus:border-meniscus-500 focus:outline-none"
+                className="h-[var(--control-h)] w-full rounded-[var(--radius-control)] border border-ink-900/15 bg-canvas-raised pl-11 pr-11 text-small text-ink-950 transition-colors duration-200 placeholder:text-neutral-550 hover:border-ink-900/30 focus:border-meniscus-500 focus:outline-none"
               />
               {query ? (
                 <button

@@ -45,12 +45,13 @@ export function ScaleLedger() {
               style={{ "--reveal-delay": `${i * 0.07}s` } as React.CSSProperties}
               className="group grid grid-cols-12 items-baseline gap-x-[clamp(1rem,1.8vw,2rem)] gap-y-2 border-b border-[var(--rule)] py-[clamp(1.25rem,2.2vw,2rem)] transition-colors duration-500 hover:border-ink-900/40"
             >
-              <span className="label-mono col-span-2 text-neutral-550 transition-colors duration-500 group-hover:text-ink-700">
-                {pad(i + 1)}
-              </span>
-
-              <dt className="col-span-10 font-display text-h1 text-ink-950 lg:col-span-4">
-                {stat.label}
+              {/* Index inside the term. A bare <span> is not permitted as
+                  a direct child of a `dl > div` grouping. */}
+              <dt className="col-span-12 flex items-baseline gap-[clamp(1rem,1.8vw,2rem)] lg:col-span-6">
+                <span className="label-mono w-8 shrink-0 text-neutral-550 transition-colors duration-200 group-hover:text-ink-700 motion-reduce:transition-none">
+                  {pad(i + 1)}
+                </span>
+                <span className="font-display text-h1 text-ink-950">{stat.label}</span>
               </dt>
 
               <dd className="col-span-12 col-start-1 text-small text-neutral-600 lg:col-span-3 lg:col-start-auto">

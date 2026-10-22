@@ -48,15 +48,14 @@ export default function NewsIndexPage() {
             <div>
               <Eyebrow index="01">The archive</Eyebrow>
               <h2 className="mt-6 font-display text-d4 text-ink-950">
-                Everything the laboratory has published here.
+                News and technical notes
               </h2>
-              {/* This paragraph used to explain the bodyless records that
-                  were listed below it. They are not listed any more, so the
-                  explanation went with them — copy describing behaviour the
-                  page no longer has is worse than no copy at all. */}
+              {/* Was "Every note here is reproduced in full, as published.
+                  Nothing is written up after the fact." — a statement about
+                  our editorial process rather than about the laboratory.
+                  What a reader wants from an archive index is what is in it. */}
               <p className="measure mt-6 text-body text-neutral-600">
-                Every note here is reproduced in full, as published. Nothing is written up
-                after the fact.
+                Notes on method, quality and regulatory practice from the divisions.
               </p>
             </div>
             <p className="label-mono text-neutral-600">
@@ -93,7 +92,7 @@ export default function NewsIndexPage() {
           {/* End-of-archive marker: the short archive is stated, not hidden. */}
           <div className="flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-[var(--rule)] pt-6">
             <span aria-hidden className="h-2.5 w-px bg-ink-900" />
-            <p className="label-mono text-neutral-500">
+            <p className="label-mono text-neutral-550">
               End of archive — {pad(totalRecords)} {totalRecords === 1 ? "note" : "notes"}
             </p>
             <p className="label-mono text-neutral-600">Newer updates are posted to LinkedIn</p>

@@ -1,27 +1,20 @@
 import type { Discipline } from "@/content/disciplines";
-import type { PlateVariant } from "@/components/visuals/SpecimenPlate";
 
 /**
  * The division pages share one template. Without a rule, they would read
  * as repeated printings of the same page.
  *
- * Everything here is derived from the division's own index, so the variation is
- * deterministic (identical on server and client, stable across builds) while
- * still giving each page its own figure, its own hero field, its own claim
- * composition and its own reading order.
+ * Everything here is derived from the division's own index, so the variation
+ * is deterministic — identical on server and client, stable across builds.
+ *
+ * Two of the old axes have gone. `plate` chose one of six generated SVG
+ * figures and `field` chose one of five generated hero backdrops; both sets
+ * led with an orbital, and neither varied anything a reader could attach
+ * meaning to. The backdrop now follows the division's family instead, which
+ * is variation that carries information. What remains here is layout
+ * variation — where the claim sits, which side the rail takes — which is
+ * about rhythm and is the thing this module was for.
  */
-
-const PLATES: PlateVariant[] = [
-  "orbital",
-  "lattice",
-  "chromatogram",
-  "titration",
-  "gradient-well",
-  "wave",
-];
-
-export const HERO_FIELDS = ["rings", "column", "trace", "arc", "mesh"] as const;
-export type HeroFieldKind = (typeof HERO_FIELDS)[number];
 
 const CLAIM_ALIGNS = ["left", "split", "right"] as const;
 export type ClaimAlign = (typeof CLAIM_ALIGNS)[number];
@@ -30,8 +23,6 @@ export type DivisionVariation = {
   /** 1-based division number, parsed from `index`. */
   n: number;
   seed: number;
-  plate: PlateVariant;
-  field: HeroFieldKind;
   claimAlign: ClaimAlign;
   /** Long capability sets collapse; short ones stay open as a ruled spec. */
   capabilityMode: "disclosure" | "ruled";
@@ -50,8 +41,6 @@ export function divisionVariation(discipline: Discipline): DivisionVariation {
   return {
     n,
     seed: n * 3 + 1,
-    plate: PLATES[i % PLATES.length],
-    field: HERO_FIELDS[i % HERO_FIELDS.length],
     claimAlign: CLAIM_ALIGNS[i % CLAIM_ALIGNS.length],
     capabilityMode: groups >= 6 ? "disclosure" : "ruled",
     capabilityTone: even ? "canvas" : "sunken",

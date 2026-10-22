@@ -78,7 +78,7 @@ export function CertificateRegister() {
           <ul className="flex flex-wrap items-center gap-x-8 gap-y-0">
             {groups.map((group, i) => (
               <li key={group.category} className="flex items-center gap-3">
-                <span aria-hidden className="label-mono text-neutral-300">
+                <span aria-hidden className="label-mono text-neutral-550">
                   {pad(i + 1)}
                 </span>
                 <a
@@ -87,7 +87,7 @@ export function CertificateRegister() {
                 >
                   {group.category}
                 </a>
-                <span aria-hidden className="label-mono text-neutral-300">
+                <span aria-hidden className="label-mono text-neutral-550">
                   ({group.items.length})
                 </span>
               </li>
@@ -200,13 +200,13 @@ function RegisterRow({ record, number }: { record: Accreditation; number: number
             </span>
             {/* Visible to everyone and present in the accessibility tree, so the
                 external destination is never a surprise. */}
-            <span className="label-mono text-neutral-500">
+            <span className="label-mono text-neutral-550">
               External link — opens in a new tab
             </span>
           </a>
         ) : (
           <p className="inline-flex flex-col items-start gap-2 rounded-[0.875rem] border border-dashed border-ink-900/15 px-5 py-4">
-            <span className="font-sans text-[0.9375rem] font-medium text-neutral-500">
+            <span className="font-sans text-[0.9375rem] font-medium text-neutral-550">
               No certificate filed
             </span>
             <span className="label-mono text-neutral-600">Listed without a link</span>

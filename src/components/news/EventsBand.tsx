@@ -4,7 +4,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RevealText } from "@/components/ui/RevealText";
 import { ActionLink } from "@/components/ui/ActionLink";
 import { Section, SectionBody } from "@/components/ui/Section";
-import { OrbitalMark } from "@/components/visuals/OrbitalMark";
+import { Motif } from "@/components/visuals/Motif";
 
 /**
  * Events. The archive above is written up after the fact; anything moving
@@ -16,9 +16,9 @@ export function EventsBand() {
     <Section bleed id="events" className="overflow-hidden">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 right-[-8rem] hidden w-[38rem] opacity-[0.16] lg:block"
+        className="pointer-events-none absolute inset-y-0 right-[-8rem] hidden w-[38rem] opacity-[0.5] lg:block"
       >
-        <OrbitalMark className="h-full w-full" />
+        <Motif name="motif-environment" />
       </div>
 
       <SectionBody className="shell relative">

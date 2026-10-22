@@ -1,156 +1,84 @@
+import Image from "next/image";
+
 import { scaleStats } from "@/content/organisation";
 import { disciplines } from "@/content/disciplines";
 import { heroImage, images } from "@/content/imagery";
-import { cn, numberWord } from "@/lib/utils";
-import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
+import { numberWord } from "@/lib/utils";
 import { ActionLink } from "@/components/ui/ActionLink";
-import { CountUp } from "@/components/ui/CountUp";
 
 const hero = images[heroImage];
 
 /**
  * The opening.
  *
- * The artwork is composed for this slot: a 2560×1332 field whose left half
- * is empty navy and whose right half carries the rising ribbon of sample
- * platforms and the NSRL plinth. So there is no crop to engineer and no
- * grade to apply — the enlargement, the hard desaturation and the overlay
- * that used to fight a yellow-cast stock photograph are all gone.
+ * A light editorial split, not a dark full-bleed poster: navy type on warm
+ * white at the left, the supplied still life at the right, and the whole
+ * thing sized so the headline, the scope sentence and both actions are in
+ * the first screen on a laptop.
  *
- * The image is shown whole and dropped to the floor of the section, with the
- * headline on the empty upper-left. The overlay is the lightest it can be
- * while still guaranteeing text contrast: the image is already the right
- * navy, and darkening it further would only bury the artwork the set was
- * commissioned for.
+ * Deliberately *not* 100vh. A viewport-height hero makes the first scroll
+ * reveal nothing but more hero, and on a short laptop window it pushes the
+ * scope sentence under the fold — the one line that says what NSRL
+ * actually does.
  *
- * The recorded figures are a frosted rail along the foot, so the blur has
- * the plinth and the lower platforms to work on.
- *
- * From `xl` the section fills the viewport, which is what puts the
- * accreditation strip wholly into the next screen rather than leaving it
- * peeking over the fold. `justify-between` rather than `justify-end` is what
- * makes that height behave: with the copy and the rail together occupying
- * barely two-thirds of the screen, ending the column would have dropped the
- * headline into the middle of the page. Spreading it pins the copy under the
- * bar and the rail to the floor, and the space that opens between them is
- * where the artwork gets to be large.
+ * The recorded figures are a separate strip beneath rather than a rail
+ * floating on the artwork. They are evidence, and evidence reads as
+ * evidence when it is set on paper next to the claim, not overlaid on a
+ * photograph of a bench.
  */
 export function HomeHero() {
   return (
     <>
-      <section
-        data-theme="deep"
-        className="relative isolate flex flex-col overflow-hidden bg-deep text-white xl:min-h-svh xl:justify-between"
-      >
+      {/*
+        Stacked below `lg`, split at and above it — copy on the left half,
+        artwork bleeding off the right edge.
+
+        Stacked means copy *then* image, in that order, rather than the copy
+        compressed over the subject: the still life has one usable empty
+        region and it is at the left, which is no help at all when the frame
+        is 390px wide and the text would have to sit on the vials.
+      */}
+      <section className="border-b border-[--rule] bg-canvas lg:grid lg:grid-cols-2 lg:items-center">
         {/*
-          Two layouts, because one composition cannot serve both.
-
-          From `xl` up the artwork is the background and the copy sits on its
-          empty left half, which is what it was drawn for.
-
-          Below `xl` there is not enough width for that: the lead runs past
-          the empty half and onto the ribbon of platforms, which is the
-          busiest, lightest part of the image. Stacking instead gives the
-          copy a clean navy field and the artwork its own 16:10 band where
-          the whole composition is visible. `order` does the swap, so the
-          markup keeps the heading first either way.
-
-          `xl` is measured, not guessed. Sampling the declared ink against
-          the pixel each glyph actually lands on: at 1024 the lead crosses
-          the petri dish at 1.62:1, and at 1280 its worst backdrop is still
-          the navy field, at 13.7:1. The boundary is where the copy stops
-          colliding with the subject — nowhere near where a device stops
-          being a tablet, which is why the obvious `sm` and `lg` are both
-          wrong here.
+          `.shell` overridden to hug the right of its half rather than
+          centre in it. `ml-auto` with a max of half the measure puts the
+          copy's left padding edge exactly where every other section's
+          content starts, at any width — the alternative, hand-tuned
+          padding, drifts the moment the measure changes.
         */}
         {/*
-          From `xl` the frame starts below the navigation rather than at the
-          top of the section.
+          The top padding clears the bar rather than being chosen for
+          rhythm. The header is `fixed`, so the hero starts at y=0 and
+          anything less than its height lands underneath it — which is
+          exactly what happened at 390px, where a 40px top padding put the
+          eyebrow straight through the wordmark.
 
-          `contain` scales the artwork until it touches the frame on its
-          tight axis, and here that axis is the height — so the artwork was
-          already 617px of a 617px frame with no slack left, and its top edge
-          sat flush against the bar. Nothing was cropped, but a composition
-          whose topmost object is pressed into the navigation reads as
-          cropped, which is the only thing that matters.
-
-          Insetting the top is what buys the room: a shorter frame means a
-          smaller contained image, and the difference becomes air above the
-          artwork. It costs some scale, which is the trade `contain` always
-          offers — the whole picture, or a big one.
+          Expressed against `--nav-h` rather than as a number, so it cannot
+          drift out of step with the bar it is clearing.
         */}
-        <div className="relative order-2 aspect-[16/10] w-full overflow-hidden xl:absolute xl:inset-x-0 xl:bottom-0 xl:top-[6.5rem] xl:order-none xl:-z-10 xl:aspect-auto">
-          {/*
-            `contain`, not `cover`, from `xl` up — so the illustration is
-            shown entire rather than cropped top and bottom, which is what
-            was clipping the sample plate under the header and shearing the
-            NSRL plinth at the foot.
-
-            It works here only because the artwork's own background is this
-            navy: anchored bottom-right on a `bg-deep` section, the fill
-            either side of it is the same colour as the field it is drawn
-            on, so there is no letterbox to see. Bottom anchoring is what
-            drops the artwork clear of the navigation and leaves the quiet
-            upper-left for the headline.
-          */}
-          <SpecimenPlate
-            src={hero.src}
-            alt={hero.alt}
-            position={hero.position}
-            sizes="100vw"
-            priority
-            className="xl:object-contain xl:[object-position:100%_100%]"
-          />
-          <div aria-hidden className="scrim hidden xl:block" />
-        </div>
-
-        {/* The top padding clears the bar rather than composing against it:
-            the bar is 5.25rem tall before it condenses, so the floor is that
-            plus enough air that the eyebrow does not look wedged under it.
-            Everything above that floor is discretionary, which is where the
-            height came out of. */}
-        <div className="shell order-1 w-full pb-[clamp(1.5rem,3vw,2.25rem)] pt-[clamp(6.75rem,11vh,7.5rem)] xl:order-none">
-          {/* Sized to hold "Complete preclinical research," on one line at
-              every width above `sm`, which is the whole point of setting the
-              break by hand. */}
-          <div className="max-w-[56rem]">
-            <p data-reveal className="label-mono text-meniscus-200">
+        <div className="shell pb-[clamp(2.5rem,5vw,4rem)] pt-[calc(var(--nav-h)+1.5rem)] lg:ml-auto lg:mr-0 lg:max-w-[calc(var(--shell-max)/2)] lg:pb-14 lg:pr-12 lg:pt-[calc(var(--nav-h)+2rem)]">
+          <div className="max-w-[34rem]">
+            <p className="label-mono text-meniscus-600">
               Contract research organisation · Salem, Tamil Nadu
             </p>
 
-            {/* Two lines on a desktop, three on a phone, and never a widow:
-                the break is set, not left to the measure. */}
-            <h1
-              data-reveal
-              style={{ "--reveal-delay": "0.06s" } as React.CSSProperties}
-              className="mt-4 font-display text-[clamp(2.125rem,3.5vw,3.25rem)] font-[450] leading-[1.06] tracking-[-0.018em]"
-            >
-              Complete preclinical research,
-              {/* Below `sm` the first line will not fit whatever the size, so
-                  the hard break is dropped and the measure takes over. */}
-              <br className="hidden sm:inline" />{" "}
-              start to finish.
+            <h1 className="mt-5 text-d1 font-display text-ink-900">
+              Complete preclinical research, start to finish.
             </h1>
 
-            <p
-              data-reveal
-              style={{ "--reveal-delay": "0.12s" } as React.CSSProperties}
-              className="mt-5 max-w-[42rem] text-lead text-ink-100"
-            >
-              One accredited laboratory, {numberWord(disciplines.length)} scientific divisions.
-              A substance that arrives for chemistry moves through toxicology, ecotoxicology
-              and entomology without leaving our custody.
+            {/* The scope sentence. Around 62 characters a line, inside the
+                55–70 the brief asks for. */}
+            <p className="mt-6 max-w-[33rem] text-lead text-neutral-600">
+              One accredited laboratory, {numberWord(disciplines.length)} scientific
+              divisions. A substance that arrives for chemistry moves through
+              toxicology, ecotoxicology and entomology without leaving our custody.
             </p>
 
-            <div
-              data-reveal
-              style={{ "--reveal-delay": "0.18s" } as React.CSSProperties}
-              className="mt-7 flex flex-wrap items-center gap-3"
-            >
-              <ActionLink href="/contact" variant="solid" tone="deep">
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <ActionLink href="/contact" variant="solid">
                 Request a proposal
               </ActionLink>
-              <ActionLink href="/research" variant="outline" tone="deep">
+              <ActionLink href="/research" variant="outline">
                 Explore divisions
               </ActionLink>
             </div>
@@ -158,53 +86,58 @@ export function HomeHero() {
         </div>
 
         {/*
-          Recorded figures, as a frosted rail along the foot of the hero.
+          A set height rather than an aspect ratio, because the frame is
+          half the viewport and a ratio ties its height to the window's
+          width — at 1920 a 4:3 half-screen frame is 720px tall, which is a
+          poster, and at 1024 it is 384px, which is a banner. A clamped
+          height holds the hero inside the brief's 620–700px band from 1280
+          up and degrades gracefully either side.
 
-          It sits *inside* the section rather than in a band beneath it, so
-          the blur has the artwork to work on — glass over a flat colour is
-          just a lighter flat colour. `order-3` keeps it last in the stacked
-          layout, under the artwork; from `xl` it is the final flex child
-          and the section's `justify-end` brings it to the floor.
+          The crop is held right. The still life keeps its left third
+          deliberately empty, so that is the third to spend; the bottle,
+          the vial rack and the seed dish stay in frame.
+
+          `priority` only here. This is the LCP element, and it is the only
+          image on the site that gets it.
         */}
-        <section
-          aria-label="NSRL in numbers"
-          className="glass-deep relative order-3 border-t border-white/15 xl:order-none"
-        >
-          <div className="shell">
-            {/*
-              Rules are drawn per cell, not by a lit background behind a
-              `gap-px` grid. That trick needs the grid to carry a colour, and
-              the grid is shell-width while the frosted rail is full-bleed —
-              so the colour showed as a brighter band with a hard vertical
-              seam at each gutter. Explicit borders keep the frosting
-              uniform edge to edge.
+        <div className="relative h-[clamp(14rem,56vw,20rem)] overflow-hidden border-t border-[--rule] bg-canvas-sunken lg:h-[clamp(24rem,44vw,38rem)] lg:border-l lg:border-t-0">
+          <Image
+            src={hero.src}
+            alt={hero.alt}
+            fill
+            priority
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            style={{ objectPosition: hero.position }}
+            className="object-cover"
+          />
+        </div>
+      </section>
 
-              The indices are doing real work: no left rule at the start of
-              a row, and a top rule only on the second row, which is two
-              columns below `lg` and four at and above it.
-            */}
-            <dl className="grid grid-cols-2 lg:grid-cols-4">
-              {scaleStats.map((stat, i) => (
-                <div
-                  key={stat.label}
-                  className={cn(
-                    "border-white/12 px-5 py-4 sm:px-7 sm:py-5",
-                    i % 2 !== 0 && "border-l",
-                    i % 4 !== 0 && "lg:border-l",
-                    i % 4 === 0 && "lg:border-l-0",
-                    i >= 2 && "border-t lg:border-t-0",
-                  )}
-                >
-                  <dt className="label-mono text-ink-100">{stat.label}</dt>
-                  <dd className="mt-1 font-display text-[clamp(1.5rem,1.9vw,1.875rem)] font-[450] leading-none text-white">
-                    <CountUp value={stat.value} suffix={stat.suffix} />
-                  </dd>
-                  <p className="mt-1.5 text-micro leading-relaxed text-ink-100">{stat.caption}</p>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </section>
+      {/* Recorded figures. Compact, and its own band. */}
+      <section aria-label="NSRL in numbers" className="border-b border-[--rule] bg-canvas-sunken">
+        <div className="shell">
+          <dl className="grid grid-cols-2 gap-x-8 gap-y-7 py-8 lg:grid-cols-4 lg:py-9">
+            {/* The caption lives inside the <dd>, not as a sibling <p>.
+                A <dl> may contain only <dt>, <dd> and grouping <div>s, and
+                a <p> among them is a structure error a screen reader can
+                trip on — the caption is part of the description, so that is
+                where it goes. */}
+            {scaleStats.map((stat) => (
+              <div key={stat.label}>
+                <dt className="label-mono text-neutral-550">{stat.label}</dt>
+                <dd className="mt-1.5">
+                  <span className="block font-display text-d4 font-[500] leading-none text-ink-900">
+                    {stat.value.toLocaleString("en-GB")}
+                    {stat.suffix}
+                  </span>
+                  <span className="mt-2 block text-micro leading-relaxed text-neutral-600">
+                    {stat.caption}
+                  </span>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </section>
     </>
   );

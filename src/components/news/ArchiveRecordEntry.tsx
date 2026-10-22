@@ -33,13 +33,13 @@ export function ArchiveRecordEntry({
 
       <div>
         <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-          <span className="label-mono text-neutral-500">{record.category}</span>
+          <span className="label-mono text-neutral-550">{record.category}</span>
           <span aria-hidden className="h-3 w-px bg-ink-900/15" />
-          <time dateTime={record.date} className="label-mono text-neutral-500">
+          <time dateTime={record.date} className="label-mono text-neutral-550">
             {record.dateDisplay}
           </time>
           <span aria-hidden className="h-3 w-px bg-ink-900/15" />
-          <span className="label-mono text-neutral-500">{record.author}</span>
+          <span className="label-mono text-neutral-550">{record.author}</span>
         </div>
 
         <h3 className="mt-6 font-display text-d4 text-ink-800">{record.title}</h3>
@@ -52,7 +52,7 @@ export function ArchiveRecordEntry({
 
       <div className="lg:justify-self-end">
         <p className="inline-flex flex-col items-start gap-2 rounded-[0.875rem] border border-dashed border-ink-900/15 px-5 py-4">
-          <span className="font-sans text-[0.9375rem] font-medium text-neutral-500">
+          <span className="font-sans text-[0.9375rem] font-medium text-neutral-550">
             No note filed
           </span>
           <span className="label-mono text-neutral-600">Listed without a page</span>

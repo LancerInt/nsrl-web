@@ -19,6 +19,7 @@ export function PageHero({
   meta,
   visual,
   aside,
+  actions,
   tone = "light",
   className,
 }: {
@@ -31,6 +32,8 @@ export function PageHero({
   meta?: { label: string; value: string }[];
   /** Absolutely-positioned background artwork supplied by the page. */
   visual?: React.ReactNode;
+  /** One contextual action for this page, shown under the meta facts. */
+  actions?: React.ReactNode;
   /** Optional right-hand column content; takes the title block's place. */
   aside?: React.ReactNode;
   tone?: "light" | "deep";
@@ -110,6 +113,24 @@ export function PageHero({
                   </div>
                 ))}
               </dl>
+            ) : null}
+
+            {/* The page's own action, under its facts.
+
+                Division pages put a 4:5 image in the right column, which is
+                taller than a heading, a sentence and three metrics. The gap
+                that left under the metrics is exactly where the one thing
+                a reader might want to do next belongs — so the slot both
+                answers the brief's "relevant action" and closes the hole
+                that prompted its "avoid unnecessary empty space" note. */}
+            {actions ? (
+              <div
+                data-reveal
+                style={{ "--reveal-delay": "0.55s" } as React.CSSProperties}
+                className="mt-9 flex flex-wrap items-center gap-3"
+              >
+                {actions}
+              </div>
             ) : null}
           </div>
 

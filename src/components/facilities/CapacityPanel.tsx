@@ -55,26 +55,41 @@ export function CapacityPanel() {
 
               <dl>
                 {capacityStats.map((stat, i) => (
+                  /*
+                    A `dl > div` grouping may contain only `dt` and `dd`.
+                    This row previously wrapped its term and value in a
+                    further flex `div` and hung the caption off a sibling
+                    `p`, which put three disallowed children inside the
+                    group and detached the `dt` from its list as far as
+                    assistive technology was concerned.
+
+                    The baseline row survives as a two-column grid on the
+                    group itself, and the caption becomes a second `dd` —
+                    one term may have more than one description, which is
+                    exactly what a value and its note are.
+                  */
                   <div
                     key={stat.label}
                     data-reveal
                     style={{ "--reveal-delay": `${0.06 * i}s` } as React.CSSProperties}
-                    className="group border-b border-[var(--rule)] py-5 transition-colors duration-500 hover:border-ink-900/40"
+                    className="group grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-5 border-b border-[var(--rule)] py-5 transition-colors duration-200 hover:border-neutral-300 motion-reduce:transition-none"
                   >
-                    <div className="flex flex-wrap items-baseline gap-x-5 gap-y-2">
-                      <span className="label-mono shrink-0 text-neutral-550 transition-colors duration-400 group-hover:text-ink-950">
+                    <dt className="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+                      <span className="label-mono shrink-0 text-neutral-550 transition-colors duration-200 group-hover:text-ink-900 motion-reduce:transition-none">
                         CH {pad(i + 1)}
                       </span>
-                      <dt className="font-display text-h2 text-ink-950">{stat.label}</dt>
+                      <span className="font-display text-h2 text-ink-950">{stat.label}</span>
                       <span
                         aria-hidden
                         className="hidden h-px min-w-8 flex-1 self-center border-b border-dashed border-[var(--rule)] sm:block"
                       />
-                      <dd className="font-display text-[clamp(2rem,3.4vw,3.25rem)] font-bold leading-none tracking-[-0.04em] text-ink-950">
-                        <CountUp value={stat.value} suffix={stat.suffix} />
-                      </dd>
-                    </div>
-                    <p className="mt-3 max-w-[46ch] text-small text-neutral-600">{stat.caption}</p>
+                    </dt>
+                    <dd className="font-display text-d2 leading-none text-ink-950">
+                      <CountUp value={stat.value} suffix={stat.suffix} />
+                    </dd>
+                    <dd className="col-span-2 mt-3 max-w-[46ch] text-small text-neutral-600">
+                      {stat.caption}
+                    </dd>
                   </div>
                 ))}
               </dl>

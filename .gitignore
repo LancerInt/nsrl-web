@@ -32,6 +32,11 @@
 # public/images/nsrl/ and is the copy the site actually serves.
 assets/*.zip
 assets/NSRL-All-29-Image-Replacements/NSRL-Image-Replacements/images/
+# Same rule for the redesign kit: its briefs, manifest, CSVs, SVGs, demo and
+# component are the record and are committed. Its three source PNGs are not —
+# public/images/editorial/ holds the same pixels as WebP at the identical
+# native dimensions, and that is the copy the site serves.
+assets/NSRL_Redesign_Kit/assets/*.png
 
 # debug
 npm-debug.log*

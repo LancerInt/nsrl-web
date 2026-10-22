@@ -1,0 +1,39 @@
+ASSET GENERATION DIRECTION
+
+Use supplied three PNGs as style references. Native delivered sizes: hero 1672x941, Toxicology 1122x1402, Ecotoxicology 1122x1402. No upscaling has been performed. Request larger native masters for larger placements. Recommended dimensions below are specifications for future production, not delivered dimensions.
+
+COMMON STYLE
+Premium scientific editorial photography or clearly labelled editorial illustration. Warm ivory matte surface, natural daylight, precise ordinary materials, realistic scale, generous breathing room, navy and muted teal accents. No baked-in text/logo; HTML carries labels. No holographic organs, neon, glowing chrome, floating stages, impossible machines or unknown scientific data. Do not imply generated interiors are NSRL premises.
+
+HOME HERO — 16:9, recommended 2560x1440
+One capped amber sample vial, four capped clear tubes in an ordinary rack, a shallow dish containing a leaf and grain samples on a ceramic tray. Objects grounded to the right; left 48% negative space for navy HTML headline. Natural shadow and fine texture. Supplied as hero-editorial.png.
+
+TOXICOLOGY — 4:5, recommended 1600x2000
+Realistic microscope stage with a single thin stained tissue slide, two additional slides and a capped blank dosing vial. Subtle violet tissue optical motif. No floating organs or invented measurement display. Supplied as toxicology-editorial.png. It is conceptual art, not clinical interpretation.
+
+ECOTOXICOLOGY — 4:5, recommended 1600x2000
+Two separate ordinary observation vessels: freshwater fish in a plain clean water tank and a young plant in a separate soil vessel. No connection between the vessels; no invented combined aquarium-soil apparatus. Natural daylight and restrained composition. Supplied as ecotoxicology-editorial.png. Illustration of themes, not a protocol or a facility photo.
+
+CHEMISTRY — 4:5, recommended 1600x2000
+Close-up of a real ordinary capped-vial rack, pipette and solvent reservoir in a pale laboratory setting. One precise focal object, subtle blue caps. No imaginary internal machinery or simulated result screen.
+
+MICROBIOLOGY — 4:5, recommended 1600x2000
+Close-up editorial still life of one sealed culture dish and a microplate with a pipette held clear of the plate. Ordinary equipment, restrained sterile environment, muted natural blue. No dramatic giant bacteria or invented colonies.
+
+ENTOMOLOGY — 4:5, recommended 1600x2000
+Macro natural specimen theme: one anatomically credible small insect on a leaf inside a simple observation chamber, optional defocused stereo microscope at edge. Modest equipment, ivory background, crisp leaf texture. Do not suggest a particular pest species unless confirmed.
+
+VIVARIUM — 4:5, recommended 1600x2000
+Use a verified real NSRL enclosure photograph with confirmed species and enrichment. If unavailable, use the supplied house/enclosure icon within a clearly labelled capability graphic. Do not fabricate an animal room and label it NSRL.
+
+CUSTOM STUDIES — 4:5, recommended 1600x2000
+Editorial modular study-material arrangement: a blank protocol sheet, two labelled-in-HTML sample containers and a clean microplate on one pale worktop. No glass towers; customisation should be expressed by the interface.
+
+THREE SECTOR IMAGES — 8:5 cards 1600x1000; 4:3 hero 1600x1200
+Agrochemical: seedling roots, soil sample and ordinary glass sample vial.
+Industrial chemicals: capped reagent vial, graduated glassware and a small sample dish.
+Food/feed: grain, feed pellets, oil sample and powder in separate shallow ceramic dishes.
+Use exactly the same lighting, camera height and shadow treatment across the three. Compose for both crop ratios.
+
+FACILITY IMAGES
+Use a real photography brief: photograph actual NSRL building, instrument bench, containment cabinet, microscopy station and archive. Natural white balance, clear walkways, no unrelated staff, correct equipment identity, consistent lens and lighting. Obtain original high-resolution files. A generated cutaway may explain a concept only when visibly labelled as such.

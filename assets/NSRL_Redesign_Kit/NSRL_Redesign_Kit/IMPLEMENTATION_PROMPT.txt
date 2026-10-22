@@ -1,0 +1,49 @@
+NSRL WEBSITE — IMPLEMENTATION PROMPT
+
+Redesign the existing NSRL website at https://nsrl-web.vercel.app/ using the supplied nsrl-redesign-kit. Inspect the repository first. Implement within its existing framework. Treat this as a substantive visual redesign, not another round of decorative effects.
+
+ART DIRECTION
+Use a precise scientific editorial style: warm white #F5F6F2, deep navy #10263B, restrained teal #187A72, borders #D8E2DE, body text #42545C. Let real materials and a limited number of strong images provide visual interest. Avoid neon, shiny fantasy glass machines, holographic organs, oversized atom orbits, meaningless bar charts, decorative cursors, particle fields and large blurry glows.
+
+Use the supplied hero-editorial.png, toxicology-editorial.png and ecotoxicology-editorial.png as conceptual illustrations. Keep the existing official logo. Generated art must never be presented as photographic evidence of the Salem premises. Label facility artwork visibly as conceptual, and reserve real facility claims for verified photographs and documents. Never invent instruments, research outcomes or certificates.
+
+TYPOGRAPHY AND LAYOUT
+Keep an elegant serif only for major headings; use the existing sans serif for the working UI. Set desktop H1 around 52–64px, mobile 34–40px, body 17–18px, labels at least 12px. Use restrained letter spacing. A 1240px content width, 72–88px desktop section gaps and 40–56px mobile gaps are starting points. Adjust by actual composition. Paragraphs should remain around 55–70 characters per line. Avoid forcing portrait images taller than the content beside them.
+
+HOMEPAGE
+Build a light, approximately 620–700px desktop hero with dark navy text on the left and the supplied editorial still life on the right. Keep the headline, a short scope statement, and two clear actions in the first screen. Do not use a fixed 100vh hero. Keep stats as a compact separate strip. The hero image has deliberate left negative space; preserve the focal objects. On mobile, use a text block followed by the image, rather than compressing copy over its subject.
+
+Keep three sectors with consistent 8:5 images and aligned links. Make their testing scope the first information read. Replace the eight-sphere illustration in the seven-division story with shared-quality-network.svg or a React implementation based on it. Show exactly seven division nodes. Connections represent shared quality and custody, not a mandatory chronological pipeline.
+
+Use the seven supplied SVG division icons consistently in the research overview. Show three group headings and linked capability rows; avoid a page made entirely of identical rounded cards. Keep the certificate strip clear and compact. Use one distinctive navy section for shared quality or facility capability, with light sections around it. Compress the footer and reduce duplication of the same CTA.
+
+ABOUT AND RESEARCH OVERVIEW
+Replace the generic atom illustration with the shared quality network, a real team/facility photograph, or a focused editorial panel. Replace the meaningless animated vertical bars on the research overview with an interactive seven-division navigator or the restrained sample-grid motif. Give meaningful hover, focus and selected states. Statistics should be supporting evidence, not an oversized floating dashboard.
+
+DIVISION PAGES
+Use a consistent compact 55/45 desktop hero: left heading, one specific scope sentence, relevant action and up to three verified metrics; right one clear image at 4:5 or 5:4 according to the content. Render no larger than the source image can support. Use the supplied Toxicology and Ecotoxicology images for their respective routes. The Ecotoxicology image depicts separate aquatic and terrestrial research themes; it is conceptual, not a study protocol.
+
+Show an accessible on-page navigation beneath the hero, with enough scroll margin for both sticky bars. Below it organise study groups and methods in accordions or concise grouped lists. Keep methods, guidelines and organism groups distinct. Preserve every existing method and guideline. Give users a contextual 'Discuss a toxicology study' or equivalent action.
+
+ASSET IMPLEMENTATION
+Use ASSET_MANIFEST.csv as the mapping reference. It distinguishes supplied replacement assets, existing slots needing new artwork, and facilities requiring real photography. Do not substitute filenames from the manifest for files that do not exist. Reuse supplied vector assets where appropriate. Use ASSET_GENERATION_PROMPTS.txt for remaining artwork.
+
+The supplied bitmap files retain their actual native dimensions. Do not relabel them as 4K or artificially upscale them. Export WebP/AVIF derivatives from the masters at useful sizes, preserving composition and dimensions. Supply accurate Next.js sizes and srcsets: approximately 33vw for three-column cards, 45vw for split heroes, and actual full-width widths for wide images. Current inspected URLs requested w=3840 even for roughly 378px slots; investigate this selection and avoid unnecessary large requests. A larger URL parameter cannot recover missing source detail. Use explicit dimensions, meaningful alt text and eager/high-priority loading only for the actual LCP hero.
+
+MOTION
+Use the included animation-demo.html and components/SampleJourney.tsx as behaviour references, not an instruction to add every effect. Animate only actions that clarify relationships or state changes. Network selection should highlight one division and its shared record. Cap hover transitions at 160–220ms, menu transitions at 180–240ms, and one-time section entry at 350–450ms. Reveal displacement should stay under 12px and staggering under 60ms. No scroll hijacking. Pause any repeating decorative animation offscreen and when the tab is hidden. Provide a pause control and respect prefers-reduced-motion. Essential content must be visible before animation initialisation.
+
+HEADER AND FORMS
+Make the scrolled header opaque so underlying headings and stats cannot show through it. Test menu open, close, click outside, Escape, focus order, focus return and touch behaviour. Keep the logo legible.
+
+Keep the current truthful 'Compose enquiry email' behaviour unless a real submission service is configured. If adding one, use server-side validation, inline errors, pending/success/failure states and delivery monitoring. Do not display a sent confirmation when only a mail draft has opened. Make telephone optional unless business needs require it.
+
+COPY
+Replace theatrical or administrative copy with direct visitor-oriented headings. For example: About NSRL; Our scientific divisions; Facilities and equipment; Plan your regulatory study. Remove meta-copy discussing why dates are missing or how the website was written. Retain verified technical facts. Keep species, organism groups, methods and accreditations as separate concepts. Route scientific claims requiring evidence to the owner; do not guess or silently remove them.
+
+ACCEPTANCE CHECKS
+Test all current routes and links at 390, 768, 1024 and 1440px; include landscape mobile. Test keyboard navigation, 200% text zoom, reduced motion, no-JavaScript content visibility, touch menus, form errors, search queries 'OECD 203', 'microbiology', and a no-match term. Verify images after scrolling, light/dark text contrast, overflow, no broken fragments and the sticky header clearance.
+
+Run a real production build and Lighthouse/axe or equivalent locally if available. Target good Core Web Vitals (LCP <=2.5s, CLS <=0.1, INP <=200ms in field data); report actual measured lab results separately from targets. These are goals, not results of this audit. Do not claim mobile or performance success without measurements.
+
+Implement and visually inspect the result. Return screenshots at desktop and mobile sizes plus a concise change log, checks performed, outstanding issues and missing real photographic assets. Keep existing routing, metadata, certificate destinations and business information intact.

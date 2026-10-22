@@ -46,7 +46,7 @@ export default function ProductsPage() {
       <PageHero
         tone="light"
         eyebrow="Study packages"
-        title="Studies we already run, grouped the way you file them."
+        title="Study packages"
         lead="A package is an assembly of studies this laboratory already runs, arranged around a single submission so that one quality system, one archive and one chain of custody carry the whole dossier."
         crumbs={[{ label: "Home", href: "/" }, { label: "Study packages" }]}
         meta={[

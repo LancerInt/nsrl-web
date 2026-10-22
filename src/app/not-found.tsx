@@ -5,7 +5,7 @@ import { Section, SectionBody } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RevealText } from "@/components/ui/RevealText";
 import { ActionLink } from "@/components/ui/ActionLink";
-import { OrbitalMark } from "@/components/visuals/OrbitalMark";
+import { Motif } from "@/components/visuals/Motif";
 import { disciplines } from "@/content/disciplines";
 import { industries } from "@/content/industries";
 import { contact } from "@/content/site";
@@ -73,10 +73,12 @@ export default function NotFound() {
         >
           404
         </span>
-        <OrbitalMark
-          animate
-          className="pointer-events-none absolute -right-[10vw] bottom-[-14vw] -z-10 h-[min(52vw,40rem)] w-[min(52vw,40rem)] text-ink-800/25"
-        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-[10vw] bottom-[-14vw] -z-10 h-[min(52vw,40rem)] w-[min(52vw,40rem)] opacity-60"
+        >
+          <Motif name="analytical-trace" />
+        </div>
 
         <div className="egrid gap-y-9">
           <div className="col-span-12 lg:col-span-6">

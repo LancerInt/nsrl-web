@@ -1,58 +1,67 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
 /* ==========================================================================
    NSRL DESIGN SYSTEM
-   Colour derived from the NSRL identity: the deep navy wordmark, the twin
-   orbital rings (navy + green), and the blue meniscus inside the flask.
+   Scientific editorial: warm white paper, deep navy ink, one restrained
+   teal. The palette is the redesign kit's â€” #F5F6F2 / #10263B / #187A72,
+   with #D8E2DE rules and #42545C body text â€” and every surface, rule and
+   accent on the site resolves to a token here, so the whole site changes
+   register from this block rather than from a hundred components.
    ========================================================================== */
 
 @theme {
-  /* --- Primary · Ink (navy). The institutional anchor. -------------------
-     Anchored on the brand deep navy #0B1730 at step 900. Steps 400–600 are
-     tuned so the scale passes *through* the primary accent rather than
-     running beside it: ink-400 is the accent, which keeps links, active
-     states and figure traces inside one family. */
-  --color-ink-50: #eef3f9;
-  --color-ink-100: #d3e2f1;
-  --color-ink-200: #a6c2de;
-  --color-ink-300: #6f9bc9;
-  --color-ink-400: #2868b2;
-  --color-ink-500: #1f5494;
-  --color-ink-600: #194477;
-  --color-ink-700: #14365e;
-  --color-ink-800: #0f2442;
-  --color-ink-900: #0b1730;
-  --color-ink-950: #060e1f;
+  /* --- Primary Â· Ink (navy). The institutional anchor. -------------------
+     Anchored on the kit navy #10263B at step 900 and run up to a cool
+     paper-grey. Unlike the scale this replaces, nothing in the middle of
+     this ramp is the accent: the accent is teal and lives in its own
+     family, so navy is only ever structure and type. */
+  --color-ink-50: #eef2f5;
+  --color-ink-100: #d8e1e8;
+  --color-ink-200: #b2c3d0;
+  --color-ink-300: #849db1;
+  --color-ink-400: #577891;
+  --color-ink-500: #3c5c76;
+  --color-ink-600: #2c4860;
+  --color-ink-700: #1f374c;
+  --color-ink-800: #172c40;
+  --color-ink-900: #10263b;
+  --color-ink-950: #0a1826;
 
-  /* --- Secondary · Meniscus (the liquid in the flask). -------------------
-     The working accent. `meniscus-500` is the brand primary blue #2868B2 —
-     5.4:1 on canvas, so it carries links and small marks on paper; the
-     lighter 300/400 steps carry the same accent on navy. */
-  --color-meniscus-100: #e7f0f9;
-  --color-meniscus-200: #c6daf0;
-  --color-meniscus-300: #93b9e2;
-  --color-meniscus-400: #5b93ce;
-  --color-meniscus-500: #2868b2;
-  --color-meniscus-600: #1f5494;
-  --color-meniscus-700: #17406f;
+  /* --- Secondary Â· Meniscus (the working accent). ------------------------
+     Now the kit's restrained teal rather than the old flask blue.
+     `meniscus-500` is #187A72 â€” 4.8:1 on the warm white, so it carries
+     links and marks at body size; `600` is 6.7:1 for small type and the
+     lighter 200/300 steps carry the same accent on navy. The name is kept
+     because every call site already speaks it. */
+  --color-meniscus-100: #e2f0ed;
+  --color-meniscus-200: #bcddd8;
+  --color-meniscus-300: #8ac4bc;
+  --color-meniscus-400: #43a094;
+  --color-meniscus-500: #187a72;
+  --color-meniscus-600: #136159;
+  --color-meniscus-700: #0e4941;
 
-  /* --- Accent · Signal (the green orbital). ------------------------------ */
-  --color-signal-50: #effaef;
-  --color-signal-100: #d8f2d9;
-  --color-signal-200: #b0e4b2;
-  --color-signal-300: #83d286;
-  --color-signal-400: #5bbf5f;
-  --color-signal-500: #3fa845;
-  --color-signal-600: #2f9436;
-  --color-signal-700: #25772b;
-  --color-signal-800: #1b5a20;
-  --color-signal-900: #123d14;
+  /* --- Accent Â· Signal (held credentials, verified state). ---------------
+     Folded into the same teal. The brief asks for one restrained accent,
+     and a site that marks a held accreditation in green while linking in
+     teal is using two accents to say one thing. Red stays the only other
+     colour, and it only ever means error. */
+  --color-signal-50: #f0f7f5;
+  --color-signal-100: #e2f0ed;
+  --color-signal-200: #bcddd8;
+  --color-signal-300: #8ac4bc;
+  --color-signal-400: #43a094;
+  --color-signal-500: #187a72;
+  --color-signal-600: #136159;
+  --color-signal-700: #0e4941;
+  --color-signal-800: #0b3a33;
+  --color-signal-900: #072b26;
 
-  /* --- Alert · the one red on the site. ---------------------------------
+  /* --- Alert Â· the one red on the site. ---------------------------------
      Forms previously reported their errors in the signal green, which made
      "we have your enquiry" and "this field is wrong" the same colour. Error
      is the only thing that is ever red here, and it is always paired with
-     an icon and a sentence — colour never carries the meaning alone.
+     an icon and a sentence â€” colour never carries the meaning alone.
      `alert-700` is 6.3:1 on canvas. */
   --color-alert-50: #fdf2f1;
   --color-alert-200: #f3c7c3;
@@ -60,43 +69,47 @@
   --color-alert-700: #b3261e;
   --color-alert-900: #7a1812;
 
-  /* --- Neutral · cool grey, tinted toward the navy. ---------------------- */
-  --color-neutral-50: #f5f7f9;
-  --color-neutral-100: #eaeef3;
-  --color-neutral-200: #d8dee7;
-  --color-neutral-300: #bbc3cf;
-  --color-neutral-400: #9098a6;
-  --color-neutral-500: #68707f;
+  /* --- Neutral Â· warm grey, tinted toward the paper. ---------------------
+     Retuned off the kit's two fixed greys: `200` is its rule colour
+     #D8E2DE and `600` its body text #42545C. The ramp is built to pass
+     through both rather than near them. */
+  --color-neutral-50: #f2f4f1;
+  --color-neutral-100: #e8ece8;
+  --color-neutral-200: #d8e2de;
+  --color-neutral-300: #b6c4c2;
+  --color-neutral-400: #8d9c9e;
+  --color-neutral-500: #6b7a80;
   /* The quiet register for label-mono on light surfaces. Clears WCAG 2.2 AA
      (4.5:1) at the small label size on EVERY light surface with room to
      spare: 5.5:1 on canvas, 5.8:1 on canvas-raised, 5.2:1 on canvas-sunken.
-     It was a step lighter and sat at 4.7:1 on the sunken band — passing, but
+     It was a step lighter and sat at 4.7:1 on the sunken band â€” passing, but
      with nothing in hand, and subdued small text is exactly where a
      borderline ratio is felt. Note it sits between 500 and 600, not between
      400 and 500: neutral-500 falls under 4.5:1 on canvas-sunken, so no step
      lighter than 500 can pass, and neutral-400 must never carry text on a
      light surface at all. */
-  --color-neutral-550: #5f6675;
-  --color-neutral-600: #4b515d;
-  --color-neutral-700: #333842;
-  --color-neutral-800: #22262e;
-  --color-neutral-900: #14171d;
-  --color-neutral-950: #0a0c10;
+  --color-neutral-550: #5a696f;
+  --color-neutral-600: #42545c;
+  --color-neutral-700: #33434a;
+  --color-neutral-800: #25323a;
+  --color-neutral-900: #18242b;
+  --color-neutral-950: #0e181e;
 
   /* --- Surface ----------------------------------------------------------
-     Paper is a near-neutral warm white; the sunken band is a cool blue-grey
-     drawn from the navy, so alternating sections read as paper / plate
-     rather than paper / darker paper. */
-  --color-canvas: #fafaf8;
+     Paper is the kit's warm white. The sunken band is now warm too â€” a
+     green-grey a step down from the paper rather than the cool blue plate
+     it used to be, which read as a different material next to the warm
+     editorial photography rather than the same sheet in shadow. */
+  --color-canvas: #f5f6f2;
   --color-canvas-raised: #ffffff;
-  --color-canvas-sunken: #eef3f7;
-  --color-deep: #0b1730;
-  --color-deep-raised: #122440;
-  --color-deep-sunken: #070f21;
+  --color-canvas-sunken: #edf0ea;
+  --color-deep: #10263b;
+  --color-deep-raised: #17334c;
+  --color-deep-sunken: #0b1b2b;
 
   /* --- Typography ------------------------------------------------------- */
   /* The document voice: Newsreader, an optical-size serif built for print-like
-     headlines, carries every heading — the register of a study report, not a
+     headlines, carries every heading â€” the register of a study report, not a
      startup landing page. Inter does the working text; IBM Plex Mono remains
      the instrument-label voice for data, indices and field names. */
   --font-display: var(--font-newsreader), "Newsreader", ui-serif, Georgia,
@@ -107,27 +120,31 @@
   --font-editorial: var(--font-newsreader), "Newsreader", ui-serif, Georgia,
     serif;
 
-  /* Fluid display scale. Deliberately restrained: a report is set, not shouted.
-     Serif display wants near-normal tracking and taller lines than the tight
-     grotesque scale it replaces. */
-  --text-d1: clamp(2.5rem, 4.2vw, 4.5rem);
-  --text-d1--line-height: 1.06;
-  --text-d1--letter-spacing: -0.018em;
+  /* Fluid display scale, set to the brief: H1 around 52â€“64px on a desktop
+     and 34â€“40px on a phone. The old scale topped out at 72px and started at
+     40px, which is a magazine cover rather than a report.
+
+     Tracking is close to normal now. Serif display at 64px needs only a
+     hair of negative tracking; the -0.018em it carried was tuned for a
+     grotesque and made Newsreader's joins look pinched. */
+  --text-d1: clamp(2.125rem, 3.6vw, 4rem);
+  --text-d1--line-height: 1.08;
+  --text-d1--letter-spacing: -0.01em;
   --text-d1--font-weight: 500;
 
-  --text-d2: clamp(2.125rem, 3.4vw, 3.5rem);
-  --text-d2--line-height: 1.1;
-  --text-d2--letter-spacing: -0.016em;
+  --text-d2: clamp(1.875rem, 2.9vw, 2.75rem);
+  --text-d2--line-height: 1.14;
+  --text-d2--letter-spacing: -0.009em;
   --text-d2--font-weight: 500;
 
-  --text-d3: clamp(1.875rem, 2.8vw, 2.875rem);
-  --text-d3--line-height: 1.14;
-  --text-d3--letter-spacing: -0.014em;
+  --text-d3: clamp(1.625rem, 2.3vw, 2.125rem);
+  --text-d3--line-height: 1.2;
+  --text-d3--letter-spacing: -0.008em;
   --text-d3--font-weight: 500;
 
-  --text-d4: clamp(1.625rem, 2.2vw, 2.25rem);
-  --text-d4--line-height: 1.18;
-  --text-d4--letter-spacing: -0.012em;
+  --text-d4: clamp(1.375rem, 1.8vw, 1.75rem);
+  --text-d4--line-height: 1.26;
+  --text-d4--letter-spacing: -0.006em;
   --text-d4--font-weight: 500;
 
   --text-h1: clamp(1.5rem, 2vw, 2.125rem);
@@ -145,7 +162,7 @@
   --text-h3--letter-spacing: -0.006em;
   --text-h3--font-weight: 550;
 
-  /* The editorial register — a larger serif setting for the one summary
+  /* The editorial register â€” a larger serif setting for the one summary
      statement a section is allowed. Roman, not italic: the italic accent
      phrase is exactly the tic this system exists to avoid. */
   --text-editorial: clamp(1.375rem, 2vw, 1.875rem);
@@ -153,24 +170,26 @@
   --text-editorial--letter-spacing: -0.012em;
   --text-editorial--font-weight: 450;
 
-  --text-lead: clamp(1.0625rem, 1.2vw, 1.25rem);
-  --text-lead--line-height: 1.6;
-  --text-lead--letter-spacing: -0.014em;
+  --text-lead: clamp(1.0625rem, 1.1vw, 1.1875rem);
+  --text-lead--line-height: 1.62;
+  --text-lead--letter-spacing: -0.006em;
 
+  /* 17px, the bottom of the brief's 17â€“18px band, with a line height that
+     holds a 55â€“70 character measure open. */
   --text-body: 1.0625rem;
-  --text-body--line-height: 1.72;
+  --text-body--line-height: 1.7;
 
   --text-small: 0.9375rem;
   --text-small--line-height: 1.6;
 
   /* The smallest type on the site, and it still has to be read: captions,
      stat descriptions and the baseline row. 13px with a generous line
-     height, not 12px — at 12px these were legible in the abstract and
+     height, not 12px â€” at 12px these were legible in the abstract and
      skipped in practice. */
   --text-micro: 0.8125rem;
   --text-micro--line-height: 1.55;
 
-  /* Calibration labels — the monospace "instrument" voice.
+  /* Calibration labels â€” the monospace "instrument" voice.
      12px, not 11px, and tracked at 0.06em rather than 0.2em: the wide
      tracking read as decoration and cost the labels their legibility, which
      is the opposite of what a field label is for. Mono already carries
@@ -189,7 +208,7 @@
      orbits, marquees and scan lines were all removed: on a page whose job is
      to carry scientific information, continuous motion in the periphery is
      the thing a reader has to work around. Motion here is transitional
-     only — see the reveal and page-enter blocks below. */
+     only â€” see the reveal and page-enter blocks below. */
 
   /* --- Structure --------------------------------------------------------
      Three radii, one job each: controls, cards, framed photographs. Nothing
@@ -204,34 +223,40 @@
   --control-h: 2.875rem;
   --control-h-sm: 2.5rem;
 
-  /* --- Elevation -------------------------------------------------------- */
-  /* Soft, navy-tinted, multi-layer shadows. Depth is what separates a
-     premium surface from a wireframe — used instead of hairline borders. */
-  --shadow-sm: 0 1px 2px -1px color-mix(in oklab, var(--color-ink-950) 8%, transparent),
-    0 1px 3px color-mix(in oklab, var(--color-ink-950) 5%, transparent);
-  --shadow-md: 0 6px 16px -6px color-mix(in oklab, var(--color-ink-950) 12%, transparent),
-    0 2px 6px -2px color-mix(in oklab, var(--color-ink-950) 7%, transparent);
-  --shadow-lg: 0 24px 48px -16px color-mix(in oklab, var(--color-ink-950) 22%, transparent),
-    0 8px 20px -10px color-mix(in oklab, var(--color-ink-950) 12%, transparent);
+  /* --- Elevation --------------------------------------------------------
+     Much shallower than before. The old scale used depth *instead of*
+     hairlines â€” a 48px blur at 22% under every card â€” and on warm white
+     that reads as a stack of floating tiles rather than a printed page.
+     Editorial structure comes from rules and spacing here; shadow is left
+     to do one small job, which is to lift a genuinely raised surface a
+     millimetre off the paper. `lg` is now roughly what `md` used to be. */
+  --shadow-sm: 0 1px 2px -1px color-mix(in oklab, var(--color-ink-950) 6%, transparent);
+  --shadow-md: 0 2px 6px -2px color-mix(in oklab, var(--color-ink-950) 8%, transparent),
+    0 1px 2px -1px color-mix(in oklab, var(--color-ink-950) 5%, transparent);
+  --shadow-lg: 0 8px 20px -10px color-mix(in oklab, var(--color-ink-950) 12%, transparent),
+    0 2px 6px -3px color-mix(in oklab, var(--color-ink-950) 7%, transparent);
 }
 
 /* --------------------------------------------------------------------------
    Runtime variables (not token-generating)
    -------------------------------------------------------------------------- */
 :root {
-  /* One content measure for the whole site: 1280px outer, ~1184px of live
-     column at desktop. Every band shares it, so nothing drifts. */
+  /* One content measure for the whole site: the brief's 1240px outer,
+     ~1144px of live column at desktop. Every band shares it. */
   --shell-pad: clamp(1.25rem, 4vw, 3rem);
-  --shell-max: 80rem;
-  /* Vertical rhythm: 56px on a phone rising to 104px on a wide desktop. The
-     previous scale topped out at 56px, which is why dense sections read as
-     one continuous wall rather than a sequence of chapters. */
-  --section-y: clamp(3.5rem, 6.2vw, 6.5rem);
+  --shell-max: 77.5rem;
+  /* Vertical rhythm, to the brief: 40px on a phone rising to 88px on a wide
+     desktop. It topped out at 104px, which on a page of short editorial
+     sections left more air between chapters than inside them. */
+  --section-y: clamp(2.5rem, 5vw, 5.5rem);
   /* A tighter step, for bands that sit against the one above them. */
-  --section-y-tight: clamp(2.5rem, 4.2vw, 4rem);
-  /* Hairlines are a whisper now, and used sparingly. */
-  --rule: color-mix(in oklab, var(--color-ink-900) 9%, transparent);
-  --rule-strong: color-mix(in oklab, var(--color-ink-900) 16%, transparent);
+  --section-y-tight: clamp(2rem, 3.4vw, 3.5rem);
+  /* Hairlines carry the structure now that shadows do not. These are the
+     kit's rule colour, stated flat rather than mixed: every light surface
+     on the site is within a few points of the paper, so one value reads
+     correctly on all of them. */
+  --rule: #d8e2de;
+  --rule-strong: #bdcbc5;
   --rule-invert: color-mix(in oklab, white 12%, transparent);
   --rule-invert-strong: color-mix(in oklab, white 22%, transparent);
   --nav-h: 5rem;
@@ -325,7 +350,7 @@
    Focus.
 
    Deliberately unlayered. Everything else in this file sits in `base`, which
-   loses to Tailwind's `utilities` layer — and `transition-colors` includes
+   loses to Tailwind's `utilities` layer â€” and `transition-colors` includes
    `outline-color`, so a nav link with `duration-200` would animate its focus
    ring up from its own text colour and the indicator would be the wrong
    colour for the first fifth of a second. Unlayered rules outrank every
@@ -373,7 +398,7 @@
   column-gap: clamp(1rem, 1.8vw, 2rem);
 }
 
-/* Monospace calibration label — the recurring "instrument" voice. */
+/* Monospace calibration label â€” the recurring "instrument" voice. */
 @utility label-mono {
   font-family: var(--font-mono);
   font-size: var(--text-label);
@@ -389,72 +414,6 @@
   overflow: hidden;
   padding-block: 0.08em;
   margin-block: -0.08em;
-}
-
-/* Frosted glass.
-
-   The earlier objection to these still stands — a translucent panel takes
-   its contrast from whatever happens to be behind it — so both variants are
-   deliberately *heavy*: 97% and 68% with a wide blur and a saturation lift,
-   not the 7% wash that made the old stats rail unreadable over a bright
-   photograph. At those values the type behind never shows through as more
-   than a soft field of colour, and the measured contrast holds.
-
-   `backdrop-filter` is unsupported in a few older engines, so the
-   background colour alone has to carry legibility. It does: both fills are
-   opaque enough to set the contrast on their own, and nothing depends on
-   the blur landing.
-
-   `glass-deep` tints *down*, not up, and that is the whole trick. A white
-   wash was the obvious choice for a dark surface and it was wrong: it only
-   lightens what is already navy, so it set no floor at all where something
-   bright passed behind. Measured over the steel plinth in the hero artwork,
-   a 14% white wash left the captions at 1.70:1. Tinting with the surface's
-   own navy instead means the darkest thing in the stack is the fill, so the
-   worst case is bounded by the fill rather than by the artwork — the same
-   caption measures 6.4:1 over that plinth and the rail stays legible
-   wherever it is dragged. Lowering the percentage lets more of the artwork
-   through and walks back toward that failure: AA for the 12px captions runs
-   out at about 50%. */
-/* The light surface: the header bar, and nothing else.
-
-   The value took three goes and the failures are worth recording, because
-   each looked fine by the obvious test.
-
-   78% ghosted badly. The bar is 4.5rem tall, so a 20px blur has very little
-   vertical context to draw on, and what it does to a 52px white serif
-   passing underneath is soften it, not remove it. Softened white-on-navy at
-   22% transparency is still white-on-navy: the hero headline read straight
-   through the bar and crossed the navigation. It passed a contrast audit
-   the whole time — the nav ink measured 11:1 against its backdrop — which
-   is the trap. Contrast asks whether the ink separates from the backdrop,
-   not whether the backdrop is quiet enough to read ink on.
-
-   93% with a wider blur was better and still not enough. Seven per cent of
-   pure white on navy is a 7-point step, and over letterforms that large a
-   7-point step is legible as letters.
-
-   97% is where structure behind stops resolving *at this height*. The worst
-   swing under a nav link is 6.7% and most links sit on a flat field; what is
-   left reads as a haze at the top edge. Colour and light still move as the
-   page scrolls, which is the part of the effect worth having.
-
-   The test that catches this is not the contrast ratio but the luminance
-   *swing* of the backdrop across a single nav link: a clean frosted field is
-   near-flat, and text behind shows up as a wide swing however well the ink
-   scores. Note the height dependence — 3% over a 4.5rem strip is a haze, and
-   the same 3% over the mega panel resolved into readable words, which is why
-   the panel is opaque and does not use this. */
-@utility glass-light {
-  background-color: color-mix(in oklab, var(--color-canvas) 97%, transparent);
-  backdrop-filter: blur(28px) saturate(1.5);
-  -webkit-backdrop-filter: blur(28px) saturate(1.5);
-}
-
-@utility glass-deep {
-  background-color: color-mix(in oklab, var(--color-deep-raised) 68%, transparent);
-  backdrop-filter: blur(22px) saturate(1.3);
-  -webkit-backdrop-filter: blur(22px) saturate(1.3);
 }
 
 /* Fine engineering graticule. */
@@ -481,7 +440,7 @@
   max-width: 52ch;
 }
 
-/* An elevated surface — the premium card. Depth from a soft shadow and a
+/* An elevated surface â€” the premium card. Depth from a soft shadow and a
    hairline of light on top, not a hard border. */
 @utility card-elevated {
   border-radius: var(--radius-card);
@@ -491,7 +450,7 @@
 }
 
 /* The one hover state a card is allowed: it gains depth and its border takes
-   the accent. No lift, no scale — a directory of cards that all
+   the accent. No lift, no scale â€” a directory of cards that all
    jump a few pixels is noise, and the brief rules out decorative motion.
    Declared once here so every card in the system behaves identically. */
 @utility card-interactive {
@@ -604,7 +563,7 @@
 
    A rail pinned at `top` can only ever show the strip of viewport left beneath
    the header, so on a short laptop window a rail taller than that strip parks
-   its lower third — often its call to action — permanently off-screen for the
+   its lower third â€” often its call to action â€” permanently off-screen for the
    whole section. Capping the rail to exactly that strip and letting it scroll
    inside itself keeps every rail reachable at any viewport height. Rails that
    already fit are untouched: `auto` shows no scrollbar and the cap never bites.
@@ -637,7 +596,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   Reveal primitives — driven by IntersectionObserver via useReveal().
+   Reveal primitives â€” driven by IntersectionObserver via useReveal().
 
    Content is visible by default and the animation is pure enhancement. The
    hidden state is gated on `[data-armed]`, an attribute the hook sets *only*
@@ -646,7 +605,7 @@
    hydration, a restored mid-page scroll position and an observer that never
    fires all end in the same place: the words are on the screen.
 
-   `transition: none` while armed makes arming instantaneous — the element
+   `transition: none` while armed makes arming instantaneous â€” the element
    must not be seen fading out on its way to being hidden. The transition is
    declared on the revealed state instead, which is the one that animates.
    -------------------------------------------------------------------------- */
@@ -672,7 +631,7 @@
 
        The stagger rides the *transform* only. A delay on opacity is a
        window during which the element is fully transparent while already
-       being treated as revealed — which is precisely the blank section
+       being treated as revealed â€” which is precisely the blank section
        this whole mechanism was reported for. Opacity therefore starts
        immediately, every time, and the stagger survives as a difference in
        how far each element still has to travel.
@@ -685,13 +644,13 @@
        up. */
     transition:
       opacity 0.35s var(--ease-out-quart),
-      transform 0.4s var(--ease-out-quart) min(var(--reveal-delay, 0s), 0.08s);
+      transform 0.4s var(--ease-out-quart) min(var(--reveal-delay, 0s), 0.06s);
     will-change: auto;
   }
 }
 
 /* --------------------------------------------------------------------------
-   Page transition — same contract as [data-reveal]: the server ships the page
+   Page transition â€” same contract as [data-reveal]: the server ships the page
    fully visible and only a hydrated document animates it. Nothing is ever
    inlined as opacity:0, so a failed or blocked bundle still paints the page.
    The wrapper is keyed on the pathname, so the element is recreated on every
@@ -724,7 +683,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   Reduced motion — honoured globally and completely.
+   Reduced motion â€” honoured globally and completely.
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   html {

@@ -1,7 +1,6 @@
 import { differentiators, positioning } from "@/content/organisation";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RevealText } from "@/components/ui/RevealText";
-import { OrbitalMark } from "@/components/visuals/OrbitalMark";
 
 /**
  * The long-form opening: who the laboratory is, argued rather than listed.
@@ -20,10 +19,6 @@ export function AboutOpening() {
           {/* Left rail — labels only, the margin of a printed page. */}
           <div className="col-span-12 lg:col-span-3">
             <Eyebrow index="01">{positioning.eyebrow}</Eyebrow>
-            <OrbitalMark
-              className="mt-6 hidden h-20 w-20 text-neutral-550 lg:block"
-              animate
-            />
           </div>
 
           {/* Prose, offset right of centre. */}

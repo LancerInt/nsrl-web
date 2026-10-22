@@ -1,34 +1,19 @@
-import { OrbitalField } from "@/components/visuals/OrbitalField";
+import { Motif } from "@/components/visuals/Motif";
 
 /**
  * Hero backdrop for the About page.
  *
- * The homepage hangs the orbital field to the right of the type; here it is
- * pushed low and left, cropped by the section edge, so the same motif produces a
- * different picture rather than a repeat of the opening screen.
+ * Was the orbital field — an atom diagram behind a page about a laboratory
+ * that runs toxicology and residue chemistry. The brief's instruction for
+ * this slot is to replace the generic atom illustration with the shared
+ * quality network, a real photograph or a focused editorial panel; the
+ * shared quality network is used at full size on the homepage, so repeating
+ * it here as wallpaper would weaken it in both places.
+ *
+ * The tissue-contour motif is the quieter answer: drawn from the stained
+ * sections the toxicology division actually reads, and content to sit
+ * behind type.
  */
 export function AboutHeroVisual() {
-  return (
-    <>
-      <div className="absolute inset-0 opacity-[0.55]">
-        <div className="absolute -bottom-[38%] left-1/2 h-[min(120vh,120vw)] w-[min(120vh,120vw)] -translate-x-1/2 lg:left-[16%] lg:-bottom-[46%]">
-          <OrbitalField intensity={0.75} />
-        </div>
-      </div>
-
-      <div
-        className="graticule absolute inset-0 opacity-40"
-        style={
-          {
-            "--graticule-color": "color-mix(in oklab, var(--color-ink-900) 2.5%, transparent)",
-            "--graticule-size": "6rem",
-          } as React.CSSProperties
-        }
-      />
-
-      {/* Keeps the display type legible where it crosses the field. */}
-      <div className="absolute inset-0 bg-[linear-gradient(255deg,var(--color-canvas)_16%,transparent_82%)]" />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(to_top,var(--color-canvas),transparent)]" />
-    </>
-  );
+  return <Motif name="motif-tissue-contours" fade="both" opacity={0.8} />;
 }

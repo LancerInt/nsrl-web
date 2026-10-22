@@ -27,7 +27,7 @@ export function ArticleReader({
           {/* ---- Margin rail ------------------------------------------- */}
           <div className="col-span-12 lg:col-span-2">
             <div className="lg:rail-sticky">
-              <p className="label-mono tabular-nums text-neutral-500">{pad(position)}</p>
+              <p className="label-mono tabular-nums text-neutral-550">{pad(position)}</p>
               <div aria-hidden className="mt-4 h-8 w-px bg-ink-900" />
               <dl className="mt-6 flex flex-wrap gap-x-10 gap-y-5 lg:block">
                 <div>

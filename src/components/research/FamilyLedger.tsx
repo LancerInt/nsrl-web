@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
@@ -127,14 +128,25 @@ function LedgerRow({ discipline, delay }: { discipline: Discipline; delay: numbe
       href={`/research/${discipline.slug}`}
       data-reveal
       style={{ "--reveal-delay": `${delay}s` } as React.CSSProperties}
-      className="group grid grid-cols-[2.5rem_minmax(0,1fr)] items-start gap-x-5 border-t border-ink-900/12 py-[clamp(1.75rem,3.2vw,2.75rem)] transition-colors duration-500 [transition-timing-function:var(--ease-out-expo)] hover:border-ink-900/40 sm:grid-cols-[3.5rem_minmax(0,1fr)_auto] sm:gap-x-8"
+      className="group grid grid-cols-[2.5rem_minmax(0,1fr)] items-start gap-x-5 border-t border-[--rule] py-[clamp(1.5rem,2.8vw,2.25rem)] transition-colors duration-200 ease-[var(--ease-out-quart)] hover:border-neutral-300 motion-reduce:transition-none sm:grid-cols-[3.5rem_minmax(0,1fr)_auto] sm:gap-x-8"
     >
-      <span className="label-mono pt-2 tabular-nums text-neutral-550 transition-colors duration-400 group-hover:text-ink-700">
-        {discipline.index}
+      {/* The supplied division icon above its index. The icons are the kit's
+          and are keyed by slug; `DivisionNetwork` asserts at module load
+          that one exists for every division, so a missing file is a build
+          failure rather than a silent gap here. */}
+      <span className="flex flex-col items-start gap-2 pt-1">
+        <Image
+          src={`/icons/divisions/icon-${discipline.slug}.svg`}
+          alt=""
+          width={32}
+          height={32}
+          unoptimized
+        />
+        <span className="label-mono tabular-nums text-neutral-550">{discipline.index}</span>
       </span>
 
       <div className="min-w-0">
-        <h3 className="font-display text-[clamp(1.5rem,2.7vw,2.375rem)] font-bold leading-[1.04] tracking-[-0.03em] text-ink-950 transition-colors duration-500 group-hover:text-ink-700">
+        <h3 className="font-display text-d3 text-ink-900 transition-colors duration-200 group-hover:text-meniscus-600 motion-reduce:transition-none">
           {discipline.name}
         </h3>
 

@@ -1,3 +1,4 @@
+import { ConceptualLabel } from "@/components/visuals/ConceptualLabel";
 import { facilityGallery, images } from "@/content/imagery";
 import { environments } from "@/content/facilities";
 import { numberWord } from "@/lib/utils";
@@ -60,6 +61,7 @@ export function FacilityGallery() {
                   <figcaption className="mt-3.5">
                     <span className="block font-display text-h3 text-ink-950">{frame.title}</span>
                     <span className="mt-1 block text-small text-neutral-600">{frame.caption}</span>
+                    <ConceptualLabel className="mt-1.5" />
                   </figcaption>
                 </figure>
               </li>

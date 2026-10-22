@@ -57,13 +57,17 @@ export function QualitySystem() {
                   key={pillar.title}
                   className="group grid grid-cols-12 items-baseline gap-x-[clamp(1rem,1.8vw,2rem)] gap-y-2 border-b border-ink-900/10 px-[clamp(1.25rem,3vw,2.5rem)] py-5 transition-colors duration-500 last:border-b-0 hover:bg-canvas-sunken/70"
                 >
-                  <span className="label-mono col-span-2 text-neutral-550 transition-colors duration-500 group-hover:text-ink-700 lg:col-span-1">
-                    A.{i + 1}
-                  </span>
-                  <dt className="col-span-10 font-display text-h2 text-ink-950 lg:col-span-4">
-                    {pillar.title}
+                  {/* The reference sits inside the <dt>, not beside it. As
+                      a bare <span> it was a direct child of the `dl > div`
+                      group, which is not allowed there and detached the
+                      term from the list for assistive technology. */}
+                  <dt className="col-span-12 flex items-baseline gap-[clamp(1rem,1.8vw,2rem)] lg:col-span-5">
+                    <span className="label-mono w-10 shrink-0 text-neutral-550 transition-colors duration-200 group-hover:text-ink-700 motion-reduce:transition-none">
+                      A.{i + 1}
+                    </span>
+                    <span className="font-display text-h2 text-ink-950">{pillar.title}</span>
                   </dt>
-                  <dd className="col-span-12 col-start-1 text-small text-neutral-600 lg:col-span-7 lg:col-start-6">
+                  <dd className="col-span-12 col-start-1 text-small text-neutral-600 lg:col-span-7 lg:col-start-6 lg:mt-0">
                     {pillar.body}
                   </dd>
                 </div>
@@ -90,15 +94,17 @@ export function QualitySystem() {
                   key={system.title}
                   className="group grid grid-cols-12 items-baseline gap-x-[clamp(1rem,1.8vw,2rem)] gap-y-2 border-b border-ink-900/10 px-[clamp(1.25rem,3vw,2.5rem)] py-5 transition-colors duration-500 last:border-b-0 hover:bg-canvas-raised"
                 >
-                  <span className="label-mono col-span-2 text-neutral-550 transition-colors duration-500 group-hover:text-ink-700 lg:col-span-1">
-                    B.{i + 1}
-                  </span>
-                  <dt className="col-span-10 lg:col-span-4">
-                    <span className="block font-display text-h2 text-ink-950">
-                      {system.title}
+                  <dt className="col-span-12 flex items-baseline gap-[clamp(1rem,1.8vw,2rem)] lg:col-span-5">
+                    <span className="label-mono w-10 shrink-0 text-neutral-550 transition-colors duration-200 group-hover:text-ink-700 motion-reduce:transition-none">
+                      B.{i + 1}
                     </span>
-                    <span className="label-mono mt-2 block text-ink-700">
-                      {system.subtitle}
+                    <span className="min-w-0">
+                      <span className="block font-display text-h2 text-ink-950">
+                        {system.title}
+                      </span>
+                      <span className="label-mono mt-2 block text-ink-700">
+                        {system.subtitle}
+                      </span>
                     </span>
                   </dt>
                   <dd className="col-span-12 col-start-1 text-small text-neutral-600 lg:col-span-7 lg:col-start-6">

@@ -50,15 +50,20 @@ export function ServicesClosing() {
                 key={studyPackage.slug}
                 data-reveal
                 style={{ "--reveal-delay": `${i * 0.06}s` } as React.CSSProperties}
-                className="grid grid-cols-[auto_1fr] gap-x-5 border-t border-[var(--rule)] py-5"
+                /* Only `dt` and `dd` may sit inside a `dl > div` group.
+                   The index moves into the `dt` and the inner flex wrapper
+                   becomes the grid itself. */
+                className="grid grid-cols-[auto_1fr] items-baseline gap-x-5 gap-y-1 border-t border-[var(--rule)] py-5 sm:grid-cols-[auto_1fr_auto]"
               >
-                <span className="label-mono pt-1.5 tabular-nums text-neutral-550">
-                  {studyPackage.index}
-                </span>
-                <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-                  <dt className="font-display text-h3 text-ink-950">{studyPackage.name}</dt>
-                  <dd className="label-mono text-ink-800">{studyPackage.audience}</dd>
-                </div>
+                <dt className="col-span-2 flex items-baseline gap-x-5 sm:col-span-1 sm:contents">
+                  <span className="label-mono tabular-nums text-neutral-550">
+                    {studyPackage.index}
+                  </span>
+                  <span className="font-display text-h3 text-ink-950">{studyPackage.name}</span>
+                </dt>
+                <dd className="label-mono col-start-2 text-ink-800 sm:col-start-3 sm:justify-self-end">
+                  {studyPackage.audience}
+                </dd>
               </div>
             ))}
             <div className="border-t border-[var(--rule)]" />
