@@ -30,7 +30,7 @@ const engagement = [
   { division: "Quality assurance", contributes: "Independent audit against the protocol" },
 ];
 
-const photo = images.scientistVials;
+const artwork = images.homeIntegratedResearch;
 
 export function IntegratedLab() {
   return (
@@ -50,9 +50,9 @@ export function IntegratedLab() {
             className="relative aspect-[4/3] img-frame sm:aspect-[16/10] lg:aspect-auto lg:h-full lg:min-h-[26rem]"
           >
             <SpecimenPlate
-              src={photo.src}
-              alt={photo.alt}
-              position={photo.position}
+              src={artwork.src}
+              alt={artwork.alt}
+              position={artwork.position}
               sizes="(min-width: 1024px) 40vw, 100vw"
             />
           </figure>

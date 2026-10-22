@@ -89,29 +89,31 @@ The review document and its extraction archive are in
 code has been. What remains needs either NSRL's own facts or assets that were
 not delivered.
 
-### Blocked on assets that were not supplied
+### Imagery — resolved 22 Oct 2026
 
-The review refers to **eight AI-generated editorial images** (analytical
-hero, agrochemical, industrial chemical, food & feed, ecotoxicology,
-entomology, microbiology, toxicology) and ships a `replacement-image-map.csv`
-placing each one. **No image files were included in the drop** — only the
-briefs in `image-prompts.txt` and the map. Nothing could be installed. When
-they arrive, the map gives the placement and crop for each, and
-`src/content/imagery.ts` is the single file to edit.
+The commissioned set arrived and is installed: **29 WebP illustrations in
+`public/images/nsrl/`, one per placement**, delivered in
+`assets/NSRL-All-29-Image-Replacements/` with a manifest and size map. Every
+stock photograph has been deleted. `src/content/imagery.ts` is the only file
+that maps a placement to a file.
 
-Two rules from the review travel with them, and both match the standing
-policy in this repo:
+The rule that travels with them, from the supplier's own README and the
+earlier review, is unchanged and still binding:
 
-> Use the images as illustrations of services. Do not caption them as
-> photographs of NSRL, its staff or its actual instrument estate.
+> These are branded conceptual/editorial scientific illustrations, not
+> photographs proving actual NSRL buildings, equipment, staff, certificates
+> or test results.
 
-> Use generated images to illustrate services; use authentic photographs to
-> document facilities, staff, housing and equipment ownership.
+So the set carries the sector, division and service illustrations, and the
+facility sections are captioned by *activity* rather than by room. It does
+**not** discharge the need for authentic photography below, and no caption
+anywhere may present an illustration as a record of the site.
 
-So the generated set, when it lands, may carry the sector and division
-illustrations. It may **not** carry the facility showcase, the vivarium, the
-leadership portrait or anything captioned as NSRL's own premises — those
-still need the authentic photography already listed below.
+**Open action from the supplier:** "Review all species and method depictions
+with the scientific owner." The entomology, ecotoxicology, vivarium and
+toxicology illustrations each depict organisms and procedures; the alt text
+describes what is drawn, but whether what is drawn is representative is a
+scientific judgement, not an editorial one.
 
 ### Blocked on NSRL's facts or sign-off
 
@@ -277,64 +279,42 @@ Everything lives in `src/app/globals.css` under `@theme`. There is no
 
 ## Imagery
 
-Every image is mapped in one place — `src/content/imagery.ts` — with its `alt`
-text and crop (`position`) written once, and the per-page assignments
-(`divisionImage`, `sectorImage`, `heroImage`, `facilityShowcase`,
-`facilityLead`, `facilityGallery`) resolved from there. `SpecimenPlate`
-renders an optimised `next/image` when passed a `src`, and falls back to its
-deterministic SVG drawing otherwise.
+**29 commissioned NSRL illustrations, one per placement**, in
+`public/images/nsrl/`. Every placement is mapped in one file —
+`src/content/imagery.ts` — with its alt text, delivered dimensions and crop
+(`position`) written once. `SpecimenPlate` renders an optimised `next/image`
+when passed a `src`, and falls back to its deterministic SVG drawing
+otherwise. No colour grade is applied: the artwork is already rendered to
+this palette, and the filter that used to unify a dozen mismatched
+photographs would now only pull it off-brand.
 
-The files in `public/images/` are **free-licence stand-ins** (CC0, public
-domain, and a few CC-BY/BY-SA with attribution recorded in
-`public/images/CREDITS.md`) — representative laboratories, not NSRL's own.
-**Replace them with NSRL's photography before launch**: drop the new files in,
-point the `src` values in `imagery.ts` at them, and no component changes are
-needed.
+Nothing is shared between slots. The old stock library had eleven files
+doing twenty-nine jobs, so one bench appeared on a sector card and a
+division page at different aspect ratios and no crop suited both. The two
+maps that used to be one are the clearest case: `sectorCardImage` (homepage,
+16:10, read at a glance) and `sectorPageImage` (sector hero, 4:3, read
+beside the scope copy) are deliberately different illustrations of the same
+sector.
 
-### ⚠ Photography still outstanding
+### What they are — and the line not to cross
 
-**There is not one photograph of NSRL on this site.** Every file in
-`public/images/` is a free-licence stand-in of somebody else's laboratory.
-Nothing is captioned as NSRL's premises, and no caption claims a room in a
-photograph is a room at Salem — the captions name the *kind* of environment
-and the specification behind it, both of which come from `content/`. That is
-the most the current library honestly supports, and it is why the list below
-matters more than any design change in this repo.
+They are branded conceptual illustrations, **not photographs**. No caption
+may present one as a record of NSRL's premises, staff, equipment,
+certificates or results, and the alt text describes the drawing rather than
+asserting a room. The facility sections are therefore captioned by activity
+("Instrument operation", "Containment work") rather than by room. Full
+licence and provenance note in `public/images/CREDITS.md`.
 
-The homepage uses ten photographs in ten slots with nothing repeated. That is
-the whole usable library — there is no slack left, and these gaps are why
-some pages share a frame.
+### ⚠ Still outstanding
 
-| Priority | Shot needed | Why |
+**Illustration cannot do these jobs**, and the set does not claim to:
+
+| Priority | Needed | Why |
 |---|---|---|
-| **1** | **The archive** — organised record storage, labelled boxes, specimen or block storage, the RAID cabinet | The ten-year retention is the foundation of the quality argument, it had a frame in the facility showcase, and that frame has been **removed** rather than filled with unrelated stock. The showcase now runs three frames instead of four because of this. |
-| **1** | **Hero plate, ≥2560px wide**, laboratory interior with a quiet left third and instrument detail right | The hero runs full-bleed. The widest file in the library is 1920px, and it is now enlarged ~1.3× to find a focal point, so it is noticeably soft on a 1440px screen at 2×. The crop and grade have taken it as far as they can; the frame is still a busy room with no natural subject. This is the single highest-impact replacement. |
-| **1** | **Named room/equipment shots for the homepage showcase** — the analytical bench, a containment room, the microscopy station | The three showcase captions now describe only what is visible ("Instrument operation", "Containment work") rather than naming the capability, because the stand-in photographs do not show chromatography or mass spectrometry and a caption that said they did was asking the reader to take the image on trust. With real photographs the captions should name the room and the instruments in it. |
-| **1** | **Animal housing / vivarium** — clean rooms, racks, environmental control | Specified on `/facilities` as "70+ clean rooms" with no photograph at all. |
-| **1** | **Inhalation suites** | Specified, no photograph. One of the capabilities the laboratory is differentiated on. |
-| **2** | **Insect rearing colonies** | Specified, no photograph. |
-| **2** | **Entomology** | Shares the nursery frame with ecotoxicology. |
-| **2** | **Second containment frame** | `cleanroom-w2.jpg` carries both the homepage facility showcase and the facilities page lead. |
-| **3** | **Exterior / site establishing shot** | Nothing on the site shows the building. |
-
-**Withdrawn from use — on disk, credited, referenced by nothing:**
-
-- `pipette-1.jpg` — a visible `rawpixel` watermark across the whole frame.
-- `documents-w3.jpg` — a handwritten ledger photographed in a museum case
-  with a period magazine in shot. It was standing in for the archive and
-  communicated the opposite of a secure, validated, backed-up one. A weak
-  photograph of the right subject can be re-graded; this was the right
-  photograph of the wrong subject.
-
-Neither may be reinstated. `imagery.ts` records why next to the map.
-
-**Quality caveats on what is in use:** `chemistry-w1.jpg` (the hero) is a
-fluorescent-lit room with a yellow-green cast and visibly dated instruments —
-the hero grade desaturates hard and lets the navy overlay supply the colour,
-which works, but it is a rescue rather than a choice. `cleanroom-w2.jpg` is
-underexposed and carries a third-party equipment brand mark. `pharma-w2.jpg`
-shows a named third-party pharmaceutical product and is used only as a
-small sector card for that reason.
+| **1** | **Scientific sign-off on the artwork** | The supplier's own instruction: "Review all species and method depictions with the scientific owner." Entomology, ecotoxicology, vivarium and toxicology each depict organisms and procedures. Whether what is drawn is representative is a scientific judgement, not an editorial one. |
+| **1** | **Leadership portrait and a real team photograph** | `/about` carries an abstract illustration captioned "Illustration — not a portrait". That is honest, not a substitute. |
+| **2** | **Facility documentation** — exterior or reception, the actual instrument benches, environmental test systems, the archive, controlled rooms | Needed before any caption can name a room. Until then `/facilities` describes activities and specifications, both drawn from `content/facilities.ts`. |
+| **2** | **Vivarium** — approved animal-housing and welfare photography | The welfare programme is a claim the site makes; a rendering of an enclosure does not evidence it. |
 
 ## Accessibility & performance notes
 

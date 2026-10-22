@@ -127,7 +127,6 @@ function Frame({
           alt={image.alt}
           position={image.position}
           sizes={sizes}
-          className="photo-deep"
         />
       </div>
       <figcaption className="px-4 py-3.5 sm:px-5 sm:py-4">

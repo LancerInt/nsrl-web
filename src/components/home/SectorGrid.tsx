@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-import { images, sectorImage, type ImageKey } from "@/content/imagery";
+import { heroImage, images, sectorCardImage } from "@/content/imagery";
 import { cn, numberWord } from "@/lib/utils";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ActionLink } from "@/components/ui/ActionLink";
@@ -23,7 +23,9 @@ export type SectorCard = {
   frameworks: string[];
 };
 
-const FALLBACK: ImageKey = "chemistryBench";
+/* The homepage card, not the sector page hero — the two are different
+   illustrations of the same sector, held in separate maps. */
+const FALLBACK = heroImage;
 
 /**
  * The five regulated sectors, and the first real decision the page asks a
@@ -116,7 +118,7 @@ function SectorTile({
   delay: number;
   className?: string;
 }) {
-  const key = sectorImage[sector.slug] ?? FALLBACK;
+  const key = sectorCardImage[sector.slug] ?? FALLBACK;
   const image = images[key];
   const isLead = size === "lead";
 

@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { JsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo";
 import { getIndustry, industries } from "@/content/industries";
 import { getDiscipline, type Discipline } from "@/content/disciplines";
-import { imageFor, sectorImage } from "@/content/imagery";
+import { imageFor, sectorPageImage } from "@/content/imagery";
 import { PageHero } from "@/components/ui/PageHero";
 import { PageNav } from "@/components/ui/PageNav";
 import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
@@ -50,7 +50,7 @@ export default async function SectorPage({ params }: SectorPageProps) {
     .map((divisionSlug) => getDiscipline(divisionSlug))
     .filter((division): division is Discipline => Boolean(division));
 
-  const photo = imageFor(sectorImage, industry.slug);
+  const photo = imageFor(sectorPageImage, industry.slug);
 
   return (
     <>

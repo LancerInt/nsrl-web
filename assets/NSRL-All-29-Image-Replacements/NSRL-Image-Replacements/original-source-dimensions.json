@@ -1,0 +1,56 @@
+[
+  {
+    "source": "/images/chemistry-2.jpg",
+    "width": 1024,
+    "height": 683,
+    "bytes": 135456
+  },
+  {
+    "source": "/images/chemistry-w1.jpg",
+    "width": 1920,
+    "height": 1280,
+    "bytes": 450136
+  },
+  {
+    "source": "/images/cleanroom-w2.jpg",
+    "width": 1920,
+    "height": 1280,
+    "bytes": 342627
+  },
+  {
+    "source": "/images/glassware-2.jpg",
+    "width": 1024,
+    "height": 815,
+    "bytes": 205121
+  },
+  {
+    "source": "/images/greenhouse-1.jpg",
+    "width": 1024,
+    "height": 683,
+    "bytes": 186460
+  },
+  {
+    "source": "/images/microscope-1.jpg",
+    "width": 1024,
+    "height": 683,
+    "bytes": 130006
+  },
+  {
+    "source": "/images/microscope-2.jpg",
+    "width": 1024,
+    "height": 678,
+    "bytes": 149748
+  },
+  {
+    "source": "/images/petri-1.jpg",
+    "width": 1024,
+    "height": 683,
+    "bytes": 171928
+  },
+  {
+    "source": "/images/team-1.jpg",
+    "width": 1024,
+    "height": 681,
+    "bytes": 207508
+  }
+]

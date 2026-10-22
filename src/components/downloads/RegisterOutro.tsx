@@ -1,5 +1,5 @@
 import { contact } from "@/content/site";
-import { images } from "@/content/imagery";
+import { downloadsImage, images } from "@/content/imagery";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ActionLink } from "@/components/ui/ActionLink";
 import { Section, SectionBody } from "@/components/ui/Section";
@@ -56,10 +56,10 @@ export function RegisterOutro() {
             className="relative col-span-12 aspect-[4/3] self-end img-frame sm:col-span-8 lg:col-span-4 lg:col-start-9 lg:aspect-[3/4]"
           >
             <SpecimenPlate
-              src={images.team.src}
-              alt={images.team.alt}
-              position={images.team.position}
-              sizes="(min-width: 1024px) 33vw, 100vw"
+              src={images[downloadsImage].src}
+              alt={images[downloadsImage].alt}
+              position={images[downloadsImage].position}
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 66vw, 100vw"
             />
           </div>
         </div>

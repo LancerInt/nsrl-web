@@ -2,11 +2,9 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import type { Article } from "@/content/news";
-import { images, type ImageKey } from "@/content/imagery";
+import { images, newsImage } from "@/content/imagery";
 import { cn, pad } from "@/lib/utils";
 import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
-
-const FIGURES: ImageKey[] = ["scientistFlask", "microscope", "team", "petri"];
 
 /**
  * One entry in the newsroom archive.
@@ -30,7 +28,10 @@ export function ArchiveEntry({
   position: number;
   variant: "lead" | "record";
 }) {
-  const figure = images[FIGURES[(position - 1) % FIGURES.length]];
+  /* The newsroom has one commissioned illustration, carried by the lead
+     entry. The rotation it replaced existed only to spread a shared stock
+     pool across entries that no longer exist. */
+  const figure = images[newsImage];
 
   const meta = (
     <div className="flex flex-wrap items-center gap-x-5 gap-y-2">

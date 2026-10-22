@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 
 import { studyPackages, type StudyPackage } from "@/content/packages";
 import { getDiscipline } from "@/content/disciplines";
-import { images, type ImageKey } from "@/content/imagery";
+import { images, studyPackagesImage } from "@/content/imagery";
 import { cn, numberWord, pad } from "@/lib/utils";
 import { Disclosure } from "@/components/ui/Disclosure";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -11,14 +11,9 @@ import { RevealText } from "@/components/ui/RevealText";
 import { SpecChips, SpecList } from "@/components/ui/SpecList";
 import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
 
-const FIGURES: ImageKey[] = [
-  "scientistVials",
-  "microscopeDark",
-  "vials",
-  "microscope",
-  "petri",
-  "cleanroom",
-];
+/* One commissioned illustration for the catalogue, shown on the featured
+   package. The six-frame rotation belonged to the six-package catalogue and
+   a shared stock pool; both are gone. */
 
 /**
  * The packages on one ledger.
@@ -59,7 +54,7 @@ export function PackageLedger() {
   );
 }
 
-function PackageRow({ pkg, position }: { pkg: StudyPackage; position: number }) {
+function PackageRow({ pkg }: { pkg: StudyPackage; position: number }) {
   const studies = pkg.includes.reduce((total, group) => total + group.items.length, 0);
   const divisions = pkg.divisions
     .map((slug) => getDiscipline(slug))
@@ -119,8 +114,9 @@ function PackageRow({ pkg, position }: { pkg: StudyPackage; position: number }) 
             {pkg.featured ? (
               <div className="relative mt-6 aspect-[16/10] img-frame">
                 <SpecimenPlate
-                  src={images[FIGURES[position % FIGURES.length]].src}
-                  alt={images[FIGURES[position % FIGURES.length]].alt}
+                  src={images[studyPackagesImage].src}
+                  alt={images[studyPackagesImage].alt}
+                  position={images[studyPackagesImage].position}
                   sizes="(min-width: 1024px) 55vw, 100vw"
                 />
               </div>

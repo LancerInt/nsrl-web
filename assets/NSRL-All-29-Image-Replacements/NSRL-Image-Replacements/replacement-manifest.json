@@ -1,0 +1,640 @@
+[
+  {
+    "id": "home-hero",
+    "page": "/",
+    "slot": "Homepage hero",
+    "current_source": "/images/chemistry-w1.jpg",
+    "observed_desktop_px": [
+      1353,
+      704
+    ],
+    "export_px": [
+      2560,
+      1332
+    ],
+    "filename": "home-hero.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 2560 by 1332 pixels; compose for this exact aspect ratio. Wide panoramic 1.922:1. An original elegant flowing glass pathway connects seven restrained research objects: sample vial, histology slide, water droplet, culture dish, leaf with insect, cellular model, modular assay. Brushed titanium base, tiny engraved NSRL at lower right. Keep left 48 percent completely quiet dark navy for white HTML heading. All detail on the right, no words except NSRL.",
+    "original_source_px": [
+      1920,
+      1280
+    ],
+    "alt": "Custom NSRL illustration of homepage hero",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "home-agrochemical",
+    "page": "/",
+    "slot": "Agrochemical sector card",
+    "current_source": "/images/greenhouse-1.jpg",
+    "observed_desktop_px": [
+      379,
+      237
+    ],
+    "export_px": [
+      1600,
+      1000
+    ],
+    "filename": "home-agrochemical.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1600 by 1000 pixels; compose for this exact aspect ratio. Landscape 16:10. Custom miniature crop research ecosystem: three real-looking healthy seedlings with visible pale roots inside refined clear glass growth vessels on a navy circular laboratory platform, one amber NSRL sample vial, a restrained translucent analytical arc. Focus on agriculture and controlled research. No futuristic city.",
+    "original_source_px": [
+      1024,
+      683
+    ],
+    "alt": "Custom NSRL illustration of agrochemical sector card",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "home-industrial-chemicals",
+    "page": "/",
+    "slot": "Industrial chemical sector card",
+    "current_source": "/images/glassware-2.jpg",
+    "observed_desktop_px": [
+      379,
+      237
+    ],
+    "export_px": [
+      1600,
+      1000
+    ],
+    "filename": "home-industrial-chemicals.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1600 by 1000 pixels; compose for this exact aspect ratio. Landscape 16:10. Art-directed industrial chemical characterization still life: amber NSRL vial, precise clear sample cuvettes, brushed metal analytical balance plate and refined glass prism. One cohesive physical arrangement, clean navy negative space, no human scientist.",
+    "original_source_px": [
+      1024,
+      815
+    ],
+    "alt": "Custom NSRL illustration of industrial chemical sector card",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "home-food-feed",
+    "page": "/",
+    "slot": "Food and feed sector card",
+    "current_source": "/images/petri-1.jpg",
+    "observed_desktop_px": [
+      379,
+      237
+    ],
+    "export_px": [
+      1600,
+      1000
+    ],
+    "filename": "home-food-feed.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1600 by 1000 pixels; compose for this exact aspect ratio. Landscape 16:10. Custom scientific still life of wheat grains, brown feed pellets, pale powder and golden oil in four separate small glass sample dishes around one elegant NSRL sample vial. Restrained scientific composition; actual materials rendered naturally, no decorative food feast or bacteria as hero.",
+    "original_source_px": [
+      1024,
+      683
+    ],
+    "alt": "Custom NSRL illustration of food and feed sector card",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "home-integrated-research",
+    "page": "/",
+    "slot": "One laboratory seven divisions portrait",
+    "current_source": "/images/chemistry-2.jpg",
+    "observed_desktop_px": [
+      473,
+      753
+    ],
+    "export_px": [
+      1200,
+      1910
+    ],
+    "filename": "home-integrated-research.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1200 by 1910 pixels; compose for this exact aspect ratio. Tall portrait 0.628:1. Vertical sculptural arrangement of seven delicate glass research modules connected by fine cyan channels around one central capped NSRL sample vial. Each module suggests a different discipline through small refined objects, no people or labels. Elegant vertical flow composed to survive a wider mobile crop, main cluster in middle 65 percent.",
+    "original_source_px": [
+      1024,
+      683
+    ],
+    "alt": "Custom NSRL illustration of one laboratory seven divisions portrait",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover. Existing container switches from 4:3 to 16:10 to tall auto-height; use a mobile art-directed crop if required."
+  },
+  {
+    "id": "home-instrument-operation",
+    "page": "/",
+    "slot": "Facility instrument operation",
+    "current_source": "/images/team-1.jpg",
+    "observed_desktop_px": [
+      677,
+      565
+    ],
+    "export_px": [
+      1600,
+      1336
+    ],
+    "filename": "home-instrument-operation.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1600 by 1336 pixels; compose for this exact aspect ratio. Landscape 1.198:1, almost square. Bespoke 3D cutaway of a modern unbranded analytical instrument with orderly autosampler tray and a small NSRL sample vial. Ice glass panels reveal a clean analytical sample route through precision metal modules. Symbolic equipment illustration, no people, no actual facility claim.",
+    "original_source_px": [
+      1024,
+      681
+    ],
+    "alt": "Custom NSRL illustration of facility instrument operation",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "home-containment",
+    "page": "/",
+    "slot": "Facility containment work",
+    "current_source": "/images/cleanroom-w2.jpg",
+    "observed_desktop_px": [
+      491,
+      224
+    ],
+    "export_px": [
+      1964,
+      896
+    ],
+    "filename": "home-containment.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1964 by 896 pixels; compose for this exact aspect ratio. Very wide 2.192:1. Bespoke scientific 3D illustration of a biological safety cabinet with transparent protective enclosure, capped samples and microplate inside, subtle cyan airflow ribbons, restrained brushed steel and glass. Small NSRL mark on sample rack. All detail central, uncluttered navy backdrop. No UV, no flames, no people.",
+    "original_source_px": [
+      1920,
+      1280
+    ],
+    "alt": "Custom NSRL illustration of facility containment work",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "home-microscopy",
+    "page": "/",
+    "slot": "Facility microscopy",
+    "current_source": "/images/microscope-2.jpg",
+    "observed_desktop_px": [
+      491,
+      234
+    ],
+    "export_px": [
+      1964,
+      936
+    ],
+    "filename": "home-microscopy.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1964 by 936 pixels; compose for this exact aspect ratio. Very wide 2.098:1. Original sculptural microscopy scene: precision optical objective above a glass tissue slide bearing a small violet section; one elegant circular optical lens reveals cellular texture. Fine brushed metal, translucent ice glass, navy setting. No fabricated scientific labels, no person, no giant glowing cells.",
+    "original_source_px": [
+      1024,
+      678
+    ],
+    "alt": "Custom NSRL illustration of facility microscopy",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "about-leadership",
+    "page": "/about",
+    "slot": "Leadership portrait replacement",
+    "current_source": "/images/team-1.jpg",
+    "observed_desktop_px": [
+      479,
+      599
+    ],
+    "export_px": [
+      1200,
+      1500
+    ],
+    "filename": "about-leadership.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1200 by 1500 pixels; compose for this exact aspect ratio. Portrait 4:5. Original symbolic scientific leadership sculpture, no human figure. Central immaculate glass sample capsule floats over a navy pedestal engraved NSRL; seven slender glass pillars arranged around it and subtle cyan connecting paths express coordination and stewardship. Pale cool white background and navy pedestal, soft realistic shadows. Do not depict an invented founder portrait.",
+    "original_source_px": [
+      1024,
+      681
+    ],
+    "alt": "Custom NSRL illustration of leadership portrait replacement",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "downloads-evidence",
+    "page": "/downloads",
+    "slot": "Certificate register supporting portrait",
+    "current_source": "/images/team-1.jpg",
+    "observed_desktop_px": [
+      378,
+      504
+    ],
+    "export_px": [
+      1200,
+      1600
+    ],
+    "filename": "downloads-evidence.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1200 by 1600 pixels; compose for this exact aspect ratio. Portrait 3:4. Original premium research evidence illustration: a meticulous stack of abstract archival report sheets in a brushed navy document tray, transparent sample vial and glass magnifying lens with one fine cyan continuous trace connecting sample and record. Tiny NSRL text on tray only. No readable report data, fake certificates, official seals, medals or accreditation emblems. Off-white background.",
+    "original_source_px": [
+      1024,
+      681
+    ],
+    "alt": "Custom NSRL illustration of certificate register supporting portrait",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover. Existing container switches from 4:3 to 3:4 on desktop."
+  },
+  {
+    "id": "facilities-overview",
+    "page": "/facilities",
+    "slot": "Main facility illustration",
+    "current_source": "/images/cleanroom-w2.jpg",
+    "observed_desktop_px": [
+      1184,
+      666
+    ],
+    "export_px": [
+      2400,
+      1350
+    ],
+    "filename": "facilities-overview.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 2400 by 1350 pixels; compose for this exact aspect ratio. Landscape 16:9. Bespoke isometric 3D conceptual research suite on navy background, one coherent open model with analytical bench, controlled culture station, small aquatic observation system and sample archive. Architectural model rendered in ice glass and brushed navy metal with a delicate shared cyan sample path. NSRL engraved on front model base. Explicitly conceptual, no real building exterior or invented factual facility sign.",
+    "original_source_px": [
+      1920,
+      1280
+    ],
+    "alt": "Custom NSRL illustration of main facility illustration",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "facilities-integrated-site",
+    "page": "/facilities",
+    "slot": "Integrated facility supporting portrait",
+    "current_source": "/images/team-1.jpg",
+    "observed_desktop_px": [
+      479,
+      672
+    ],
+    "export_px": [
+      1200,
+      1684
+    ],
+    "filename": "facilities-integrated-site.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1200 by 1684 pixels; compose for this exact aspect ratio. Portrait 0.713:1. Vertical conceptual cutaway of integrated research modules: analytical samples, optical slide, contained culture and archive drawers connected by one very fine cyan trace. Refined ice glass and navy metal physical sculpture, small NSRL engraving on plinth. No people, no false floor plans or actual lab photograph claim, no readable labels.",
+    "original_source_px": [
+      1024,
+      681
+    ],
+    "alt": "Custom NSRL illustration of integrated facility supporting portrait",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover. Existing container is 5:4 on smaller screens and auto-height on desktop."
+  },
+  {
+    "id": "facilities-ecotoxicology",
+    "page": "/facilities",
+    "slot": "Aquatic and terrestrial systems gallery",
+    "current_source": "/images/greenhouse-1.jpg",
+    "observed_desktop_px": [
+      582,
+      388
+    ],
+    "export_px": [
+      1800,
+      1200
+    ],
+    "filename": "facilities-ecotoxicology.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1800 by 1200 pixels; compose for this exact aspect ratio. Landscape 3:2. Custom scientific display combining a refined clear freshwater observation vessel with tiny healthy fish and a separate controlled plant growth vessel on a common navy research platform. Grounded 3D materials and subtle flow-control tubing, no fantasy mixed ecosystem, small NSRL sample tag only. Symbolic capability illustration.",
+    "original_source_px": [
+      1024,
+      683
+    ],
+    "alt": "Custom NSRL illustration of aquatic and terrestrial systems gallery",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "facilities-microbiology",
+    "page": "/facilities",
+    "slot": "Microbiology gallery",
+    "current_source": "/images/petri-1.jpg",
+    "observed_desktop_px": [
+      582,
+      388
+    ],
+    "export_px": [
+      1800,
+      1200
+    ],
+    "filename": "facilities-microbiology.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1800 by 1200 pixels; compose for this exact aspect ratio. Landscape 3:2. Original controlled-culture research still life, elegant closed transparent culture dish with subtle small bacterial colonies, capped sample tubes and a well plate inside a clear protective enclosure. Navy platform with tiny NSRL sample label, glass and steel, cyan-white lighting, no free-floating bacteria or giant organisms.",
+    "original_source_px": [
+      1024,
+      683
+    ],
+    "alt": "Custom NSRL illustration of microbiology gallery",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "facilities-microscopy",
+    "page": "/facilities",
+    "slot": "Microscopy and cell analysis gallery",
+    "current_source": "/images/microscope-1.jpg",
+    "observed_desktop_px": [
+      582,
+      388
+    ],
+    "export_px": [
+      1800,
+      1200
+    ],
+    "filename": "facilities-microscopy.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1800 by 1200 pixels; compose for this exact aspect ratio. Landscape 3:2. Original premium 3D optical analysis composition: microscope objective, stacked glass lenses and one tissue slide with a realistic small purple stained section. A fine light path links objective to a restrained lens showing subtle cellular texture. Navy base engraved NSRL, no text beyond brand, no fake data display.",
+    "original_source_px": [
+      1024,
+      683
+    ],
+    "alt": "Custom NSRL illustration of microscopy and cell analysis gallery",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "facilities-chemistry",
+    "page": "/facilities",
+    "slot": "Chemistry and bioanalysis gallery",
+    "current_source": "/images/glassware-2.jpg",
+    "observed_desktop_px": [
+      582,
+      388
+    ],
+    "export_px": [
+      1800,
+      1200
+    ],
+    "filename": "facilities-chemistry.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1800 by 1200 pixels; compose for this exact aspect ratio. Landscape 3:2. Custom analytical chemistry scene of a compact unbranded LC instrument module, capped NSRL sample vial in a precise autosampler rack, several glass cuvettes and a subtle translucent physical separation channel. Clean exquisite glass, steel and navy materials, scientific restrained studio composition, no scientist.",
+    "original_source_px": [
+      1024,
+      815
+    ],
+    "alt": "Custom NSRL illustration of chemistry and bioanalysis gallery",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "news-research",
+    "page": "/news",
+    "slot": "Newsroom supporting portrait",
+    "current_source": "/images/glassware-2.jpg",
+    "observed_desktop_px": [
+      378,
+      473
+    ],
+    "export_px": [
+      1200,
+      1500
+    ],
+    "filename": "news-research.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1200 by 1500 pixels; compose for this exact aspect ratio. Portrait 4:5. Original scientific communication still life: elegant navy research journal with small NSRL on cover, unmarked stacked paper, a glass slide and a small amber sample vial. A refined transparent glass lens floats above the page suggesting discovery. Off-white background, precise shadows, no newspaper headlines, fake reports, invented event dates or people.",
+    "original_source_px": [
+      1024,
+      815
+    ],
+    "alt": "Custom NSRL illustration of newsroom supporting portrait",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "study-packages",
+    "page": "/products",
+    "slot": "Study package catalogue image",
+    "current_source": "/images/chemistry-2.jpg",
+    "observed_desktop_px": [
+      479,
+      299
+    ],
+    "export_px": [
+      1600,
+      1000
+    ],
+    "filename": "study-packages.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1600 by 1000 pixels; compose for this exact aspect ratio. Landscape 16:10. Original three-part regulatory research sculpture: three tidy translucent glass folders or shallow sample trays in one cohesive arrangement, respectively paired with seedling and soil sample, amber chemical vial, grain and feed dishes. Fine cyan connecting trace and navy base engraved NSRL. No fake official stamps or readable document details.",
+    "original_source_px": [
+      1024,
+      683
+    ],
+    "alt": "Custom NSRL illustration of study package catalogue image",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "division-chemistry",
+    "page": "/research/chemistry",
+    "slot": "Chemistry division portrait",
+    "current_source": "/images/chemistry-w1.jpg",
+    "observed_desktop_px": [
+      378,
+      473
+    ],
+    "export_px": [
+      1200,
+      1500
+    ],
+    "filename": "division-chemistry.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1200 by 1500 pixels; compose for this exact aspect ratio. Portrait 4:5. Distinctive original chemistry brand illustration, a vertically arranged precision glass separation column above an immaculate autosampler tray with an amber NSRL sample vial in foreground. Small brushed metal instrument module in background, ice glass and navy, subtle cyan analytical route, no scientist or generic panorama.",
+    "original_source_px": [
+      1920,
+      1280
+    ],
+    "alt": "Custom NSRL illustration of chemistry division portrait",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "division-custom-studies",
+    "page": "/research/custom-studies",
+    "slot": "Custom studies division portrait",
+    "current_source": "/images/glassware-2.jpg",
+    "observed_desktop_px": [
+      378,
+      473
+    ],
+    "export_px": [
+      1200,
+      1500
+    ],
+    "filename": "division-custom-studies.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1200 by 1500 pixels; compose for this exact aspect ratio. Portrait 4:5. Original bespoke research design sculpture: modular glass assay blocks form a deliberate adaptable open structure around one small NSRL sample capsule. Different precision modules interlock through a subtle cyan path, leaving one tasteful empty socket to suggest tailored study design. Navy and cool white, no puzzle-piece clich\u00e9, no text or invented scientific formula.",
+    "original_source_px": [
+      1024,
+      815
+    ],
+    "alt": "Custom NSRL illustration of custom studies division portrait",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "division-ecotoxicology",
+    "page": "/research/ecotoxicology",
+    "slot": "Ecotoxicology division portrait",
+    "current_source": "/images/greenhouse-1.jpg",
+    "observed_desktop_px": [
+      378,
+      473
+    ],
+    "export_px": [
+      1200,
+      1500
+    ],
+    "filename": "division-ecotoxicology.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1200 by 1500 pixels; compose for this exact aspect ratio. Portrait 4:5. Original ecological research illustration: clear freshwater test vessel with a few tiny healthy fish and suspended water droplet lens above; separate lower soil sample chamber with a small seedling and fine roots, all on refined navy laboratory platform with small NSRL engraving. Distinct compartments, no fantasy organism mixtures or harm.",
+    "original_source_px": [
+      1024,
+      683
+    ],
+    "alt": "Custom NSRL illustration of ecotoxicology division portrait",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "division-entomology",
+    "page": "/research/entomology",
+    "slot": "Entomology division portrait",
+    "current_source": "/images/microscope-1.jpg",
+    "observed_desktop_px": [
+      378,
+      473
+    ],
+    "export_px": [
+      1200,
+      1500
+    ],
+    "filename": "division-entomology.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1200 by 1500 pixels; compose for this exact aspect ratio. Portrait 4:5. Original scientific insect research illustration: small realistic green crop caterpillar on a leaf inside an elegant transparent ventilated observation chamber, stereo microscope objective and fine glass lens positioned above, navy base engraved NSRL. Believable small insect scale and accurate anatomy, no threatening enlarged monster or butterflies as substitute.",
+    "original_source_px": [
+      1024,
+      683
+    ],
+    "alt": "Custom NSRL illustration of entomology division portrait",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "division-microbiology",
+    "page": "/research/microbiology",
+    "slot": "Microbiology division portrait",
+    "current_source": "/images/cleanroom-w2.jpg",
+    "observed_desktop_px": [
+      378,
+      473
+    ],
+    "export_px": [
+      1200,
+      1500
+    ],
+    "filename": "division-microbiology.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1200 by 1500 pixels; compose for this exact aspect ratio. Portrait 4:5. Original microbiology brand sculpture: closed clear culture dish with subtle realistic colonies in foreground, orderly capped tubes, small well plate and precision pipette suspended as a clean still-life composition within a transparent protective frame. Navy base with tiny NSRL engraving. No human, flames, active UV or oversized bacteria.",
+    "original_source_px": [
+      1920,
+      1280
+    ],
+    "alt": "Custom NSRL illustration of microbiology division portrait",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "division-toxicology",
+    "page": "/research/toxicology",
+    "slot": "Toxicology division portrait",
+    "current_source": "/images/chemistry-2.jpg",
+    "observed_desktop_px": [
+      378,
+      473
+    ],
+    "export_px": [
+      1200,
+      1500
+    ],
+    "filename": "division-toxicology.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1200 by 1500 pixels; compose for this exact aspect ratio. Portrait 4:5. Original toxicology illustration: glass tissue slides with tiny violet stained sections arranged beneath a precise optical microscope objective, central amber NSRL sample vial, subtle layered glass organ-like cellular forms only as restrained abstractions. Navy and ice white, no animal dosing, graphic tissue, fabricated data or false hazard shields.",
+    "original_source_px": [
+      1024,
+      683
+    ],
+    "alt": "Custom NSRL illustration of toxicology division portrait",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "division-vivarium",
+    "page": "/research/vivarium",
+    "slot": "Vivarium division portrait",
+    "current_source": "/images/team-1.jpg",
+    "observed_desktop_px": [
+      378,
+      473
+    ],
+    "export_px": [
+      1200,
+      1500
+    ],
+    "filename": "division-vivarium.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1200 by 1500 pixels; compose for this exact aspect ratio. Portrait 4:5. Original conceptual animal care research illustration: one small healthy white laboratory mouse calmly resting beside nesting enrichment inside a refined transparent ventilated housing unit; a discrete water bottle and environmental-control module behind. Carefully proportioned non-graphic respectful scene, navy plinth with small NSRL engraving, no experiment, injection or real-facility claim.",
+    "original_source_px": [
+      1024,
+      681
+    ],
+    "alt": "Custom NSRL illustration of vivarium division portrait",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "services-integrated",
+    "page": "/services",
+    "slot": "Services overview supporting image",
+    "current_source": "/images/chemistry-2.jpg",
+    "observed_desktop_px": [
+      479,
+      359
+    ],
+    "export_px": [
+      1600,
+      1200
+    ],
+    "filename": "services-integrated.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1600 by 1200 pixels; compose for this exact aspect ratio. Landscape 4:3. Original coordinated research services composition with three research objects around one capped NSRL sample vial: plant-growth vessel, precision clear chemical cuvettes and food/feed samples. All connected on one minimal glass and brushed navy platform by a delicate cyan trace. Premium cohesive physical sculpture, no labels, no exaggerated glow.",
+    "original_source_px": [
+      1024,
+      683
+    ],
+    "alt": "Custom NSRL illustration of services overview supporting image",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover. Existing container switches from 16:9 to 4:3 on desktop."
+  },
+  {
+    "id": "service-agrochemical",
+    "page": "/services/agrochemical",
+    "slot": "Agrochemical service illustration",
+    "current_source": "/images/greenhouse-1.jpg",
+    "observed_desktop_px": [
+      378,
+      284
+    ],
+    "export_px": [
+      1600,
+      1200
+    ],
+    "filename": "service-agrochemical.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1600 by 1200 pixels; compose for this exact aspect ratio. Landscape 4:3. Original agrochemical testing sculpture, controlled seedlings in transparent glass growth vessels above separate soil cores, a leaf specimen and one small amber NSRL sample vial on the navy platform. Root detail carefully rendered, subtle analytical glass arc, no spraying, farmers, generic landscape or pest damage.",
+    "original_source_px": [
+      1024,
+      683
+    ],
+    "alt": "Custom NSRL illustration of agrochemical service illustration",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "service-food-feed",
+    "page": "/services/food-and-feed-additives",
+    "slot": "Food and feed service illustration",
+    "current_source": "/images/petri-1.jpg",
+    "observed_desktop_px": [
+      378,
+      284
+    ],
+    "export_px": [
+      1600,
+      1200
+    ],
+    "filename": "service-food-feed.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1600 by 1200 pixels; compose for this exact aspect ratio. Landscape 4:3. Custom food and feed analytical still life: wheat, feed pellets, pale additive powder and golden oil in separate neat glass sample dishes arranged with a small NSRL vial and a precision balance plate. Grounded real material texture and refined glass/metal lighting, navy base. No petri dish dominating, no stock kitchen photo.",
+    "original_source_px": [
+      1024,
+      683
+    ],
+    "alt": "Custom NSRL illustration of food and feed service illustration",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  },
+  {
+    "id": "service-industrial-chemicals",
+    "page": "/services/industrial-chemicals",
+    "slot": "Industrial chemical service illustration",
+    "current_source": "/images/glassware-2.jpg",
+    "observed_desktop_px": [
+      378,
+      284
+    ],
+    "export_px": [
+      1600,
+      1200
+    ],
+    "filename": "service-industrial-chemicals.webp",
+    "prompt": "Use case: stylized-concept. Create a single original custom scientific website image for NSRL contract research organisation in Salem, India. This is premium art-directed scientific brand imagery, not stock photography, not a website mockup, not a collage. Coherent sophisticated 3D/editorial rendering with realistic glass, brushed titanium, deep ink navy #0C1730, ice white and restrained cyan/teal highlights. Physically believable objects, refined cinematic studio lighting, clean strong composition, generous edges for responsive crops. No other company branding, watermark, generic floating molecules, decorative DNA, excessive glow, fake official badges, illegible pseudo text, or invented people. Only small accurate uppercase NSRL where specified. This illustrates capabilities and does not depict actual NSRL facilities.  Intended export dimensions 1600 by 1200 pixels; compose for this exact aspect ratio. Landscape 4:3. Original industrial chemical testing composition: amber NSRL sample vial, orderly clear cuvettes and metal specimen coupon within an elegant glass analytical frame, compact precision instrument at back and subtle cyan separation channel. Polished navy and ice glass materials, no person with flask, no factory pollution panorama.",
+    "original_source_px": [
+      1024,
+      815
+    ],
+    "alt": "Custom NSRL illustration of industrial chemical service illustration",
+    "responsive_note": "Desktop measurement at a 1363px-wide viewport; slot dimensions vary with viewport and content. Preserve existing responsive CSS and use object-fit: cover."
+  }
+]

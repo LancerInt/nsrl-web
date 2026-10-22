@@ -1,6 +1,6 @@
 import { leadership } from "@/content/organisation";
 import { site } from "@/content/site";
-import { images } from "@/content/imagery";
+import { aboutLeadershipImage, images } from "@/content/imagery";
 import { ActionLink } from "@/components/ui/ActionLink";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RevealText } from "@/components/ui/RevealText";
@@ -35,15 +35,22 @@ export function LeadershipPanel() {
           >
             <div className="relative aspect-[4/5] img-frame">
               <SpecimenPlate
-                src={images.team.src}
-                alt={images.team.alt}
-                sizes="(min-width: 1024px) 40vw, 100vw"
+                src={images[aboutLeadershipImage].src}
+                alt={images[aboutLeadershipImage].alt}
+                position={images[aboutLeadershipImage].position}
+                sizes="(min-width: 1024px) 40vw, (min-width: 640px) 66vw, 100vw"
               />
             </div>
+            {/* The caption names the illustration, not the man.
+                "Office of the Managing Director" beside a picture, in a
+                section headed by his name, reads as a portrait of him —
+                and this is an abstract rendering of glass cylinders on a
+                plinth. His name, role and biography are stated in full in
+                the column beside it, which is where they belong. */}
             <figcaption className="mt-5 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
               <span className="label-mono text-neutral-600">{site.legalName}</span>
-              <span className="label-mono text-neutral-600">
-                Office of the Managing Director
+              <span className="label-mono text-neutral-550">
+                Illustration — not a portrait
               </span>
             </figcaption>
           </figure>

@@ -11,19 +11,19 @@ const hero = images[heroImage];
 /**
  * The opening.
  *
- * The source is a 3:2 room photograph, and a full-bleed band is far wider
- * than that — so `object-fit: cover` always shows its *entire* width and the
- * frame becomes the whole busy room, with the eye landing nowhere. The scale
- * below is the fix: enlarging past the frame and holding the origin
- * right-of-centre crops the cluttered near bench out of shot altogether and
- * brings the instrument stack and its monitor up to a size where they read
- * as the subject. It is a crop, not a motion effect — the still holds
- * perfectly still while it is read.
+ * The artwork is composed for this slot: a 2560×1332 field whose left half
+ * is empty navy and whose right half carries the rising ribbon of sample
+ * platforms and the NSRL plinth. So there is no crop to engineer and no
+ * grade to apply — the enlargement, the hard desaturation and the overlay
+ * that used to fight a yellow-cast stock photograph are all gone. What is
+ * left is `object-fit: cover` and a crop held right of centre, which keeps
+ * the platforms and the wordmark in frame as the band narrows.
  *
- * The grade is heavier than the site default for the same reason: the
- * original is lit by ageing fluorescent tubes and carries a yellow-green
- * cast that fights the navy. Desaturating hard and letting the overlay
- * supply the colour is what makes the photograph belong to this palette.
+ * The overlay is now the lightest it can be while still guaranteeing text
+ * contrast. The image is already the right navy; darkening it further would
+ * only bury the artwork the set was commissioned for. Below `sm` the copy
+ * sits on a stronger vertical wash instead, because at that width the
+ * platforms run under the text rather than beside it.
  *
  * The recorded figures sit *below* the image on their own band rather than
  * floating on it in a glass panel: the numbers are evidence, and evidence is
@@ -34,22 +34,34 @@ export function HomeHero() {
     <>
       <section
         data-theme="deep"
-        className="relative isolate flex min-h-[min(44rem,82svh)] flex-col justify-end overflow-hidden bg-deep text-white"
+        className="relative isolate flex flex-col overflow-hidden bg-deep text-white sm:min-h-[min(44rem,82svh)] sm:justify-end"
       >
-        {/* Photograph */}
-        <div className="absolute inset-0 -z-10 overflow-hidden">
+        {/*
+          Two layouts, because one crop cannot serve both.
+
+          From `sm` up the artwork is the background and the copy sits on its
+          empty left half, which is the composition it was drawn for.
+
+          Below `sm` the frame is portrait and the artwork is a 1.9:1
+          landscape, so `cover` would show roughly a quarter of its width —
+          a blurred slice of platforms with no plinth, no wordmark and no
+          subject, sitting under the headline. Stacking instead gives the
+          copy a clean navy field and the artwork its own 16:10 band where
+          the whole composition is visible. `order` does the swap, so the
+          markup keeps the heading first either way.
+        */}
+        <div className="relative order-2 aspect-[16/10] w-full overflow-hidden sm:absolute sm:inset-0 sm:order-none sm:-z-10 sm:aspect-auto">
           <SpecimenPlate
             src={hero.src}
             alt={hero.alt}
             position={hero.position}
             sizes="100vw"
             priority
-            className="origin-[72%_46%] scale-[1.45] [--photo-grade:saturate(0.42)_contrast(1.14)_brightness(0.9)] sm:scale-[1.32]"
           />
-          <div aria-hidden className="scrim" />
+          <div aria-hidden className="scrim hidden sm:block" />
         </div>
 
-        <div className="shell w-full pb-[clamp(3rem,5vw,4.5rem)] pt-[clamp(9rem,17vh,13rem)]">
+        <div className="shell order-1 w-full pb-[clamp(2.5rem,5vw,4.5rem)] pt-[clamp(7.5rem,17vh,13rem)] sm:order-none">
           {/* Sized to hold "Complete preclinical research," on one line at
               every width above `sm`, which is the whole point of setting the
               break by hand. */}

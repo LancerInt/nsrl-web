@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 
 import { industries } from "@/content/industries";
 import { getDiscipline, type Discipline } from "@/content/disciplines";
-import { images } from "@/content/imagery";
+import { images, servicesOverviewImage } from "@/content/imagery";
 import { numberWord } from "@/lib/utils";
 import { Section } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -41,9 +41,9 @@ export function SectorLedger() {
           className="relative col-span-12 aspect-[16/9] img-frame lg:col-span-5 lg:col-start-8 lg:aspect-[4/3]"
         >
           <SpecimenPlate
-            src={images.scientistVials.src}
-            alt={images.scientistVials.alt}
-            position={images.scientistVials.position}
+            src={images[servicesOverviewImage].src}
+            alt={images[servicesOverviewImage].alt}
+            position={images[servicesOverviewImage].position}
             sizes="(min-width: 1024px) 40vw, 100vw"
           />
         </div>

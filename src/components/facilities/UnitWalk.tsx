@@ -1,13 +1,16 @@
 import { units } from "@/content/facilities";
 import { locations } from "@/content/site";
-import { images, type ImageKey } from "@/content/imagery";
+import { facilityUnitImage, images } from "@/content/imagery";
 import { pad } from "@/lib/utils";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RevealText } from "@/components/ui/RevealText";
 import { SpecList } from "@/components/ui/SpecList";
 import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
 
-const FIGURES: ImageKey[] = ["team", "cleanroom", "microscopeDark"];
+/* One site, one illustration. The rotating list existed when this section
+   could render several units from a shared stock pool; the content module
+   has carried a single accredited site for some time, and the image set
+   supplies one frame for it. */
 
 /**
  * The single accredited site, presented as one full band.
@@ -35,7 +38,7 @@ export function UnitWalk() {
         </div>
 
         <div className="mt-[clamp(2rem,3.5vw,3rem)]">
-          {units.map((unit, i) => {
+          {units.map((unit) => {
             const location = locations.find((entry) => entry.id === unit.id);
 
             return (
@@ -59,9 +62,9 @@ export function UnitWalk() {
                     className="relative col-span-12 aspect-[5/4] img-frame lg:col-span-5 lg:aspect-auto lg:min-h-[24rem]"
                   >
                     <SpecimenPlate
-                      src={images[FIGURES[i % FIGURES.length]].src}
-                      alt={images[FIGURES[i % FIGURES.length]].alt}
-                      position={images[FIGURES[i % FIGURES.length]].position}
+                      src={images[facilityUnitImage].src}
+                      alt={images[facilityUnitImage].alt}
+                      position={images[facilityUnitImage].position}
                       sizes="(min-width: 1024px) 40vw, 100vw"
                     />
                   </div>

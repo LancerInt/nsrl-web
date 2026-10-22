@@ -24,6 +24,15 @@
 .DS_Store
 *.pem
 
+# Supplier drops are committed extracted, for provenance — the manifest,
+# size map, prompts and contact sheet are the record of where the artwork
+# came from, and they are small. What is excluded is everything that would
+# be a second copy of bytes already in the repo: the archive itself, and the
+# drop's own `images/` folder, which is byte-for-byte what now lives in
+# public/images/nsrl/ and is the copy the site actually serves.
+assets/*.zip
+assets/NSRL-All-29-Image-Replacements/NSRL-Image-Replacements/images/
+
 # debug
 npm-debug.log*
 yarn-debug.log*

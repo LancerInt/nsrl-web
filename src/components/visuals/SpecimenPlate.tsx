@@ -111,10 +111,15 @@ export function SpecimenPlate({
   sizes?: string;
   priority?: boolean;
 }) {
-  // A supplied photograph takes the drawing's place, filling the same frame.
-  // The caller owns the aspect ratio via its positioned wrapper; the image's
-  // own record owns the crop, and `photo` applies the shared colour grade
-  // that makes a library of mixed sources read as one shoot.
+  // Supplied artwork takes the drawing's place, filling the same frame. The
+  // caller owns the aspect ratio via its positioned wrapper; the image's own
+  // record owns the crop.
+  //
+  // No colour grade. The old `photo` filter — desaturate, lift, hold
+  // contrast — existed to make a dozen free-licence photographs taken on
+  // different cameras under different light read as one set. The artwork
+  // that replaced them is commissioned to the NSRL palette and already *is*
+  // one set, so filtering it would only pull it off-brand.
   if (src) {
     return (
       <Image
@@ -124,7 +129,7 @@ export function SpecimenPlate({
         sizes={sizes}
         priority={priority}
         style={position ? { objectPosition: position } : undefined}
-        className={cn("photo", className)}
+        className={cn("object-cover", className)}
       />
     );
   }
