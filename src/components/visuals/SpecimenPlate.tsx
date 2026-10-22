@@ -120,6 +120,14 @@ export function SpecimenPlate({
   // different cameras under different light read as one set. The artwork
   // that replaced them is commissioned to the NSRL palette and already *is*
   // one set, so filtering it would only pull it off-brand.
+  //
+  // The crop is handed over as a custom property and applied by a utility,
+  // not written to `style.objectPosition`. An inline declaration beats every
+  // class, including responsive ones, so a caller that needed a different
+  // crop at one breakpoint had no way to say so — `xl:object-right-bottom`
+  // on the hero was silently dead, and the artwork sat short of the viewport
+  // edge with a visible seam beside it. Through a variable the caller can
+  // override at any breakpoint in the ordinary way.
   if (src) {
     return (
       <Image
@@ -128,8 +136,12 @@ export function SpecimenPlate({
         fill
         sizes={sizes}
         priority={priority}
-        style={position ? { objectPosition: position } : undefined}
-        className={cn("object-cover", className)}
+        style={position ? ({ "--object-position": position } as React.CSSProperties) : undefined}
+        className={cn(
+          "object-cover",
+          position && "[object-position:var(--object-position)]",
+          className,
+        )}
       />
     );
   }

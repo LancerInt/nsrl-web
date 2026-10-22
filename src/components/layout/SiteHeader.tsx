@@ -190,22 +190,22 @@ export function SiteHeader() {
         className="fixed inset-x-0 top-0 z-[90]"
         onMouseLeave={scheduleClose}
       >
-        {/* Frosted once the page moves. The bar is 78% canvas before the
-            blur is applied, so the navigation keeps its contrast whatever
-            scrolls under it and still reads as glass — the earlier failure
-            was a 7% wash, not translucency as such.
+        {/* Frosted once the page moves — but solid while a mega panel is
+            open, and that is not an inconsistency.
 
-            With a mega panel open the bar switches to the panel's heavier
-            fill rather than keeping its own. The panel has to be near-opaque
-            to stay readable over the hero (see `glass-panel`), and a 78% bar
-            sitting directly on top of a 97% panel reads as two different
-            materials with a seam between them. Matching the fill keeps them
-            one surface, which is the whole point of the open state. */}
+            The bar is 4.5rem tall, so the 3% the frosting lets through is
+            confined to a strip and reads as a haze. The panel is seven
+            times that, and over an area that large the eye resolves a 3%
+            step into shapes: the hero headline was still legible behind the
+            menu. The panel therefore goes fully opaque, and the bar joins it
+            so the two do not meet as a 97%/100% step. Frosting is worth
+            having where it costs nothing and not worth defending where it
+            costs the menu. */}
         <div
           className={cn(
             "transition-[background-color,border-color,box-shadow] duration-300 ease-[var(--ease-out-quart)]",
             openLabel
-              ? "glass-panel border-b border-ink-900/10 shadow-[var(--shadow-sm)]"
+              ? "border-b border-ink-900/10 bg-canvas shadow-[var(--shadow-sm)]"
               : condensed
                 ? "glass-light border-b border-ink-900/10 shadow-[var(--shadow-sm)]"
                 : "border-b border-transparent bg-transparent",
@@ -403,7 +403,7 @@ function MegaPanel({
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
       onClick={onNavigate}
-      className="glass-panel hidden border-b border-ink-900/10 shadow-[var(--shadow-md)] lg:block"
+      className="hidden border-b border-ink-900/10 bg-canvas shadow-[var(--shadow-md)] lg:block"
     >
       <div className="shell">
         <div className="grid grid-cols-[minmax(0,16rem)_minmax(0,1fr)] gap-x-14 py-9">

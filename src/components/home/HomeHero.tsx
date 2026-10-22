@@ -31,7 +31,7 @@ export function HomeHero() {
     <>
       <section
         data-theme="deep"
-        className="relative isolate flex flex-col overflow-hidden bg-deep text-white xl:min-h-[min(36rem,74svh)] xl:justify-end"
+        className="relative isolate flex flex-col overflow-hidden bg-deep text-white xl:min-h-[min(30rem,64svh)] xl:justify-end"
       >
         {/*
           Two layouts, because one composition cannot serve both.
@@ -74,12 +74,17 @@ export function HomeHero() {
             position={hero.position}
             sizes="100vw"
             priority
-            className="xl:object-contain xl:object-right-bottom"
+            className="xl:object-contain xl:[object-position:100%_100%]"
           />
           <div aria-hidden className="scrim hidden xl:block" />
         </div>
 
-        <div className="shell order-1 w-full pb-[clamp(2rem,4vw,3rem)] pt-[clamp(7rem,14vh,9.5rem)] xl:order-none">
+        {/* The top padding clears the bar rather than composing against it:
+            the bar is 5.25rem tall before it condenses, so the floor is that
+            plus enough air that the eyebrow does not look wedged under it.
+            Everything above that floor is discretionary, which is where the
+            height came out of. */}
+        <div className="shell order-1 w-full pb-[clamp(1.5rem,3vw,2.25rem)] pt-[clamp(6.75rem,11vh,7.5rem)] xl:order-none">
           {/* Sized to hold "Complete preclinical research," on one line at
               every width above `sm`, which is the whole point of setting the
               break by hand. */}
@@ -93,7 +98,7 @@ export function HomeHero() {
             <h1
               data-reveal
               style={{ "--reveal-delay": "0.06s" } as React.CSSProperties}
-              className="mt-5 font-display text-[clamp(2.25rem,4vw,3.75rem)] font-[450] leading-[1.08] tracking-[-0.018em]"
+              className="mt-4 font-display text-[clamp(2.125rem,3.5vw,3.25rem)] font-[450] leading-[1.06] tracking-[-0.018em]"
             >
               Complete preclinical research,
               {/* Below `sm` the first line will not fit whatever the size, so
@@ -105,7 +110,7 @@ export function HomeHero() {
             <p
               data-reveal
               style={{ "--reveal-delay": "0.12s" } as React.CSSProperties}
-              className="mt-6 max-w-[40rem] text-lead text-ink-100"
+              className="mt-5 max-w-[42rem] text-lead text-ink-100"
             >
               One accredited laboratory, {numberWord(disciplines.length)} scientific divisions.
               A substance that arrives for chemistry moves through toxicology, ecotoxicology
@@ -115,7 +120,7 @@ export function HomeHero() {
             <div
               data-reveal
               style={{ "--reveal-delay": "0.18s" } as React.CSSProperties}
-              className="mt-9 flex flex-wrap items-center gap-3"
+              className="mt-7 flex flex-wrap items-center gap-3"
             >
               <ActionLink href="/contact" variant="solid" tone="deep">
                 Request a proposal
@@ -158,7 +163,7 @@ export function HomeHero() {
                 <div
                   key={stat.label}
                   className={cn(
-                    "border-white/12 px-5 py-5 sm:px-7 sm:py-6",
+                    "border-white/12 px-5 py-4 sm:px-7 sm:py-5",
                     i % 2 !== 0 && "border-l",
                     i % 4 !== 0 && "lg:border-l",
                     i % 4 === 0 && "lg:border-l-0",
@@ -166,10 +171,10 @@ export function HomeHero() {
                   )}
                 >
                   <dt className="label-mono text-ink-100">{stat.label}</dt>
-                  <dd className="mt-1.5 font-display text-[clamp(1.625rem,2.2vw,2.125rem)] font-[450] leading-none text-white">
+                  <dd className="mt-1 font-display text-[clamp(1.5rem,1.9vw,1.875rem)] font-[450] leading-none text-white">
                     <CountUp value={stat.value} suffix={stat.suffix} />
                   </dd>
-                  <p className="mt-2 text-micro leading-relaxed text-ink-100">{stat.caption}</p>
+                  <p className="mt-1.5 text-micro leading-relaxed text-ink-100">{stat.caption}</p>
                 </div>
               ))}
             </dl>

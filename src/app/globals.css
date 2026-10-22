@@ -395,7 +395,7 @@
 
    The earlier objection to these still stands — a translucent panel takes
    its contrast from whatever happens to be behind it — so both variants are
-   deliberately *heavy*: 78% and 68% with a wide blur and a saturation lift,
+   deliberately *heavy*: 97% and 68% with a wide blur and a saturation lift,
    not the 7% wash that made the old stats rail unreadable over a bright
    photograph. At those values the type behind never shows through as more
    than a soft field of colour, and the measured contrast holds.
@@ -416,28 +416,39 @@
    wherever it is dragged. Lowering the percentage lets more of the artwork
    through and walks back toward that failure: AA for the 12px captions runs
    out at about 50%. */
+/* The light surface: the header bar, and nothing else.
+
+   The value took three goes and the failures are worth recording, because
+   each looked fine by the obvious test.
+
+   78% ghosted badly. The bar is 4.5rem tall, so a 20px blur has very little
+   vertical context to draw on, and what it does to a 52px white serif
+   passing underneath is soften it, not remove it. Softened white-on-navy at
+   22% transparency is still white-on-navy: the hero headline read straight
+   through the bar and crossed the navigation. It passed a contrast audit
+   the whole time — the nav ink measured 11:1 against its backdrop — which
+   is the trap. Contrast asks whether the ink separates from the backdrop,
+   not whether the backdrop is quiet enough to read ink on.
+
+   93% with a wider blur was better and still not enough. Seven per cent of
+   pure white on navy is a 7-point step, and over letterforms that large a
+   7-point step is legible as letters.
+
+   97% is where structure behind stops resolving *at this height*. The worst
+   swing under a nav link is 6.7% and most links sit on a flat field; what is
+   left reads as a haze at the top edge. Colour and light still move as the
+   page scrolls, which is the part of the effect worth having.
+
+   The test that catches this is not the contrast ratio but the luminance
+   *swing* of the backdrop across a single nav link: a clean frosted field is
+   near-flat, and text behind shows up as a wide swing however well the ink
+   scores. Note the height dependence — 3% over a 4.5rem strip is a haze, and
+   the same 3% over the mega panel resolved into readable words, which is why
+   the panel is opaque and does not use this. */
 @utility glass-light {
-  background-color: color-mix(in oklab, var(--color-canvas) 78%, transparent);
-  backdrop-filter: blur(20px) saturate(1.6);
-  -webkit-backdrop-filter: blur(20px) saturate(1.6);
-}
-
-/* The same surface, raised to the point where it stops being see-through.
-
-   78% is fine for the header bar — a thin strip with nothing but body copy
-   passing under it. It is not fine for the mega panel, which is tall enough
-   to sit over the hero headline: a 60px white serif behind a 78% wash stays
-   legible through it, and the menu links end up crossing the words. Twenty
-   per cent of a very bright thing is still bright, and no amount of blur
-   fixes it, because blur spreads the glyph rather than dimming it.
-
-   So the panel keeps the blur, the saturation and the canvas hue — it still
-   belongs to the same material as the bar — and simply gives up the
-   transparency it cannot afford. */
-@utility glass-panel {
   background-color: color-mix(in oklab, var(--color-canvas) 97%, transparent);
-  backdrop-filter: blur(20px) saturate(1.6);
-  -webkit-backdrop-filter: blur(20px) saturate(1.6);
+  backdrop-filter: blur(28px) saturate(1.5);
+  -webkit-backdrop-filter: blur(28px) saturate(1.5);
 }
 
 @utility glass-deep {
