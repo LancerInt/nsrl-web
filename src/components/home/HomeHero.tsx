@@ -54,7 +54,23 @@ export function HomeHero() {
           being a tablet, which is why the obvious `sm` and `lg` are both
           wrong here.
         */}
-        <div className="relative order-2 aspect-[16/10] w-full overflow-hidden xl:absolute xl:inset-0 xl:order-none xl:-z-10 xl:aspect-auto">
+        {/*
+          From `xl` the frame starts below the navigation rather than at the
+          top of the section.
+
+          `contain` scales the artwork until it touches the frame on its
+          tight axis, and here that axis is the height — so the artwork was
+          already 617px of a 617px frame with no slack left, and its top edge
+          sat flush against the bar. Nothing was cropped, but a composition
+          whose topmost object is pressed into the navigation reads as
+          cropped, which is the only thing that matters.
+
+          Insetting the top is what buys the room: a shorter frame means a
+          smaller contained image, and the difference becomes air above the
+          artwork. It costs some scale, which is the trade `contain` always
+          offers — the whole picture, or a big one.
+        */}
+        <div className="relative order-2 aspect-[16/10] w-full overflow-hidden xl:absolute xl:inset-x-0 xl:bottom-0 xl:top-[6.5rem] xl:order-none xl:-z-10 xl:aspect-auto">
           {/*
             `contain`, not `cover`, from `xl` up — so the illustration is
             shown entire rather than cropped top and bottom, which is what
