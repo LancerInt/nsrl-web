@@ -176,15 +176,11 @@ export const primaryNav: NavGroup[] = [
         },
         {
           heading: "Newsroom",
-          links: [
-            { label: "News & events", href: "/news" },
-            { label: "Careers", href: "/careers" },
-          ],
+          links: [{ label: "News & events", href: "/news" }],
         },
       ],
     },
   },
-  { label: "Careers", href: "/careers" },
 ];
 
 export const footerNav: { heading: string; links: NavLink[] }[] = [
@@ -193,9 +189,7 @@ export const footerNav: { heading: string; links: NavLink[] }[] = [
     links: [
       { label: "About NSRL", href: "/about" },
       { label: "Quality system", href: "/about#quality-system" },
-      { label: "Leadership", href: "/about#leadership" },
       { label: "Facilities", href: "/facilities" },
-      { label: "Careers", href: "/careers" },
     ],
   },
   {

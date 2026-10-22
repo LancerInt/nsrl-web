@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { site } from "@/content/site";
 import { disciplines } from "@/content/disciplines";
-import { leadership, positioning } from "@/content/organisation";
+import { positioning } from "@/content/organisation";
 import {
   accreditations,
   getAccreditation,
@@ -15,7 +15,6 @@ import { AboutOpening } from "@/components/about/AboutOpening";
 import { ScaleLedger } from "@/components/about/ScaleLedger";
 import { QualitySystem } from "@/components/about/QualitySystem";
 import { ThreeRsBand } from "@/components/about/ThreeRsBand";
-import { LeadershipPanel } from "@/components/about/LeadershipPanel";
 import { AccreditationSummary } from "@/components/about/AccreditationSummary";
 import { MilestoneStair } from "@/components/about/MilestoneStair";
 
@@ -51,13 +50,9 @@ function aboutPageJsonLd() {
       legalName: site.legalName,
       slogan: site.tagline,
       description: positioning.lead,
-      founder: leadership.map((leader) => ({
-        "@type": "Person",
-        name: leader.name,
-        jobTitle: leader.role,
-        description: leader.bio,
-        worksFor: { "@id": `${site.url}/#organisation` },
-      })),
+      /* No `founder`. The page no longer names one, and structured data that
+         asserts what the page does not say is the kind of claim this site
+         does not make. */
     },
   };
 }
@@ -122,7 +117,6 @@ export default function AboutPage() {
       <ScaleLedger />
       <QualitySystem />
       <ThreeRsBand />
-      <LeadershipPanel />
       <AccreditationSummary />
       <MilestoneStair />
     </>

@@ -43,7 +43,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/products", 0.8, "monthly"),
     entry("/downloads", 0.8, "monthly"),
     entry("/news", 0.8, "weekly"),
-    entry("/careers", 0.8, "weekly"),
     entry("/contact", 0.8, "yearly"),
   ];
 

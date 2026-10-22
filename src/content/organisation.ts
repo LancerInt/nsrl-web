@@ -1,5 +1,5 @@
 /**
- * Organisational facts: scale, positioning, quality system, leadership.
+ * Organisational facts: scale, positioning, quality system.
  *
  * No dates are asserted anywhere in this file. The reference material carries
  * achievements but not the years they occurred, and inventing a founding date
@@ -252,24 +252,6 @@ export const threeRs = [
     letter: "R",
     word: "Rehabilitation",
     body: "Post-study rehabilitation protocols, extending our obligation beyond the point at which the data has been collected.",
-  },
-];
-
-/* -------------------------------------------------------------------------- */
-/*  Leadership                                                                */
-/* -------------------------------------------------------------------------- */
-
-export type Leader = {
-  name: string;
-  role: string;
-  bio: string;
-};
-
-export const leadership: Leader[] = [
-  {
-    name: "Dr. C. Tamilselvan",
-    role: "Founder · Test Facility Management & Managing Director",
-    bio: "The laboratory was founded by Dr. C. Tamilselvan, a visionary leader with decades of experience in the research industry. As Test Facility Management he holds ultimate responsibility under the GLP principles for the resourcing, personnel and quality system that every study depends on.",
   },
 ];
 

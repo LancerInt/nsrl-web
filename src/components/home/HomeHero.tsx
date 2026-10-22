@@ -25,13 +25,22 @@ const hero = images[heroImage];
  *
  * The recorded figures are a frosted rail along the foot, so the blur has
  * the plinth and the lower platforms to work on.
+ *
+ * From `xl` the section fills the viewport, which is what puts the
+ * accreditation strip wholly into the next screen rather than leaving it
+ * peeking over the fold. `justify-between` rather than `justify-end` is what
+ * makes that height behave: with the copy and the rail together occupying
+ * barely two-thirds of the screen, ending the column would have dropped the
+ * headline into the middle of the page. Spreading it pins the copy under the
+ * bar and the rail to the floor, and the space that opens between them is
+ * where the artwork gets to be large.
  */
 export function HomeHero() {
   return (
     <>
       <section
         data-theme="deep"
-        className="relative isolate flex flex-col overflow-hidden bg-deep text-white xl:min-h-[min(30rem,64svh)] xl:justify-end"
+        className="relative isolate flex flex-col overflow-hidden bg-deep text-white xl:min-h-svh xl:justify-between"
       >
         {/*
           Two layouts, because one composition cannot serve both.

@@ -2,9 +2,15 @@
 
 Everything in `nsrl/` is **commissioned NSRL artwork**, delivered in
 `assets/NSRL-All-29-Image-Replacements/` with its manifest, size map and
-generation prompts. Twenty-nine files, twenty-nine placements, none shared.
+generation prompts. Twenty-eight files, twenty-eight placements, none shared.
 `src/content/imagery.ts` maps each file to its slot and is the only place a
 placement changes.
+
+The drop was twenty-nine. `about-leadership.webp` went with the leadership
+section when that was removed from the About page: with no placement left it
+would have been an unreferenced file, and a one-to-one mapping only stays
+honest if it is maintained in both directions. The original remains in the
+supplier drop if the section ever returns.
 
 ## What these images are, and are not
 
@@ -19,17 +25,18 @@ rather than assert a room. The supplier's own note puts it the same way:
 
 > These are branded conceptual/editorial scientific illustrations, not
 > photographs proving actual NSRL buildings, equipment, staff, certificates
-> or test results. In the Leadership section the illustration is abstract;
-> it does not impersonate Dr. Tamilselvan. Review all species and method
-> depictions with the scientific owner.
+> or test results. Review all species and method depictions with the
+> scientific owner.
 
-That last sentence is an open action — see README.md.
+That last sentence is an open action — see README.md. (The supplier's note
+also covered the Leadership illustration; that section and its file are gone,
+so the clause has been dropped rather than left describing nothing.)
 
 ## Still needs genuine photography
 
 Illustration cannot do these jobs, and the set does not claim to:
 
-- A real NSRL team photograph and an approved leadership portrait.
+- A real NSRL team photograph, should the site ever show people.
 - Facility documentation: exterior or reception, the actual instrument
   benches, environmental test systems, the archive and controlled rooms,
   each with a truthful caption.

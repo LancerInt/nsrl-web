@@ -100,14 +100,6 @@ const library = {
     height: 936,
   },
 
-  /* ── About ────────────────────────────────────────────────────────── */
-  aboutLeadership: {
-    src: nsrl("about-leadership.webp"),
-    alt: "NSRL illustration: seven engraved glass cylinders arranged in a ring on a navy plinth marked NSRL, each etched with a discipline symbol and linked by teal lines to a lit central vessel.",
-    width: 1200,
-    height: 1500,
-  },
-
   /* ── Downloads ────────────────────────────────────────────────────── */
   downloadsEvidence: {
     src: nsrl("downloads-evidence.webp"),
@@ -289,7 +281,6 @@ export const divisionImage: Record<string, ImageKey> = {
 };
 
 /** Single-slot placements, named so a call site never guesses. */
-export const aboutLeadershipImage: ImageKey = "aboutLeadership";
 export const downloadsImage: ImageKey = "downloadsEvidence";
 export const newsImage: ImageKey = "newsResearch";
 export const studyPackagesImage: ImageKey = "studyPackages";

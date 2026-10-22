@@ -39,7 +39,7 @@ export function ScrollManager({ children }: { children: React.ReactNode }) {
     let frame = 0;
 
     if (firstRun.current) {
-      // Leave the initial load alone: a cold `/about#leadership` and browser
+      // Leave the initial load alone: a cold `/about#quality-system` and browser
       // scroll restoration both own the position at this point.
       firstRun.current = false;
     } else if (window.location.hash) {
