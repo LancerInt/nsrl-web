@@ -1,33 +1,49 @@
-import { ConceptualLabel } from "@/components/visuals/ConceptualLabel";
 import { capacityStats } from "@/content/organisation";
 import { facilityShowcase, images } from "@/content/imagery";
-import { formatCount } from "@/lib/utils";
+import { formatCount, pad } from "@/lib/utils";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ActionLink } from "@/components/ui/ActionLink";
 import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
+import { ConceptualLabel } from "@/components/visuals/ConceptualLabel";
 
 /**
  * The facility, shown rather than described.
  *
- * One tall frame and two stacked beside it, sized so the three fill a single
- * clean rectangle with no dead corner — the lead runs the full height of the
- * block and each stacked frame takes half of it less the gap. Laying it out
- * as spans in a shared row left the two small frames floating at the top of
- * a column twice their height; this is a two-column flex instead, which has
- * no such gap to leave.
+ * ── What this replaces ─────────────────────────────────────────────────
  *
- * Captions sit directly beneath their own frame, inside it, so a caption is
- * never ambiguous about which image it belongs to.
+ * A 58/42 split: one tall lead frame beside two stacked ones, each sized
+ * by flex rather than by a ratio. Three problems, all of them structural.
  *
- * The captions describe the kind of environment shown and each frame says
- * in type that it is a conceptual illustration. This section is the one on
- * the homepage that names the Salem site, which is precisely why its
- * artwork has to disclaim being a record of it. ASSET_MANIFEST.csv marks
- * all three of these slots REAL PHOTO NEEDED.
+ * The three images are the same kind of thing — one environment each —
+ * and the layout rendered them at three different weights and three
+ * different aspect ratios, so they read as a hierarchy that does not
+ * exist. Equal frames at one ratio say what is true: here are three
+ * environments.
+ *
+ * The lead frame had no ratio at all. `aspect-auto` with `flex-1` let its
+ * height come from whatever the other column happened to be, which made
+ * the crop unpredictable and, at wide viewports, enormous.
+ *
+ * And the conceptual disclaimer appeared three times, once per card,
+ * directly under three captions that were already two lines each. Stated
+ * once beneath the set it covers, it is clearer and it stops competing
+ * with the captions for the same reading.
+ *
+ * ── What is deliberate ─────────────────────────────────────────────────
+ *
+ * No card chrome. The images are the objects; captions sit under them on
+ * the section's own navy rather than inside a raised panel, which was
+ * putting a box around a box.
+ *
+ * Two type levels per caption, not three: a title and one line. The index
+ * is a label, in the same mono register the rest of the site uses for
+ * reference marks.
+ *
+ * This is the one section on the homepage that names the Salem site, which
+ * is exactly why its artwork has to disclaim being a record of it.
+ * ASSET_MANIFEST.csv marks all three slots REAL PHOTO NEEDED.
  */
 export function FacilityShowcase() {
-  const [lead, ...stacked] = facilityShowcase;
-
   return (
     <section
       data-theme="deep"
@@ -49,46 +65,69 @@ export function FacilityShowcase() {
           </p>
         </div>
 
-        <div
+        {/*
+          One column, then three. Never two: there are three frames, and a
+          two-column grid leaves the third alone beside an empty cell —
+          the same orphan the sector and accreditation grids had to be
+          made count-aware to avoid.
+
+          The ratio changes with the column count and that is deliberate.
+          A full-width 4:3 frame at 768px is 576px tall, so three of them
+          is a lot of scrolling for a showcase; 16:10 keeps the single
+          column in proportion. What matters is that the three are
+          identical to each other at any one width, which was the actual
+          fault in what this replaces.
+        */}
+        <ul
           data-reveal
-          className="mt-[clamp(1.75rem,3vw,2.5rem)] flex flex-col gap-4 lg:flex-row lg:items-stretch"
+          className="mt-[clamp(2rem,3.4vw,3rem)] grid gap-x-6 gap-y-8 lg:grid-cols-3"
         >
-          {/* Lead frame — full height of the block. */}
-          <Frame
-            frame={lead}
-            className="lg:w-[58%]"
-            mediaClassName="aspect-[4/3] lg:aspect-auto lg:flex-1"
-            sizes="(min-width: 1024px) 58vw, 100vw"
-          />
+          {facilityShowcase.map((frame, i) => {
+            const image = images[frame.image];
+            return (
+              <li key={frame.title}>
+                <figure>
+                  <div className="relative aspect-[16/10] overflow-hidden rounded-[var(--radius-card)] border border-white/10 bg-deep-raised lg:aspect-[4/3]">
+                    <SpecimenPlate
+                      src={image.src}
+                      alt={image.alt}
+                      position={image.position}
+                      /* The real rendered width at each breakpoint. Left to
+                         default this slot asked for a 3840px file to fill
+                         about 380px. */
+                      sizes="(min-width: 1024px) 31vw, 100vw"
+                    />
+                  </div>
+                  <figcaption className="mt-4">
+                    <span className="label-mono text-meniscus-300">{pad(i + 1)}</span>
+                    <span className="mt-2 block font-display text-h2 text-white">
+                      {frame.title}
+                    </span>
+                    <span className="mt-1.5 block text-small leading-snug text-ink-100">
+                      {frame.caption}
+                    </span>
+                  </figcaption>
+                </figure>
+              </li>
+            );
+          })}
+        </ul>
 
-          {/* Two stacked, each half the block less the gap. */}
-          <div className="flex flex-col gap-4 lg:w-[42%]">
-            {/* `min-h` on the stacked media is what actually sets the
-                height of the whole block: both columns stretch, so the
-                shortest definite height in the group wins and the lead
-                flexes to match it. Set too low, the two small frames
-                letterbox to a 3:1 slot and their subjects get cropped out
-                of their own photographs. */}
-            {stacked.map((frame) => (
-              <Frame
-                key={frame.title}
-                frame={frame}
-                className="lg:flex-1"
-                mediaClassName="aspect-[16/9] lg:aspect-auto lg:flex-1 lg:min-h-[14rem]"
-                sizes="(min-width: 1024px) 42vw, 100vw"
-              />
-            ))}
-          </div>
-        </div>
+        {/* Said once, for the set, immediately beneath it — rather than
+            three times, once under each caption. */}
+        <ConceptualLabel tone="deep" className="mt-6">
+          All three are conceptual illustrations — not photographs of NSRL premises or
+          equipment.
+        </ConceptualLabel>
 
-        {/* Recorded capacity — the numbers the photographs are evidence of. */}
+        {/* Recorded capacity. */}
         <dl
           data-reveal
           className="mt-10 grid gap-x-8 gap-y-6 border-t border-white/15 pt-8 sm:grid-cols-2 lg:grid-cols-4"
         >
           {capacityStats.map((stat) => (
             <div key={stat.label}>
-              <dt className="label-mono text-ink-100">{stat.label}</dt>
+              <dt className="label-mono text-ink-200">{stat.label}</dt>
               <dd className="mt-2 font-display text-h1 text-white">
                 {formatCount(stat.value)}
                 {stat.suffix ?? ""}
@@ -104,39 +143,5 @@ export function FacilityShowcase() {
         </div>
       </div>
     </section>
-  );
-}
-
-function Frame({
-  frame,
-  className,
-  mediaClassName,
-  sizes,
-}: {
-  frame: (typeof facilityShowcase)[number];
-  className?: string;
-  mediaClassName: string;
-  sizes: string;
-}) {
-  const image = images[frame.image];
-
-  return (
-    <figure
-      className={`flex flex-col overflow-hidden rounded-[var(--radius-card)] bg-deep-raised ${className ?? ""}`}
-    >
-      <div className={`relative overflow-hidden ${mediaClassName}`}>
-        <SpecimenPlate
-          src={image.src}
-          alt={image.alt}
-          position={image.position}
-          sizes={sizes}
-        />
-      </div>
-      <figcaption className="space-y-1 px-4 py-3.5 sm:px-5 sm:py-4">
-        <span className="block font-display text-h3 text-white">{frame.title}</span>
-        <span className="mt-1 block text-small leading-snug text-ink-100">{frame.caption}</span>
-        <ConceptualLabel tone="deep" className="pt-1" />
-      </figcaption>
-    </figure>
   );
 }
