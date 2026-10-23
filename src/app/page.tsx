@@ -32,7 +32,7 @@ const divisionRows: DivisionRow[] = disciplines.map((discipline) => ({
   index: discipline.index,
   name: discipline.name,
   family: discipline.family,
-  summary: discipline.summary,
+  overview: discipline.overview,
   claim: discipline.claim,
 }));
 

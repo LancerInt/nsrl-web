@@ -167,14 +167,6 @@ const library = {
     height: 1200,
   },
 
-  /* ── Newsroom ─────────────────────────────────────────────────────── */
-  newsResearch: {
-    src: nsrl("news-research.webp"),
-    alt: "NSRL illustration: a navy bound notebook, a magnifying lens, a microscope slide and an amber vial arranged on a pale surface.",
-    width: 1200,
-    height: 1500,
-  },
-
   /* ── Study packages ───────────────────────────────────────────────── */
   studyPackages: {
     src: nsrl("study-packages.webp"),
@@ -324,7 +316,6 @@ export const divisionImage: Record<string, ImageKey> = {
 
 /** Single-slot placements, named so a call site never guesses. */
 export const downloadsImage: ImageKey = "downloadsEvidence";
-export const newsImage: ImageKey = "newsResearch";
 export const studyPackagesImage: ImageKey = "studyPackages";
 export const servicesOverviewImage: ImageKey = "servicesIntegrated";
 

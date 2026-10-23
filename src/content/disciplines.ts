@@ -21,6 +21,23 @@ export type Discipline = {
   family: "Safety & toxicology" | "Analytical & discovery" | "Applied & specialist";
   /** One line, sentence case, no full stop — used under headings. */
   summary: string;
+  /**
+   * The plain-language description, for a reader who has not yet decided
+   * which division owns their question.
+   *
+   * Separate from `summary` because the two answer different questions.
+   * `summary` is the division's distinguishing claim — "acute through
+   * multi-year carcinogenicity, run under GLP in our own vivaria" — which
+   * is what a toxicologist already scanning for capability wants, and is
+   * what the division page, the register and the relationship panel show.
+   * `overview` says what the division *does*, which is what the homepage
+   * index needs: someone arriving there may not know whether their
+   * question is toxicology or ecotoxicology, and a claim about study
+   * duration does not help them choose.
+   *
+   * Full sentences with a full stop, unlike `summary`.
+   */
+  overview: string;
   /** Two to four paragraphs of body copy. */
   body: string[];
   /** Headline claim rendered large on the division page. */
@@ -54,6 +71,8 @@ export const disciplines: Discipline[] = [
     family: "Safety & toxicology",
     summary:
       "Acute through multi-year carcinogenicity, run under GLP in our own vivaria",
+    overview:
+      "Safety assessments to evaluate toxicity, irritation, sensitisation and potential health effects.",
     body: [
       "Toxicology is the division the rest of the laboratory is built around. It runs under GLP certification, operates multiple vivaria, and is staffed by toxicologists holding DABT credentials — the board certification that regulators outside India look for first.",
       "The work spans the full duration axis. Acute studies resolve in days; subchronic and chronic programmes run for months; carcinogenicity bioassays run for years without a gap in the record. Multiple state-of-the-art inhalation chambers let us run inhalation toxicity studies on small animals, which is essential for evaluating airborne chemicals and inhaled drug products.",
@@ -133,6 +152,8 @@ export const disciplines: Discipline[] = [
     family: "Safety & toxicology",
     summary:
       "India's largest ecotoxicology department — 26 species across water, soil and air",
+    overview:
+      "Environmental safety studies assessing effects on aquatic organisms, terrestrial species and beneficial insects.",
     body: [
       "This is India's largest ecotoxicology department, and the breadth is the point: 26 species spanning birds, fish, algae, plants, honeybees, earthworms, crustaceans, molluscs, collembolans, ladybugs and lacewings. An environmental risk assessment is only as credible as the number of trophic levels behind it.",
       "The division works to GLP and NABL standards, and its regulatory history includes registering India's first nano-fertiliser — a dossier with no domestic precedent to follow.",
@@ -236,6 +257,8 @@ export const disciplines: Discipline[] = [
     family: "Analytical & discovery",
     summary:
       "Analytical chemistry that underwrites every other division's numbers",
+    overview:
+      "Analytical testing for composition, purity, residues, physicochemical properties and storage stability.",
     body: [
       "Chemistry is the division no study can proceed without. Identity, purity, concentration and stability are established here, and every dose administered anywhere in the laboratory traces back to a chemistry result.",
       "The GLP-certified laboratory runs HPLC, GC-MS/MS, LC-MS/MS, ICP-MS, FTIR, NMR, DSC and TGA — a spread that covers organic and inorganic, volatile and involatile, thermal and spectroscopic characterisation without outsourcing a step.",
@@ -309,6 +332,8 @@ export const disciplines: Discipline[] = [
     family: "Analytical & discovery",
     summary:
       "Sterility, endotoxin and environmental monitoring against ISO, USP and OECD methods",
+    overview:
+      "Microbial identification, viable counts, contamination testing and evaluation of biological activity.",
     body: [
       "The microbiology division is certified by NGCMA for GLP and accredited by NABL to ISO/IEC 17025, and operates under Good Laboratory Practice with recognition from the FDA and EMA.",
       "Its method set is deliberately standard-anchored. Sterility runs to ISO 11737-1:2018 and USP 71; endotoxin to USP 85; microbial limits to ISO 4833-1:2013; susceptibility to ISO 20776-1:2019. Naming the method is how a result travels across borders intact.",
@@ -435,6 +460,8 @@ export const disciplines: Discipline[] = [
     family: "Applied & specialist",
     summary:
       "Insecticide efficacy and resistance work on colonies we breed ourselves",
+    overview:
+      "Laboratory and field studies evaluating pest control efficacy and effects on beneficial arthropods.",
     body: [
       "Efficacy data is only as good as the insects behind it. This division maintains in-house breeding programmes for its test species, which removes the variability that makes field-collected populations unreliable as a baseline.",
       "Contact, residual and knockdown efficacy, repellency, larvicidal and adulticidal activity and fumigant testing all run under Good Laboratory Practice, against the agriculturally and economically important pest species a product has to be effective on.",
@@ -500,6 +527,8 @@ export const disciplines: Discipline[] = [
     family: "Applied & specialist",
     summary:
       "Over 70 environmentally controlled clean rooms for small animal models",
+    overview:
+      "Controlled animal housing and husbandry supporting research, welfare and reliable study outcomes.",
     body: [
       "Animal welfare and data quality are the same problem viewed from two directions. A stressed animal is a poor model, which is why environmental control and health monitoring are treated as study parameters rather than as housekeeping.",
       "More than 70 clean rooms hold small animal models under controlled temperature, humidity, lighting and ventilation, with continuous health monitoring, body weight checks and feed and water quality evaluation.",
@@ -546,6 +575,8 @@ export const disciplines: Discipline[] = [
     family: "Applied & specialist",
     summary:
       "For the programme no standard guideline was written to cover",
+    overview:
+      "Tailored study designs addressing specific product, research and regulatory requirements.",
     body: [
       "Custom Services exists to bridge the gaps in research and development — the studies that fall between guidelines, combine two disciplines, or need a model that does not yet exist.",
       "Because the design work happens inside the same GLP quality system that runs our routine studies, a bespoke protocol carries the same defensibility as a standard one. That is the difference between a custom study and an improvised one.",

@@ -174,10 +174,6 @@ export const primaryNav: NavGroup[] = [
             { label: "Study packages", href: "/products" },
           ],
         },
-        {
-          heading: "Newsroom",
-          links: [{ label: "News & events", href: "/news" }],
-        },
       ],
     },
   },
@@ -216,7 +212,6 @@ export const footerNav: { heading: string; links: NavLink[] }[] = [
     links: [
       { label: "Study packages", href: "/products" },
       { label: "Downloads", href: "/downloads" },
-      { label: "News & events", href: "/news" },
       { label: "Contact", href: "/contact" },
     ],
   },

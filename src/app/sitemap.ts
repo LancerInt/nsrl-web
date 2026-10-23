@@ -3,15 +3,11 @@ import type { MetadataRoute } from "next";
 import { site } from "@/content/site";
 import { disciplines } from "@/content/disciplines";
 import { industries } from "@/content/industries";
-import { articles } from "@/content/news";
 
 /**
  * Every URL the site serves, derived from the same typed content modules the
- * pages render from. Adding a discipline, an industry or an article extends the
- * sitemap with no edit here — which is the only way a sitemap stays truthful.
- *
- * `archiveRecords` is deliberately not imported: those entries are listed on
- * /news but have no page, so emitting a URL for one would advertise a 404.
+ * pages render from. Adding a discipline or an industry extends the sitemap
+ * with no edit here — which is the only way a sitemap stays truthful.
  */
 
 /** One timestamp for the whole build, so entries never disagree with each other. */
@@ -42,7 +38,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/services", 0.8, "monthly"),
     entry("/products", 0.8, "monthly"),
     entry("/downloads", 0.8, "monthly"),
-    entry("/news", 0.8, "weekly"),
     entry("/contact", 0.8, "yearly"),
   ];
 
@@ -55,9 +50,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry(`/services/${industry.slug}`, 0.6, "monthly"),
   );
 
-  const articlePages: MetadataRoute.Sitemap = articles.map((article) =>
-    entry(`/news/${article.slug}`, 0.6, "yearly"),
-  );
-
-  return [...home, ...indexes, ...disciplinePages, ...industryPages, ...articlePages];
+  return [...home, ...indexes, ...disciplinePages, ...industryPages];
 }

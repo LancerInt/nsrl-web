@@ -2,15 +2,19 @@
 
 Everything in `nsrl/` is **commissioned NSRL artwork**, delivered in
 `assets/NSRL-All-29-Image-Replacements/` with its manifest, size map and
-generation prompts. Twenty-eight files, twenty-eight placements, none shared.
+generation prompts. Twenty-seven files, twenty-seven placements, none shared.
 `src/content/imagery.ts` maps each file to its slot and is the only place a
 placement changes.
 
-The drop was twenty-nine. `about-leadership.webp` went with the leadership
-section when that was removed from the About page: with no placement left it
-would have been an unreferenced file, and a one-to-one mapping only stays
-honest if it is maintained in both directions. The original remains in the
-supplier drop if the section ever returns.
+Three further editorial stills live in `editorial/`, from the redesign kit —
+see the note at the foot of this file.
+
+The drop was twenty-nine. Two files left with the sections they served:
+`about-leadership.webp` when the leadership section came off the About page,
+and `news-research.webp` when News & Events was withdrawn. With no placement
+left each would have been an unreferenced file, and a one-to-one mapping only
+stays honest if it is maintained in both directions. Both originals remain in
+the supplier drop if those sections ever return.
 
 ## What these images are, and are not
 

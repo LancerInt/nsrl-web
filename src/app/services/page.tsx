@@ -35,8 +35,8 @@ export default function ServicesPage() {
         /* The old title counted sectors and stages at the reader before
            saying what the page was for. Those counts are still on the page,
            in the meta row directly beneath, where a number belongs. */
-        title="Plan your regulatory study"
-        lead="Every programme here is scoped from the authority that will read it, conducted inside one accredited laboratory, and reported so that each conclusion traces back to the instrument that produced it."
+        title="Plan your next regulatory study"
+        lead="We will identify the endpoints, guidelines and specialist divisions your project requires — and advise you clearly on which studies are necessary."
         crumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
         meta={[
           { label: "Sectors", value: String(industries.length) },

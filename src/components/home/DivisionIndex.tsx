@@ -18,7 +18,13 @@ export type DivisionRow = {
   index: string;
   name: string;
   family: string;
-  summary: string;
+  /**
+   * The plain-language description, not the division's distinguishing
+   * claim. A reader on the homepage is still deciding which division owns
+   * their question, and "26 species across water, soil and air" answers a
+   * question they have not asked yet.
+   */
+  overview: string;
   claim: { value: string; unit?: string; caption: string };
 };
 
@@ -91,7 +97,7 @@ export function DivisionIndex({ divisions }: { divisions: DivisionRow[] }) {
                           />
                         </span>
                         <span className="mt-1 block text-small leading-snug text-neutral-600">
-                          {division.summary}
+                          {division.overview}
                         </span>
                       </Link>
                     </li>
