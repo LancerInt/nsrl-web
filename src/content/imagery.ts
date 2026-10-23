@@ -64,19 +64,14 @@ const editorial = (file: string) => `/images/editorial/${file}`;
 const library = {
   /* ── Homepage ─────────────────────────────────────────────────────── */
   homeHero: {
-    src: editorial("hero-editorial.webp"),
-    alt: "Still life on a warm white bench: a labelled amber sample bottle beside a rack of capped clear vials, a shallow glass dish holding seed and a single leaf, in daylight.",
-    /* 1672×941, the delivered size. The kit's manifest names 2560×1440 as a
-       preferred future master and is explicit that no such file was
-       supplied, so this is what the frame is allowed to assume. */
-    width: 1672,
-    height: 941,
-    /* The composition keeps its left third nearly empty and groups the
-       focal objects right of centre. Holding the crop there is what
-       protects them as the frame narrows; the empty third is for the
-       headline on a desktop, and is cropped away on a phone where the
-       artwork sits under the copy instead of behind it. */
-    position: "72% 50%",
+    src: nsrl("home-hero.webp"),
+    alt: "NSRL illustration: a ribbon of glass platforms rising across a navy field, carrying a sample vial, a stained tissue slide, a water droplet, a culture dish, a leaf with an insect, a cell model and a sample plate, above a steel plinth marked NSRL.",
+    width: 2560,
+    height: 1332,
+    /* The left half is deliberately empty navy and the platforms climb the
+       right. Holding the crop right of centre keeps them and the NSRL
+       plinth in frame as the panel narrows. */
+    position: "68% 50%",
   },
   homeAgrochemical: {
     src: nsrl("home-agrochemical.webp"),
@@ -223,11 +218,28 @@ const library = {
   },
 
   /* ── Services ─────────────────────────────────────────────────────── */
-  servicesIntegrated: {
-    src: nsrl("services-integrated.webp"),
-    alt: "NSRL illustration: a seedling under glass on a circular base marked NSRL, with dishes of grain, powder and seed set around it.",
-    width: 1600,
-    height: 1200,
+  /*
+    The kit's editorial still life lives here rather than on the homepage.
+
+    It was commissioned for the home hero and held that slot briefly; the
+    homepage has gone back to the navy ribbon illustration. This is the
+    better of the remaining homes for it: a labelled sample bottle, a rack
+    of vials and a dish of seed is a picture of a test item arriving to be
+    scoped, which is exactly what the Services page asks a visitor to do.
+
+    It also retires `services-integrated.webp`, the seedling-under-glass
+    podium the kit's manifest singles out as "redundant shiny specimen
+    podium" for this slot.
+  */
+  servicesEditorial: {
+    src: editorial("hero-editorial.webp"),
+    alt: "Still life on a warm white bench: a labelled amber sample bottle beside a rack of capped clear vials, a shallow glass dish holding seed and a single leaf, in daylight.",
+    /* 1672×941, the delivered size. The manifest names larger masters as
+       future production targets and is explicit that none was supplied. */
+    width: 1672,
+    height: 941,
+    /* Focal objects sit right of centre with the left third nearly empty. */
+    position: "72% 50%",
   },
   serviceAgrochemical: {
     src: nsrl("service-agrochemical.webp"),
@@ -317,7 +329,7 @@ export const divisionImage: Record<string, ImageKey> = {
 /** Single-slot placements, named so a call site never guesses. */
 export const downloadsImage: ImageKey = "downloadsEvidence";
 export const studyPackagesImage: ImageKey = "studyPackages";
-export const servicesOverviewImage: ImageKey = "servicesIntegrated";
+export const servicesOverviewImage: ImageKey = "servicesEditorial";
 
 /* -------------------------------------------------------------------------- */
 

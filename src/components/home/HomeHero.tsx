@@ -38,7 +38,17 @@ export function HomeHero() {
         region and it is at the left, which is no help at all when the frame
         is 390px wide and the text would have to sit on the vials.
       */}
-      <section className="border-b border-[--rule] bg-canvas lg:grid lg:grid-cols-2 lg:items-center">
+      {/*
+        At `lg` the clearance for the fixed bar moves from the copy to the
+        section, so *both* columns start below it.
+
+        With the navy artwork back in the right half, the bar is no longer
+        sitting on warm white across its whole width — the "Request a
+        proposal" button is at the right, and the button is navy. Navy on
+        navy loses the button's edge entirely. Pushing the panel down means
+        the bar spans one surface again.
+      */}
+      <section className="border-b border-[--rule] bg-canvas lg:grid lg:grid-cols-2 lg:items-center lg:pb-10 lg:pt-[calc(var(--nav-h)+1.5rem)]">
         {/*
           `.shell` overridden to hug the right of its half rather than
           centre in it. `ml-auto` with a max of half the measure puts the
@@ -56,7 +66,7 @@ export function HomeHero() {
           Expressed against `--nav-h` rather than as a number, so it cannot
           drift out of step with the bar it is clearing.
         */}
-        <div className="shell pb-[clamp(2.5rem,5vw,4rem)] pt-[calc(var(--nav-h)+1.5rem)] lg:ml-auto lg:mr-0 lg:max-w-[calc(var(--shell-max)/2)] lg:pb-14 lg:pr-12 lg:pt-[calc(var(--nav-h)+2rem)]">
+        <div className="shell pb-[clamp(2.5rem,5vw,4rem)] pt-[calc(var(--nav-h)+1.5rem)] lg:ml-auto lg:mr-0 lg:max-w-[calc(var(--shell-max)/2)] lg:py-0 lg:pr-12">
           <div className="max-w-[34rem]">
             <p className="label-mono text-meniscus-600">
               Contract research organisation · Salem, Tamil Nadu

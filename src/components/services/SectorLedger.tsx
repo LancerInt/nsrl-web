@@ -32,13 +32,22 @@ export function SectorLedger() {
           </RevealText>
           <p className="measure mt-6 text-lead text-neutral-600">
             The endpoints, guidelines and species in a programme follow from the authority that
-            has to approve it. These five are the contexts the laboratory is built to write for.
+            has to approve it. These {numberWord(industries.length)} are the contexts the
+            laboratory is built to write for.
+            {/* Was a hardcoded "five", left behind when two sectors were
+                withdrawn — directly under a heading that derives "Three"
+                from the same array. Derived now, so the sentence cannot
+                disagree with the heading above it again. */}
           </p>
         </div>
 
+        {/* 16:9 at every width now, because that is the delivered ratio of
+            the still life this frame holds. The 4:3 it used at `lg` was cut
+            for a 4:3 source; applied to a 16:9 file it would crop a quarter
+            of the width away, and the quarter nearest the subject. */}
         <div
           data-reveal="scale"
-          className="relative col-span-12 aspect-[16/9] img-frame lg:col-span-5 lg:col-start-8 lg:aspect-[4/3]"
+          className="relative col-span-12 aspect-[16/9] img-frame lg:col-span-5 lg:col-start-8"
         >
           <SpecimenPlate
             src={images[servicesOverviewImage].src}

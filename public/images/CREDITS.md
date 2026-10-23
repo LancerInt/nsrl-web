@@ -2,19 +2,21 @@
 
 Everything in `nsrl/` is **commissioned NSRL artwork**, delivered in
 `assets/NSRL-All-29-Image-Replacements/` with its manifest, size map and
-generation prompts. Twenty-seven files, twenty-seven placements, none shared.
+generation prompts. Twenty-six files, twenty-six placements, none shared.
 `src/content/imagery.ts` maps each file to its slot and is the only place a
 placement changes.
 
-Three further editorial stills live in `editorial/`, from the redesign kit —
-see the note at the foot of this file.
+Three further editorial stills live in `editorial/`, from the redesign kit.
+Two of them hold the Toxicology and Ecotoxicology division heroes; the third
+runs on the Services overview.
 
-The drop was twenty-nine. Two files left with the sections they served:
-`about-leadership.webp` when the leadership section came off the About page,
-and `news-research.webp` when News & Events was withdrawn. With no placement
-left each would have been an unreferenced file, and a one-to-one mapping only
-stays honest if it is maintained in both directions. Both originals remain in
-the supplier drop if those sections ever return.
+The drop was twenty-nine. Three files have left it: `about-leadership.webp`
+when the leadership section came off the About page, `news-research.webp`
+when News & Events was withdrawn, and `services-integrated.webp` when the
+Services overview took the kit's editorial still life instead. With no
+placement left each would have been an unreferenced file, and a one-to-one
+mapping only stays honest if it is maintained in both directions. All three
+originals remain in the supplier drop if those slots ever need them again.
 
 ## What these images are, and are not
 
