@@ -39,16 +39,21 @@ export function HomeHero() {
         is 390px wide and the text would have to sit on the vials.
       */}
       {/*
-        At `lg` the clearance for the fixed bar moves from the copy to the
-        section, so *both* columns start below it.
+        Full-bleed split: warm white and the headline on the left half, the
+        navy artwork filling the right half edge to edge and top to bottom.
 
-        With the navy artwork back in the right half, the bar is no longer
-        sitting on warm white across its whole width — the "Request a
-        proposal" button is at the right, and the button is navy. Navy on
-        navy loses the button's edge entirely. Pushing the panel down means
-        the bar spans one surface again.
+        No padding on the section and `items-stretch`, so the artwork panel
+        is the full height of the row rather than a picture floating in a
+        band of paper. The copy column carries its own padding, including
+        the clearance for the fixed bar.
+
+        The panel runs *under* the bar rather than starting below it. That
+        is only safe because the bar is opaque at every scroll position now
+        (see SiteHeader): the first navy pixel a reader sees is the one
+        immediately below it, so the panel reads as full height without the
+        navigation ever having to sit on navy.
       */}
-      <section className="border-b border-[--rule] bg-canvas lg:grid lg:grid-cols-2 lg:items-center lg:pb-10 lg:pt-[calc(var(--nav-h)+1.5rem)]">
+      <section className="border-b border-[--rule] bg-canvas lg:grid lg:min-h-[min(46rem,92svh)] lg:grid-cols-2 lg:items-stretch">
         {/*
           `.shell` overridden to hug the right of its half rather than
           centre in it. `ml-auto` with a max of half the measure puts the
@@ -66,7 +71,7 @@ export function HomeHero() {
           Expressed against `--nav-h` rather than as a number, so it cannot
           drift out of step with the bar it is clearing.
         */}
-        <div className="shell pb-[clamp(2.5rem,5vw,4rem)] pt-[calc(var(--nav-h)+1.5rem)] lg:ml-auto lg:mr-0 lg:max-w-[calc(var(--shell-max)/2)] lg:py-0 lg:pr-12">
+        <div className="shell flex pb-[clamp(2.5rem,5vw,4rem)] pt-[calc(var(--nav-h)+1.5rem)] lg:ml-auto lg:mr-0 lg:max-w-[calc(var(--shell-max)/2)] lg:items-center lg:pb-16 lg:pr-12 lg:pt-[calc(var(--nav-h)+4rem)]">
           <div className="max-w-[34rem]">
             <p className="label-mono text-meniscus-600">
               Contract research organisation · Salem, Tamil Nadu
@@ -110,7 +115,11 @@ export function HomeHero() {
           `priority` only here. This is the LCP element, and it is the only
           image on the site that gets it.
         */}
-        <div className="relative h-[clamp(14rem,56vw,20rem)] overflow-hidden border-t border-[--rule] bg-canvas-sunken lg:h-[clamp(24rem,44vw,38rem)] lg:border-l lg:border-t-0">
+        {/* `h-full` at `lg`, not a clamped height: the panel's job is to be
+            the right half of the section, whatever that section turns out
+            to be. Below `lg` it is a band under the copy and needs a height
+            of its own. */}
+        <div className="relative h-[clamp(14rem,56vw,20rem)] overflow-hidden bg-deep lg:h-full">
           <Image
             src={hero.src}
             alt={hero.alt}

@@ -24,7 +24,10 @@ import { DivisionNetwork } from "@/components/visuals/DivisionNetwork";
 export function IntegratedLab() {
   return (
     <section
-      className="bg-canvas py-[var(--section-y)] text-ink-900"
+      /* Sunken, so the selected row can lift onto white paper and the navy
+         answer panel has something to sit against. On plain canvas the
+         whole figure floated. */
+      className="bg-canvas-sunken py-[var(--section-y)] text-ink-900"
       aria-labelledby="one-laboratory"
     >
       <div className="shell">

@@ -23,7 +23,6 @@ export function SiteHeader() {
   const [open, setOpen] = useState<{ label: string; via: OpenSource } | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [lastPath, setLastPath] = useState(pathname);
-  const [overDeep, setOverDeep] = useState(false);
   const closeTimer = useRef<number>(0);
   // The mobile sheet is a modal dialog, so focus has to come back here when it
   // closes. Held on the header because the sheet outlives its own open state
@@ -33,35 +32,20 @@ export function SiteHeader() {
 
   const openLabel = open?.label ?? null;
 
-  /* -- Adapt to the band beneath ------------------------------------------ */
-  // While the bar is transparent it sits directly on the page, so it has to
-  // take its contrast from whatever is under it. Without this the navy logo
-  // and grey links disappear against a deep hero.
-  useEffect(() => {
-    const sections = Array.from(
-      document.querySelectorAll<HTMLElement>("main [data-theme]"),
-    );
-    if (!sections.length) return;
+  /* -- No longer adapts to the band beneath -------------------------------
+     The bar used to be transparent at the top of a page and watch for a
+     `data-theme="deep"` section passing underneath, switching the logo and
+     links to light ink when one did. That whole mechanism is gone, because
+     the bar is opaque at every scroll position now.
 
-    // A zero-height band across the viewport at the header's baseline: the
-    // section intersecting it is the one currently behind the bar.
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-          setOverDeep((entry.target as HTMLElement).dataset.theme === "deep");
-        }
-      },
-      { rootMargin: "-44px 0px -100% 0px", threshold: 0 },
-    );
+     What killed it was the split hero: with warm white on the left and navy
+     artwork on the right, the bar spans *both* at once. There is no single
+     answer to "what is behind me" to adapt to — half the links would have
+     been on paper and the "Request a proposal" button, which is navy, would
+     have been navy-on-navy with no edge at all.
 
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, [pathname]);
-
-  // Deep styling only applies while the bar is see-through; once it goes
-  // opaque it has its own light background and must return to dark ink.
-  const onDark = overDeep && !condensed && !openLabel;
+     An opaque bar also means a hero can run full-bleed under it without
+     anything having to be negotiated, which is what this change was for. */
 
   /* -- Opaque once the page moves ----------------------------------------- */
   // The bar does not hide on scroll-down. On a page whose primary action is
@@ -83,10 +67,6 @@ export function SiteHeader() {
     setLastPath(pathname);
     setOpen(null);
     setMobileOpen(false);
-    // Reset here rather than in the observer effect: the new page's sections
-    // have not been measured yet, and carrying the old page's tone across the
-    // transition flashes white links onto a light hero.
-    setOverDeep(false);
   }
 
   /* -- Escape closes everything, and gives focus back --------------------- */
@@ -233,10 +213,10 @@ export function SiteHeader() {
             from its backdrop, not whether the backdrop is quiet. */}
         <div
           className={cn(
-            "transition-[background-color,border-color,box-shadow] duration-200 ease-[var(--ease-out-quart)]",
-            condensed || openLabel
-              ? "border-b border-[--rule] bg-canvas shadow-[var(--shadow-sm)]"
-              : "border-b border-transparent bg-transparent",
+            "border-b border-[--rule] bg-canvas transition-shadow duration-200 ease-[var(--ease-out-quart)]",
+            /* Only the shadow changes on scroll now: the bar lifts off the
+               page once there is page underneath it to lift off. */
+            condensed || openLabel ? "shadow-[var(--shadow-sm)]" : "shadow-none",
           )}
         >
           <div className="shell">
@@ -246,7 +226,7 @@ export function SiteHeader() {
                 condensed ? "h-[4.5rem]" : "h-[5.25rem]",
               )}
             >
-              <Logo tone={onDark ? "deep" : "light"} />
+              <Logo />
 
               {/* ---- Desktop navigation ---- */}
               <nav aria-label="Primary" className="hidden lg:block">
@@ -265,7 +245,7 @@ export function SiteHeader() {
                         <span
                           className={cn(
                             "flex items-center rounded-[var(--radius-control)] transition-colors duration-200",
-                            expanded && !onDark && "bg-ink-900/5",
+                            expanded && "bg-ink-900/5",
                           )}
                         >
                           <Link
@@ -275,12 +255,8 @@ export function SiteHeader() {
                               "relative block py-2.5 pl-3.5 text-[0.9375rem] font-medium transition-colors duration-200",
                               group.panel ? "pr-1" : "pr-3.5",
                               active || expanded
-                                ? onDark
-                                  ? "text-white"
-                                  : "text-ink-950"
-                                : onDark
-                                  ? "text-ink-100 hover:text-white"
-                                  : "text-neutral-600 hover:text-ink-950",
+                                ? "text-ink-950"
+                                : "text-neutral-600 hover:text-ink-950",
                             )}
                           >
                             {group.label}
@@ -291,7 +267,7 @@ export function SiteHeader() {
                               aria-hidden
                               className={cn(
                                 "absolute inset-x-3.5 bottom-1 h-[2px] origin-left rounded-full transition-transform duration-300 ease-[var(--ease-out-quart)]",
-                                onDark ? "bg-white" : "bg-meniscus-500",
+                                "bg-meniscus-500",
                                 active ? "scale-x-100" : "scale-x-0",
                               )}
                             />
@@ -323,9 +299,7 @@ export function SiteHeader() {
                               }
                               className={cn(
                                 "grid h-9 w-7 place-items-center rounded-[var(--radius-control)] transition-colors duration-200",
-                                onDark
-                                  ? "text-ink-200 hover:text-white"
-                                  : "text-neutral-550 hover:text-ink-950",
+                                "text-neutral-550 hover:text-ink-950",
                               )}
                             >
                               <ChevronDown
@@ -352,7 +326,6 @@ export function SiteHeader() {
                   <ActionLink
                     href="/contact"
                     variant="solid"
-                    tone={onDark ? "deep" : "light"}
                     size="compact"
                   >
                     Request a proposal
@@ -367,9 +340,7 @@ export function SiteHeader() {
                   aria-expanded={mobileOpen}
                   className={cn(
                     "grid h-11 w-11 place-items-center rounded-[var(--radius-control)] border transition-colors duration-200 lg:hidden",
-                    onDark
-                      ? "border-white/25 text-white hover:border-white"
-                      : "border-ink-900/15 text-ink-900 hover:border-ink-900/40",
+                    "border-ink-900/15 text-ink-900 hover:border-ink-900/40",
                   )}
                 >
                   <Menu className="h-5 w-5" />
