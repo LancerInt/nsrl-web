@@ -30,14 +30,13 @@ export function ThreeRsBand() {
               Animal welfare
             </Eyebrow>
             <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
-              Three Rs. And a fourth.
+              The three Rs, with a commitment to care.
             </RevealText>
           </div>
           <div className="col-span-12 lg:col-span-4 lg:col-start-9">
             <p className="text-small text-neutral-600">
-              Welfare is treated as a data-quality question, not a compliance
-              overlay. A stressed animal is a poor model — the programme exists
-              because the science depends on it.
+              Animal welfare guides study design, daily care and responsible research, with
+              attention to the animals before, during and after each study.
             </p>
             <ActionLink
               href="/research/vivarium"

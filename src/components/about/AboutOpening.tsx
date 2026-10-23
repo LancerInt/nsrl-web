@@ -24,7 +24,7 @@ export function AboutOpening() {
           {/* Prose, offset right of centre. */}
           <div className="col-span-12 lg:col-span-8 lg:col-start-5">
             <RevealText as="h2" className="font-display text-d3 text-ink-950">
-              One custodian, from receipt to archive.
+              Integrated research, from planning to reporting.
             </RevealText>
 
             <p

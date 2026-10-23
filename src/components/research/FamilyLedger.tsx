@@ -18,7 +18,7 @@ type Family = Discipline["family"];
 const FAMILY_NOTES: Record<Family, string> = {
   "Safety & toxicology":
     "The divisions that establish what a substance does to a living system, and the dose at which it starts doing it.",
-  "Analytical & discovery":
+  "Analytical & Microbial Sciences":
     "The divisions that identify, quantify and trace. Every safety conclusion elsewhere in the laboratory rests on a number produced here.",
   "Applied & specialist":
     "Divisions built around a particular problem — an insect, an animal facility, or a study no guideline was written to cover.",
@@ -150,7 +150,11 @@ function LedgerRow({ discipline, delay }: { discipline: Discipline; delay: numbe
           {discipline.name}
         </h3>
 
-        <p className="measure mt-3.5 text-small text-neutral-600">{discipline.summary}</p>
+        {/* `overview`, not `summary`. The index is a place a reader is
+            still choosing which division owns their question, so it wants
+            the plain description of what the division does; `summary` is
+            the longer lead that heads the division's own page. */}
+        <p className="measure mt-3.5 text-small text-neutral-600">{discipline.overview}</p>
 
         <dl className="mt-7 flex flex-wrap items-baseline gap-x-9 gap-y-3">
           {facts.map((fact) => (

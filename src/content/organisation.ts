@@ -23,19 +23,19 @@ export const scaleStats: Stat[] = [
     value: 20000,
     suffix: "+",
     label: "GLP studies",
-    caption: "Completed and reported under Good Laboratory Practice",
+    caption: "Studies completed and reported under Good Laboratory Practice.",
   },
   {
     value: 275,
     suffix: "+",
     label: "Clients",
-    caption: "Sponsors who have brought a programme through the laboratory",
+    caption: "Clients supported through testing and research programmes.",
   },
   {
     value: 50,
     suffix: "+",
     label: "Countries",
-    caption: "Jurisdictions our study reports have travelled to",
+    caption: "Countries to which our study reports have been supplied.",
   },
   {
     /* Derived, never asserted. The register is the source of truth for how
@@ -47,7 +47,7 @@ export const scaleStats: Stat[] = [
        recognitions. Totalling them under one word overstated what three of
        them are. */
     label: "Accreditations & recognitions",
-    caption: "Independently issued, every one published in full",
+    caption: "Laboratory credentials issued by independent bodies.",
   },
 ];
 
@@ -86,9 +86,9 @@ export const capacityStats: Stat[] = [
 export const positioning = {
   eyebrow: "Contract research organisation",
   headline: "Complete preclinical research, start to finish.",
-  lead: "A one-stop, fully equipped and accredited laboratory built to meet agrochemical, industrial chemical and food and feed additive regulatory needs — without a single study leaving our custody.",
+  lead: "NutriScience Research Laboratory provides multidisciplinary testing and research services to support the safety, quality and regulatory assessment of agrochemicals, industrial chemicals, and food and feed additives.",
   supporting:
-    "Seven scientific divisions share one quality system, one archive and one chain of custody. A substance that arrives for chemistry can move to toxicology, ecotoxicology and entomology without a transfer, a re-validation, or a gap in the record.",
+    "Our seven scientific divisions bring complementary expertise to each project, coordinating study planning, testing and reporting with clear communication and documented sample handling.",
 } as const;
 
 export type Differentiator = {
@@ -193,42 +193,42 @@ export const studyLifecycle: LifecycleStage[] = [
 
 export const qualityPillars = [
   {
-    title: "Ethics compliance",
-    body: "Every study is designed and conducted within the ethical framework that governs it, reviewed before work begins rather than defended afterwards.",
+    title: "Ethical compliance",
+    body: "Studies are planned and conducted within applicable ethical frameworks, with required reviews and approvals completed before work begins.",
   },
   {
     title: "Animal welfare",
-    body: "The animal care and use programme runs to a written standard with in-house veterinarians, continuous health monitoring and environmental control treated as study parameters.",
+    body: "Documented care procedures, veterinary oversight and health monitoring support animal welfare throughout the study.",
   },
   {
     title: "Employee safety",
-    body: "Handling protocols, containment and monitoring protect the people who work with hazardous test items, radioactive material and biological agents.",
+    body: "Safe handling procedures, appropriate protective equipment and staff training support the safe management of chemicals and biological materials.",
   },
   {
     title: "Data security",
-    body: "Redundancy and resilience with multiple backups stored on RAID servers, both on-site and off-site, with archival capacity extending ten years.",
+    body: "Controlled access, documented backups and organised archiving help protect study data, confidentiality and record traceability.",
   },
   {
     title: "Timely completion",
-    body: "Schedule is treated as a quality attribute. A study delivered late has failed the sponsor as surely as one delivered wrong.",
+    body: "Realistic schedules, progress monitoring and clear communication support study completion within agreed timelines.",
   },
 ];
 
 export const qualitySystems = [
   {
     title: "Test item management",
-    subtitle: "TSC / TICO",
-    body: "Separate storage zones are maintained for pharmaceutical and non-pharmaceutical products. Sponsors receive receipt confirmation within 48 hours, with stability guidance issued alongside.",
+    subtitle: "Receipt & traceability",
+    body: "Documented receipt, identification, storage and handling procedures support test item integrity and traceability throughout each study.",
   },
   {
     title: "Data management",
-    subtitle: "Redundancy & resilience",
-    body: "Multiple backups are stored on RAID servers held both on-site and off-site, with archival capacity extending ten years for raw data, specimens and reports.",
+    subtitle: "Security & retention",
+    body: "Controlled access, regular backups and organised archiving protect study records and support retrieval within agreed retention periods.",
   },
   {
     title: "Quality assurance",
-    subtitle: "Independent audit",
-    body: "The facility maintains GLP standards and NABL ISO/IEC 17025 accreditation, ensuring the resulting data is accepted by regulators globally.",
+    subtitle: "NABL / ISO/IEC 17025",
+    body: "Our quality system incorporates NABL accreditation to ISO/IEC 17025 within the accredited scope, supported by independent inspections and documented reviews of procedures, records and reports.",
   },
 ];
 
@@ -236,41 +236,49 @@ export const threeRs = [
   {
     letter: "R",
     word: "Replacement",
-    body: "In vitro and in silico methods substituted for animal work wherever the endpoint permits — including SAR, QSAR and cell-based assays that answer the question earlier and at lower cost.",
+    body: "Use suitable non-animal methods, including in vitro and in silico approaches, wherever they can meet the study objectives and applicable requirements.",
   },
   {
     letter: "R",
     word: "Refinement",
-    body: "Improved procedures that minimise harm and distress, from housing and enrichment through to analgesia, handling and humane endpoints.",
+    body: "Refine procedures, housing and handling to minimise pain and distress, supported by appropriate care, monitoring and humane endpoints.",
   },
   {
     letter: "R",
     word: "Reduction",
-    body: "Animal numbers optimised against statistical validity, so that no study uses more animals than the question requires — or fewer than it can answer with.",
+    body: "Use the minimum number of animals needed to produce scientifically reliable results through sound study design and appropriate analysis.",
   },
   {
     letter: "R",
     word: "Rehabilitation",
-    body: "Post-study rehabilitation protocols, extending our obligation beyond the point at which the data has been collected.",
+    body: "Consider post-study care and rehabilitation where appropriate, guided by veterinary assessment and applicable ethical requirements.",
   },
 ];
 
-/** Milestones stated without dates, because the source material carries none. */
+/**
+ * Research and capabilities.
+ *
+ * These replace a set of superlative "firsts" — India's first
+ * nano-fertiliser registration, India's largest ecotoxicology department,
+ * reports accepted by the FDA and EMA. Those were claims about primacy and
+ * scale that a reader cannot check; these describe what the laboratory
+ * does, which they can.
+ */
 export const milestones = [
   {
-    title: "India's first nano-fertiliser registration",
-    body: "Taken from first study through to approval, with no domestic precedent to follow.",
+    title: "Biopesticide registration support",
+    body: "Study planning and safety data generation to support the assessment and registration of biopesticide products.",
   },
   {
-    title: "India's largest ecotoxicology department",
-    body: "Twenty-six species spanning aquatic, terrestrial, avian and pollinator models.",
+    title: "Comprehensive ecotoxicology",
+    body: "Environmental safety studies covering aquatic and terrestrial organisms, birds and pollinators.",
   },
   {
-    title: "Reports accepted by the FDA and EMA",
-    body: "Safety data submitted to and accepted by agencies on three continents.",
+    title: "International regulatory support",
+    body: "Technical reports and study documentation prepared to support submissions to relevant regulatory authorities.",
   },
   {
-    title: "NABL ISO/IEC 17025:2017 accreditation",
-    body: "Technical competence assessed independently of the GLP certification, against the international standard.",
+    title: "NABL accreditation to ISO/IEC 17025:2017",
+    body: "Recognition of laboratory competence for the tests specified within the accredited scope.",
   },
 ];

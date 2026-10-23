@@ -75,7 +75,7 @@ export function DivisionFinder({
           {/* Search */}
           <div>
             <label htmlFor={inputId} className="label-mono text-neutral-600">
-              Search the divisions
+              Search our divisions
             </label>
             <div className="relative mt-3">
               <Search
@@ -87,7 +87,7 @@ export function DivisionFinder({
                 type="search"
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
-                placeholder="Earthworm, OECD 203, sterility…"
+                placeholder="Search by division, method or guideline…"
                 autoComplete="off"
                 aria-describedby={`${inputId}-hint`}
                 aria-controls={resultsId}
@@ -105,7 +105,7 @@ export function DivisionFinder({
               ) : null}
             </div>
             <p id={`${inputId}-hint`} className="mt-2.5 text-micro text-neutral-600">
-              Matches division names, summaries, guideline numbers, species and method names.
+              Find services by division, study type, guideline, species or method.
             </p>
 
             {/* The route out for a visitor whose study does not land on one
@@ -115,7 +115,7 @@ export function DivisionFinder({
                 section. It belongs here, at the moment the question is
                 actually being asked. */}
             <p className="mt-4 text-small text-neutral-600">
-              Most programmes touch three or four divisions. If yours does not land on one,{" "}
+              Need help choosing the right study?{" "}
               <a
                 href={`tel:${contact.phoneHref}`}
                 className="font-medium text-meniscus-600 underline decoration-meniscus-500/35 underline-offset-[5px] transition-colors duration-200 hover:decoration-meniscus-500"

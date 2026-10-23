@@ -18,7 +18,7 @@ export type Discipline = {
   name: string;
   /** Short label used in dense listings and the nav. */
   shortName?: string;
-  family: "Safety & toxicology" | "Analytical & discovery" | "Applied & specialist";
+  family: "Safety & toxicology" | "Analytical & Microbial Sciences" | "Applied & specialist";
   /** One line, sentence case, no full stop — used under headings. */
   summary: string;
   /**
@@ -70,7 +70,7 @@ export const disciplines: Discipline[] = [
     name: "Toxicology",
     family: "Safety & toxicology",
     summary:
-      "Acute through multi-year carcinogenicity, run under GLP in our own vivaria",
+      "Safety studies evaluating acute and longer-term effects, including toxicity, irritation and sensitisation, to support product safety and regulatory assessment",
     overview:
       "Safety assessments to evaluate toxicity, irritation, sensitisation and potential health effects.",
     body: [
@@ -254,7 +254,7 @@ export const disciplines: Discipline[] = [
     slug: "chemistry",
     index: "03",
     name: "Chemistry",
-    family: "Analytical & discovery",
+    family: "Analytical & Microbial Sciences",
     summary:
       "Analytical chemistry that underwrites every other division's numbers",
     overview:
@@ -329,7 +329,7 @@ export const disciplines: Discipline[] = [
     slug: "microbiology",
     index: "04",
     name: "Microbiology",
-    family: "Analytical & discovery",
+    family: "Analytical & Microbial Sciences",
     summary:
       "Sterility, endotoxin and environmental monitoring against ISO, USP and OECD methods",
     overview:
@@ -461,7 +461,7 @@ export const disciplines: Discipline[] = [
     summary:
       "Insecticide efficacy and resistance work on colonies we breed ourselves",
     overview:
-      "Laboratory and field studies evaluating pest control efficacy and effects on beneficial arthropods.",
+      "Laboratory and field studies evaluating pest control efficacy, resistance and effects on beneficial arthropods.",
     body: [
       "Efficacy data is only as good as the insects behind it. This division maintains in-house breeding programmes for its test species, which removes the variability that makes field-collected populations unreliable as a baseline.",
       "Contact, residual and knockdown efficacy, repellency, larvicidal and adulticidal activity and fumigant testing all run under Good Laboratory Practice, against the agriculturally and economically important pest species a product has to be effective on.",
@@ -630,7 +630,7 @@ export const disciplines: Discipline[] = [
 
 export const disciplineFamilies = [
   "Safety & toxicology",
-  "Analytical & discovery",
+  "Analytical & Microbial Sciences",
   "Applied & specialist",
 ] as const;
 

@@ -23,17 +23,16 @@ export function QualitySystem() {
           <div className="col-span-12 lg:col-span-7">
             <Eyebrow index="03">Quality system</Eyebrow>
             <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
-              Written down, audited, and kept.
+              Quality defined. Responsibility documented.
             </RevealText>
           </div>
           <div className="col-span-12 lg:col-span-4 lg:col-start-9">
             <p className="text-small text-neutral-600">
-              Five commitments and three mechanisms. Nothing here is aspirational —
-              each line is something an auditor can ask us to evidence on the day
-              they walk in.
+              Five commitments guide our work, supporting ethical research, responsible
+              conduct and reliable study delivery.
             </p>
             <ActionLink href="/downloads" variant="text" className="mt-5">
-              Certificates on file
+              View quality credentials
             </ActionLink>
           </div>
         </div>

@@ -15,9 +15,9 @@ export function MilestoneStair() {
       <div className="shell">
         <div className="egrid gap-y-8">
           <div className="col-span-12 lg:col-span-6">
-            <Eyebrow index="05">Firsts</Eyebrow>
+            <Eyebrow index="05">Research &amp; capabilities</Eyebrow>
             <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
-              Work that had no precedent to follow.
+              Scientific expertise. Practical outcomes.
             </RevealText>
           </div>
           {/* The paragraph that sat here explained why these entries carry

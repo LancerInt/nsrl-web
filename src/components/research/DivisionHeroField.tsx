@@ -19,7 +19,7 @@ import type { Discipline } from "@/content/disciplines";
  */
 const BY_FAMILY: Record<Discipline["family"], MotifName> = {
   "Safety & toxicology": "motif-tissue-contours",
-  "Analytical & discovery": "motif-sample-grid",
+  "Analytical & Microbial Sciences": "motif-sample-grid",
   "Applied & specialist": "motif-environment",
 };
 

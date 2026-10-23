@@ -35,8 +35,8 @@ export function ClosingCta() {
               Plan your next regulatory study.
             </h2>
             <p className="mt-4 max-w-[52ch] text-lead text-neutral-700">
-              We will map the endpoints, the guidelines and the divisions from there — and tell
-              you plainly if a study you have asked for is one you do not need.
+              We will identify the endpoints, guidelines and specialist divisions your project
+              requires — and advise you clearly on which studies are necessary.
             </p>
           </div>
 

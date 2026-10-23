@@ -74,8 +74,8 @@ export default function ResearchIndexPage() {
         eyebrow="Scientific divisions"
         index={String(disciplines.length)}
         crumbs={[{ label: "Home", href: "/" }, { label: "Research" }]}
-        title="Our scientific divisions"
-        lead="Each division holds its own accreditations, its own instrument estate and its own species list. They share one campus, one quality system and one archive — which is why a programme can cross between them without a handover."
+        title="Explore our scientific divisions."
+        lead="Seven specialist divisions bring together expertise in safety assessment, analytical testing and applied research. Coordinated study planning, documented procedures and clear reporting support your project from start to finish."
         meta={[
           { label: "Divisions", value: String(disciplines.length) },
           { label: "Families", value: String(disciplineFamilies.length) },

@@ -19,14 +19,13 @@ export function ScaleLedger() {
           <div className="col-span-12 lg:col-span-6">
             <Eyebrow index="02">The record</Eyebrow>
             <RevealText as="h2" className="mt-6 font-display text-d3 text-ink-950">
-              What the ledger says.
+              Our experience, in numbers.
             </RevealText>
           </div>
           <div className="col-span-12 lg:col-span-4 lg:col-start-9">
             <p className="text-small text-neutral-600">
-              Four running totals, kept because they are the ones a sponsor asks for
-              first. Each is a count of work completed and reported, not of capacity
-              available.
+              A snapshot of completed studies, client partnerships, international reach and
+              laboratory credentials.
             </p>
           </div>
         </div>
