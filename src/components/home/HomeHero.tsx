@@ -11,124 +11,142 @@ const hero = images[heroImage];
 /**
  * The opening.
  *
- * A light editorial split, not a dark full-bleed poster: navy type on warm
- * white at the left, the supplied still life at the right, and the whole
- * thing sized so the headline, the scope sentence and both actions are in
- * the first screen on a laptop.
+ * The artwork fills the whole section and the copy sits on it — not a
+ * picture in one half of a split. The illustration was composed for exactly
+ * this: a 2560×1332 field whose left half is empty navy and whose right
+ * half carries the rising platforms and the NSRL plinth. Cropped into a
+ * half-width panel that empty half is wasted, and the composition stops
+ * making sense.
  *
- * Deliberately *not* 100vh. A viewport-height hero makes the first scroll
+ * Deliberately not 100vh. A viewport-height hero makes the first scroll
  * reveal nothing but more hero, and on a short laptop window it pushes the
  * scope sentence under the fold — the one line that says what NSRL
- * actually does.
+ * actually does. A clamped minimum keeps it generous without that.
  *
- * The recorded figures are a separate strip beneath rather than a rail
- * floating on the artwork. They are evidence, and evidence reads as
- * evidence when it is set on paper next to the claim, not overlaid on a
- * photograph of a bench.
+ * `data-theme="deep"` is not decoration: focus rings key off it, so a
+ * keyboard user tabbing the two actions gets a ring that is visible on
+ * navy rather than one tuned for paper.
+ *
+ * The recorded figures are a separate light strip beneath rather than a
+ * rail floating on the artwork. They are evidence, and evidence reads as
+ * evidence when it is set on paper next to the claim.
  */
 export function HomeHero() {
   return (
     <>
-      {/*
-        Stacked below `lg`, split at and above it — copy on the left half,
-        artwork bleeding off the right edge.
+      <section
+        data-theme="deep"
+        /*
+          `bg-deep` below `lg`, where the artwork is a cropped band and the
+          copy sits on the section's own navy.
 
-        Stacked means copy *then* image, in that order, rather than the copy
-        compressed over the subject: the still life has one usable empty
-        region and it is at the left, which is no help at all when the frame
-        is 390px wide and the text would have to sit on the vials.
-      */}
-      {/*
-        Full-bleed split: warm white and the headline on the left half, the
-        navy artwork filling the right half edge to edge and top to bottom.
+          At `lg` the fill is the artwork's own ground colour, so the
+          `object-contain` letterbox is invisible and the hero can show the
+          illustration entire instead of cropping a third of it away.
 
-        No padding on the section and `items-stretch`, so the artwork panel
-        is the full height of the row rather than a picture floating in a
-        band of paper. The copy column carries its own padding, including
-        the clearance for the fixed bar.
+          That colour is #030f26 and it has to be measured in a browser,
+          not read off the file. Decoding the bytes with sharp gives
+          #1a2b42; Chromium decodes the identical bytes — same URL, same
+          response — to #030f26, and a canvas `getImageData` inside the
+          page confirms it is the decode and not the screenshot pipeline,
+          with no filter, opacity or blend anywhere in the ancestry. The
+          two decoders simply disagree about this file's colour, and the
+          browser's answer is the one a visitor sees. Fill it with #1a2b42
+          and the join is a hard twenty-level step.
 
-        The panel runs *under* the bar rather than starting below it. That
-        is only safe because the bar is opaque at every scroll position now
-        (see SiteHeader): the first navy pixel a reader sees is the one
-        immediately below it, so the panel reads as full height without the
-        navigation ever having to sit on navy.
-      */}
-      <section className="border-b border-[--rule] bg-canvas lg:grid lg:min-h-[min(46rem,92svh)] lg:grid-cols-2 lg:items-stretch">
+          Not a token, deliberately: this is one file's rendered edge, not
+          a surface the design system owns. If the hero artwork is ever
+          replaced, re-measure it in a browser — `getImageData` on the
+          served URL, not `sharp` on the source.
+        */
+        className="relative isolate flex flex-col overflow-hidden bg-deep text-white lg:min-h-[min(44rem,88svh)] lg:justify-center lg:bg-[#030f26]"
+      >
         {/*
-          `.shell` overridden to hug the right of its half rather than
-          centre in it. `ml-auto` with a max of half the measure puts the
-          copy's left padding edge exactly where every other section's
-          content starts, at any width — the alternative, hand-tuned
-          padding, drifts the moment the measure changes.
-        */}
-        {/*
-          The top padding clears the bar rather than being chosen for
-          rhythm. The header is `fixed`, so the hero starts at y=0 and
-          anything less than its height lands underneath it — which is
-          exactly what happened at 390px, where a 40px top padding put the
-          eyebrow straight through the wordmark.
+          Two layouts, because one composition cannot serve both.
 
-          Expressed against `--nav-h` rather than as a number, so it cannot
-          drift out of step with the bar it is clearing.
+          From `lg` the artwork is the background and the copy sits on its
+          empty left half, which is what it was drawn for.
+
+          Below `lg` the frame is portrait and the artwork is a 1.9:1
+          landscape, so `cover` would show roughly a quarter of its width:
+          a slice of platforms with no plinth, no wordmark and no subject,
+          under the headline. Stacking gives the copy a clean navy field
+          and the artwork its own 16:10 band where the whole composition is
+          visible. `order` does the swap, so the heading stays first in the
+          markup either way.
         */}
-        <div className="shell flex pb-[clamp(2.5rem,5vw,4rem)] pt-[calc(var(--nav-h)+1.5rem)] lg:ml-auto lg:mr-0 lg:max-w-[calc(var(--shell-max)/2)] lg:items-center lg:pb-16 lg:pr-12 lg:pt-[calc(var(--nav-h)+4rem)]">
-          <div className="max-w-[34rem]">
-            <p className="label-mono text-meniscus-600">
+        {/* The frame starts below the bar, not at the top of the section.
+            The section's navy still runs the full height — it is the
+            background — but `contain` fits the artwork to its frame, and a
+            frame that includes the 5rem hidden behind an opaque header
+            spends 5rem of artwork on something nobody can see. Insetting
+            the top is what makes "shown whole" and "shown whole *to the
+            reader*" the same thing. */}
+        <div className="relative order-2 aspect-[16/10] w-full overflow-hidden lg:absolute lg:inset-x-0 lg:bottom-0 lg:top-[var(--nav-h)] lg:order-none lg:-z-10 lg:aspect-auto">
+          {/*
+            `contain`, anchored right, from `lg` up.
+
+            At full width the section is wider than the artwork is tall, so
+            `cover` scales to the width and then crops about 29% off the
+            height — which takes the top platform and the base of the NSRL
+            plinth with it. The illustration is the one asset on the page
+            composed specifically for this slot; cropping a third of it
+            away defeats the point.
+
+            `contain` works here only because the artwork's own ground is
+            this navy. Anchored right on a `bg-deep` section, the fill
+            beside it is the same colour as the field it is drawn on, so
+            there is no letterbox to see — and the flat area it leaves at
+            the left is exactly where the headline goes.
+
+            The crop is set by class rather than by the record's inline
+            `objectPosition`, because an inline declaration beats every
+            class including responsive ones, and the two breakpoints need
+            different answers: `cover` held right on the mobile band,
+            `contain` held right on the desktop field.
+          */}
+          <Image
+            src={hero.src}
+            alt={hero.alt}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover [object-position:68%_50%] lg:object-contain lg:[object-position:100%_50%]"
+          />
+          {/* No wash at `lg`. The artwork's left half is a flat #1a2b42
+              field drawn to hold type, and white on it measures 14.3:1 —
+              there is nothing for a scrim to rescue. It was also the one
+              thing making the join between artwork and fill hard to
+              reason about, since it composited over both. */}
+        </div>
+
+        <div className="shell order-1 w-full pb-[clamp(2.5rem,5vw,3.5rem)] pt-[calc(var(--nav-h)+1.5rem)] lg:order-none lg:py-16">
+          <div className="max-w-[36rem]">
+            <p className="label-mono text-meniscus-300">
               Contract research organisation · Salem, Tamil Nadu
             </p>
 
-            <h1 className="mt-5 text-d1 font-display text-ink-900">
+            <h1 className="mt-5 text-d1 font-display text-white">
               Complete preclinical research, start to finish.
             </h1>
 
             {/* The scope sentence. Around 62 characters a line, inside the
                 55–70 the brief asks for. */}
-            <p className="mt-6 max-w-[33rem] text-lead text-neutral-600">
+            <p className="mt-6 max-w-[33rem] text-lead text-ink-100">
               One accredited laboratory, {numberWord(disciplines.length)} scientific
               divisions. A substance that arrives for chemistry moves through
               toxicology, ecotoxicology and entomology without leaving our custody.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <ActionLink href="/contact" variant="solid">
+              <ActionLink href="/contact" variant="solid" tone="deep">
                 Request a proposal
               </ActionLink>
-              <ActionLink href="/research" variant="outline">
+              <ActionLink href="/research" variant="outline" tone="deep">
                 Explore divisions
               </ActionLink>
             </div>
           </div>
-        </div>
-
-        {/*
-          A set height rather than an aspect ratio, because the frame is
-          half the viewport and a ratio ties its height to the window's
-          width — at 1920 a 4:3 half-screen frame is 720px tall, which is a
-          poster, and at 1024 it is 384px, which is a banner. A clamped
-          height holds the hero inside the brief's 620–700px band from 1280
-          up and degrades gracefully either side.
-
-          The crop is held right. The still life keeps its left third
-          deliberately empty, so that is the third to spend; the bottle,
-          the vial rack and the seed dish stay in frame.
-
-          `priority` only here. This is the LCP element, and it is the only
-          image on the site that gets it.
-        */}
-        {/* `h-full` at `lg`, not a clamped height: the panel's job is to be
-            the right half of the section, whatever that section turns out
-            to be. Below `lg` it is a band under the copy and needs a height
-            of its own. */}
-        <div className="relative h-[clamp(14rem,56vw,20rem)] overflow-hidden bg-deep lg:h-full">
-          <Image
-            src={hero.src}
-            alt={hero.alt}
-            fill
-            priority
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            style={{ objectPosition: hero.position }}
-            className="object-cover"
-          />
         </div>
       </section>
 
@@ -139,8 +157,7 @@ export function HomeHero() {
             {/* The caption lives inside the <dd>, not as a sibling <p>.
                 A <dl> may contain only <dt>, <dd> and grouping <div>s, and
                 a <p> among them is a structure error a screen reader can
-                trip on — the caption is part of the description, so that is
-                where it goes. */}
+                trip on — the caption is part of the description. */}
             {scaleStats.map((stat) => (
               <div key={stat.label}>
                 <dt className="label-mono text-neutral-550">{stat.label}</dt>
