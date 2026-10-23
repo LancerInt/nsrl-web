@@ -55,7 +55,7 @@ export function IntegratedLab() {
         {/* The denial that earns the figure. Radial arrangements read as
             pipelines whether or not one is meant, so what the links stand
             for is written down rather than implied. */}
-        <p className="mt-6 max-w-[62ch] border-t border-[--rule] pt-4 text-small text-neutral-600">
+        <p className="mt-6 max-w-[62ch] border-t border-[var(--rule)] pt-4 text-small text-neutral-600">
           The connections above are a shared quality system, one test-item record and one
           archive — not a fixed order of work. Which divisions a programme engages, and in what
           sequence, follows from the dossier it has to satisfy, and they run in parallel wherever

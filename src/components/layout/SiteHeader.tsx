@@ -213,7 +213,7 @@ export function SiteHeader() {
             from its backdrop, not whether the backdrop is quiet. */}
         <div
           className={cn(
-            "border-b border-[--rule] bg-canvas transition-shadow duration-200 ease-[var(--ease-out-quart)]",
+            "border-b border-[var(--rule)] bg-canvas transition-shadow duration-200 ease-[var(--ease-out-quart)]",
             /* Only the shadow changes on scroll now: the bar lifts off the
                page once there is page underneath it to lift off. */
             condensed || openLabel ? "shadow-[var(--shadow-sm)]" : "shadow-none",

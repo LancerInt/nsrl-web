@@ -11,56 +11,59 @@ const hero = images[heroImage];
 /**
  * The opening.
  *
- * The artwork fills the whole section and the copy sits on it — not a
- * picture in one half of a split. The illustration was composed for exactly
- * this: a 2560×1332 field whose left half is empty navy and whose right
- * half carries the rising platforms and the NSRL plinth. Cropped into a
- * half-width panel that empty half is wasted, and the composition stops
- * making sense.
+ * The artwork fills the section and the copy sits on it. The illustration
+ * was composed for exactly this — a 2560×1332 field whose left half is
+ * empty navy and whose right half carries the rising platforms and the
+ * NSRL plinth — so the empty half is where the headline goes.
  *
- * Deliberately not 100vh. A viewport-height hero makes the first scroll
- * reveal nothing but more hero, and on a short laptop window it pushes the
- * scope sentence under the fold — the one line that says what NSRL
- * actually does. A clamped minimum keeps it generous without that.
+ * The recorded figures are a band at the foot, inside the section rather
+ * than on paper beneath it.
+ *
+ * ── Why a two-row grid ─────────────────────────────────────────────────
+ *
+ * The artwork is `object-contain`, which fits it to its frame. If that
+ * frame were the whole section the artwork's lower edge — the plinth
+ * carrying the NSRL wordmark — would finish underneath the figures band
+ * and be hidden by it. Making the section a grid of `1fr auto` gives the
+ * artwork a row that stops exactly where the band starts, so the whole
+ * illustration sits above it and nothing has to be guessed about the
+ * band's height.
  *
  * `data-theme="deep"` is not decoration: focus rings key off it, so a
- * keyboard user tabbing the two actions gets a ring that is visible on
- * navy rather than one tuned for paper.
- *
- * The recorded figures are a separate light strip beneath rather than a
- * rail floating on the artwork. They are evidence, and evidence reads as
- * evidence when it is set on paper next to the claim.
+ * keyboard user tabbing the actions gets a ring visible on navy rather
+ * than one tuned for paper.
  */
 export function HomeHero() {
   return (
-    <>
-      <section
-        data-theme="deep"
-        /*
-          `bg-deep` below `lg`, where the artwork is a cropped band and the
-          copy sits on the section's own navy.
+    <section
+      data-theme="deep"
+      /*
+        `bg-deep` below `lg`, where the artwork is a cropped band and the
+        copy sits on the section's own navy.
 
-          At `lg` the fill is the artwork's own ground colour, so the
-          `object-contain` letterbox is invisible and the hero can show the
-          illustration entire instead of cropping a third of it away.
+        At `lg` the fill is the artwork's own ground colour, so the
+        `object-contain` letterbox is invisible and the hero can show the
+        illustration entire instead of cropping a third of it away.
 
-          That colour is #030f26 and it has to be measured in a browser,
-          not read off the file. Decoding the bytes with sharp gives
-          #1a2b42; Chromium decodes the identical bytes — same URL, same
-          response — to #030f26, and a canvas `getImageData` inside the
-          page confirms it is the decode and not the screenshot pipeline,
-          with no filter, opacity or blend anywhere in the ancestry. The
-          two decoders simply disagree about this file's colour, and the
-          browser's answer is the one a visitor sees. Fill it with #1a2b42
-          and the join is a hard twenty-level step.
+        That colour is #030f26 and it has to be measured in a browser, not
+        read off the file. Decoding the bytes with sharp gives #1a2b42;
+        Chromium decodes the identical bytes — same URL, same response — to
+        #030f26, and a canvas `getImageData` inside the page confirms it is
+        the decode and not the screenshot pipeline, with no filter, opacity
+        or blend anywhere in the ancestry. The browser's answer is the one a
+        visitor sees. Fill it with #1a2b42 and the join is a hard
+        twenty-level step.
 
-          Not a token, deliberately: this is one file's rendered edge, not
-          a surface the design system owns. If the hero artwork is ever
-          replaced, re-measure it in a browser — `getImageData` on the
-          served URL, not `sharp` on the source.
-        */
-        className="relative isolate flex flex-col overflow-hidden bg-deep text-white lg:min-h-[min(44rem,88svh)] lg:justify-center lg:bg-[#030f26]"
-      >
+        Not a token, deliberately: this is one file's rendered edge, not a
+        surface the design system owns. If the hero artwork is ever
+        replaced, re-measure it in a browser — `getImageData` on the served
+        URL, not `sharp` on the source.
+      */
+      className="relative isolate overflow-hidden bg-deep text-white lg:grid lg:min-h-svh lg:grid-rows-[1fr_auto] lg:bg-[#030f26]"
+    >
+      {/* The stage: artwork and copy. Stretches to fill whatever height is
+          left above the figures band. */}
+      <div className="relative flex flex-col lg:block">
         {/*
           Two layouts, because one composition cannot serve both.
 
@@ -74,30 +77,19 @@ export function HomeHero() {
           and the artwork its own 16:10 band where the whole composition is
           visible. `order` does the swap, so the heading stays first in the
           markup either way.
+
+          The frame starts below the bar rather than at the top of the
+          section. The navy still runs the full height — it is the
+          background — but `contain` fits the artwork to its frame, and a
+          frame including the 5rem hidden behind an opaque header spends
+          5rem of artwork on something nobody can see.
         */}
-        {/* The frame starts below the bar, not at the top of the section.
-            The section's navy still runs the full height — it is the
-            background — but `contain` fits the artwork to its frame, and a
-            frame that includes the 5rem hidden behind an opaque header
-            spends 5rem of artwork on something nobody can see. Insetting
-            the top is what makes "shown whole" and "shown whole *to the
-            reader*" the same thing. */}
         <div className="relative order-2 aspect-[16/10] w-full overflow-hidden lg:absolute lg:inset-x-0 lg:bottom-0 lg:top-[var(--nav-h)] lg:order-none lg:-z-10 lg:aspect-auto">
           {/*
-            `contain`, anchored right, from `lg` up.
-
-            At full width the section is wider than the artwork is tall, so
-            `cover` scales to the width and then crops about 29% off the
-            height — which takes the top platform and the base of the NSRL
-            plinth with it. The illustration is the one asset on the page
-            composed specifically for this slot; cropping a third of it
-            away defeats the point.
-
-            `contain` works here only because the artwork's own ground is
-            this navy. Anchored right on a `bg-deep` section, the fill
-            beside it is the same colour as the field it is drawn on, so
-            there is no letterbox to see — and the flat area it leaves at
-            the left is exactly where the headline goes.
+            `contain`, anchored right, from `lg` up. At full width the
+            section is wider than the artwork is tall, so `cover` scales to
+            the width and then crops about 29% off the height — taking the
+            top platform and the base of the plinth with it.
 
             The crop is set by class rather than by the record's inline
             `objectPosition`, because an inline declaration beats every
@@ -113,14 +105,12 @@ export function HomeHero() {
             sizes="100vw"
             className="object-cover [object-position:68%_50%] lg:object-contain lg:[object-position:100%_50%]"
           />
-          {/* No wash at `lg`. The artwork's left half is a flat #1a2b42
-              field drawn to hold type, and white on it measures 14.3:1 —
-              there is nothing for a scrim to rescue. It was also the one
-              thing making the join between artwork and fill hard to
-              reason about, since it composited over both. */}
+          {/* No wash at `lg`. The artwork's left half is a flat field drawn
+              to hold type, and white on it measures 19:1 — there is nothing
+              for a scrim to rescue. */}
         </div>
 
-        <div className="shell order-1 w-full pb-[clamp(2.5rem,5vw,3.5rem)] pt-[calc(var(--nav-h)+1.5rem)] lg:order-none lg:py-16">
+        <div className="shell order-1 w-full pb-[clamp(2.5rem,5vw,3.5rem)] pt-[calc(var(--nav-h)+1.5rem)] lg:order-none lg:flex lg:h-full lg:items-center lg:py-14">
           <div className="max-w-[36rem]">
             <p className="label-mono text-meniscus-300">
               Contract research organisation · Salem, Tamil Nadu
@@ -148,25 +138,25 @@ export function HomeHero() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Recorded figures. Compact, and its own band. */}
-      <section aria-label="NSRL in numbers" className="border-b border-[--rule] bg-canvas-sunken">
+      {/* Recorded figures, at the foot of the hero. */}
+      <div aria-label="NSRL in numbers" role="group" className="border-t border-white/15">
         <div className="shell">
-          <dl className="grid grid-cols-2 gap-x-8 gap-y-7 py-8 lg:grid-cols-4 lg:py-9">
-            {/* The caption lives inside the <dd>, not as a sibling <p>.
-                A <dl> may contain only <dt>, <dd> and grouping <div>s, and
-                a <p> among them is a structure error a screen reader can
+          <dl className="grid grid-cols-2 gap-x-8 gap-y-6 py-7 lg:grid-cols-4 lg:py-8">
+            {/* The caption lives inside the <dd>, not as a sibling <p>. A
+                <dl> may contain only <dt>, <dd> and grouping <div>s, and a
+                <p> among them is a structure error a screen reader can
                 trip on — the caption is part of the description. */}
             {scaleStats.map((stat) => (
               <div key={stat.label}>
-                <dt className="label-mono text-neutral-550">{stat.label}</dt>
+                <dt className="label-mono text-ink-200">{stat.label}</dt>
                 <dd className="mt-1.5">
-                  <span className="block font-display text-d4 font-[500] leading-none text-ink-900">
+                  <span className="block font-display text-d4 font-[500] leading-none text-white">
                     {stat.value.toLocaleString("en-GB")}
                     {stat.suffix}
                   </span>
-                  <span className="mt-2 block text-micro leading-relaxed text-neutral-600">
+                  <span className="mt-2 block text-micro leading-relaxed text-ink-200">
                     {stat.caption}
                   </span>
                 </dd>
@@ -174,7 +164,7 @@ export function HomeHero() {
             ))}
           </dl>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

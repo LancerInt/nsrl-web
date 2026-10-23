@@ -128,7 +128,7 @@ function LedgerRow({ discipline, delay }: { discipline: Discipline; delay: numbe
       href={`/research/${discipline.slug}`}
       data-reveal
       style={{ "--reveal-delay": `${delay}s` } as React.CSSProperties}
-      className="group grid grid-cols-[2.5rem_minmax(0,1fr)] items-start gap-x-5 border-t border-[--rule] py-[clamp(1.5rem,2.8vw,2.25rem)] transition-colors duration-200 ease-[var(--ease-out-quart)] hover:border-neutral-300 motion-reduce:transition-none sm:grid-cols-[3.5rem_minmax(0,1fr)_auto] sm:gap-x-8"
+      className="group grid grid-cols-[2.5rem_minmax(0,1fr)] items-start gap-x-5 border-t border-[var(--rule)] py-[clamp(1.5rem,2.8vw,2.25rem)] transition-colors duration-200 ease-[var(--ease-out-quart)] hover:border-neutral-300 motion-reduce:transition-none sm:grid-cols-[3.5rem_minmax(0,1fr)_auto] sm:gap-x-8"
     >
       {/* The supplied division icon above its index. The icons are the kit's
           and are keyed by slug; `DivisionNetwork` asserts at module load
