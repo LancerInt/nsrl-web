@@ -16,14 +16,10 @@ import type { Discipline } from "@/content/disciplines";
  * about rhythm and is the thing this module was for.
  */
 
-const CLAIM_ALIGNS = ["left", "split", "right"] as const;
-export type ClaimAlign = (typeof CLAIM_ALIGNS)[number];
-
 export type DivisionVariation = {
   /** 1-based division number, parsed from `index`. */
   n: number;
   seed: number;
-  claimAlign: ClaimAlign;
   /** Long capability sets collapse; short ones stay open as a ruled spec. */
   capabilityMode: "disclosure" | "ruled";
   capabilityTone: "canvas" | "sunken";
@@ -41,7 +37,6 @@ export function divisionVariation(discipline: Discipline): DivisionVariation {
   return {
     n,
     seed: n * 3 + 1,
-    claimAlign: CLAIM_ALIGNS[i % CLAIM_ALIGNS.length],
     capabilityMode: groups >= 6 ? "disclosure" : "ruled",
     capabilityTone: even ? "canvas" : "sunken",
     specTone: even ? "sunken" : "canvas",
@@ -52,16 +47,6 @@ export function divisionVariation(discipline: Discipline): DivisionVariation {
 /** Total number of individually listed methods across every capability group. */
 export function methodCount(discipline: Discipline): number {
   return discipline.capabilities.reduce((total, group) => total + group.items.length, 0);
-}
-
-/**
- * The claim values range from "8" to "GLP · NABL". One display size
- * cannot serve both, so the size steps down as the string grows.
- */
-export function claimSizeClass(value: string): string {
-  if (value.length > 13) return "text-d3";
-  if (value.length > 8) return "text-d2";
-  return "text-d1";
 }
 
 /** Deterministic 0–1 noise for the generative hero fields. */

@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { disciplines, getDiscipline } from "@/content/disciplines";
 import { imageFor, divisionImage } from "@/content/imagery";
 import { JsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo";
-import { cn, pad } from "@/lib/utils";
+import { cn, numberWord, pad } from "@/lib/utils";
 import { PageHero } from "@/components/ui/PageHero";
 import { PageNav, type PageNavItem } from "@/components/ui/PageNav";
 import { ActionLink } from "@/components/ui/ActionLink";
@@ -13,7 +13,6 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RevealText } from "@/components/ui/RevealText";
 import { SpecimenPlate } from "@/components/visuals/SpecimenPlate";
 import { DivisionHeroField } from "@/components/research/DivisionHeroField";
-import { ClaimStatement } from "@/components/research/ClaimStatement";
 import { CapabilityLedger } from "@/components/research/CapabilityLedger";
 import { SpecificationBand } from "@/components/research/SpecificationBand";
 import { CredentialStrip } from "@/components/research/CredentialStrip";
@@ -64,7 +63,6 @@ export default async function DivisionPage({ params }: PageProps) {
   /* Section numbering is computed so an absent band never leaves a gap. */
   const order = [
     "overview",
-    "claim",
     "capabilities",
     ...(hasSpecs ? ["specifications"] : []),
     "credentials",
@@ -76,7 +74,6 @@ export default async function DivisionPage({ params }: PageProps) {
      with no specification band never offers a link to one. */
   const NAV_LABELS: Record<string, string> = {
     overview: "Overview",
-    claim: "In short",
     capabilities: "Capabilities",
     specifications: "Specifications",
     credentials: "Accreditations",
@@ -122,14 +119,12 @@ export default async function DivisionPage({ params }: PageProps) {
 
         <h2 id="overview" className="mt-6 font-display text-d4 text-ink-950">
           <RevealText as="span" className="block">
-            The work,{" "}
-            <span className="font-display text-ink-800">
-              in outline.
-            </span>
+            {discipline.name},{" "}
+            <span className="font-display text-ink-800">in overview.</span>
           </RevealText>
         </h2>
 
-        <p className="label-mono mt-6 text-neutral-600">Family</p>
+        <p className="label-mono mt-6 text-neutral-600">Discipline group</p>
         <p className="mt-2 font-display text-h3 text-ink-900">{discipline.family}</p>
 
         <p className="label-mono mt-7 text-neutral-600">Capability groups</p>
@@ -238,12 +233,6 @@ export default async function DivisionPage({ params }: PageProps) {
         </SectionBody>
       </Section>
 
-      <ClaimStatement
-        claim={discipline.claim}
-        align={variation.claimAlign}
-        index={step("claim")}
-      />
-
       <Section tone={variation.capabilityTone} aria-labelledby="capabilities">
         <SectionBody>
           <div className="egrid items-end gap-y-8">
@@ -252,16 +241,16 @@ export default async function DivisionPage({ params }: PageProps) {
 
               <h2 id="capabilities" className="mt-6 font-display text-d3 text-ink-950">
                 <RevealText as="span" className="block">
-                  {discipline.capabilities.length} groups, {methods} listed methods.
+                  {numberWord(discipline.capabilities.length, { capitalise: true })}{" "}
+                  capability groups. {methods} listed methods.
                 </RevealText>
               </h2>
             </div>
 
             <div className="col-span-12 lg:col-span-4 lg:col-start-9">
               <p className="text-small text-neutral-600">
-                Every method below runs inside the same quality system, against the same
-                archive, with the same chain of custody. Study designs are assembled from
-                this catalogue rather than improvised around it.
+                {discipline.capabilitiesIntro ??
+                  "Every method below runs inside the same quality system, against the same archive, with the same chain of custody. Study designs are assembled from this catalogue rather than improvised around it."}
               </p>
             </div>
           </div>

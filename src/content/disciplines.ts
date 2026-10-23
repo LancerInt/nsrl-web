@@ -43,6 +43,14 @@ export type Discipline = {
   /** Headline claim rendered large on the division page. */
   claim: { value: string; unit?: string; caption: string };
   capabilities: CapabilityGroup[];
+  /**
+   * One paragraph introducing this division's capability catalogue.
+   *
+   * Optional on purpose. Where it is absent the template falls back to the
+   * shared sentence, which is true of every division; writing a bespoke
+   * one for each would mean inventing six paragraphs of scientific copy.
+   */
+  capabilitiesIntro?: string;
   instruments?: string[];
   guidelines?: string[];
   species?: string[];
@@ -82,18 +90,20 @@ export const disciplines: Discipline[] = [
       value: "Multi-year",
       caption: "Carcinogenicity bioassays carried without a break in the chain of custody",
     },
+    capabilitiesIntro:
+      "Our toxicology capabilities support studies across different exposure routes and durations. Study designs are tailored to the test item, intended use and relevant guidelines, with documented procedures supporting sample traceability, data review and archiving.",
     capabilities: [
       {
         title: "General toxicology",
         items: [
-          "Acute toxicity — oral, dermal and inhalation",
+          "Acute oral, dermal and inhalation toxicity",
           "Subchronic and chronic toxicity",
           "NOEL and NOAEL determination",
           "Developmental and reproductive toxicity",
           "Carcinogenicity",
           "Immunotoxicity",
           "Neurotoxicity",
-          "Endocrine disruptor studies",
+          "Endocrine disruption studies",
           "Histopathological examination",
         ],
       },
@@ -105,16 +115,16 @@ export const disciplines: Discipline[] = [
       {
         title: "Dermal toxicology",
         items: [
-          "Acute dermal testing",
+          "Acute dermal toxicity",
           "Skin sensitisation — LLNA and GPMT",
-          "Irritation and corrosion testing",
+          "Skin irritation and corrosion",
           "Dermal penetration studies",
         ],
       },
       {
         title: "Inhalation toxicology",
         items: [
-          "Acute inhalation testing",
+          "Acute inhalation toxicity",
           "Respiratory sensitisation",
           "Lung function assessment",
           "Histopathological examination",
@@ -123,7 +133,7 @@ export const disciplines: Discipline[] = [
       {
         title: "Systemic toxicity",
         items: [
-          "Liver, kidney, lung and heart organ toxicity",
+          "Assessment of toxicity in the liver, kidneys, lungs and heart",
           "Specialised staining techniques",
         ],
       },
