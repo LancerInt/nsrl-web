@@ -198,7 +198,7 @@ export default function NotFound() {
                 <li key={discipline.slug}>
                   <Link
                     href={`/research/${discipline.slug}`}
-                    className="group flex items-baseline gap-4 border-t border-ink-900/12 py-4 transition-colors duration-500 [transition-timing-function:var(--ease-out-expo)] hover:border-ink-900/40"
+                    className="group flex items-baseline gap-4 border-t border-[var(--rule)] py-4 transition-colors duration-500 [transition-timing-function:var(--ease-out-expo)] hover:border-ink-900/40"
                   >
                     <span className="label-mono shrink-0 text-neutral-550">{pad(i + 1)}</span>
                     <span className="font-display text-h3 text-ink-950 transition-colors duration-400 [transition-timing-function:var(--ease-out-expo)] group-hover:text-ink-950">

@@ -47,7 +47,7 @@ export function PackageLedger() {
           {studyPackages.map((pkg, i) => (
             <PackageRow key={pkg.slug} pkg={pkg} position={i} />
           ))}
-          <div className="border-t border-ink-900/12" />
+          <div className="border-t border-[var(--rule)]" />
         </div>
       </div>
     </section>

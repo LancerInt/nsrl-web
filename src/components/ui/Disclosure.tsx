@@ -35,7 +35,7 @@ export function Disclosure({
     <div
       className={cn(
         "border-t",
-        deep ? "border-white/12" : "border-ink-900/12",
+        deep ? "border-white/12" : "border-[var(--rule)]",
         className,
       )}
     >

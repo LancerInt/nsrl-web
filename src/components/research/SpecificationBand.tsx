@@ -96,7 +96,7 @@ function SpecBlock({
   children: React.ReactNode;
 }) {
   return (
-    <div data-reveal className="border-t border-ink-900/12 pt-8 first:border-t-0 first:pt-0">
+    <div data-reveal className="border-t border-[var(--rule)] pt-8 first:border-t-0 first:pt-0">
       <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
         <h3 className="font-display text-h2 text-ink-950">{title}</h3>
         {count ? <span className="label-mono text-neutral-600">{count}</span> : null}

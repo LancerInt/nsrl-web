@@ -73,7 +73,7 @@ export function DivisionIndex({ divisions }: { divisions: DivisionRow[] }) {
             >
               <h3
                 id={`family-${familyIndex}`}
-                className="label-mono border-b border-ink-900/12 pb-3 text-meniscus-600"
+                className="label-mono border-b border-[var(--rule)] pb-3 text-meniscus-600"
               >
                 {family}
               </h3>
@@ -82,7 +82,7 @@ export function DivisionIndex({ divisions }: { divisions: DivisionRow[] }) {
                 {divisions
                   .filter((division) => division.family === family)
                   .map((division) => (
-                    <li key={division.slug} className="border-b border-ink-900/8 last:border-b-0">
+                    <li key={division.slug} className="border-b border-[var(--rule)] last:border-b-0">
                       <Link
                         href={`/research/${division.slug}`}
                         className="group row-interactive -mx-3 block rounded-[var(--radius-control)] px-3 py-3.5"

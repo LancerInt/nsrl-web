@@ -75,7 +75,7 @@ export function FamilyLedger({
                 <LedgerRow discipline={discipline} delay={i * 0.06} />
               </li>
             ))}
-            <li aria-hidden className="border-t border-ink-900/12" />
+            <li aria-hidden className="border-t border-[var(--rule)]" />
           </ol>
         </div>
       </SectionBody>

@@ -58,7 +58,7 @@ export function Logo({
   if (!href) return mark;
 
   return (
-    <Link href={href} aria-label={`${site.name} — home`} className="shrink-0" data-cursor="Home">
+    <Link href={href} aria-label={`${site.name} — home`} className="shrink-0">
       {mark}
     </Link>
   );

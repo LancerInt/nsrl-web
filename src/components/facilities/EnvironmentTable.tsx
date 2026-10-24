@@ -47,15 +47,15 @@ export function EnvironmentTable() {
           tabIndex={0}
           role="region"
           aria-label="Controlled environments — specification schedule"
-          className="relative mt-6 overflow-x-auto rounded-[var(--radius-card)] border border-ink-900/12 bg-canvas-raised"
+          className="relative mt-6 overflow-x-auto rounded-[var(--radius-card)] border border-[var(--rule)] bg-canvas-raised"
         >
           <table className="w-full min-w-[52rem] border-collapse text-left">
-            <caption className="label-mono border-b border-ink-900/12 px-6 py-5 text-left text-neutral-550">
+            <caption className="label-mono border-b border-[var(--rule)] px-6 py-5 text-left text-neutral-550">
               Controlled environments — specification schedule
             </caption>
 
             <thead>
-              <tr className="border-b border-ink-900/12">
+              <tr className="border-b border-[var(--rule)]">
                 <th scope="col" className="label-mono w-16 px-6 py-4 font-medium text-neutral-600">
                   Ref
                 </th>
@@ -75,7 +75,7 @@ export function EnvironmentTable() {
               {environments.map((environment) => (
                 <tr
                   key={environment.index}
-                  className="group border-b border-ink-900/10 align-top transition-colors duration-400 last:border-b-0 hover:bg-canvas-sunken/70"
+                  className="group border-b border-[var(--rule)] align-top transition-colors duration-400 last:border-b-0 hover:bg-canvas-sunken/70"
                 >
                   <td className="label-mono px-6 py-5 tabular-nums text-neutral-550 transition-colors duration-400 group-hover:text-ink-700">
                     {environment.index}

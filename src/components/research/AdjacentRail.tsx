@@ -44,7 +44,7 @@ export function AdjacentRail({
               quality system, that crossing costs a corridor rather than a shipment.
             </p>
 
-            <div className="mt-6 border-t border-ink-900/12 pt-9">
+            <div className="mt-6 border-t border-[var(--rule)] pt-9">
               <p className="label-mono text-neutral-600">Talk to a study director</p>
               <a
                 href={`tel:${contact.phoneHref}`}
@@ -77,7 +77,7 @@ export function AdjacentRail({
                   href={`/research/${neighbour.slug}`}
                   data-reveal
                   style={{ "--reveal-delay": `${i * 0.07}s` } as React.CSSProperties}
-                  className="group grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-start gap-x-5 border-t border-ink-900/12 py-6 transition-colors duration-500 [transition-timing-function:var(--ease-out-expo)] hover:border-ink-900/40 sm:gap-x-8"
+                  className="group grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-start gap-x-5 border-t border-[var(--rule)] py-6 transition-colors duration-500 [transition-timing-function:var(--ease-out-expo)] hover:border-ink-900/40 sm:gap-x-8"
                 >
                   <span className="label-mono pt-2 tabular-nums text-neutral-550 transition-colors duration-400 group-hover:text-ink-700">
                     {neighbour.index}
@@ -99,7 +99,7 @@ export function AdjacentRail({
                 </Link>
               </li>
             ))}
-            <li aria-hidden className="border-t border-ink-900/12" />
+            <li aria-hidden className="border-t border-[var(--rule)]" />
           </ol>
         </div>
       </SectionBody>

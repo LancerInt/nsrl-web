@@ -22,7 +22,7 @@ export function ClosingCta() {
     <section
       data-theme="light"
       aria-labelledby="closing-cta"
-      className="border-t border-ink-900/10 bg-canvas-sunken"
+      className="border-t border-[var(--rule)] bg-canvas-sunken"
     >
       <div className="shell py-[clamp(3rem,5vw,4.5rem)]">
         <div className="grid items-center gap-x-12 gap-y-7 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">

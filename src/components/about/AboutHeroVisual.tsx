@@ -15,5 +15,8 @@ import { Motif } from "@/components/visuals/Motif";
  * behind type.
  */
 export function AboutHeroVisual() {
-  return <Motif name="motif-tissue-contours" fade="both" opacity={0.8} />;
+  /* 0.3, not 0.8. The About hero carries the "Governed by" credentials
+     panel, which is dense reference information; a contour field at full
+     strength behind it competed with the rows for attention. */
+  return <Motif name="motif-tissue-contours" fade="both" opacity={0.3} />;
 }

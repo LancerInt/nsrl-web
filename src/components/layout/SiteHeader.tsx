@@ -402,12 +402,12 @@ function MegaPanel({
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
       onClick={onNavigate}
-      className="hidden border-b border-ink-900/10 bg-canvas shadow-[var(--shadow-md)] lg:block"
+      className="hidden border-b border-[var(--rule)] bg-canvas shadow-[var(--shadow-md)] lg:block"
     >
       <div className="shell">
         <div className="grid grid-cols-[minmax(0,16rem)_minmax(0,1fr)] gap-x-14 py-9">
           {/* Intro */}
-          <div className="border-r border-ink-900/8 pr-10">
+          <div className="border-r border-[var(--rule)] pr-10">
             <p className="label-mono text-meniscus-600">{panel.intro.eyebrow}</p>
             <p className="mt-4 font-display text-h2 text-ink-950">{panel.intro.title}</p>
             <p className="mt-3 max-w-[30ch] text-small text-neutral-600">{panel.intro.body}</p>
@@ -427,7 +427,7 @@ function MegaPanel({
           >
             {panel.columns.map((column) => (
               <div key={column.heading}>
-                <p className="label-mono mb-3 border-b border-ink-900/8 pb-2.5 text-neutral-550">
+                <p className="label-mono mb-3 border-b border-[var(--rule)] pb-2.5 text-neutral-550">
                   {column.heading}
                 </p>
                 <ul>

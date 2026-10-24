@@ -34,7 +34,7 @@ export function PageNav({
     <nav
       aria-label={label}
       className={cn(
-        "border-y border-ink-900/8",
+        "border-y border-[var(--rule)]",
         tone === "sunken" ? "bg-canvas-sunken" : "bg-canvas",
       )}
     >

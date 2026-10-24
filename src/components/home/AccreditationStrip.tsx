@@ -46,7 +46,7 @@ export function AccreditationStrip() {
   return (
     <section
       aria-labelledby="accredited-under"
-      className="border-b border-ink-900/8 bg-canvas"
+      className="border-b border-[var(--rule)] bg-canvas"
     >
       <div className="shell py-[var(--section-y-tight)]">
         <div className="flex flex-wrap items-baseline justify-between gap-x-10 gap-y-3">
@@ -63,7 +63,7 @@ export function AccreditationStrip() {
 
         <ul
           className={cn(
-            "mt-6 grid grid-cols-2 gap-px border border-ink-900/8 bg-ink-900/8",
+            "mt-6 grid grid-cols-2 gap-px border border-[var(--rule)] bg-ink-900/8",
             bestFit(accreditations.length, [3, 2], "sm"),
             bestFit(accreditations.length, [5, 4, 3], "lg"),
           )}

@@ -82,51 +82,18 @@ export default function ContactPage() {
         tone="light"
         eyebrow="Contact"
         title="Discuss your study requirements."
-        lead="Tell us the test item, the sector and the authority that has to accept the dossier. We will tell you which studies that implies, which of our divisions run them, and what the programme looks like end to end."
+        lead="Tell us the test item, the sector and the authority that has to accept the dossier."
         crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
         visual={<ContactHeroVisual />}
-        aside={
-          <div className="rounded-[var(--radius-card)] border border-ink-900/12 bg-canvas-raised p-8">
-            <p className="label-mono text-neutral-600">Direct lines</p>
-
-            <a
-              href={`tel:${contact.phoneHref}`}
-              className="mt-6 block font-display text-h1 text-ink-950 transition-colors duration-400 hover:text-meniscus-600"
-            >
-              {contact.phoneDisplay}
-            </a>
-            <a
-              href={`tel:${contact.mobileHref}`}
-              className="mt-2 block font-display text-h2 text-ink-950 transition-colors duration-400 hover:text-meniscus-600"
-            >
-              {contact.mobileDisplay}
-            </a>
-
-            <a
-              href={`mailto:${contact.email}`}
-              className="mt-7 block break-words font-display text-h2 text-ink-950 underline decoration-ink-900/20 underline-offset-[6px] transition-colors duration-400 hover:text-meniscus-600 hover:decoration-meniscus-500"
-            >
-              {contact.email}
-            </a>
-
-            <ul className="mt-6 border-t border-ink-900/12">
-              {locations.map((location) => (
-                <li key={location.id} className="border-b border-ink-900/10 py-4 last:border-b-0">
-                  <p className="text-small font-medium text-ink-900">{location.label}</p>
-                  <p className="mt-1 text-micro text-neutral-550">{location.role}</p>
-                </li>
-              ))}
-            </ul>
-
-            <a
-              href="#locations"
-              className="label-mono mt-5 inline-flex min-h-9 items-center text-ink-700 underline decoration-ink-900/25 underline-offset-4 transition-colors duration-200 hover:text-meniscus-600 hover:decoration-meniscus-500"
-            >
-              Full address
-            </a>
-          </div>
-        }
       />
+
+      {/* The "Direct lines" panel that stood in the hero is gone. It
+          carried the phone, the mobile and the email, and the enquiry
+          section below carries the same three beside the form — the place
+          a reader is actually deciding how to get in touch. One supporting
+          column, not two, and the form moves up by the height of the panel
+          that was duplicating it. The full address stays in the location
+          directory, which is the one place it is not a repeat. */}
 
       <EnquirySection />
       <LocationDirectory />

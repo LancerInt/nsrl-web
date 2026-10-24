@@ -38,7 +38,7 @@ export function SpecList({
             "group flex items-baseline gap-4 border-t py-3.5 transition-colors duration-400",
             deep
               ? "border-white/10 text-ink-100 hover:border-ink-900/40"
-              : "border-ink-900/10 text-ink-800 hover:border-ink-900/60/50",
+              : "border-[var(--rule)] text-ink-800 hover:border-ink-900/60/50",
           )}
         >
           {numbered ? (
@@ -90,7 +90,7 @@ export function SpecChips({
             "label-mono rounded-[var(--radius-control)] border px-3 py-1.5 transition-colors duration-200",
             deep
               ? "border-white/20 text-ink-100 hover:border-meniscus-300 hover:text-white"
-              : "border-ink-900/14 text-ink-700 hover:border-meniscus-500/60 hover:text-meniscus-600",
+              : "border-[var(--rule)] text-ink-700 hover:border-meniscus-500/60 hover:text-meniscus-600",
           )}
         >
           {item}

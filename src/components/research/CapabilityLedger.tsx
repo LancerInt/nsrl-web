@@ -38,7 +38,7 @@ export function CapabilityLedger({
             />
           </Disclosure>
         ))}
-        <div className="border-t border-ink-900/12" />
+        <div className="border-t border-[var(--rule)]" />
       </div>
     );
   }
@@ -50,7 +50,7 @@ export function CapabilityLedger({
           key={group.title}
           data-reveal
           style={{ "--reveal-delay": `${i * 0.06}s` } as React.CSSProperties}
-          className="egrid gap-y-7 border-t border-ink-900/12 py-[clamp(2rem,3.6vw,3.25rem)]"
+          className="egrid gap-y-7 border-t border-[var(--rule)] py-[clamp(2rem,3.6vw,3.25rem)]"
         >
           <div className="col-span-12 lg:col-span-4">
             <div className="flex items-baseline gap-4">
@@ -79,7 +79,7 @@ export function CapabilityLedger({
           </div>
         </div>
       ))}
-      <div className="border-t border-ink-900/12" />
+      <div className="border-t border-[var(--rule)]" />
     </div>
   );
 }

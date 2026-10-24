@@ -41,9 +41,9 @@ export function QualitySystem() {
           {/* Part A — the commitments. */}
           <div
             data-reveal
-            className="col-span-12 overflow-hidden rounded-[var(--radius-card)] border border-ink-900/12 bg-canvas-raised lg:col-span-11"
+            className="col-span-12 overflow-hidden rounded-[var(--radius-card)] border border-[var(--rule)] bg-canvas-raised lg:col-span-11"
           >
-            <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 border-b border-ink-900/12 px-[clamp(1.25rem,3vw,2.5rem)] py-4">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 border-b border-[var(--rule)] px-[clamp(1.25rem,3vw,2.5rem)] py-4">
               <h3 className="label-mono text-ink-700">Part A — Commitments</h3>
               <p className="label-mono text-neutral-600">
                 {pad(qualityPillars.length)} clauses
@@ -54,7 +54,7 @@ export function QualitySystem() {
               {qualityPillars.map((pillar, i) => (
                 <div
                   key={pillar.title}
-                  className="group grid grid-cols-12 items-baseline gap-x-[clamp(1rem,1.8vw,2rem)] gap-y-2 border-b border-ink-900/10 px-[clamp(1.25rem,3vw,2.5rem)] py-5 transition-colors duration-500 last:border-b-0 hover:bg-canvas-sunken/70"
+                  className="group grid grid-cols-12 items-baseline gap-x-[clamp(1rem,1.8vw,2rem)] gap-y-2 border-b border-[var(--rule)] px-[clamp(1.25rem,3vw,2.5rem)] py-5 transition-colors duration-500 last:border-b-0 hover:bg-canvas-sunken/70"
                 >
                   {/* The reference sits inside the <dt>, not beside it. As
                       a bare <span> it was a direct child of the `dl > div`
@@ -78,9 +78,9 @@ export function QualitySystem() {
           <div
             data-reveal
             style={{ "--reveal-delay": "0.1s" } as React.CSSProperties}
-            className="col-span-12 overflow-hidden rounded-[var(--radius-card)] border border-ink-900/12 bg-canvas-sunken lg:col-span-11 lg:col-start-2"
+            className="col-span-12 overflow-hidden rounded-[var(--radius-card)] border border-[var(--rule)] bg-canvas-sunken lg:col-span-11 lg:col-start-2"
           >
-            <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 border-b border-ink-900/12 px-[clamp(1.25rem,3vw,2.5rem)] py-4">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 border-b border-[var(--rule)] px-[clamp(1.25rem,3vw,2.5rem)] py-4">
               <h3 className="label-mono text-ink-700">Part B — Mechanisms</h3>
               <p className="label-mono text-neutral-600">
                 {pad(qualitySystems.length)} systems
@@ -91,7 +91,7 @@ export function QualitySystem() {
               {qualitySystems.map((system, i) => (
                 <div
                   key={system.title}
-                  className="group grid grid-cols-12 items-baseline gap-x-[clamp(1rem,1.8vw,2rem)] gap-y-2 border-b border-ink-900/10 px-[clamp(1.25rem,3vw,2.5rem)] py-5 transition-colors duration-500 last:border-b-0 hover:bg-canvas-raised"
+                  className="group grid grid-cols-12 items-baseline gap-x-[clamp(1rem,1.8vw,2rem)] gap-y-2 border-b border-[var(--rule)] px-[clamp(1.25rem,3vw,2.5rem)] py-5 transition-colors duration-500 last:border-b-0 hover:bg-canvas-raised"
                 >
                   <dt className="col-span-12 flex items-baseline gap-[clamp(1rem,1.8vw,2rem)] lg:col-span-5">
                     <span className="label-mono w-10 shrink-0 text-neutral-550 transition-colors duration-200 group-hover:text-ink-700 motion-reduce:transition-none">

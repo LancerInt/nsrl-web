@@ -37,7 +37,7 @@ export function InstrumentRegister() {
                 </p>
               ) : null}
 
-              <dl className="mt-6 border-t border-ink-900/12 pt-6">
+              <dl className="mt-6 border-t border-[var(--rule)] pt-6">
                 <div className="flex items-baseline justify-between gap-6 py-2">
                   <dt className="label-mono text-neutral-600">Groups</dt>
                   <dd className="label-mono text-ink-800">{pad(instrumentEstate.length)}</dd>
@@ -74,7 +74,7 @@ export function InstrumentRegister() {
                 <SpecChips items={group.instruments} />
               </Disclosure>
             ))}
-            <div className="border-t border-ink-900/12" />
+            <div className="border-t border-[var(--rule)]" />
           </div>
         </div>
       </div>

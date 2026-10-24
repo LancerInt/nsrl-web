@@ -80,7 +80,7 @@ export function AboutOpening() {
                 key={item.index}
                 data-reveal
                 style={{ "--reveal-delay": `${i * 0.06}s` } as React.CSSProperties}
-                className="mb-9 break-inside-avoid border-t border-ink-900/12 pt-5 text-small text-neutral-600"
+                className="mb-9 break-inside-avoid border-t border-[var(--rule)] pt-5 text-small text-neutral-600"
               >
                 <span className="label-mono mr-3 text-ink-800">{item.index}</span>
                 {item.metric ? (

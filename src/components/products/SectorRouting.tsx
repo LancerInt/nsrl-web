@@ -45,7 +45,7 @@ export function SectorRouting() {
               >
                 <Link
                   href={`/services/${industry.slug}`}
-                  className="group grid grid-cols-[auto_1fr_auto] items-baseline gap-x-6 border-t border-ink-900/12 py-6 transition-colors duration-500 hover:border-ink-900/40"
+                  className="group grid grid-cols-[auto_1fr_auto] items-baseline gap-x-6 border-t border-[var(--rule)] py-6 transition-colors duration-500 hover:border-ink-900/40"
                 >
                   <span className="label-mono tabular-nums text-neutral-550 transition-colors duration-400 group-hover:text-ink-700">
                     {industry.index}
@@ -70,7 +70,7 @@ export function SectorRouting() {
                 </Link>
               </li>
             ))}
-            <li aria-hidden className="border-t border-ink-900/12" />
+            <li aria-hidden className="border-t border-[var(--rule)]" />
           </ul>
         </div>
       </div>

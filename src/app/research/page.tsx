@@ -9,7 +9,6 @@ import { pageMetadata } from "@/lib/seo";
 import { pad, slugify } from "@/lib/utils";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { RegisterHeroField } from "@/components/research/RegisterHeroField";
 import {
   DivisionFinder,
   type FinderEntry,
@@ -86,8 +85,12 @@ export default function ResearchIndexPage() {
         renders `bare` so it contributes its controls and not a second
         section.
       */}
-      <section className="relative isolate overflow-hidden border-b border-[var(--rule)] bg-canvas">
-        <RegisterHeroField />
+      {/* No backdrop. This band holds the statistics, the search field and
+          the family chips, and a decorative grid of outlined rectangles
+          behind real controls makes a reader work out which outlines are
+          clickable. Fading it helped; removing it is the honest fix for a
+          band that is now entirely interface. */}
+      <section className="relative isolate border-b border-[var(--rule)] bg-canvas">
         <div className="shell relative pb-10 pt-[calc(var(--nav-h)+clamp(1.25rem,2.5vw,2rem))]">
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Research" }]} />
 

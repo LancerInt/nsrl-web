@@ -14,7 +14,7 @@ export function FrameworkStrip() {
   return (
     <Section
       tone="sunken"
-      className="border-y border-ink-900/10"
+      className="border-y border-[var(--rule)]"
       innerClassName="py-[clamp(2.5rem,5vw,4rem)]"
     >
       <div className="egrid gap-y-7">

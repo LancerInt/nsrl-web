@@ -58,7 +58,7 @@ export default function ProductsPage() {
         aside={
           <nav
             aria-label="Package index"
-            className="rounded-[var(--radius-card)] border border-ink-900/12 bg-canvas-raised p-6"
+            className="rounded-[var(--radius-card)] border border-[var(--rule)] bg-canvas-raised p-6"
           >
             <p className="label-mono text-meniscus-600">Index</p>
             <ol className="mt-5">
@@ -66,7 +66,7 @@ export default function ProductsPage() {
                 <li key={pkg.slug}>
                   <a
                     href={`#${pkg.slug}`}
-                    className="group flex items-baseline gap-4 border-t border-ink-900/12 py-3.5 transition-colors duration-400 hover:border-meniscus-500/60"
+                    className="group flex items-baseline gap-4 border-t border-[var(--rule)] py-3.5 transition-colors duration-400 hover:border-meniscus-500/60"
                   >
                     <span className="label-mono shrink-0 tabular-nums text-neutral-550 transition-colors duration-400 group-hover:text-meniscus-600">
                       {pkg.index}

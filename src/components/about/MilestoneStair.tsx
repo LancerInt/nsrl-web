@@ -47,7 +47,7 @@ export function MilestoneStair() {
           ))}
         </div>
 
-        <div className="mt-[clamp(2rem,3.5vw,3rem)] flex flex-wrap items-center gap-x-10 gap-y-5 border-t border-ink-900/12 pt-7">
+        <div className="mt-[clamp(2rem,3.5vw,3rem)] flex flex-wrap items-center gap-x-10 gap-y-5 border-t border-[var(--rule)] pt-7">
           <p className="label-mono text-neutral-600">Next</p>
           <ActionLink href="/facilities" variant="outline">
             Walk the facilities

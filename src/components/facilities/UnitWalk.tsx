@@ -45,7 +45,7 @@ export function UnitWalk() {
               <article
                 key={unit.id}
                 id={unit.id}
-                className="scroll-mt-[calc(var(--nav-h)+2rem)] border-t border-ink-900/12 pt-7"
+                className="scroll-mt-[calc(var(--nav-h)+2rem)] border-t border-[var(--rule)] pt-7"
               >
                 {/* Site marker */}
                 <div className="flex items-center gap-4">

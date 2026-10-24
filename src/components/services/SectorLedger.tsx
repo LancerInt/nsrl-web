@@ -70,7 +70,7 @@ export function SectorLedger() {
               id={industry.slug}
               data-reveal
               style={{ "--reveal-delay": `${i * 0.05}s` } as React.CSSProperties}
-              className="group scroll-mt-32 border-t border-ink-900/12 transition-colors duration-500 hover:border-ink-900/40"
+              className="group scroll-mt-32 border-t border-[var(--rule)] transition-colors duration-500 hover:border-ink-900/40"
             >
               <div className="egrid gap-y-9 py-[clamp(2.5rem,5vw,4.5rem)]">
                 <p className="col-span-12 font-display text-[clamp(2.75rem,4.6vw,4.25rem)] font-medium leading-none tracking-[-0.014em] tabular-nums text-neutral-550 transition-colors duration-500 group-hover:text-ink-700 lg:col-span-1">
@@ -110,7 +110,7 @@ export function SectorLedger() {
                       <li key={division.slug}>
                         <Link
                           href={`/research/${division.slug}`}
-                          className="flex items-baseline justify-between gap-5 border-t border-ink-900/10 py-3 text-small text-ink-800 transition-colors duration-400 hover:border-ink-900/40 hover:text-ink-700"
+                          className="flex items-baseline justify-between gap-5 border-t border-[var(--rule)] py-3 text-small text-ink-800 transition-colors duration-400 hover:border-ink-900/40 hover:text-ink-700"
                         >
                           <span>{division.name}</span>
                           <span className="label-mono shrink-0 tabular-nums text-neutral-550">
@@ -125,7 +125,7 @@ export function SectorLedger() {
             </article>
           );
         })}
-        <div className="border-t border-ink-900/12" />
+        <div className="border-t border-[var(--rule)]" />
       </div>
     </Section>
   );

@@ -25,7 +25,7 @@ export function SectorBrief({ industry }: { industry: Industry }) {
             <p className="label-mono mt-6 text-neutral-600">Frameworks &amp; authorities</p>
             <SpecChips items={industry.frameworks} className="mt-5" />
 
-            <p className="label-mono mt-7 border-t border-ink-900/12 pt-6 leading-relaxed text-neutral-550">
+            <p className="label-mono mt-7 border-t border-[var(--rule)] pt-6 leading-relaxed text-neutral-550">
               Sector {industry.index} · {industry.serviceGroups.length} study groups ·{" "}
               {industry.divisions.length} divisions
             </p>

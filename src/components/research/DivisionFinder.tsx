@@ -80,7 +80,7 @@ export function DivisionFinder({
         <div className="grid gap-x-12 gap-y-7 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
           {/* Search */}
           <div>
-            <label htmlFor={inputId} className="label-mono text-neutral-600">
+            <label htmlFor={inputId} className="label-form text-ink-900">
               Search our divisions
             </label>
             <div className="relative mt-3">
@@ -178,7 +178,7 @@ export function DivisionFinder({
             without losing their place in the field. */}
         <div id={resultsId} aria-live="polite" className="empty:hidden">
           {results ? (
-            <div className="mt-8 border-t border-ink-900/10 pt-6">
+            <div className="mt-8 border-t border-[var(--rule)] pt-6">
               <p className="label-mono text-neutral-600">
                 {results.length === 0
                   ? "No division matches that"

@@ -74,7 +74,7 @@ export function CertificateRegister() {
             so the band keeps the height it had at 11px label-mono. */}
         <nav
           aria-label="Register categories"
-          className="mt-6 border-y border-ink-900/12 py-1.5"
+          className="mt-6 border-y border-[var(--rule)] py-1.5"
         >
           <ul className="flex flex-wrap items-center gap-x-8 gap-y-0">
             {groups.map((group, i) => (
@@ -135,7 +135,7 @@ export function CertificateRegister() {
                       key={record.id}
                       data-reveal
                       style={{ "--reveal-delay": `${i * 0.06}s` } as React.CSSProperties}
-                      className="group border-t border-ink-900/12 transition-colors duration-500 hover:border-ink-900/40"
+                      className="group border-t border-[var(--rule)] transition-colors duration-500 hover:border-ink-900/40"
                     >
                       <RegisterRow
                         record={record}
@@ -143,7 +143,7 @@ export function CertificateRegister() {
                       />
                     </li>
                   ))}
-                  <li aria-hidden className="border-t border-ink-900/12" />
+                  <li aria-hidden className="border-t border-[var(--rule)]" />
                 </ol>
               </div>
             </section>
@@ -190,7 +190,7 @@ function RegisterRow({ record, number }: { record: Accreditation; number: number
             href={record.certificateUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group/cert inline-flex flex-col items-start gap-2 rounded-[0.875rem] border border-ink-900/15 p-3 transition-colors duration-200 hover:border-ink-900/60 hover:bg-ink-900/6 motion-reduce:transition-none"
+            className="group/cert inline-flex flex-col items-start gap-2 rounded-[var(--radius-card)] border border-ink-900/15 p-3 transition-colors duration-200 hover:border-ink-900/60 hover:bg-ink-900/6 motion-reduce:transition-none"
           >
             {/*
               The thumbnail is page one of the document this link opens,
@@ -210,7 +210,7 @@ function RegisterRow({ record, number }: { record: Accreditation; number: number
                 width={record.preview.width}
                 height={record.preview.height}
                 sizes="(min-width: 1024px) 15rem, 60vw"
-                className="mb-1 w-[15rem] max-w-full rounded-[0.5rem] border border-[var(--rule)] bg-canvas-raised"
+                className="mb-1 w-[15rem] max-w-full rounded-[var(--radius-control)] border border-[var(--rule)] bg-canvas-raised"
               />
             ) : null}
             <span className="flex items-center gap-2 px-2 font-sans text-[0.9375rem] font-medium text-ink-950 transition-colors duration-200 group-hover/cert:text-ink-700 motion-reduce:transition-none">
@@ -227,7 +227,7 @@ function RegisterRow({ record, number }: { record: Accreditation; number: number
             </span>
           </a>
         ) : (
-          <p className="inline-flex flex-col items-start gap-2 rounded-[0.875rem] border border-dashed border-ink-900/15 px-5 py-4">
+          <p className="inline-flex flex-col items-start gap-2 rounded-[var(--radius-card)] border border-dashed border-ink-900/15 px-5 py-4">
             <span className="font-sans text-[0.9375rem] font-medium text-neutral-550">
               No certificate filed
             </span>

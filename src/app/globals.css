@@ -179,7 +179,16 @@
   --text-body: 1.0625rem;
   --text-body--line-height: 1.7;
 
-  --text-small: 0.9375rem;
+  /* 16px, up from 15px.
+
+     `text-small` is not a caption size on this site — it carries the
+     supporting paragraph under almost every section heading, the division
+     descriptions in the register and the scope lines in the certificate
+     rows. That is long-form body copy, and 15px set it below the 16–17px
+     the rest of the body sits at. The genuinely small registers are
+     `text-micro` (13px) and `label-mono` (12px), and both stay where
+     they are. */
+  --text-small: 1rem;
   --text-small--line-height: 1.6;
 
   /* The smallest type on the site, and it still has to be read: captions,
@@ -406,6 +415,24 @@
   letter-spacing: var(--text-label--letter-spacing);
   text-transform: uppercase;
   font-weight: 500;
+}
+
+/* Form labels.
+
+   Deliberately *not* `label-mono`. The mono voice is the instrument
+   register — field names in a specification table, reference marks, counts
+   — where uppercase and wide tracking read as calibration. A form is
+   something a person fills in, and setting "Your name" in tracked
+   uppercase mono at 12px makes an ordinary question look like a data
+   field on a chart recorder. Inter, sentence case, 14px: the same voice
+   the question itself is asked in. */
+@utility label-form {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 /* Text that is masked and revealed line-by-line. */

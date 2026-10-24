@@ -50,7 +50,7 @@ export function SectorClosing({ industry }: { industry: Industry }) {
             </ActionLink>
           </div>
 
-          <div className="mt-6 flex flex-wrap items-baseline gap-x-10 gap-y-3 border-t border-ink-900/12 pt-8">
+          <div className="mt-6 flex flex-wrap items-baseline gap-x-10 gap-y-3 border-t border-[var(--rule)] pt-8">
             <a
               href={`tel:${contact.phoneHref}`}
               className="font-display text-h2 text-ink-950 transition-colors duration-400 hover:text-ink-700"
@@ -74,7 +74,7 @@ export function SectorClosing({ industry }: { industry: Industry }) {
               <li key={entry.slug}>
                 <Link
                   href={`/services/${entry.slug}`}
-                  className="group grid grid-cols-[auto_1fr_auto] items-baseline gap-x-5 border-t border-ink-900/12 py-6 transition-colors duration-500 hover:border-ink-900/40"
+                  className="group grid grid-cols-[auto_1fr_auto] items-baseline gap-x-5 border-t border-[var(--rule)] py-6 transition-colors duration-500 hover:border-ink-900/40"
                 >
                   <span className="label-mono tabular-nums text-neutral-550">{entry.index}</span>
                   <span>
@@ -91,7 +91,7 @@ export function SectorClosing({ industry }: { industry: Industry }) {
               </li>
             ))}
           </ul>
-          <div className="border-t border-ink-900/12" />
+          <div className="border-t border-[var(--rule)]" />
 
           <ActionLink href="/services" variant="text" className="mt-6">
             How we work

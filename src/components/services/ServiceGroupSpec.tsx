@@ -52,13 +52,13 @@ export function ServiceGroupSpec({ industry }: { industry: Industry }) {
         </div>
       </div>
 
-      <div className="mt-[clamp(3rem,6vw,5rem)] border-t border-ink-900/14">
+      <div className="mt-[clamp(3rem,6vw,5rem)] border-t border-[var(--rule)]">
         {industry.serviceGroups.map((group, i) => (
           <div
             key={group.title}
             data-reveal
             style={{ "--reveal-delay": `${(i % 3) * 0.06}s` } as React.CSSProperties}
-            className="egrid gap-y-6 border-b border-ink-900/14 py-[clamp(1.25rem,2.5vw,2rem)]"
+            className="egrid gap-y-6 border-b border-[var(--rule)] py-[clamp(1.25rem,2.5vw,2rem)]"
           >
             <div className="col-span-12 flex items-baseline gap-5 lg:col-span-4">
               <span className="label-mono shrink-0 pt-1 tabular-nums text-neutral-550">

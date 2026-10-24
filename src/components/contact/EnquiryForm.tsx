@@ -131,13 +131,14 @@ export function EnquiryForm() {
   const border = (field: FieldName) =>
     errors[field] ? "border-alert-500" : "border-ink-900/15 hover:border-ink-900/30";
 
-  const labelClass = "label-mono text-ink-700";
+  /* Inter, sentence case, 14px — see the `label-form` utility. */
+  const labelClass = "label-form text-ink-900";
 
   return (
     <form
       noValidate
       onSubmit={handleSubmit}
-      className="rounded-[var(--radius-card)] border border-ink-900/10 bg-canvas-raised p-[clamp(1.5rem,3.5vw,3rem)] shadow-[0_1px_2px_rgba(8,21,43,0.04),0_28px_56px_-40px_rgba(8,21,43,0.3)]"
+      className="rounded-[var(--radius-card)] border border-[var(--rule)] bg-canvas-raised p-[clamp(1.5rem,3.5vw,3rem)] shadow-[0_1px_2px_rgba(8,21,43,0.04),0_28px_56px_-40px_rgba(8,21,43,0.3)]"
     >
       <div className="grid gap-x-6 gap-y-7 sm:grid-cols-2">
         <div>
@@ -214,7 +215,7 @@ export function EnquiryForm() {
             aria-describedby={describedBy("company", `${id}-company-hint`)}
             className={cn(control, border("company"))}
           />
-          <p id={`${id}-company-hint`} className="label-mono mt-2.5 text-neutral-550">
+          <p id={`${id}-company-hint`} className="mt-2 text-micro text-neutral-600">
             Optional
           </p>
         </div>
@@ -234,14 +235,14 @@ export function EnquiryForm() {
             aria-describedby={describedBy("message", `${id}-message-hint`)}
             className={cn(control, "resize-y", border("message"))}
           />
-          <p id={`${id}-message-hint`} className="label-mono mt-2.5 text-neutral-550">
+          <p id={`${id}-message-hint`} className="mt-2 text-micro text-neutral-600">
             Test item, sector and the authority the dossier is going to, if you know them
           </p>
           <FieldError id={`${id}-message-error`} message={errors.message} />
         </div>
       </div>
 
-      <div className="mt-7 flex flex-wrap items-center gap-x-8 gap-y-5 border-t border-ink-900/10 pt-8">
+      <div className="mt-7 flex flex-wrap items-center gap-x-8 gap-y-5 border-t border-[var(--rule)] pt-8">
         {/* Matches ActionLink's geometry exactly — same height token, same
             radius, same type size — so the one real <button> on the site
             does not read as a different control from every link-button. */}
