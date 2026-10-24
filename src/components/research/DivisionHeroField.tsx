@@ -24,5 +24,8 @@ const BY_FAMILY: Record<Discipline["family"], MotifName> = {
 };
 
 export function DivisionHeroField({ family }: { family: Discipline["family"] }) {
-  return <Motif name={BY_FAMILY[family]} fade="both" opacity={0.75} />;
+  /* Quieter than it was. At 0.75 the contour field read as a second subject
+     competing with the editorial still beside it; the point of a backdrop
+     is that it is one. */
+  return <Motif name={BY_FAMILY[family]} fade="both" opacity={0.35} />;
 }

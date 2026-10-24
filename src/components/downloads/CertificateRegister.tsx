@@ -49,11 +49,11 @@ export function CertificateRegister() {
           </div>
 
           <div className="col-span-12 lg:col-span-6 lg:col-start-7">
-            <p className="text-small text-neutral-600">
-              Each record carries the abbreviation the certificate is known by, the authority
-              that issued it and the scope it covers. Where the laboratory has published the
-              certificate, the record links straight to it.
-            </p>
+            {/* The paragraph that stood here repeated the page lead almost
+                word for word — "names the authority that issued it and the
+                scope it covers … links straight to it" — one section apart.
+                One concise introduction, then the records. The counts stay:
+                they are the only thing this block was adding. */}
             <p className="label-mono mt-6 flex flex-wrap gap-x-8 gap-y-2 text-neutral-600">
               <span>
                 Records <span className="text-ink-900">{pad(accreditations.length)}</span>

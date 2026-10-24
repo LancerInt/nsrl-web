@@ -186,23 +186,45 @@ export default async function DivisionPage({ params }: PageProps) {
            new submission behaviour is implied. */
         actions={
           <ActionLink href="/contact" variant="solid">
-            Discuss a {discipline.name.toLowerCase()} study
+            {/* "an ecotoxicology study", not "a". Chosen on the sound of the
+                division's first letter rather than hardcoded, so the seventh
+                division to be added gets it right too. Vowel-letter is the
+                right test here because every division name that begins with
+                one also begins with a vowel sound. */}
+            Discuss {/^[aeiou]/i.test(discipline.name) ? "an" : "a"}{" "}
+            {discipline.name.toLowerCase()} study
           </ActionLink>
         }
         aside={
-          <figure>
-            {/* 4:5, which is the delivered ratio of the editorial stills
-                (1122×1402) and the kit's recommendation for this slot — so
-                the frame crops nothing and asks for nothing the file cannot
-                supply. `sizes` is set to the real rendered width rather
-                than being left to default to 100vw, which is what had this
-                slot requesting a 3840px file to fill about 380px. */}
+          <figure className="mx-auto max-w-[19rem] lg:mx-0">
+            {/*
+              Still 4:5 — the delivered ratio of the editorial stills
+              (1122×1402) and the kit's recommendation for this slot — but
+              presented smaller rather than cropped.
+
+              At the column's full 364px a 4:5 frame is 455px tall, and
+              with its caption the figure ran to 528px against a left
+              column of text that needed rather less. The grid row took the
+              taller of the two, so the surplus showed as dead space under
+              the heading, lead, metrics and action.
+
+              Capping the figure at 19rem brings the image to about 380px,
+              inside the 340–400 asked for, and keeps the full portrait
+              composition: the microscope, the fish tank and the root
+              system are all still whole. Cropping to a landscape at this
+              width would have cut the subject out of three of the images
+              to save the same 70px.
+
+              `sizes` follows the new rendered width — about 19rem at
+              desktop rather than 32vw — so the slot stops asking for a
+              file wider than it can show.
+            */}
             <div className="relative aspect-[4/5] img-frame">
               <SpecimenPlate
                 src={divisionPhoto.src}
                 alt={divisionPhoto.alt}
                 position={divisionPhoto.position}
-                sizes="(min-width: 1024px) 32vw, (min-width: 640px) 50vw, 100vw"
+                sizes="(min-width: 1024px) 19rem, (min-width: 640px) 40vw, 90vw"
                 priority
               />
             </div>

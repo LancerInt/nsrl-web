@@ -80,13 +80,13 @@ export default function AboutPage() {
         ]}
         visual={<AboutHeroVisual />}
         aside={
-          <div className="card-elevated p-7">
+          <div className="card-elevated p-6">
             <h2 className="label-mono text-neutral-550">Governed by</h2>
-            <dl className="mt-5">
+            <dl className="mt-4">
               {governing.map((item) => (
                 <div
                   key={item.id}
-                  className="border-t border-[var(--rule)] py-4 first:border-t-0 first:pt-0"
+                  className="border-t border-[var(--rule)] py-3 first:border-t-0 first:pt-0"
                 >
                   {/* The heading is the *standard*, not the accrediting
                       body, wherever there is one. "Governed by" asks what
@@ -99,13 +99,14 @@ export default function AboutPage() {
                   <dt className="font-display text-h3 text-ink-950">
                     {item.standard ?? item.abbr}
                   </dt>
-                  <dd className="mt-1.5">
-                    <span className="block text-small leading-snug text-ink-800">
-                      {item.standard ? `${item.abbr} accreditation` : item.name}
-                    </span>
-                    <span className="mt-1 block text-micro leading-relaxed text-neutral-600">
-                      {item.issuer}
-                    </span>
+                  {/* Two lines, not three. The issuer was the third, and it
+                      is stated in full — with the scope and the certificate
+                      link — in the Evidence on file section further down
+                      this same page. Repeating it here made the panel the
+                      tallest thing in the hero without telling a reader
+                      anything they would not meet again. */}
+                  <dd className="mt-1 text-small leading-snug text-ink-800">
+                    {item.standard ? `${item.abbr} accreditation` : item.name}
                   </dd>
                 </div>
               ))}

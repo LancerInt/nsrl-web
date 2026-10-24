@@ -56,30 +56,6 @@ export default function DownloadsPage() {
           { label: "Countries", value: pad(acceptingCountries.length) },
         ]}
         visual={<RegisterVisual />}
-        aside={
-          /* A solid card, not frosted glass: the hero is a light surface, and
-             the white-on-translucent-white it used to be was all but
-             unreadable. */
-          <div className="card-elevated p-6 sm:p-7">
-            <h2 className="label-mono text-meniscus-600">Register key</h2>
-            <dl className="mt-5">
-              <div className="border-t border-ink-900/10 py-4 first:border-t-0 first:pt-0">
-                <dt className="font-display text-h3 text-ink-950">Certificate filed</dt>
-                <dd className="mt-1.5 text-small text-neutral-600">
-                  The certificate is published by the laboratory. The record links to it and the
-                  link opens in a new tab.
-                </dd>
-              </div>
-              <div className="border-t border-ink-900/10 py-4 last:pb-0">
-                <dt className="font-display text-h3 text-ink-950">No certificate filed</dt>
-                <dd className="mt-1.5 text-small text-neutral-600">
-                  The record is listed in full but carries no link, because no certificate has
-                  been published for it.
-                </dd>
-              </div>
-            </dl>
-          </div>
-        }
       />
 
       <CertificateRegister />

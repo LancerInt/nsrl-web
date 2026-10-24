@@ -61,7 +61,11 @@ export function PageHero({
         </div>
       ) : null}
 
-      <div className="shell relative pb-[clamp(2.25rem,3.5vw,3rem)] pt-[clamp(6.25rem,8vw,7.5rem)]">
+      {/* Top padding clears the fixed bar and adds air; it does not need to
+          add 120px of it. The floor is the bar's height plus a comfortable
+          gap, which is what `--nav-h` expresses — stated against the bar so
+          it cannot drift out of step with it. */}
+      <div className="shell relative pb-[clamp(2rem,3vw,2.5rem)] pt-[calc(var(--nav-h)+clamp(1.5rem,3vw,2.5rem))]">
         <Breadcrumbs items={crumbs} tone={tone} baseUrl={site.url} />
 
         <Eyebrow index={index} tone={tone} className="mt-7">

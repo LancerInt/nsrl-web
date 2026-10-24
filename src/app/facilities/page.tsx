@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 
 import { units } from "@/content/facilities";
 import { capacityStats } from "@/content/organisation";
-import { formatCount, pad } from "@/lib/utils";
+import { formatCount } from "@/lib/utils";
 import { pageMetadata } from "@/lib/seo";
 import { PageHero } from "@/components/ui/PageHero";
+import { PageNav } from "@/components/ui/PageNav";
 import { SitePlanField } from "@/components/facilities/SitePlanField";
 import { FacilityLead } from "@/components/facilities/FacilityLead";
 import { FacilityGallery } from "@/components/facilities/FacilityGallery";
@@ -58,34 +59,24 @@ export default function FacilitiesPage() {
           { label: "City", value: "Salem" },
         ]}
         visual={<SitePlanField />}
-        aside={
-          <nav aria-label="On this page" className="card-elevated p-6">
-            <p className="label-mono text-neutral-550">On this page</p>
-            <ul className="mt-4">
-              {contents.map((item, i) => (
-                <li key={item.href}>
-                  <a
-                    href={item.href}
-                    className="group -mx-3 flex items-baseline gap-4 rounded-lg px-3 py-3 transition-colors duration-300 hover:bg-canvas-sunken"
-                  >
-                    <span className="label-mono shrink-0 tabular-nums text-neutral-550">
-                      {pad(i + 1)}
-                    </span>
-                    <span>
-                      <span className="block font-display text-h3 text-ink-950">{item.label}</span>
-                      <span className="mt-1 block text-small text-neutral-600">{item.note}</span>
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        }
       />
 
+      {/* A horizontal anchor strip, the same one the division pages use.
+
+          This was a card in the hero's right column listing six sections,
+          each with a serif heading and an explanatory note — the tallest
+          thing on the page above the fold, and it set the hero's height
+          while saying nothing a reader needed before seeing the facility
+          itself. As a strip it does the same job in one row and the
+          gallery arrives far sooner. */}
+      <PageNav items={contents.map((item) => ({ href: item.href, label: item.label }))} />
+
       <FacilityLead />
-      <UnitWalk />
+      {/* The gallery sits directly after the lead now. It was third, behind
+          the unit walk, so the page's only photography arrived two long
+          sections after the introduction that promised it. */}
       <FacilityGallery />
+      <UnitWalk />
       <CapacityPanel />
       <EnvironmentTable />
       <InstrumentRegister />

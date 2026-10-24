@@ -59,7 +59,7 @@ export function HomeHero() {
         replaced, re-measure it in a browser — `getImageData` on the served
         URL, not `sharp` on the source.
       */
-      className="relative isolate overflow-hidden bg-deep text-white lg:grid lg:min-h-svh lg:grid-rows-[1fr_auto] lg:bg-[#030f26]"
+      className="relative isolate overflow-hidden bg-deep text-white lg:grid lg:min-h-[min(40rem,86svh)] lg:grid-rows-[1fr_auto] lg:bg-[#030f26]"
     >
       {/* The stage: artwork and copy. Stretches to fill whatever height is
           left above the figures band. */}
@@ -110,7 +110,7 @@ export function HomeHero() {
               for a scrim to rescue. */}
         </div>
 
-        <div className="shell order-1 w-full pb-[clamp(2.5rem,5vw,3.5rem)] pt-[calc(var(--nav-h)+1.5rem)] lg:order-none lg:flex lg:h-full lg:items-center lg:py-14">
+        <div className="shell order-1 w-full pb-[clamp(1.75rem,3.5vw,2.5rem)] pt-[calc(var(--nav-h)+1.25rem)] lg:order-none lg:flex lg:h-full lg:items-center lg:py-10">
           <div className="max-w-[36rem]">
             <p className="label-mono text-meniscus-300">
               Contract research organisation · Salem, Tamil Nadu
@@ -128,7 +128,7 @@ export function HomeHero() {
               toxicology, ecotoxicology and entomology without leaving our custody.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="mt-7 flex flex-wrap items-center gap-3">
               <ActionLink href="/contact" variant="solid" tone="deep">
                 Request a proposal
               </ActionLink>

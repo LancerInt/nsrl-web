@@ -133,21 +133,32 @@ export function DivisionFinder({
             </p>
           </div>
 
-          {/* Jump links */}
+          {/*
+            Compact controls, not cards.
+
+            These were three elevated cards, each with a serif heading and a
+            count stacked inside it, filling most of the right half of the
+            band and pushing the division listings well down the page. They
+            are jump links — one tap, no state, nothing to read but a name
+            and a number — and a card is a container for something richer
+            than that. As chips they say the same thing in a quarter of the
+            height, and the band's job of getting a reader to a division
+            happens sooner.
+          */}
           <nav aria-label="Division families">
             <p className="label-mono text-neutral-600">Or jump to a family</p>
-            <ul className="mt-3 grid gap-2 sm:grid-cols-3">
+            <ul className="mt-3 flex flex-wrap gap-2">
               {families.map((family) => (
                 <li key={family.id}>
                   <a
                     href={`#${family.id}`}
-                    className="group card-elevated card-interactive flex h-full flex-col justify-between gap-3 px-4 py-3.5"
+                    className="group inline-flex items-baseline gap-2.5 rounded-[var(--radius-control)] border border-[var(--rule)] bg-canvas-raised px-3.5 py-2 transition-colors duration-200 hover:border-meniscus-500 motion-reduce:transition-none"
                   >
-                    <span className="font-display text-h3 text-ink-950 transition-colors duration-200 group-hover:text-meniscus-600">
+                    <span className="text-small font-medium text-ink-900 transition-colors duration-200 group-hover:text-meniscus-600 motion-reduce:transition-none">
                       {family.name}
                     </span>
-                    <span className="label-mono text-neutral-550">
-                      {family.count} divisions
+                    <span className="label-mono tabular-nums text-neutral-550">
+                      {family.count}
                     </span>
                   </a>
                 </li>
