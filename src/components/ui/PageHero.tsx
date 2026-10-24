@@ -72,7 +72,11 @@ export function PageHero({
           {eyebrow}
         </Eyebrow>
 
-        <div className="egrid mt-6 gap-y-8">
+        {/* `items-start`: the text column and the aside are different
+            things of different natural heights, and stretching the shorter
+            to the taller is what turned the surplus into dead space under
+            the division CTA. */}
+        <div className="egrid mt-6 items-start gap-y-8">
           <div className={cn("col-span-12", panel ? "lg:col-span-7" : "lg:col-span-9")}>
             <RevealText
               as="h1"

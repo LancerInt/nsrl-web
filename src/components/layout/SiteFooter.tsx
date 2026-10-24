@@ -1,17 +1,7 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 
 import { contact, footerNav, locations, site } from "@/content/site";
 import { Logo } from "@/components/layout/Logo";
-
-/** Inlined because lucide dropped brand marks in v1. */
-function LinkedInMark() {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className="h-4 w-4">
-      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
-    </svg>
-  );
-}
 
 /**
  * The directory.
@@ -66,20 +56,6 @@ export function SiteFooter() {
                 {contact.email}
               </a>
             </div>
-
-            <a
-              href={site.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group mt-6 inline-flex h-[var(--control-h-sm)] items-center gap-2.5 rounded-[var(--radius-control)] border border-white/25 px-4 text-small transition-colors duration-200 hover:border-white"
-            >
-              <LinkedInMark />
-              LinkedIn
-              <ArrowUpRight
-                aria-hidden
-                className="h-3.5 w-3.5 transition-transform duration-200 ease-[var(--ease-out-quart)] group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-              />
-            </a>
           </div>
 
           <nav

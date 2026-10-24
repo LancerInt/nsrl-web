@@ -196,7 +196,7 @@ export default async function DivisionPage({ params }: PageProps) {
           </ActionLink>
         }
         aside={
-          <figure className="mx-auto max-w-[19rem] lg:mx-0">
+          <figure className="mx-auto max-w-[17rem] self-start lg:mx-0">
             {/*
               Still 4:5 — the delivered ratio of the editorial stills
               (1122×1402) and the kit's recommendation for this slot — but
@@ -224,7 +224,7 @@ export default async function DivisionPage({ params }: PageProps) {
                 src={divisionPhoto.src}
                 alt={divisionPhoto.alt}
                 position={divisionPhoto.position}
-                sizes="(min-width: 1024px) 19rem, (min-width: 640px) 40vw, 90vw"
+                sizes="(min-width: 1024px) 17rem, (min-width: 640px) 40vw, 90vw"
                 priority
               />
             </div>

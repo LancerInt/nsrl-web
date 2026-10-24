@@ -74,7 +74,9 @@ export function organisationJsonLd() {
     logo: `${site.url}/brand/nsrl-logo.png`,
     description: site.shortDescription,
     slogan: site.tagline,
-    sameAs: [site.linkedin],
+    /* No `sameAs`. It listed a LinkedIn company page that is not ours;
+       an Organization claiming a profile it does not own is worse than
+       claiming none. Restore it when a verified profile exists. */
     telephone: contact.phoneDisplay,
     email: contact.email,
     address: locations.map((location) => ({

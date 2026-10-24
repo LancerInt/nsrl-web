@@ -12,7 +12,6 @@ export const site = {
   tagline: "Complete preclinical research, start to finish.",
   url: "https://nsrl.co.in",
   locale: "en_IN",
-  linkedin: "https://www.linkedin.com/company/nsrl",
 } as const;
 
 export const contact = {
@@ -96,7 +95,7 @@ export const primaryNav: NavGroup[] = [
           ],
         },
         {
-          heading: "Analytical & discovery",
+          heading: "Analytical & Microbial Sciences",
           links: [
             { label: "Chemistry", href: "/research/chemistry" },
             { label: "Microbiology", href: "/research/microbiology" },

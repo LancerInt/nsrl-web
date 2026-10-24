@@ -44,9 +44,19 @@ export type FinderFamily = {
 export function DivisionFinder({
   entries,
   families,
+  bare = false,
 }: {
   entries: FinderEntry[];
   families: FinderFamily[];
+  /**
+   * Render without the band wrapper.
+   *
+   * The research index now folds the heading, introduction, statistics,
+   * search and family chips into one section, so the finder must not
+   * bring a second `<section>` and a second set of vertical padding with
+   * it. Every other caller still gets the band.
+   */
+  bare?: boolean;
 }) {
   const [query, setQuery] = useState("");
   const inputId = useId();
@@ -65,12 +75,8 @@ export function DivisionFinder({
     });
   }, [entries, trimmed]);
 
-  return (
-    <section
-      aria-label="Find a division"
-      className="border-y border-ink-900/8 bg-canvas-sunken"
-    >
-      <div className="shell py-[var(--section-y-tight)]">
+  const body = (
+    <>
         <div className="grid gap-x-12 gap-y-7 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
           {/* Search */}
           <div>
@@ -221,7 +227,17 @@ export function DivisionFinder({
             </div>
           ) : null}
         </div>
-      </div>
+    </>
+  );
+
+  if (bare) return body;
+
+  return (
+    <section
+      aria-label="Find a division"
+      className="border-y border-[var(--rule)] bg-canvas-sunken"
+    >
+      <div className="shell py-[var(--section-y-tight)]">{body}</div>
     </section>
   );
 }
