@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
 import { accreditations, type Accreditation } from "@/content/accreditations";
@@ -189,10 +190,31 @@ function RegisterRow({ record, number }: { record: Accreditation; number: number
             href={record.certificateUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group/cert inline-flex flex-col items-start gap-2 rounded-[0.875rem] border border-ink-900/15 px-5 py-4 transition-colors duration-500 [transition-timing-function:var(--ease-out-expo)] hover:border-ink-900/60 hover:bg-ink-900/8"
+            className="group/cert inline-flex flex-col items-start gap-2 rounded-[0.875rem] border border-ink-900/15 p-3 transition-colors duration-200 hover:border-ink-900/60 hover:bg-ink-900/6 motion-reduce:transition-none"
           >
-            <span className="flex items-center gap-2 font-sans text-[0.9375rem] font-medium text-ink-950 transition-colors duration-400 group-hover/cert:text-ink-700">
-              Open certificate
+            {/*
+              The thumbnail is page one of the document this link opens,
+              rendered from the file itself and served locally rather than
+              hot-linked. It sits inside the anchor, so the image opens the
+              original — a reader who reaches for the picture gets the
+              document, which is what a preview implies.
+
+              `width`/`height` are the real rendered dimensions, so the
+              row reserves its space before the image arrives and the
+              register does not reflow as thumbnails load.
+            */}
+            {record.preview ? (
+              <Image
+                src={record.preview.src}
+                alt=""
+                width={record.preview.width}
+                height={record.preview.height}
+                sizes="(min-width: 1024px) 15rem, 60vw"
+                className="mb-1 w-[15rem] max-w-full rounded-[0.5rem] border border-[var(--rule)] bg-canvas-raised"
+              />
+            ) : null}
+            <span className="flex items-center gap-2 px-2 font-sans text-[0.9375rem] font-medium text-ink-950 transition-colors duration-200 group-hover/cert:text-ink-700 motion-reduce:transition-none">
+              {record.preview ? "Open the certificate" : "Open certificate"}
               <ArrowUpRight
                 aria-hidden
                 className="h-4 w-4 transition-transform duration-500 [transition-timing-function:var(--ease-out-expo)] group-hover/cert:-translate-y-0.5 group-hover/cert:translate-x-0.5"
@@ -200,7 +222,7 @@ function RegisterRow({ record, number }: { record: Accreditation; number: number
             </span>
             {/* Visible to everyone and present in the accessibility tree, so the
                 external destination is never a surprise. */}
-            <span className="label-mono text-neutral-550">
+            <span className="label-mono px-2 pb-1 text-neutral-550">
               External link — opens in a new tab
             </span>
           </a>

@@ -62,3 +62,30 @@ reasons are worth carrying forward as a standard:
 - `documents-w3.jpg` was a handwritten ledger photographed in a museum case,
   standing in for the ten-year archive and communicating the opposite of a
   secure, validated, backed-up one.
+
+## Certificate previews
+
+`certificates/oecd-glp.webp` is page one of the GLP certificate linked from
+the Downloads register, rendered from that document and served locally
+rather than hot-linked.
+
+It is the only preview on the site. The other three records in
+`src/content/accreditations.ts` link to documents that were opened and
+checked, and each is a different credential from the one the record
+describes:
+
+- the **NABL ISO/IEC 17025** record links to an AYUSH State Licensing
+  Authority approval letter;
+- the **SIRO / DSIR** record links to a SENAVE Paraguay laboratory
+  registration;
+- the **CIBRC** record links to an AERB radioisotope facility registration.
+
+All four documents, including the GLP certificate, name **Bioscience
+Research Foundation, Kancheepuram** as the holder rather than NSRL. For
+GLP the credential type and issuing authority match the record exactly, so
+the preview is shown; for the other three they do not, so those records
+keep their text entry and no frame.
+
+Set `preview` on a record once its correct document is supplied. Render it
+the same way: page one of the actual file, exported to WebP at its real
+dimensions, with `width`/`height` recorded so the row reserves space.

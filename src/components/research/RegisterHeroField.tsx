@@ -15,5 +15,15 @@ import { Motif } from "@/components/visuals/Motif";
  * motif, which is decoration that admits to being decoration.
  */
 export function RegisterHeroField() {
-  return <Motif name="motif-sample-grid" fade="start" opacity={0.75} />;
+  /*
+    Barely there.
+
+    At 0.75 the sample-tray motif's outlined boxes sat directly behind the
+    statistics row, the search field and the family chips — three sets of
+    rectangles competing with three real controls, so the eye had to work
+    out which outlines it was allowed to click. The decoration stays
+    because the band is otherwise a flat field, but at 0.18 it is texture
+    rather than a second set of boxes.
+  */
+  return <Motif name="motif-sample-grid" fade="start" opacity={0.18} />;
 }

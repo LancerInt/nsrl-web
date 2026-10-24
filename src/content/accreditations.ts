@@ -34,6 +34,18 @@ export type Accreditation = {
   /** Grouping used by the downloads page and the accreditation wall. */
   category: "Good Laboratory Practice" | "Testing & calibration" | "Sector approval";
   certificateUrl?: string;
+  /**
+   * A thumbnail of the linked certificate's first page, rendered from the
+   * document itself and served locally.
+   *
+   * Set only where the linked document has been opened and confirmed to be
+   * the credential this record describes. A preview is a much stronger
+   * assertion than a link — a reader scanning thumbnails takes the image
+   * as the certificate — so a record whose document has not been verified
+   * keeps its text entry and shows no frame. An empty or mismatched frame
+   * would be worse than none.
+   */
+  preview?: { src: string; width: number; height: number };
 };
 
 export const accreditations: Accreditation[] = [
@@ -47,6 +59,16 @@ export const accreditations: Accreditation[] = [
     category: "Good Laboratory Practice",
     certificateUrl:
       "https://drive.google.com/file/d/17GU4XvbPc9TXYjx6ebWmhJFBnolnavkZ/view?usp=sharing",
+    /* Rendered from page one of the linked PDF. Verified: it is a GLP
+       Compliance Certificate issued by NGCMA under the Department of
+       Science and Technology, which is the credential and the issuer this
+       record names. Certificate GLP/C-244/2025, valid to 3 April 2028.
+
+       The other three records carry no preview. Their linked documents
+       were opened and are a different credential in each case — see
+       README. They keep their text entries until the correct documents
+       are supplied. */
+    preview: { src: "/images/certificates/oecd-glp.webp", width: 1024, height: 724 },
   },
   {
     id: "nabl",

@@ -13,7 +13,11 @@ import { RevealText } from "@/components/ui/RevealText";
  */
 export function AboutOpening() {
   return (
-    <section className="relative bg-canvas py-[var(--section-y)]">
+    <section
+      /* A shorter foot than head. The band below opens with its own full
+         section padding, so the two stacked to an unusually wide gap. */
+      className="relative bg-canvas pb-[var(--section-y-tight)] pt-[var(--section-y)]"
+    >
       <div className="shell">
         <div className="egrid gap-y-8">
           {/* Left rail — labels only, the margin of a printed page. */}
