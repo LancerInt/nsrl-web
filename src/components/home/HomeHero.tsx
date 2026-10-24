@@ -59,11 +59,27 @@ export function HomeHero() {
         replaced, re-measure it in a browser — `getImageData` on the served
         URL, not `sharp` on the source.
       */
-      className="relative isolate overflow-hidden bg-deep text-white lg:grid lg:min-h-[min(40rem,86svh)] lg:grid-rows-[1fr_auto] lg:bg-[#030f26]"
+      className="relative isolate overflow-hidden bg-deep text-white lg:grid lg:grid-rows-[1fr_auto] lg:bg-[#030f26]"
     >
-      {/* The stage: artwork and copy. Stretches to fill whatever height is
-          left above the figures band. */}
-      <div className="relative flex flex-col lg:block">
+      {/*
+        The stage: artwork and copy.
+
+        Its height is derived from the artwork's own proportions rather
+        than picked. `contain` paints the illustration as wide as its
+        frame is tall times 1.922, so for it to reach both edges the frame
+        has to be the viewport divided by 1.922 — plus the 5rem the frame
+        is inset by to clear the opaque bar. At 1280 and 1440 that lands
+        exactly, and the artwork spans the full width with nothing cropped.
+
+        Capped at 50rem so an ultra-wide screen does not get a 990px hero.
+        Past that the artwork stays whole and anchored right, with matched
+        navy to its left — the fill is the artwork's own ground colour, so
+        the join is invisible.
+
+        The figures band is a separate row, so it adds to this rather than
+        eating into it.
+      */}
+      <div className="relative flex flex-col lg:block lg:min-h-[min(calc(100vw/1.922+var(--nav-h)),50rem)]">
         {/*
           Two layouts, because one composition cannot serve both.
 
